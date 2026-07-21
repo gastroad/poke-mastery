@@ -1,8 +1,12 @@
 import Link from "next/link";
+import { AuthStatus } from "@/client/auth/AuthStatus";
 
 export default function Home() {
   return (
-    <main className="flex min-h-full flex-1 flex-col items-center justify-center gap-10 bg-slate-950 px-6 text-center text-slate-100">
+    <main className="relative flex min-h-full flex-1 flex-col items-center justify-center gap-10 bg-slate-950 px-6 text-center text-slate-100">
+      <header className="absolute right-5 top-5">
+        <AuthStatus />
+      </header>
       <div className="flex flex-col items-center gap-4">
         <h1 className="text-5xl font-black tracking-tight">
           Poké<span className="text-indigo-400">Mastery</span>
