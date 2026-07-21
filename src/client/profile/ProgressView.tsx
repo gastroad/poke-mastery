@@ -1,13 +1,10 @@
-import { Lock } from "lucide-react";
-import { CHALLENGES } from "@/domain/challenge/catalog";
-import { describeUnlock, isUnlocked } from "@/domain/challenge/unlock";
 import { resolveLevel } from "@/domain/progress/level";
 import { masteryPct } from "@/domain/progress/mastery";
 import type { Progress, TypeStat } from "@/domain/progress/types";
 import type { PokemonType } from "@/domain/pokemon/types";
 import { TYPE_NAME_KO } from "@/domain/pokemon/typeNames";
 
-/** Presentational progress dashboard: level/XP, per-type mastery, challenge unlocks. */
+/** Presentational progress dashboard: level/XP and per-type mastery. */
 export function ProgressView({ progress }: { progress: Progress }) {
   const { level, xpIntoLevel, xpForNext } = resolveLevel(progress.totalXp);
   const levelPct = xpForNext > 0 ? Math.round((xpIntoLevel / xpForNext) * 100) : 0;
@@ -53,37 +50,6 @@ export function ProgressView({ progress }: { progress: Progress }) {
             })}
           </ul>
         )}
-      </section>
-
-      <section className="flex flex-col gap-3">
-        <h2 className="text-sm font-semibold text-slate-300">챌린지</h2>
-        <ul className="flex flex-col gap-2">
-          {CHALLENGES.map((challenge) => {
-            const unlocked = isUnlocked(challenge.unlock, progress);
-            return (
-              <li
-                key={challenge.id}
-                className={`flex items-center justify-between rounded-xl border px-4 py-3 ${
-                  unlocked ? "border-slate-700 bg-slate-900" : "border-slate-800 bg-slate-900/40"
-                }`}
-              >
-                <div className="flex min-w-0 flex-col">
-                  <span className={unlocked ? "font-semibold" : "font-semibold text-slate-500"}>
-                    {challenge.title}
-                  </span>
-                  <span className="truncate text-xs text-slate-500">
-                    {unlocked ? challenge.description : describeUnlock(challenge.unlock)}
-                  </span>
-                </div>
-                {unlocked ? (
-                  <span className="shrink-0 text-xs font-medium text-emerald-400">열림</span>
-                ) : (
-                  <Lock className="h-4 w-4 shrink-0 text-slate-600" />
-                )}
-              </li>
-            );
-          })}
-        </ul>
       </section>
     </div>
   );

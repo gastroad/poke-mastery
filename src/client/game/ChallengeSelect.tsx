@@ -2,77 +2,88 @@
 
 import { Lock } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { getMyProgressAction } from "@/app/profile/actions";
+import { useState } from "react";
 import { AuthStatus } from "@/client/auth/AuthStatus";
-import { CHALLENGES } from "@/domain/challenge/catalog";
-import { describeUnlock, isUnlocked } from "@/domain/challenge/unlock";
-import type { Progress } from "@/domain/progress/types";
-import { readLocalProgress } from "./localProgress";
+import { GENERATION_POOLS, MODES, type PoolDef, TYPE_POOLS } from "@/domain/challenge/catalog";
+import { isUnlocked } from "@/domain/challenge/unlock";
+import { EMPTY_PROGRESS } from "@/domain/progress/applyPlayResult";
 
-/** Challenge picker: unlocks are computed from progress (DB if logged in, else localStorage). */
+/** Two-step picker: choose a pool (generation / type), then a mode. */
 export function ChallengeSelect() {
-  const [progress, setProgress] = useState<Progress | null>(null);
-
-  useEffect(() => {
-    let active = true;
-    getMyProgressAction()
-      .then((res) => {
-        if (!active) return;
-        setProgress(res.status === "authed" ? res.progress : readLocalProgress());
-      })
-      .catch(() => active && setProgress(readLocalProgress()));
-    return () => {
-      active = false;
-    };
-  }, []);
+  const [pool, setPool] = useState<PoolDef | null>(null);
 
   return (
     <main className="flex min-h-full flex-1 flex-col items-center bg-slate-950 px-6 py-12 text-slate-100">
       <div className="flex w-full max-w-lg flex-col gap-8">
-        <header className="flex items-center justify-between">
-          <h1 className="text-2xl font-black tracking-tight">챌린지</h1>
+        <header className="flex items-center justify-between gap-3">
+          <h1 className="text-2xl font-black tracking-tight">{pool ? pool.label : "무엇을 플레이할까요?"}</h1>
           <AuthStatus />
         </header>
 
-        {progress === null ? (
-          <p className="text-sm text-slate-500">불러오는 중…</p>
-        ) : (
-          <ul className="flex flex-col gap-3">
-            {CHALLENGES.map((challenge) => {
-              const unlocked = isUnlocked(challenge.unlock, progress);
-              if (unlocked) {
-                return (
-                  <li key={challenge.id}>
-                    <Link
-                      href={`/play/${challenge.id}`}
-                      className="flex items-center justify-between rounded-2xl border border-slate-700 bg-slate-900 px-5 py-4 transition hover:border-indigo-500 hover:bg-slate-800"
-                    >
-                      <div className="flex min-w-0 flex-col">
-                        <span className="text-lg font-semibold">{challenge.title}</span>
-                        <span className="truncate text-sm text-slate-400">{challenge.description}</span>
-                      </div>
-                      <span className="shrink-0 pl-3 text-sm font-medium text-indigo-400">플레이 →</span>
-                    </Link>
-                  </li>
-                );
-              }
-              return (
-                <li
-                  key={challenge.id}
-                  className="flex items-center justify-between rounded-2xl border border-slate-800 bg-slate-900/40 px-5 py-4"
-                >
-                  <div className="flex min-w-0 flex-col">
-                    <span className="text-lg font-semibold text-slate-500">{challenge.title}</span>
-                    <span className="truncate text-sm text-slate-600">{describeUnlock(challenge.unlock)}</span>
-                  </div>
-                  <Lock className="h-5 w-5 shrink-0 text-slate-600" />
-                </li>
-              );
-            })}
-          </ul>
-        )}
+        {pool ? <ModeStep pool={pool} onBack={() => setPool(null)} /> : <PoolStep onPick={setPool} />}
       </div>
     </main>
+  );
+}
+
+function PoolStep({ onPick }: { onPick: (pool: PoolDef) => void }) {
+  return (
+    <div className="flex flex-col gap-6">
+      <PoolGroup title="세대" pools={GENERATION_POOLS} onPick={onPick} />
+      <PoolGroup title="타입" pools={TYPE_POOLS} onPick={onPick} />
+    </div>
+  );
+}
+
+function PoolGroup({ title, pools, onPick }: { title: string; pools: PoolDef[]; onPick: (pool: PoolDef) => void }) {
+  return (
+    <section className="flex flex-col gap-2">
+      <h2 className="text-sm font-semibold text-slate-400">{title}</h2>
+      <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+        {pools.map((pool) =>
+          isUnlocked(pool.unlock, EMPTY_PROGRESS) ? (
+            <button
+              key={pool.id}
+              type="button"
+              onClick={() => onPick(pool)}
+              className="rounded-xl border border-slate-700 bg-slate-900 px-3 py-3 text-sm font-medium transition hover:border-indigo-500 hover:bg-slate-800"
+            >
+              {pool.label}
+            </button>
+          ) : (
+            <div
+              key={pool.id}
+              className="flex items-center justify-center gap-1.5 rounded-xl border border-slate-800 bg-slate-900/40 px-3 py-3 text-sm text-slate-600"
+            >
+              <Lock className="h-3.5 w-3.5" />
+              {pool.label}
+            </div>
+          ),
+        )}
+      </div>
+    </section>
+  );
+}
+
+function ModeStep({ pool, onBack }: { pool: PoolDef; onBack: () => void }) {
+  return (
+    <div className="flex flex-col gap-3">
+      <button type="button" onClick={onBack} className="self-start text-sm text-slate-400 transition hover:text-slate-200">
+        ← 다른 풀 선택
+      </button>
+      {MODES.map((mode) => (
+        <Link
+          key={mode.id}
+          href={`/play/${pool.id}/${mode.id}`}
+          className="flex items-center justify-between rounded-2xl border border-slate-700 bg-slate-900 px-5 py-4 transition hover:border-indigo-500 hover:bg-slate-800"
+        >
+          <div className="flex min-w-0 flex-col">
+            <span className="text-lg font-semibold">{mode.label}</span>
+            <span className="truncate text-sm text-slate-400">{mode.description}</span>
+          </div>
+          <span className="shrink-0 pl-3 text-sm font-medium text-indigo-400">플레이 →</span>
+        </Link>
+      ))}
+    </div>
   );
 }

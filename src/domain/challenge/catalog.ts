@@ -1,74 +1,101 @@
-import type { Progress } from "../progress/types";
-import type { ChallengeRule } from "./types";
-import { isUnlocked, type UnlockCondition } from "./unlock";
+import type { PokemonType } from "../pokemon/types";
+import { TYPE_NAME_KO } from "../pokemon/typeNames";
+import type { ChallengeRule, GameMode, PoolFilter } from "./types";
+import type { UnlockCondition } from "./unlock";
 
 /**
- * A playable challenge = a rule (what questions) + an unlock gate (when it opens).
- * This is the single source of truth for what a player can play; `id` is the
- * `challengeId` carried in a PlayRecord.
+ * A challenge is composed on the fly from a POOL (what Pokémon) × a MODE (how to
+ * play). The id is `${poolId}:${modeId}`. Difficulty is emergent from the combo,
+ * not assigned. Pools gate availability (e.g. later generations are "coming soon"
+ * until their data is synced); every mode is available for an open pool.
  */
-export interface ChallengeDef {
+
+// ── Pools: the "what" ──
+export interface PoolDef {
   id: string;
-  title: string;
-  description: string;
-  rule: ChallengeRule;
+  label: string;
+  filter: PoolFilter;
   unlock: UnlockCondition;
 }
 
-export const CHALLENGES: ChallengeDef[] = [
+/** Only Gen 1 is synced; the rest are locked until their data lands. */
+export const GENERATION_POOLS: PoolDef[] = [
+  { id: "gen1", label: "1세대", filter: { generations: [1] }, unlock: { kind: "always" } },
+  ...[2, 3, 4, 5, 6, 7, 8, 9].map(
+    (n): PoolDef => ({
+      id: `gen${n}`,
+      label: `${n}세대`,
+      filter: { generations: [n] },
+      unlock: { kind: "comingSoon" },
+    }),
+  ),
+  { id: "all", label: "전세대", filter: {}, unlock: { kind: "comingSoon" } },
+];
+
+export const TYPE_POOLS: PoolDef[] = (Object.keys(TYPE_NAME_KO) as PokemonType[]).map((type) => ({
+  id: `type-${type}`,
+  label: `${TYPE_NAME_KO[type]} 타입`,
+  filter: { types: [type] },
+  unlock: { kind: "comingSoon" },
+}));
+
+export const POOLS: PoolDef[] = [...GENERATION_POOLS, ...TYPE_POOLS];
+
+export function getPool(id: string): PoolDef | undefined {
+  return POOLS.find((p) => p.id === id);
+}
+
+// ── Modes: the "how" ──
+export interface ModeDef {
+  id: GameMode;
+  label: string;
+  description: string;
+  /** The mode's rule params (the pool is filled in per selection). */
+  rule: Omit<ChallengeRule, "pool">;
+}
+
+export const MODES: ModeDef[] = [
+  { id: "quiz", label: "기본", description: "10문제, 실루엣 이름 맞히기", rule: { mode: "quiz", questionCount: 10 } },
   {
-    id: "kanto-beginner",
-    title: "관동 초급",
-    description: "관동 포켓몬 10마리, 실루엣 이름 맞히기",
-    rule: { mode: "quiz", pool: { generations: [1] }, questionCount: 10 },
-    unlock: { kind: "always" },
+    id: "time-attack",
+    label: "타임어택",
+    description: "60초 안에 최대한 많이",
+    // large count so the pool never runs out before the clock (capped at pool size)
+    rule: { mode: "time-attack", questionCount: 1000, timeLimitSec: 60 },
   },
   {
-    id: "kanto-marathon",
-    title: "관동 마라톤",
-    description: "관동 포켓몬 20마리 연속 도전",
-    rule: { mode: "quiz", pool: { generations: [1] }, questionCount: 20 },
-    unlock: { kind: "level", min: 5 },
-  },
-  {
-    id: "fire-trial",
-    title: "불꽃 시련",
-    description: "불꽃 타입만 출제되는 심화 챌린지",
-    rule: { mode: "quiz", pool: { generations: [1], types: ["fire"] }, questionCount: 10 },
-    unlock: { kind: "typeMastery", type: "fire", minPct: 70 },
-  },
-  {
-    id: "water-trial",
-    title: "물결 시련",
-    description: "물 타입만 출제되는 심화 챌린지",
-    rule: { mode: "quiz", pool: { generations: [1], types: ["water"] }, questionCount: 10 },
-    unlock: { kind: "typeMastery", type: "water", minPct: 70 },
-  },
-  {
-    id: "kanto-time-attack",
-    title: "관동 타임어택",
-    description: "60초 안에 최대한 많이 맞히기",
-    // questionCount = whole Kanto pool so you never run out before the clock.
-    rule: { mode: "time-attack", pool: { generations: [1] }, questionCount: 151, timeLimitSec: 60 },
-    unlock: { kind: "always" },
-  },
-  {
-    id: "kanto-reveal-rush",
-    title: "관동 리빌 러시",
-    description: "실루엣이 드러나기 전에 빨리 맞힐수록 고득점",
-    rule: { mode: "reveal-rush", pool: { generations: [1] }, questionCount: 12, revealSec: 6 },
-    unlock: { kind: "always" },
+    id: "reveal-rush",
+    label: "리빌 러시",
+    description: "빨리 맞힐수록 고득점",
+    rule: { mode: "reveal-rush", questionCount: 12, revealSec: 6 },
   },
 ];
 
-/** The always-open starter challenge (what /play runs by default). */
-export const BEGINNER_CHALLENGE = CHALLENGES[0];
-
-export function getChallenge(id: string): ChallengeDef | undefined {
-  return CHALLENGES.find((c) => c.id === id);
+export function getMode(id: string): ModeDef | undefined {
+  return MODES.find((m) => m.id === id);
 }
 
-/** Challenges currently open for a given progress (unlocks are derived). */
-export function unlockedChallenges(progress: Progress): ChallengeDef[] {
-  return CHALLENGES.filter((c) => isUnlocked(c.unlock, progress));
+// ── Challenge = pool × mode ──
+export interface ChallengeDef {
+  id: string;
+  title: string;
+  rule: ChallengeRule;
+}
+
+export function challengeId(poolId: string, modeId: string): string {
+  return `${poolId}:${modeId}`;
+}
+
+/** Build a playable challenge from its `poolId:modeId`. Returns undefined for an
+ * unknown or not-yet-available (coming-soon) pool, so locked pools can't be played. */
+export function getChallenge(id: string): ChallengeDef | undefined {
+  const [poolId, modeId] = id.split(":");
+  const pool = getPool(poolId);
+  const mode = getMode(modeId);
+  if (!pool || !mode || pool.unlock.kind === "comingSoon") return undefined;
+  return {
+    id,
+    title: `${pool.label} · ${mode.label}`,
+    rule: { ...mode.rule, pool: pool.filter },
+  };
 }

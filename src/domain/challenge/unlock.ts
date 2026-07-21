@@ -11,6 +11,7 @@ import type { Progress } from "../progress/types";
  */
 export type UnlockCondition =
   | { kind: "always" }
+  | { kind: "comingSoon" } // not available yet (e.g. data not synced)
   | { kind: "level"; min: number }
   | { kind: "typeMastery"; type: PokemonType; minPct: number };
 
@@ -18,6 +19,8 @@ export function isUnlocked(condition: UnlockCondition, progress: Progress): bool
   switch (condition.kind) {
     case "always":
       return true;
+    case "comingSoon":
+      return false;
     case "level":
       return resolveLevel(progress.totalXp).level >= condition.min;
     case "typeMastery":
@@ -30,6 +33,8 @@ export function describeUnlock(condition: UnlockCondition): string {
   switch (condition.kind) {
     case "always":
       return "항상 열림";
+    case "comingSoon":
+      return "준비 중";
     case "level":
       return `레벨 ${condition.min} 필요`;
     case "typeMastery":

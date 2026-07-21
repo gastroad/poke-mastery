@@ -1,36 +1,53 @@
 import { describe, expect, it } from "vitest";
-import { BEGINNER_CHALLENGE, CHALLENGES, getChallenge, unlockedChallenges } from "./catalog";
-import { EMPTY_PROGRESS } from "../progress/applyPlayResult";
+import { challengeId, getChallenge, getMode, getPool, MODES, POOLS } from "./catalog";
 
-describe("challenge catalog", () => {
+describe("pools", () => {
+  it("has Gen 1 open and later generations coming soon", () => {
+    expect(getPool("gen1")?.unlock).toEqual({ kind: "always" });
+    expect(getPool("gen2")?.unlock).toEqual({ kind: "comingSoon" });
+    expect(getPool("type-fire")?.unlock).toEqual({ kind: "comingSoon" });
+  });
+
   it("has unique ids", () => {
-    const ids = CHALLENGES.map((c) => c.id);
+    const ids = POOLS.map((p) => p.id);
     expect(new Set(ids).size).toBe(ids.length);
   });
+});
 
-  it("every challenge asks at least one question", () => {
-    for (const c of CHALLENGES) expect(c.rule.questionCount).toBeGreaterThan(0);
+describe("modes", () => {
+  it("ships the three formats", () => {
+    expect(MODES.map((m) => m.id)).toEqual(["quiz", "time-attack", "reveal-rush"]);
+    expect(getMode("time-attack")?.rule.timeLimitSec).toBe(60);
+  });
+});
+
+describe("getChallenge", () => {
+  it("composes a pool × mode into a playable challenge", () => {
+    const c = getChallenge("gen1:quiz");
+    expect(c?.rule.mode).toBe("quiz");
+    expect(c?.rule.pool).toEqual({ generations: [1] });
+    expect(c?.rule.questionCount).toBe(10);
+    expect(c?.title).toContain("1세대");
   });
 
-  it("the beginner challenge is always unlocked", () => {
-    expect(BEGINNER_CHALLENGE.unlock).toEqual({ kind: "always" });
-    expect(unlockedChallenges(EMPTY_PROGRESS)).toContainEqual(BEGINNER_CHALLENGE);
+  it("carries mode params (time-attack clock)", () => {
+    expect(getChallenge("gen1:time-attack")?.rule.timeLimitSec).toBe(60);
   });
 
-  it("a fresh player only sees the always-open challenges", () => {
-    const open = unlockedChallenges(EMPTY_PROGRESS);
-    expect(open.every((c) => c.unlock.kind === "always")).toBe(true);
+  it("returns undefined for a coming-soon pool", () => {
+    expect(getChallenge("gen2:quiz")).toBeUndefined();
+    expect(getChallenge("type-fire:quiz")).toBeUndefined();
   });
 
-  it("higher level and mastery open more challenges", () => {
-    const strong = { totalXp: 2400, typeStats: { fire: { seen: 12, correct: 11 } } };
-    const openIds = unlockedChallenges(strong).map((c) => c.id);
-    expect(openIds).toContain("kanto-marathon"); // level gate
-    expect(openIds).toContain("fire-trial"); // mastery gate
+  it("returns undefined for an unknown pool or mode", () => {
+    expect(getChallenge("nope:quiz")).toBeUndefined();
+    expect(getChallenge("gen1:nope")).toBeUndefined();
   });
+});
 
-  it("getChallenge finds by id and returns undefined otherwise", () => {
-    expect(getChallenge("kanto-beginner")).toBe(BEGINNER_CHALLENGE);
-    expect(getChallenge("nope")).toBeUndefined();
+describe("challengeId", () => {
+  it("joins pool and mode", () => {
+    expect(challengeId("gen1", "reveal-rush")).toBe("gen1:reveal-rush");
+    expect(getChallenge(challengeId("gen1", "quiz"))?.rule.mode).toBe("quiz");
   });
 });

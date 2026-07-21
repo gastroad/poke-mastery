@@ -8,6 +8,11 @@ describe("isUnlocked", () => {
     expect(isUnlocked({ kind: "always" }, EMPTY_PROGRESS)).toBe(true);
   });
 
+  it("never opens a 'comingSoon' gate", () => {
+    expect(isUnlocked({ kind: "comingSoon" }, EMPTY_PROGRESS)).toBe(false);
+    expect(describeUnlock({ kind: "comingSoon" })).toBe("준비 중");
+  });
+
   it("level gate compares against the resolved level", () => {
     expect(isUnlocked({ kind: "level", min: 5 }, { totalXp: 250, typeStats: {} })).toBe(false);
     // 300+500+700+900 = 2400 XP reaches level 5
