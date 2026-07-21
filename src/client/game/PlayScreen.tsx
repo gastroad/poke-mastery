@@ -2,8 +2,7 @@
 
 import { Flame, Heart } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { INITIAL_LIVES, useSessionStore } from "@/client/stores/sessionStore";
-import { BEGINNER_CHALLENGE } from "@/domain/challenge/catalog";
+import { INITIAL_LIVES, type StartChallenge, useSessionStore } from "@/client/stores/sessionStore";
 import { POKEMON } from "./pokemonDataset";
 import { PokemonSilhouette } from "./PokemonSilhouette";
 import { ResultScreen } from "./ResultScreen";
@@ -15,14 +14,14 @@ const randomSeed = () => Math.floor(Math.random() * 0x7fffffff);
  * "no Math.random" rule applies only to domain/), starts the game, and renders
  * the right screen for the current status. All rules live in the store/domain.
  */
-export function PlayScreen() {
+export function PlayScreen({ challenge }: { challenge: StartChallenge }) {
   const status = useSessionStore((s) => s.status);
   const start = useSessionStore((s) => s.start);
   const [seed] = useState(randomSeed);
 
   useEffect(() => {
-    start(BEGINNER_CHALLENGE, POKEMON, seed);
-  }, [start, seed]);
+    start(challenge, POKEMON, seed);
+  }, [start, seed, challenge]);
 
   if (status === "finished") return <ResultScreen />;
   if (status === "playing") return <PlayingView />;

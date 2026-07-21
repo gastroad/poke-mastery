@@ -1,5 +1,5 @@
-import { PlayScreen } from "@/client/game/PlayScreen";
+import { ChallengeSelect } from "@/client/game/ChallengeSelect";
 
 export default function PlayPage() {
-  return <PlayScreen />;
+  return <ChallengeSelect />;
 }
