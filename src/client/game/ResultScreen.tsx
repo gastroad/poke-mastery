@@ -1,5 +1,6 @@
 "use client";
 
+import { Cloud, Flame, HardDrive, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { submitPlayAction } from "@/app/play/actions";
@@ -69,8 +70,10 @@ export function ResultScreen() {
             {correct}
             <span className="text-2xl text-slate-500"> / {total}</span>
           </p>
-          <p className="text-slate-400">
-            정답률 {pct}% · 최고 콤보 🔥 {maxCombo}
+          <p className="flex items-center justify-center gap-1 text-slate-400">
+            정답률 {pct}% · 최고 콤보
+            <Flame className="h-4 w-4 text-amber-400" />
+            {maxCombo}
           </p>
         </div>
 
@@ -109,10 +112,22 @@ function SaveBanner({ save }: { save: SaveState }) {
     <div className="flex flex-col items-center gap-1 rounded-2xl border border-slate-800 bg-slate-900/60 px-6 py-4">
       <p className="text-2xl font-bold text-emerald-400">+{delta.xpGained} XP</p>
       {delta.leveledUp && (
-        <p className="text-lg font-semibold text-amber-400">레벨 {delta.levelAfter} 달성! 🎉</p>
+        <p className="flex items-center gap-1.5 text-lg font-semibold text-amber-400">
+          <Sparkles className="h-5 w-5" />
+          레벨 {delta.levelAfter} 달성!
+        </p>
       )}
-      <p className="text-xs text-slate-500">
-        {where === "server" ? "☁️ 계정에 저장됨" : "💾 이 브라우저에 저장됨 (로그인하면 계정에 저장)"}
+      <p className="flex items-center gap-1.5 text-xs text-slate-500">
+        {where === "server" ? (
+          <>
+            <Cloud className="h-3.5 w-3.5" />
+            계정에 저장됨
+          </>
+        ) : (
+          <>
+            <HardDrive className="h-3.5 w-3.5" />이 브라우저에 저장됨 (로그인하면 계정에 저장)
+          </>
+        )}
       </p>
     </div>
   );

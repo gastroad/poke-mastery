@@ -1,5 +1,6 @@
 "use client";
 
+import { Flame, Heart } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { INITIAL_LIVES, useSessionStore } from "@/client/stores/sessionStore";
 import { BEGINNER_CHALLENGE } from "@/domain/challenge/catalog";
@@ -108,14 +109,25 @@ function Hud() {
 
   return (
     <div className="flex w-full items-center justify-between text-sm">
-      <span aria-label={`남은 목숨 ${remaining}`}>
-        {"❤️".repeat(remaining)}
-        {"🤍".repeat(lost)}
+      <span className="flex items-center gap-1" aria-label={`남은 목숨 ${remaining}`}>
+        {Array.from({ length: remaining }).map((_, i) => (
+          <Heart key={`life-${i}`} className="h-5 w-5 fill-rose-500 text-rose-500" />
+        ))}
+        {Array.from({ length: lost }).map((_, i) => (
+          <Heart key={`lost-${i}`} className="h-5 w-5 text-slate-700" />
+        ))}
       </span>
       <span className="font-mono text-slate-400">
         {currentIndex + 1} / {total}
       </span>
-      <span className="font-semibold text-amber-400">{combo >= 2 ? `🔥 ${combo}` : ""}</span>
+      <span className="flex items-center gap-1 font-semibold text-amber-400">
+        {combo >= 2 && (
+          <>
+            <Flame className="h-4 w-4" />
+            {combo}
+          </>
+        )}
+      </span>
     </div>
   );
 }
