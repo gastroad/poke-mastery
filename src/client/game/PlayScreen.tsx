@@ -2,17 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import { INITIAL_LIVES, useSessionStore } from "@/client/stores/sessionStore";
-import type { ChallengeRule } from "@/domain/challenge/types";
+import { BEGINNER_CHALLENGE } from "@/domain/challenge/catalog";
 import { POKEMON } from "./pokemonDataset";
 import { PokemonSilhouette } from "./PokemonSilhouette";
 import { ResultScreen } from "./ResultScreen";
-
-/** MVP challenge: guess 10 Kanto Pokémon by name. Later this becomes a catalog. */
-const DEFAULT_RULE: ChallengeRule = {
-  mode: "name-guess",
-  pool: { generations: [1] },
-  questionCount: 10,
-};
 
 const randomSeed = () => Math.floor(Math.random() * 0x7fffffff);
 
@@ -27,7 +20,7 @@ export function PlayScreen() {
   const [seed] = useState(randomSeed);
 
   useEffect(() => {
-    start(DEFAULT_RULE, POKEMON, seed);
+    start(BEGINNER_CHALLENGE.rule, POKEMON, seed);
   }, [start, seed]);
 
   if (status === "finished") return <ResultScreen />;
