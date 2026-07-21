@@ -20,6 +20,7 @@ export function RevealRushView({ revealSec = 6 }: { revealSec?: number }) {
 
   const question = questions[currentIndex];
   const inputRef = useRef<HTMLInputElement>(null);
+  const composingRef = useRef(false); // true while a Hangul syllable is mid-composition
   const startRef = useRef<number>(0); // set to Date.now() when each question starts
   // Reveal only once the new question's silhouette has painted (avoids a flash).
   const [revealedIndex, setRevealedIndex] = useState(-1);
@@ -42,9 +43,18 @@ export function RevealRushView({ revealSec = 6 }: { revealSec?: number }) {
     return Math.round(MAX_POINTS - (MAX_POINTS - MIN_POINTS) * t);
   };
 
+  // Skip the match check mid-composition so the final Hangul character isn't missed.
+  const tryCommit = (value: string) => {
+    if (judgeAnswer(value, question.acceptedAnswers)) recordAndAdvance(true, pointsForNow());
+  };
   const onChange = (value: string) => {
     setInput(value);
-    if (judgeAnswer(value, question.acceptedAnswers)) recordAndAdvance(true, pointsForNow());
+    if (!composingRef.current) tryCommit(value);
+  };
+  const onCompositionEnd = (value: string) => {
+    composingRef.current = false;
+    setInput(value);
+    tryCommit(value);
   };
 
   const onSubmit = (e: React.FormEvent) => {
@@ -53,8 +63,8 @@ export function RevealRushView({ revealSec = 6 }: { revealSec?: number }) {
   };
 
   return (
-    <main className="flex min-h-full flex-1 flex-col items-center justify-center bg-slate-950 px-6 py-10 text-slate-100">
-      <div className="flex w-full max-w-md flex-col items-center gap-6">
+    <main className="flex min-h-[100dvh] flex-1 flex-col items-center justify-start bg-slate-950 px-6 py-6 text-slate-100 sm:justify-center sm:py-10">
+      <div className="flex w-full max-w-md flex-col items-center gap-5 sm:gap-6">
         <div className="flex w-full items-center justify-between text-sm">
           <span className="font-mono text-slate-400">
             {currentIndex + 1} / {questions.length}
@@ -73,8 +83,16 @@ export function RevealRushView({ revealSec = 6 }: { revealSec?: number }) {
             ref={inputRef}
             value={input}
             onChange={(e) => onChange(e.target.value)}
+            onCompositionStart={() => {
+              composingRef.current = true;
+            }}
+            onCompositionEnd={(e) => onCompositionEnd(e.currentTarget.value)}
             placeholder="이름을 입력하세요"
             autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="off"
+            spellCheck={false}
+            enterKeyHint="next"
             className="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-center text-lg outline-none focus:border-indigo-400"
           />
           <button

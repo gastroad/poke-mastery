@@ -18,7 +18,7 @@ export function PokemonSilhouette({
   transitionSec?: number;
 }) {
   return (
-    <div className="flex h-64 w-64 items-center justify-center rounded-full bg-gradient-to-b from-slate-100 to-slate-300 shadow-inner">
+    <div className="flex h-44 w-44 items-center justify-center rounded-full bg-gradient-to-b from-slate-100 to-slate-300 shadow-inner sm:h-64 sm:w-64">
       <Image
         key={pokemonId}
         src={spritePath(pokemonId, "artwork")}
@@ -26,7 +26,7 @@ export function PokemonSilhouette({
         width={200}
         height={200}
         priority
-        className="h-48 w-48 object-contain"
+        className="h-32 w-32 object-contain sm:h-48 sm:w-48"
         style={{ filter: `brightness(${brightness})`, transition: `filter ${transitionSec}s linear` }}
       />
     </div>

@@ -21,6 +21,7 @@ export function TimeAttackView({ timeLimitSec }: { timeLimitSec: number }) {
   const correctCount = results.filter((r) => r.correct).length;
 
   const inputRef = useRef<HTMLInputElement>(null);
+  const composingRef = useRef(false); // true while a Hangul syllable is mid-composition
   const [deadline] = useState(() => Date.now() + timeLimitSec * 1000);
   const [msLeft, setMsLeft] = useState(timeLimitSec * 1000);
 
@@ -46,9 +47,18 @@ export function TimeAttackView({ timeLimitSec }: { timeLimitSec: number }) {
   if (!question) return null;
 
   // Auto-advance the instant the typed text matches — the time-attack "feel".
+  // Skip the check mid-composition so the final Hangul character isn't missed.
+  const tryCommit = (value: string) => {
+    if (judgeAnswer(value, question.acceptedAnswers)) recordAndAdvance(true);
+  };
   const onChange = (value: string) => {
     setInput(value);
-    if (judgeAnswer(value, question.acceptedAnswers)) recordAndAdvance(true);
+    if (!composingRef.current) tryCommit(value);
+  };
+  const onCompositionEnd = (value: string) => {
+    composingRef.current = false;
+    setInput(value);
+    tryCommit(value);
   };
 
   const onSubmit = (e: React.FormEvent) => {
@@ -61,8 +71,8 @@ export function TimeAttackView({ timeLimitSec }: { timeLimitSec: number }) {
   const low = secondsLeft <= 10;
 
   return (
-    <main className="flex min-h-full flex-1 flex-col items-center justify-center bg-slate-950 px-6 py-10 text-slate-100">
-      <div className="flex w-full max-w-md flex-col items-center gap-6">
+    <main className="flex min-h-[100dvh] flex-1 flex-col items-center justify-start bg-slate-950 px-6 py-6 text-slate-100 sm:justify-center sm:py-10">
+      <div className="flex w-full max-w-md flex-col items-center gap-5 sm:gap-6">
         <div className="flex w-full items-center justify-between">
           <span
             className={`flex items-center gap-1.5 font-mono text-lg font-bold ${low ? "text-rose-400" : "text-slate-200"}`}
@@ -95,8 +105,16 @@ export function TimeAttackView({ timeLimitSec }: { timeLimitSec: number }) {
             ref={inputRef}
             value={input}
             onChange={(e) => onChange(e.target.value)}
+            onCompositionStart={() => {
+              composingRef.current = true;
+            }}
+            onCompositionEnd={(e) => onCompositionEnd(e.currentTarget.value)}
             placeholder="이름을 입력하세요"
             autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="off"
+            spellCheck={false}
+            enterKeyHint="next"
             className="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-center text-lg outline-none focus:border-indigo-400"
           />
           <button

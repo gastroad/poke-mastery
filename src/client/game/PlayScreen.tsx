@@ -49,18 +49,16 @@ function PlayingView() {
   const next = useSessionStore((s) => s.next);
 
   const inputRef = useRef<HTMLInputElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
 
   const question = questions[currentIndex];
   const revealed = phase === "revealed";
   const isLastQuestion = currentIndex + 1 >= questions.length;
 
-  // Keep focus where the next keystroke should go: input while answering,
-  // the button while revealed (so Enter advances).
+  // Keep the input focused across questions AND the reveal so the mobile
+  // keyboard never closes/reopens (Enter submits, then advances).
   useEffect(() => {
-    if (revealed) buttonRef.current?.focus();
-    else inputRef.current?.focus();
-  }, [currentIndex, revealed]);
+    inputRef.current?.focus();
+  }, [currentIndex]);
 
   if (!question) return null;
 
@@ -71,8 +69,8 @@ function PlayingView() {
   };
 
   return (
-    <main className="flex min-h-full flex-1 flex-col items-center justify-center bg-slate-950 px-6 py-10 text-slate-100">
-      <div className="flex w-full max-w-md flex-col items-center gap-8">
+    <main className="flex min-h-[100dvh] flex-1 flex-col items-center justify-start bg-slate-950 px-6 py-6 text-slate-100 sm:justify-center sm:py-10">
+      <div className="flex w-full max-w-md flex-col items-center gap-6 sm:gap-8">
         <Hud />
         <PokemonSilhouette pokemonId={question.pokemonId} brightness={revealed ? 1 : 0} />
 
@@ -89,13 +87,15 @@ function PlayingView() {
             ref={inputRef}
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            disabled={revealed}
             placeholder="이 포켓몬의 이름은?"
             autoComplete="off"
-            className="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-center text-lg outline-none focus:border-indigo-400 disabled:opacity-60"
+            autoCorrect="off"
+            autoCapitalize="off"
+            spellCheck={false}
+            enterKeyHint={revealed ? "next" : "done"}
+            className="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-center text-lg outline-none focus:border-indigo-400"
           />
           <button
-            ref={buttonRef}
             type="submit"
             className="w-full rounded-xl bg-indigo-500 px-4 py-3 text-lg font-semibold text-white transition hover:bg-indigo-400 active:scale-[0.98]"
           >
