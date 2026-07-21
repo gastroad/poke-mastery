@@ -20,7 +20,7 @@ export function PlayScreen() {
   const [seed] = useState(randomSeed);
 
   useEffect(() => {
-    start(BEGINNER_CHALLENGE.rule, POKEMON, seed);
+    start(BEGINNER_CHALLENGE, POKEMON, seed);
   }, [start, seed]);
 
   if (status === "finished") return <ResultScreen />;

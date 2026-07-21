@@ -16,6 +16,12 @@ export type GameStatus = "idle" | "playing" | "finished";
 export type QuestionPhase = "answering" | "revealed";
 export type AnswerResult = "correct" | "wrong";
 
+/** What a game is started from: a challenge id (for the PlayRecord) + its rule. */
+export interface StartChallenge {
+  id: string;
+  rule: ChallengeRule;
+}
+
 export interface AnsweredQuestion {
   /** Exactly what the player typed (raw), so the server can re-judge from the seed. */
   input: string;
@@ -26,8 +32,8 @@ export interface AnsweredQuestion {
 export const INITIAL_LIVES = 3;
 
 interface SessionState {
-  // ── identity: (rule + seed) fully determines the questions ──
-  rule: ChallengeRule | null;
+  // ── identity: (challenge + seed) fully determines the questions ──
+  challenge: StartChallenge | null;
   seed: number;
   questions: Question[];
 
@@ -45,7 +51,7 @@ interface SessionState {
   results: AnsweredQuestion[];
 
   // ── actions ──
-  start: (rule: ChallengeRule, dataset: Dataset, seed: number) => void;
+  start: (challenge: StartChallenge, dataset: Dataset, seed: number) => void;
   setInput: (value: string) => void;
   submit: () => void;
   next: () => void;
@@ -53,7 +59,7 @@ interface SessionState {
 }
 
 const initialState = {
-  rule: null,
+  challenge: null as StartChallenge | null,
   seed: 0,
   questions: [] as Question[],
   currentIndex: 0,
@@ -70,12 +76,12 @@ const initialState = {
 export const useSessionStore = create<SessionState>((set, get) => ({
   ...initialState,
 
-  start: (rule, dataset, seed) => {
+  start: (challenge, dataset, seed) => {
     set({
       ...initialState,
-      rule,
+      challenge,
       seed,
-      questions: generateQuestions(rule, dataset, seed),
+      questions: generateQuestions(challenge.rule, dataset, seed),
       status: "playing",
     });
   },
