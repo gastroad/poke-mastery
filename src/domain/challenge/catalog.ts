@@ -52,6 +52,13 @@ export const CHALLENGES: ChallengeDef[] = [
     rule: { mode: "time-attack", pool: { generations: [1] }, questionCount: 151, timeLimitSec: 60 },
     unlock: { kind: "always" },
   },
+  {
+    id: "kanto-reveal-rush",
+    title: "관동 리빌 러시",
+    description: "실루엣이 드러나기 전에 빨리 맞힐수록 고득점",
+    rule: { mode: "reveal-rush", pool: { generations: [1] }, questionCount: 12, revealSec: 6 },
+    unlock: { kind: "always" },
+  },
 ];
 
 /** The always-open starter challenge (what /play runs by default). */

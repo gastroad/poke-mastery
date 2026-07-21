@@ -4,8 +4,9 @@ import type { Pokemon, PokemonId, PokemonType } from "../pokemon/types";
  * Session format (always "guess the name by silhouette" for now):
  * - "quiz": fixed number of questions, lives, answer→reveal→next.
  * - "time-attack": one global countdown, answer as many as possible.
+ * - "reveal-rush": each silhouette reveals over time; earlier guess = more points.
  */
-export type GameMode = "quiz" | "time-attack";
+export type GameMode = "quiz" | "time-attack" | "reveal-rush";
 
 /**
  * Which Pokémon a challenge draws from. Undefined field = no constraint.
@@ -28,6 +29,8 @@ export interface ChallengeRule {
   questionCount: number;
   /** Time-attack only: total seconds on the clock. */
   timeLimitSec?: number;
+  /** Reveal-rush only: seconds each silhouette takes to fully reveal. */
+  revealSec?: number;
 }
 
 /**

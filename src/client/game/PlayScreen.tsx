@@ -6,6 +6,7 @@ import { INITIAL_LIVES, type StartChallenge, useSessionStore } from "@/client/st
 import { POKEMON } from "./pokemonDataset";
 import { PokemonSilhouette } from "./PokemonSilhouette";
 import { ResultScreen } from "./ResultScreen";
+import { RevealRushView } from "./RevealRushView";
 import { TimeAttackView } from "./TimeAttackView";
 
 const randomSeed = () => Math.floor(Math.random() * 0x7fffffff);
@@ -26,11 +27,13 @@ export function PlayScreen({ challenge }: { challenge: StartChallenge }) {
 
   if (status === "finished") return <ResultScreen />;
   if (status === "playing") {
-    return challenge.rule.mode === "time-attack" ? (
-      <TimeAttackView timeLimitSec={challenge.rule.timeLimitSec ?? 60} />
-    ) : (
-      <PlayingView />
-    );
+    if (challenge.rule.mode === "time-attack") {
+      return <TimeAttackView timeLimitSec={challenge.rule.timeLimitSec ?? 60} />;
+    }
+    if (challenge.rule.mode === "reveal-rush") {
+      return <RevealRushView revealSec={challenge.rule.revealSec ?? 6} />;
+    }
+    return <PlayingView />;
   }
   return null; // "idle": the single frame before start() runs
 }
@@ -71,7 +74,7 @@ function PlayingView() {
     <main className="flex min-h-full flex-1 flex-col items-center justify-center bg-slate-950 px-6 py-10 text-slate-100">
       <div className="flex w-full max-w-md flex-col items-center gap-8">
         <Hud />
-        <PokemonSilhouette pokemonId={question.pokemonId} revealed={revealed} />
+        <PokemonSilhouette pokemonId={question.pokemonId} brightness={revealed ? 1 : 0} />
 
         <div className="flex h-8 items-center">
           {revealed && (

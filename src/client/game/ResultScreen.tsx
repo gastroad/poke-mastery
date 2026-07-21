@@ -24,11 +24,13 @@ export function ResultScreen() {
   const results = useSessionStore((s) => s.results);
   const questions = useSessionStore((s) => s.questions);
   const maxCombo = useSessionStore((s) => s.maxCombo);
+  const score = useSessionStore((s) => s.score);
   const challenge = useSessionStore((s) => s.challenge);
   const seed = useSessionStore((s) => s.seed);
   const start = useSessionStore((s) => s.start);
 
   const isTimeAttack = challenge?.rule.mode === "time-attack";
+  const isRevealRush = challenge?.rule.mode === "reveal-rush";
   const correct = results.filter((r) => r.correct).length;
   const attempted = results.length;
   const total = questions.length; // the quiz's intended size
@@ -69,15 +71,31 @@ export function ResultScreen() {
         <h1 className="text-3xl font-bold">게임 종료</h1>
 
         <div className="flex flex-col gap-2">
-          <p className="text-6xl font-black text-indigo-400">
-            {correct}
-            <span className="text-2xl text-slate-500">{isTimeAttack ? " 마리" : ` / ${total}`}</span>
-          </p>
-          <p className="flex items-center justify-center gap-1 text-slate-400">
-            정답률 {isTimeAttack ? accuracy : quizPct}% · 최고 콤보
-            <Flame className="h-4 w-4 text-amber-400" />
-            {maxCombo}
-          </p>
+          {isRevealRush ? (
+            <>
+              <p className="text-6xl font-black text-indigo-400">
+                {score}
+                <span className="text-2xl text-slate-500"> 점</span>
+              </p>
+              <p className="flex items-center justify-center gap-1 text-slate-400">
+                정답 {correct} / {total} · 최고 콤보
+                <Flame className="h-4 w-4 text-amber-400" />
+                {maxCombo}
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="text-6xl font-black text-indigo-400">
+                {correct}
+                <span className="text-2xl text-slate-500">{isTimeAttack ? " 마리" : ` / ${total}`}</span>
+              </p>
+              <p className="flex items-center justify-center gap-1 text-slate-400">
+                정답률 {isTimeAttack ? accuracy : quizPct}% · 최고 콤보
+                <Flame className="h-4 w-4 text-amber-400" />
+                {maxCombo}
+              </p>
+            </>
+          )}
         </div>
 
         <SaveBanner save={save} />

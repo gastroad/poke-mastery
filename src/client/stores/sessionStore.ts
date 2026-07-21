@@ -48,6 +48,8 @@ interface SessionState {
   lives: number;
   combo: number;
   maxCombo: number;
+  /** Mode-specific session score (e.g. reveal-rush earliness points). */
+  score: number;
   results: AnsweredQuestion[];
 
   // ── actions ──
@@ -55,8 +57,8 @@ interface SessionState {
   setInput: (value: string) => void;
   submit: () => void;
   next: () => void;
-  /** time-attack: record the current answer and advance immediately (no reveal). */
-  recordAndAdvance: (correct: boolean) => void;
+  /** time-attack / reveal-rush: record the answer (+optional points) and advance immediately. */
+  recordAndAdvance: (correct: boolean, points?: number) => void;
   /** time-attack: end the game (clock ran out). */
   finishNow: () => void;
   reset: () => void;
@@ -74,6 +76,7 @@ const initialState = {
   lives: INITIAL_LIVES,
   combo: 0,
   maxCombo: 0,
+  score: 0,
   results: [] as AnsweredQuestion[],
 };
 
@@ -123,8 +126,8 @@ export const useSessionStore = create<SessionState>((set, get) => ({
     set({ currentIndex: currentIndex + 1, input: "", phase: "answering", lastResult: null });
   },
 
-  recordAndAdvance: (correct) => {
-    const { status, questions, currentIndex, input, combo, maxCombo, results } = get();
+  recordAndAdvance: (correct, points = 0) => {
+    const { status, questions, currentIndex, input, combo, maxCombo, score, results } = get();
     if (status !== "playing") return;
     const nextCombo = correct ? combo + 1 : 0;
     const nextIndex = currentIndex + 1;
@@ -133,6 +136,7 @@ export const useSessionStore = create<SessionState>((set, get) => ({
       results: [...results, { input, correct }],
       combo: nextCombo,
       maxCombo: Math.max(maxCombo, nextCombo),
+      score: score + (correct ? points : 0),
       input: "",
       currentIndex: isLast ? currentIndex : nextIndex,
       status: isLast ? "finished" : "playing",

@@ -88,7 +88,7 @@ export function TimeAttackView({ timeLimitSec }: { timeLimitSec: number }) {
           />
         </div>
 
-        <PokemonSilhouette pokemonId={question.pokemonId} revealed={false} />
+        <PokemonSilhouette pokemonId={question.pokemonId} brightness={0} />
 
         <form onSubmit={onSubmit} className="flex w-full flex-col gap-3">
           <input

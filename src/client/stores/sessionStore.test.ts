@@ -130,4 +130,14 @@ describe("sessionStore", () => {
     store().finishNow();
     expect(store().status).toBe("finished");
   });
+
+  it("recordAndAdvance adds points to the score only on a correct answer", () => {
+    store().start(challenge, dataset, 1);
+    store().setInput(store().questions[0].answer);
+    store().recordAndAdvance(true, 80);
+    expect(store().score).toBe(80);
+    store().setInput("몰라");
+    store().recordAndAdvance(false, 80);
+    expect(store().score).toBe(80); // a miss adds nothing
+  });
 });
