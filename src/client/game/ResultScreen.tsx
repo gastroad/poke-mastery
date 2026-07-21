@@ -28,9 +28,12 @@ export function ResultScreen() {
   const seed = useSessionStore((s) => s.seed);
   const start = useSessionStore((s) => s.start);
 
+  const isTimeAttack = challenge?.rule.mode === "time-attack";
   const correct = results.filter((r) => r.correct).length;
-  const total = questions.length;
-  const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
+  const attempted = results.length;
+  const total = questions.length; // the quiz's intended size
+  const quizPct = total > 0 ? Math.round((correct / total) * 100) : 0;
+  const accuracy = attempted > 0 ? Math.round((correct / attempted) * 100) : 0;
 
   const [save, setSave] = useState<SaveState>({ kind: "saving" });
   const savedSeed = useRef<number | null>(null);
@@ -68,10 +71,10 @@ export function ResultScreen() {
         <div className="flex flex-col gap-2">
           <p className="text-6xl font-black text-indigo-400">
             {correct}
-            <span className="text-2xl text-slate-500"> / {total}</span>
+            <span className="text-2xl text-slate-500">{isTimeAttack ? " 마리" : ` / ${total}`}</span>
           </p>
           <p className="flex items-center justify-center gap-1 text-slate-400">
-            정답률 {pct}% · 최고 콤보
+            정답률 {isTimeAttack ? accuracy : quizPct}% · 최고 콤보
             <Flame className="h-4 w-4 text-amber-400" />
             {maxCombo}
           </p>

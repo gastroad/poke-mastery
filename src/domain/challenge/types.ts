@@ -1,7 +1,11 @@
 import type { Pokemon, PokemonId, PokemonType } from "../pokemon/types";
 
-/** Game modes. MVP ships only "name-guess" (see a sprite, type the name). */
-export type GameMode = "name-guess";
+/**
+ * Session format (always "guess the name by silhouette" for now):
+ * - "quiz": fixed number of questions, lives, answer→reveal→next.
+ * - "time-attack": one global countdown, answer as many as possible.
+ */
+export type GameMode = "quiz" | "time-attack";
 
 /**
  * Which Pokémon a challenge draws from. Undefined field = no constraint.
@@ -20,7 +24,10 @@ export interface PoolFilter {
 export interface ChallengeRule {
   mode: GameMode;
   pool: PoolFilter;
+  /** How many questions to generate. For time-attack, set to the pool size (endless within the clock). */
   questionCount: number;
+  /** Time-attack only: total seconds on the clock. */
+  timeLimitSec?: number;
 }
 
 /**

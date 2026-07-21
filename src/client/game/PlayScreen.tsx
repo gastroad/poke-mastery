@@ -6,6 +6,7 @@ import { INITIAL_LIVES, type StartChallenge, useSessionStore } from "@/client/st
 import { POKEMON } from "./pokemonDataset";
 import { PokemonSilhouette } from "./PokemonSilhouette";
 import { ResultScreen } from "./ResultScreen";
+import { TimeAttackView } from "./TimeAttackView";
 
 const randomSeed = () => Math.floor(Math.random() * 0x7fffffff);
 
@@ -24,7 +25,13 @@ export function PlayScreen({ challenge }: { challenge: StartChallenge }) {
   }, [start, seed, challenge]);
 
   if (status === "finished") return <ResultScreen />;
-  if (status === "playing") return <PlayingView />;
+  if (status === "playing") {
+    return challenge.rule.mode === "time-attack" ? (
+      <TimeAttackView timeLimitSec={challenge.rule.timeLimitSec ?? 60} />
+    ) : (
+      <PlayingView />
+    );
+  }
   return null; // "idle": the single frame before start() runs
 }
 

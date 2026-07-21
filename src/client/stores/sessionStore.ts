@@ -55,6 +55,10 @@ interface SessionState {
   setInput: (value: string) => void;
   submit: () => void;
   next: () => void;
+  /** time-attack: record the current answer and advance immediately (no reveal). */
+  recordAndAdvance: (correct: boolean) => void;
+  /** time-attack: end the game (clock ran out). */
+  finishNow: () => void;
   reset: () => void;
 }
 
@@ -117,6 +121,26 @@ export const useSessionStore = create<SessionState>((set, get) => ({
       return;
     }
     set({ currentIndex: currentIndex + 1, input: "", phase: "answering", lastResult: null });
+  },
+
+  recordAndAdvance: (correct) => {
+    const { status, questions, currentIndex, input, combo, maxCombo, results } = get();
+    if (status !== "playing") return;
+    const nextCombo = correct ? combo + 1 : 0;
+    const nextIndex = currentIndex + 1;
+    const isLast = nextIndex >= questions.length;
+    set({
+      results: [...results, { input, correct }],
+      combo: nextCombo,
+      maxCombo: Math.max(maxCombo, nextCombo),
+      input: "",
+      currentIndex: isLast ? currentIndex : nextIndex,
+      status: isLast ? "finished" : "playing",
+    });
+  },
+
+  finishNow: () => {
+    if (get().status === "playing") set({ status: "finished" });
   },
 
   reset: () => set({ ...initialState }),

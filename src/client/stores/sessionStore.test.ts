@@ -14,7 +14,7 @@ const dataset: Pokemon[] = Array.from({ length: 20 }, (_, i) => ({
 
 const challenge = {
   id: "test-challenge",
-  rule: { mode: "name-guess", pool: { generations: [1] }, questionCount: 5 } as ChallengeRule,
+  rule: { mode: "quiz", pool: { generations: [1] }, questionCount: 5 } as ChallengeRule,
 };
 
 const store = () => useSessionStore.getState();
@@ -101,5 +101,33 @@ describe("sessionStore", () => {
     const snapshot = store().results.length;
     store().submit(); // phase is "revealed" -> no-op
     expect(store().results).toHaveLength(snapshot);
+  });
+
+  it("recordAndAdvance (time-attack) records and advances without a reveal", () => {
+    store().start(challenge, dataset, 1);
+    const answer = store().questions[0].answer;
+    store().setInput(answer);
+    store().recordAndAdvance(true);
+    expect(store().results).toEqual([{ input: answer, correct: true }]);
+    expect(store().currentIndex).toBe(1);
+    expect(store().phase).toBe("answering"); // never entered reveal
+    expect(store().combo).toBe(1);
+  });
+
+  it("recordAndAdvance(false) records a miss and resets the combo", () => {
+    store().start(challenge, dataset, 1);
+    store().setInput(store().questions[0].answer);
+    store().recordAndAdvance(true);
+    store().setInput("몰라");
+    store().recordAndAdvance(false);
+    expect(store().combo).toBe(0);
+    expect(store().results).toHaveLength(2);
+    expect(store().results[1]).toEqual({ input: "몰라", correct: false });
+  });
+
+  it("finishNow ends the game", () => {
+    store().start(challenge, dataset, 1);
+    store().finishNow();
+    expect(store().status).toBe("finished");
   });
 });

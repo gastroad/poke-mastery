@@ -12,7 +12,7 @@ const dataset: Pokemon[] = Array.from({ length: 20 }, (_, i) => ({
   acceptedAnswers: [`포켓몬${i + 1}`],
 }));
 
-const rule: ChallengeRule = { mode: "name-guess", pool: { generations: [1] }, questionCount: 10 };
+const rule: ChallengeRule = { mode: "quiz", pool: { generations: [1] }, questionCount: 10 };
 
 describe("generateQuestions", () => {
   it("is deterministic: same seed produces identical questions", () => {
