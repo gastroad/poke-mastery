@@ -18,31 +18,31 @@ export function ProgressView({ progress }: { progress: Progress }) {
       <section className="flex flex-col gap-2">
         <div className="flex items-end justify-between">
           <span className="text-2xl font-black">Lv. {level}</span>
-          <span className="text-sm text-slate-400">
+          <span className="text-sm text-zinc-400">
             {xpIntoLevel} / {xpForNext} XP
           </span>
         </div>
-        <div className="h-3 w-full overflow-hidden rounded-full bg-slate-800">
-          <div className="h-full rounded-full bg-indigo-500" style={{ width: `${levelPct}%` }} />
+        <div className="h-3 w-full overflow-hidden rounded-full bg-zinc-800">
+          <div className="h-full rounded-full bg-poke-500" style={{ width: `${levelPct}%` }} />
         </div>
-        <span className="text-xs text-slate-500">누적 {progress.totalXp} XP</span>
+        <span className="text-xs text-zinc-500">누적 {progress.totalXp} XP</span>
       </section>
 
       <section className="flex flex-col gap-3">
-        <h2 className="text-sm font-semibold text-slate-300">타입 마스터리</h2>
+        <h2 className="text-sm font-semibold text-zinc-300">타입 마스터리</h2>
         {masteries.length === 0 ? (
-          <p className="text-sm text-slate-500">아직 기록이 없어요. 한 판 플레이해보세요!</p>
+          <p className="text-sm text-zinc-500">아직 기록이 없어요. 한 판 플레이해보세요!</p>
         ) : (
           <ul className="flex flex-col gap-2">
             {masteries.map(([type, stat]) => {
               const pct = masteryPct(stat);
               return (
                 <li key={type} className="flex items-center gap-3">
-                  <span className="w-14 shrink-0 text-sm text-slate-300">{TYPE_NAME_KO[type]}</span>
-                  <div className="h-2 flex-1 overflow-hidden rounded-full bg-slate-800">
+                  <span className="w-14 shrink-0 text-sm text-zinc-300">{TYPE_NAME_KO[type]}</span>
+                  <div className="h-2 flex-1 overflow-hidden rounded-full bg-zinc-800">
                     <div className="h-full rounded-full bg-emerald-500" style={{ width: `${pct}%` }} />
                   </div>
-                  <span className="w-24 shrink-0 text-right text-xs text-slate-500">
+                  <span className="w-24 shrink-0 text-right text-xs text-zinc-500">
                     {pct}% ({stat.correct}/{stat.seen})
                   </span>
                 </li>

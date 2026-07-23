@@ -69,7 +69,7 @@ function PlayingView() {
   };
 
   return (
-    <main className="flex min-h-[100dvh] flex-1 flex-col items-center justify-start bg-slate-950 px-6 py-6 text-slate-100 sm:justify-center sm:py-10">
+    <main className="flex min-h-[100dvh] flex-1 flex-col items-center justify-start bg-zinc-950 px-6 py-6 text-zinc-100 sm:justify-center sm:py-10">
       <div className="flex w-full max-w-md flex-col items-center gap-6 sm:gap-8">
         <Hud />
         <PokemonSilhouette pokemonId={question.pokemonId} brightness={revealed ? 1 : 0} />
@@ -93,11 +93,11 @@ function PlayingView() {
             autoCapitalize="off"
             spellCheck={false}
             enterKeyHint={revealed ? "next" : "done"}
-            className="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-center text-lg outline-none focus:border-indigo-400"
+            className="w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-center text-lg outline-none focus:border-poke-400"
           />
           <button
             type="submit"
-            className="w-full rounded-xl bg-indigo-500 px-4 py-3 text-lg font-semibold text-white transition hover:bg-indigo-400 active:scale-[0.98]"
+            className="w-full rounded-xl bg-poke-500 px-4 py-3 text-lg font-semibold text-white transition hover:bg-poke-400 active:scale-[0.98]"
           >
             {revealed ? (isLastQuestion ? "결과 보기" : "다음") : "확인"}
           </button>
@@ -123,10 +123,10 @@ function Hud() {
           <Heart key={`life-${i}`} className="h-5 w-5 fill-rose-500 text-rose-500" />
         ))}
         {Array.from({ length: lost }).map((_, i) => (
-          <Heart key={`lost-${i}`} className="h-5 w-5 text-slate-700" />
+          <Heart key={`lost-${i}`} className="h-5 w-5 text-zinc-700" />
         ))}
       </span>
-      <span className="font-mono text-slate-400">
+      <span className="font-mono text-zinc-400">
         {currentIndex + 1} / {total}
       </span>
       <span className="flex items-center gap-1 font-semibold text-amber-400">

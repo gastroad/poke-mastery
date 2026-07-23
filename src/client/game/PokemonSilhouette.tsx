@@ -18,7 +18,7 @@ export function PokemonSilhouette({
   transitionSec?: number;
 }) {
   return (
-    <div className="flex h-44 w-44 items-center justify-center rounded-full bg-gradient-to-b from-slate-100 to-slate-300 shadow-inner sm:h-64 sm:w-64">
+    <div className="flex h-44 w-44 items-center justify-center rounded-full bg-gradient-to-b from-zinc-100 to-zinc-300 shadow-inner sm:h-64 sm:w-64">
       <Image
         key={pokemonId}
         src={spritePath(pokemonId, "artwork")}

@@ -71,16 +71,16 @@ export function TimeAttackView({ timeLimitSec }: { timeLimitSec: number }) {
   const low = secondsLeft <= 10;
 
   return (
-    <main className="flex min-h-[100dvh] flex-1 flex-col items-center justify-start bg-slate-950 px-6 py-6 text-slate-100 sm:justify-center sm:py-10">
+    <main className="flex min-h-[100dvh] flex-1 flex-col items-center justify-start bg-zinc-950 px-6 py-6 text-zinc-100 sm:justify-center sm:py-10">
       <div className="flex w-full max-w-md flex-col items-center gap-5 sm:gap-6">
         <div className="flex w-full items-center justify-between">
           <span
-            className={`flex items-center gap-1.5 font-mono text-lg font-bold ${low ? "text-rose-400" : "text-slate-200"}`}
+            className={`flex items-center gap-1.5 font-mono text-lg font-bold ${low ? "text-rose-400" : "text-zinc-200"}`}
           >
             <Timer className="h-5 w-5" />
             {secondsLeft}s
           </span>
-          <span className="text-lg font-bold text-indigo-400">{correctCount}</span>
+          <span className="text-lg font-bold text-poke-400">{correctCount}</span>
           <span className="flex items-center gap-1 font-semibold text-amber-400">
             {combo >= 2 && (
               <>
@@ -91,9 +91,9 @@ export function TimeAttackView({ timeLimitSec }: { timeLimitSec: number }) {
           </span>
         </div>
 
-        <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-800">
+        <div className="h-1.5 w-full overflow-hidden rounded-full bg-zinc-800">
           <div
-            className={`h-full rounded-full ${low ? "bg-rose-500" : "bg-indigo-500"}`}
+            className={`h-full rounded-full ${low ? "bg-rose-500" : "bg-poke-500"}`}
             style={{ width: `${timePct}%` }}
           />
         </div>
@@ -115,11 +115,11 @@ export function TimeAttackView({ timeLimitSec }: { timeLimitSec: number }) {
             autoCapitalize="off"
             spellCheck={false}
             enterKeyHint="next"
-            className="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-center text-lg outline-none focus:border-indigo-400"
+            className="w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-center text-lg outline-none focus:border-poke-400"
           />
           <button
             type="submit"
-            className="w-full rounded-xl border border-slate-700 px-4 py-3 text-slate-400 transition hover:bg-slate-900 hover:text-slate-200"
+            className="w-full rounded-xl border border-zinc-700 px-4 py-3 text-zinc-400 transition hover:bg-zinc-900 hover:text-zinc-200"
           >
             모르겠어요 (넘기기)
           </button>

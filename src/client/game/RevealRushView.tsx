@@ -63,13 +63,13 @@ export function RevealRushView({ revealSec = 6 }: { revealSec?: number }) {
   };
 
   return (
-    <main className="flex min-h-[100dvh] flex-1 flex-col items-center justify-start bg-slate-950 px-6 py-6 text-slate-100 sm:justify-center sm:py-10">
+    <main className="flex min-h-[100dvh] flex-1 flex-col items-center justify-start bg-zinc-950 px-6 py-6 text-zinc-100 sm:justify-center sm:py-10">
       <div className="flex w-full max-w-md flex-col items-center gap-5 sm:gap-6">
         <div className="flex w-full items-center justify-between text-sm">
-          <span className="font-mono text-slate-400">
+          <span className="font-mono text-zinc-400">
             {currentIndex + 1} / {questions.length}
           </span>
-          <span className="text-lg font-bold text-indigo-400">{score}</span>
+          <span className="text-lg font-bold text-poke-400">{score}</span>
         </div>
 
         <PokemonSilhouette
@@ -93,11 +93,11 @@ export function RevealRushView({ revealSec = 6 }: { revealSec?: number }) {
             autoCapitalize="off"
             spellCheck={false}
             enterKeyHint="next"
-            className="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-center text-lg outline-none focus:border-indigo-400"
+            className="w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-center text-lg outline-none focus:border-poke-400"
           />
           <button
             type="submit"
-            className="w-full rounded-xl border border-slate-700 px-4 py-3 text-slate-400 transition hover:bg-slate-900 hover:text-slate-200"
+            className="w-full rounded-xl border border-zinc-700 px-4 py-3 text-zinc-400 transition hover:bg-zinc-900 hover:text-zinc-200"
           >
             모르겠어요 (넘기기)
           </button>

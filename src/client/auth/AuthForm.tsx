@@ -37,13 +37,13 @@ export function AuthForm() {
   };
 
   return (
-    <main className="flex min-h-full flex-1 flex-col items-center justify-center bg-slate-950 px-6 py-10 text-slate-100">
+    <main className="flex min-h-full flex-1 flex-col items-center justify-center bg-zinc-950 px-6 py-10 text-zinc-100">
       <div className="flex w-full max-w-sm flex-col gap-6">
         <div className="text-center">
           <h1 className="text-3xl font-black tracking-tight">
-            Poké<span className="text-indigo-400">Mastery</span>
+            Poké<span className="text-poke-400">Mastery</span>
           </h1>
-          <p className="mt-2 text-sm text-slate-400">
+          <p className="mt-2 text-sm text-zinc-400">
             {isSignUp ? "계정을 만들면 진행이 저장됩니다" : "로그인하고 진행을 이어가세요"}
           </p>
         </div>
@@ -55,7 +55,7 @@ export function AuthForm() {
               onChange={(e) => setName(e.target.value)}
               placeholder="닉네임 (선택)"
               autoComplete="nickname"
-              className="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 outline-none focus:border-indigo-400"
+              className="w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 outline-none focus:border-poke-400"
             />
           )}
           <input
@@ -65,7 +65,7 @@ export function AuthForm() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="이메일"
             autoComplete="email"
-            className="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 outline-none focus:border-indigo-400"
+            className="w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 outline-none focus:border-poke-400"
           />
           <input
             type="password"
@@ -74,7 +74,7 @@ export function AuthForm() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="비밀번호"
             autoComplete={isSignUp ? "new-password" : "current-password"}
-            className="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 outline-none focus:border-indigo-400"
+            className="w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 outline-none focus:border-poke-400"
           />
 
           {error && <p className="text-sm text-rose-400">{error}</p>}
@@ -82,24 +82,24 @@ export function AuthForm() {
           <button
             type="submit"
             disabled={pending}
-            className="mt-1 w-full rounded-xl bg-indigo-500 px-4 py-3 text-lg font-semibold text-white transition hover:bg-indigo-400 active:scale-[0.98] disabled:opacity-60"
+            className="mt-1 w-full rounded-xl bg-poke-500 px-4 py-3 text-lg font-semibold text-white transition hover:bg-poke-400 active:scale-[0.98] disabled:opacity-60"
           >
             {pending ? "처리 중…" : isSignUp ? "가입하기" : "로그인"}
           </button>
         </form>
 
-        <div className="flex flex-col items-center gap-3 text-sm text-slate-400">
+        <div className="flex flex-col items-center gap-3 text-sm text-zinc-400">
           <button
             type="button"
             onClick={() => {
               setMode(isSignUp ? "sign-in" : "sign-up");
               setError(null);
             }}
-            className="text-slate-300 underline-offset-4 hover:underline"
+            className="text-zinc-300 underline-offset-4 hover:underline"
           >
             {isSignUp ? "이미 계정이 있어요 · 로그인" : "계정이 없어요 · 회원가입"}
           </button>
-          <Link href="/play" className="text-slate-500 hover:text-slate-300">
+          <Link href="/play" className="text-zinc-500 hover:text-zinc-300">
             로그인 없이 플레이 (진행은 이 브라우저에만 저장)
           </Link>
         </div>

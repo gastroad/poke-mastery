@@ -66,18 +66,18 @@ export function ResultScreen() {
   }, [challenge, seed, results]);
 
   return (
-    <main className="flex min-h-full flex-1 flex-col items-center justify-center bg-slate-950 px-6 py-10 text-center text-slate-100">
+    <main className="flex min-h-full flex-1 flex-col items-center justify-center bg-zinc-950 px-6 py-10 text-center text-zinc-100">
       <div className="flex w-full max-w-md flex-col items-center gap-8">
         <h1 className="text-3xl font-bold">게임 종료</h1>
 
         <div className="flex flex-col gap-2">
           {isRevealRush ? (
             <>
-              <p className="text-6xl font-black text-indigo-400">
+              <p className="text-6xl font-black text-poke-400">
                 {score}
-                <span className="text-2xl text-slate-500"> 점</span>
+                <span className="text-2xl text-zinc-500"> 점</span>
               </p>
-              <p className="flex items-center justify-center gap-1 text-slate-400">
+              <p className="flex items-center justify-center gap-1 text-zinc-400">
                 정답 {correct} / {total} · 최고 콤보
                 <Flame className="h-4 w-4 text-amber-400" />
                 {maxCombo}
@@ -85,11 +85,11 @@ export function ResultScreen() {
             </>
           ) : (
             <>
-              <p className="text-6xl font-black text-indigo-400">
+              <p className="text-6xl font-black text-poke-400">
                 {correct}
-                <span className="text-2xl text-slate-500">{isTimeAttack ? " 마리" : ` / ${total}`}</span>
+                <span className="text-2xl text-zinc-500">{isTimeAttack ? " 마리" : ` / ${total}`}</span>
               </p>
-              <p className="flex items-center justify-center gap-1 text-slate-400">
+              <p className="flex items-center justify-center gap-1 text-zinc-400">
                 정답률 {isTimeAttack ? accuracy : quizPct}% · 최고 콤보
                 <Flame className="h-4 w-4 text-amber-400" />
                 {maxCombo}
@@ -104,13 +104,13 @@ export function ResultScreen() {
           <button
             type="button"
             onClick={() => challenge && start(challenge, POKEMON, randomSeed())}
-            className="w-full rounded-xl bg-indigo-500 px-4 py-3 text-lg font-semibold text-white transition hover:bg-indigo-400 active:scale-[0.98]"
+            className="w-full rounded-xl bg-poke-500 px-4 py-3 text-lg font-semibold text-white transition hover:bg-poke-400 active:scale-[0.98]"
           >
             다시 하기
           </button>
           <Link
             href="/"
-            className="w-full rounded-xl border border-slate-700 px-4 py-3 text-slate-300 transition hover:bg-slate-900"
+            className="w-full rounded-xl border border-zinc-700 px-4 py-3 text-zinc-300 transition hover:bg-zinc-900"
           >
             홈으로
           </Link>
@@ -122,15 +122,15 @@ export function ResultScreen() {
 
 function SaveBanner({ save }: { save: SaveState }) {
   if (save.kind === "saving") {
-    return <p className="text-sm text-slate-500">진행 저장 중…</p>;
+    return <p className="text-sm text-zinc-500">진행 저장 중…</p>;
   }
   if (save.kind === "none") {
     const msg = save.reason === "replay" ? "이미 기록된 게임이에요" : "진행을 저장하지 못했어요";
-    return <p className="text-sm text-slate-500">{msg}</p>;
+    return <p className="text-sm text-zinc-500">{msg}</p>;
   }
   const { delta, where } = save;
   return (
-    <div className="flex flex-col items-center gap-1 rounded-2xl border border-slate-800 bg-slate-900/60 px-6 py-4">
+    <div className="flex flex-col items-center gap-1 rounded-2xl border border-zinc-800 bg-zinc-900/60 px-6 py-4">
       <p className="text-2xl font-bold text-emerald-400">+{delta.xpGained} XP</p>
       {delta.leveledUp && (
         <p className="flex items-center gap-1.5 text-lg font-semibold text-amber-400">
@@ -138,7 +138,7 @@ function SaveBanner({ save }: { save: SaveState }) {
           레벨 {delta.levelAfter} 달성!
         </p>
       )}
-      <p className="flex items-center gap-1.5 text-xs text-slate-500">
+      <p className="flex items-center gap-1.5 text-xs text-zinc-500">
         {where === "server" ? (
           <>
             <Cloud className="h-3.5 w-3.5" />
