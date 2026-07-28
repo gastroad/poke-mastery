@@ -1,5 +1,15 @@
-/** The signature Poké Ball motif — used as the logo and (spinning) loader. */
-export function Pokeball({ className, spin = false }: { className?: string; spin?: boolean }) {
+/** The signature Poké Ball motif — used as the logo and (spinning) loader.
+    `hideButton` drops the center button, leaving clean red/white halves + seam
+    (used when the ball is split into a top/bottom frame). */
+export function Pokeball({
+  className,
+  spin = false,
+  hideButton = false,
+}: {
+  className?: string;
+  spin?: boolean;
+  hideButton?: boolean;
+}) {
   return (
     <svg
       viewBox="0 0 100 100"
@@ -18,8 +28,12 @@ export function Pokeball({ className, spin = false }: { className?: string; spin
         <rect x="0" y="44" width="100" height="12" fill="#18181b" />
       </g>
       <circle cx="50" cy="50" r="47" fill="none" stroke="#18181b" strokeWidth="4" />
-      <circle cx="50" cy="50" r="15" fill="#f4f4f5" stroke="#18181b" strokeWidth="5" />
-      <circle cx="50" cy="50" r="6" fill="#ffffff" stroke="#18181b" strokeWidth="2.5" />
+      {!hideButton && (
+        <>
+          <circle cx="50" cy="50" r="15" fill="#f4f4f5" stroke="#18181b" strokeWidth="5" />
+          <circle cx="50" cy="50" r="6" fill="#ffffff" stroke="#18181b" strokeWidth="2.5" />
+        </>
+      )}
     </svg>
   );
 }

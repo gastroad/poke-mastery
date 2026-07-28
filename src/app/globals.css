@@ -98,12 +98,18 @@ body {
     animation: hero-fade 0.4s ease-in both;
   }
 
-  /* Challenge screen fading in after the ball opens, its list rising within. */
+  /* Challenge screen fading in after the ball opens. */
   .page-enter {
     animation: page-fade 0.45s ease-out both;
   }
-  .list-rise {
-    animation: hero-rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  /* Play screen: continuing from the home ball that flung apart, the halves
+     settle back INWARD to frame the wheel (the gap narrows into place). */
+  .frame-half-top {
+    animation: frame-settle-top 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
+  }
+  .frame-half-bottom {
+    animation: frame-settle-bottom 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
   }
 }
 
@@ -203,5 +209,92 @@ body {
   to {
     opacity: 0;
     transform: translateY(-8px);
+  }
+}
+
+/* ── Play screen: opened Poké Ball frame + wheel picker ─────────────────────── */
+
+/* Hide the wheel's scrollbar (it snaps, so the bar is just noise). */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Resting position of the two frame halves — the settle animation above lands
+   on these. Wide enough that the split center button reads as clean half-domes
+   at each frame's inner edge, clear of the wheel. */
+.frame-half-top {
+  transform: translateY(-26vh);
+}
+.frame-half-bottom {
+  transform: translateY(26vh);
+}
+
+/* Softens the middle band so the wheel reads cleanly and the halves' inner
+   edges fade into it — a dark zinc grey (not jet black), fading to transparent
+   at the top/bottom so the red/white frames show. */
+.frame-scrim {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(39, 39, 42, 0.45) 24%,
+    rgba(39, 39, 42, 0.72) 42%,
+    rgba(39, 39, 42, 0.72) 58%,
+    rgba(39, 39, 42, 0.45) 76%,
+    transparent 100%
+  );
+}
+
+/* Smooth the focus scale/fade as items pass through the center. */
+.wheel-label {
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    color 0.2s ease;
+}
+.wheel-shake {
+  animation: wheel-shake 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wheel-label {
+    transition: none;
+  }
+  .wheel-shake {
+    animation: none;
+  }
+}
+
+@keyframes frame-settle-top {
+  from {
+    transform: translateY(-52vh);
+  }
+  to {
+    transform: translateY(-26vh);
+  }
+}
+
+@keyframes frame-settle-bottom {
+  from {
+    transform: translateY(52vh);
+  }
+  to {
+    transform: translateY(26vh);
+  }
+}
+
+@keyframes wheel-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
   }
 }
