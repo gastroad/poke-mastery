@@ -13,13 +13,13 @@ export function PokeballFrame() {
         className="frame-half frame-half-top absolute inset-0 flex items-center justify-center"
         style={{ clipPath: "inset(0 0 50% 0)" }}
       >
-        <Pokeball hideButton className="h-[130vmax] w-[130vmax]" />
+        <Pokeball hideButton className="h-[var(--poke-ball-size)] w-[var(--poke-ball-size)]" />
       </div>
       <div
         className="frame-half frame-half-bottom absolute inset-0 flex items-center justify-center"
         style={{ clipPath: "inset(50% 0 0 0)" }}
       >
-        <Pokeball hideButton className="h-[130vmax] w-[130vmax]" />
+        <Pokeball hideButton className="h-[var(--poke-ball-size)] w-[var(--poke-ball-size)]" />
       </div>
       {/* Dark middle band that seats the wheel and fades the halves' inner edges. */}
       <div className="frame-scrim absolute inset-0" />

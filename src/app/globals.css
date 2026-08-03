@@ -10,6 +10,26 @@
 :root {
   --background: #09090b;
   --foreground: #fafafa;
+
+  /* Diameter of the full-screen Poké Ball (home backdrop + play frame).
+     Oversized on purpose so it bleeds past the viewport instead of floating in
+     it. `vmax` follows the LONGER edge, so on a landscape desktop this tracks
+     the width and the ball zooms so far in that only its flat middle shows —
+     hence the cap below. */
+  --poke-ball-size: 130vmax;
+  /* How far each half of the play-screen frame slides off the seam. Tied to the
+     ball (not the viewport) so the opened ball keeps the same proportions at
+     any size. 20% matches the 26vh this used to be on a phone. */
+  --poke-frame-offset: calc(var(--poke-ball-size) * 0.2);
+}
+
+/* Landscape (desktop): cap the ball against the viewport HEIGHT so its curve
+   stays on screen and it still reads as a ball. Portrait/phone is unchanged —
+   there the ball must stay bigger than the screen diagonal to cover it. */
+@media (min-aspect-ratio: 1/1) {
+  :root {
+    --poke-ball-size: 115vh;
+  }
 }
 
 @theme inline {
@@ -227,10 +247,10 @@ body {
    on these. Wide enough that the split center button reads as clean half-domes
    at each frame's inner edge, clear of the wheel. */
 .frame-half-top {
-  transform: translateY(-26vh);
+  transform: translateY(calc(var(--poke-frame-offset) * -1));
 }
 .frame-half-bottom {
-  transform: translateY(26vh);
+  transform: translateY(var(--poke-frame-offset));
 }
 
 /* Softens the middle band so the wheel reads cleanly and the halves' inner
@@ -270,19 +290,19 @@ body {
 
 @keyframes frame-settle-top {
   from {
-    transform: translateY(-52vh);
+    transform: translateY(calc(var(--poke-frame-offset) * -2));
   }
   to {
-    transform: translateY(-26vh);
+    transform: translateY(calc(var(--poke-frame-offset) * -1));
   }
 }
 
 @keyframes frame-settle-bottom {
   from {
-    transform: translateY(52vh);
+    transform: translateY(calc(var(--poke-frame-offset) * 2));
   }
   to {
-    transform: translateY(26vh);
+    transform: translateY(var(--poke-frame-offset));
   }
 }
 

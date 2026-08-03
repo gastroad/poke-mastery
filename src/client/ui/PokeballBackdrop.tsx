@@ -17,19 +17,19 @@ export function PokeballBackdrop() {
         className="poke-half poke-half-top absolute inset-0 flex items-center justify-center"
         style={{ clipPath: "inset(0 0 49% 0)" }}
       >
-        <Pokeball className="h-[130vmax] w-[130vmax]" />
+        <Pokeball className="h-[var(--poke-ball-size)] w-[var(--poke-ball-size)]" />
       </div>
       {/* Bottom white half. */}
       <div
         className="poke-half poke-half-bottom absolute inset-0 flex items-center justify-center"
         style={{ clipPath: "inset(49% 0 0 0)" }}
       >
-        <Pokeball className="h-[130vmax] w-[130vmax]" />
+        <Pokeball className="h-[var(--poke-ball-size)] w-[var(--poke-ball-size)]" />
       </div>
       {/* Dim + center vignette. */}
       <div className="hero-scrim absolute inset-0" />
       {/* Flash of light at the moment the halves snap together. */}
-      <div className="hero-flash absolute left-1/2 top-1/2 h-[46vmax] w-[46vmax] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white opacity-0 blur-3xl" />
+      <div className="hero-flash absolute left-1/2 top-1/2 h-[calc(var(--poke-ball-size)*0.35)] w-[calc(var(--poke-ball-size)*0.35)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white opacity-0 blur-3xl" />
     </div>
   );
 }
