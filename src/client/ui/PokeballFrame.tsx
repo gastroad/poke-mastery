@@ -5,21 +5,26 @@ import { Pokeball } from "@/client/ui/Pokeball";
  * the top of the screen, the white bottom half framing the bottom, with a dark
  * gap between them for the wheel picker. On mount the halves animate from closed
  * to this open position (see `.frame-half-*` in globals.css). Decorative.
+ *
+ * Centered with `absolute` + translate, not flex — see PokeballBackdrop.
  */
+const BALL =
+  "absolute left-1/2 top-1/2 h-[var(--poke-ball-size)] w-[var(--poke-ball-size)] -translate-x-1/2 -translate-y-1/2";
+
 export function PokeballFrame() {
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 overflow-hidden">
       <div
-        className="frame-half frame-half-top absolute inset-0 flex items-center justify-center"
+        className="frame-half frame-half-top absolute inset-0"
         style={{ clipPath: "inset(0 0 50% 0)" }}
       >
-        <Pokeball hideButton className="h-[var(--poke-ball-size)] w-[var(--poke-ball-size)]" />
+        <Pokeball hideButton className={BALL} />
       </div>
       <div
-        className="frame-half frame-half-bottom absolute inset-0 flex items-center justify-center"
+        className="frame-half frame-half-bottom absolute inset-0"
         style={{ clipPath: "inset(50% 0 0 0)" }}
       >
-        <Pokeball hideButton className="h-[var(--poke-ball-size)] w-[var(--poke-ball-size)]" />
+        <Pokeball hideButton className={BALL} />
       </div>
       {/* Dark middle band that seats the wheel and fades the halves' inner edges. */}
       <div className="frame-scrim absolute inset-0" />

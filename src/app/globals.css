@@ -11,16 +11,16 @@
   --background: #09090b;
   --foreground: #fafafa;
 
-  /* Diameter of the full-screen Poké Ball (home backdrop + play frame).
-     Oversized on purpose so it bleeds past the viewport instead of floating in
-     it. `vmax` follows the LONGER edge, so on a landscape desktop this tracks
-     the width and the ball zooms so far in that only its flat middle shows —
-     hence the cap below. */
-  --poke-ball-size: 130vmax;
-  /* How far each half of the play-screen frame slides off the seam. Tied to the
-     ball (not the viewport) so the opened ball keeps the same proportions at
-     any size. 20% matches the 26vh this used to be on a phone. */
-  --poke-frame-offset: calc(var(--poke-ball-size) * 0.2);
+  /* Diameter of the full-screen Poké Ball (home backdrop + play frame). This is
+     the REAL drawn diameter — the ball is centered absolutely, so nothing clamps
+     it behind our back. (It used to be declared 130vmax while a flex parent
+     silently shrank it to the viewport width, which is why portrait says 100vw:
+     that is what a phone was already drawing.) */
+  --poke-ball-size: 100vw;
+  /* How far each half of the play-screen frame slides off the seam. Measured
+     against the viewport HEIGHT, since what it has to clear is the wheel in the
+     middle of the screen, not the ball. */
+  --poke-frame-offset: 26vh;
   /* The opening between the two halves — the wheel picker is sized to fill it,
      so the picker grows with the ball instead of being a fixed-px widget. */
   --poke-frame-gap: calc(var(--poke-frame-offset) * 2);
@@ -42,15 +42,14 @@
   }
 }
 
-/* Landscape (desktop): cap the ball against the viewport HEIGHT so its curve
-   stays on screen and it still reads as a ball. Portrait/phone is unchanged —
-   there the ball must stay bigger than the screen diagonal to cover it. */
+/* Landscape (desktop): size the ball off the viewport HEIGHT instead, so its
+   curve stays on screen rather than the ball zooming past both edges. */
 @media (min-aspect-ratio: 1/1) {
   :root {
     --poke-ball-size: 115vh;
-    /* Landscape leaves room to spare beside the ball, so open the halves wider
-       than the portrait 20% and let the wheel spend that height. */
-    --poke-frame-offset: calc(var(--poke-ball-size) * 0.27);
+    /* Landscape leaves room to spare above and below, so open the halves wider
+       than portrait and let the wheel spend that height. */
+    --poke-frame-offset: 31vh;
   }
 }
 
