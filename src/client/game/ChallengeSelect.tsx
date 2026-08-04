@@ -37,7 +37,10 @@ export function ChallengeSelect() {
     <main className="page-enter relative flex min-h-[100dvh] flex-col overflow-hidden bg-zinc-950 text-zinc-100">
       <PokeballFrame />
 
-      <header className="relative z-20 flex items-center justify-between gap-3 bg-gradient-to-b from-zinc-950/70 to-transparent px-6 pb-8 pt-6">
+      {/* Header and hint float over the scene rather than sitting in the column,
+          so the wheel below centers on the VIEWPORT — which is where the ball's
+          opening is. In flow they pushed it ~20px off the seam. */}
+      <header className="absolute inset-x-0 top-0 z-20 flex items-center justify-between gap-3 bg-gradient-to-b from-zinc-950/70 to-transparent px-6 pb-8 pt-6">
         <div className="flex items-center gap-2">
           {pool && (
             <button
@@ -56,28 +59,37 @@ export function ChallengeSelect() {
         <AuthStatus />
       </header>
 
-      <div className="relative z-10 flex flex-1 flex-col items-center justify-center gap-4">
-        {pool ? (
-          <WheelPicker
-            key="mode"
-            items={modeItems}
-            ariaLabel="모드 선택"
-            onConfirm={(item) => router.push(`/play/${pool.id}/${item.id}`)}
-          />
-        ) : (
-          <WheelPicker
-            key="pool"
-            items={poolItems}
-            ariaLabel="풀 선택"
-            onConfirm={(item) => {
-              const p = getPool(item.id);
-              if (p) setPool({ id: p.id, label: p.label });
-            }}
-          />
-        )}
+      {/* The wheel takes the full height: it only LOOKS like it sits inside the
+          ball's opening (its mask does that), but you can flick it anywhere on
+          the screen. It used to be a fixed 320px band with dead space around it.
+          `absolute inset-0` is deliberate — the scroller's spacers are sized in
+          %, so they need an ancestor with a DEFINITE height. As a flex child it
+          resolved to auto and the spacers collapsed to 0. */}
+      <div className="absolute inset-0 z-10 flex items-center justify-center">
+        <div className="h-full w-full max-w-md md:max-w-lg">
+          {pool ? (
+            <WheelPicker
+              key="mode"
+              items={modeItems}
+              ariaLabel="모드 선택"
+              onConfirm={(item) => router.push(`/play/${pool.id}/${item.id}`)}
+            />
+          ) : (
+            <WheelPicker
+              key="pool"
+              items={poolItems}
+              ariaLabel="풀 선택"
+              onConfirm={(item) => {
+                const p = getPool(item.id);
+                if (p) setPool({ id: p.id, label: p.label });
+              }}
+            />
+          )}
+        </div>
       </div>
 
-      <p className="relative z-10 pb-8 text-center text-xs text-zinc-500">
+      {/* Sits on the white lower cap, so it needs a darker grey than the rest. */}
+      <p className="pointer-events-none absolute inset-x-0 bottom-0 z-10 pb-8 text-center text-xs text-zinc-600 md:text-sm">
         스크롤해서 고르고 · 가운데를 탭하세요
       </p>
     </main>

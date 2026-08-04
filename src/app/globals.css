@@ -21,6 +21,25 @@
      ball (not the viewport) so the opened ball keeps the same proportions at
      any size. 20% matches the 26vh this used to be on a phone. */
   --poke-frame-offset: calc(var(--poke-ball-size) * 0.2);
+  /* The opening between the two halves — the wheel picker is sized to fill it,
+     so the picker grows with the ball instead of being a fixed-px widget. */
+  --poke-frame-gap: calc(var(--poke-frame-offset) * 2);
+
+  /* Height of one wheel row. Scales up on wider screens so the picker fills a
+     monitor instead of staying phone-sized. WheelPicker READS this value to do
+     its snap math, so it has to stay a plain px length. */
+  --wheel-row: 64px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --wheel-row: 76px;
+  }
+}
+@media (min-width: 1280px) {
+  :root {
+    --wheel-row: 88px;
+  }
 }
 
 /* Landscape (desktop): cap the ball against the viewport HEIGHT so its curve
@@ -29,6 +48,9 @@
 @media (min-aspect-ratio: 1/1) {
   :root {
     --poke-ball-size: 115vh;
+    /* Landscape leaves room to spare beside the ball, so open the halves wider
+       than the portrait 20% and let the wheel spend that height. */
+    --poke-frame-offset: calc(var(--poke-ball-size) * 0.27);
   }
 }
 
@@ -265,6 +287,33 @@ body {
     rgba(39, 39, 42, 0.72) 58%,
     rgba(39, 39, 42, 0.45) 76%,
     transparent 100%
+  );
+}
+
+/* The wheel's scroll surface spans the whole screen so a flick anywhere works —
+   a picker you can only grab in a 320px band in the middle of a phone is the
+   main thing that made this feel broken. It still has to LOOK like it lives in
+   the ball's opening, so rows fade out as they pass behind the caps: the mask is
+   fully opaque exactly across the opening and ramps to transparent at the edges. */
+.wheel-scroller {
+  /* Where the ball's opening starts, measured from the top of the scroller. */
+  --wheel-fade: calc(50% - var(--poke-frame-gap) / 2);
+  /* Ramp over the last 48px before the opening, not the whole cap — a gradient
+     spread across the full cap leaves rows ghosting at ~80% over the red. */
+  --wheel-fade-in: calc(var(--wheel-fade) - 48px);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent var(--wheel-fade-in),
+    #000 var(--wheel-fade),
+    #000 calc(100% - var(--wheel-fade)),
+    transparent calc(100% - var(--wheel-fade-in))
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent var(--wheel-fade-in),
+    #000 var(--wheel-fade),
+    #000 calc(100% - var(--wheel-fade)),
+    transparent calc(100% - var(--wheel-fade-in))
   );
 }
 

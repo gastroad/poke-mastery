@@ -1,13 +1,15 @@
 "use client";
 
 import { Lock } from "lucide-react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 
-/** Layout height of one row (px). The focused row scales up *visually* via a
-    transform, so the layout height — and thus the snap math — stays constant. */
-const ITEM_HEIGHT = 64;
-/** Spacer rows above/below the list so the first and last items can center. */
-const PAD_ROWS = 2;
+/** Row height used until the real one is read from `--wheel-row` (see globals.css).
+    Only matters for the very first paint; every measurement after that is live. */
+const FALLBACK_ROW = 64;
+/** How far a pointer may travel and still count as a tap rather than a drag. */
+const TAP_SLOP = 8;
+/** Scroll movement between press and release that means "the player was scrolling". */
+const SCROLL_SLOP = 2;
 
 export interface WheelItem {
   id: string;
@@ -23,8 +25,14 @@ export interface WheelItem {
  * the focused item (or press Enter) to confirm. Locked items can be scrolled
  * past but not confirmed. Keyboard + listbox semantics included.
  *
+ * Sizing: the wheel fills whatever height its parent gives it, and the row
+ * height comes from `--wheel-row`, so the picker scales with the screen instead
+ * of being a fixed-px widget stranded in the middle of a monitor. The top and
+ * bottom spacers are `50% - row/2` so the first and last items can still reach
+ * the center — which is what keeps `scrollTop === index * row` exact.
+ *
  * Centering tweens `scrollTop` by hand (native smooth scrolling is a no-op in
- * some environments) with snap momentarily disabled so it can't fight it.
+ * some environments) with `scroll-smooth` doing the animation.
  */
 export function WheelPicker({
   items,
@@ -42,13 +50,58 @@ export function WheelPicker({
   const [focused, setFocused] = useState(initialIndex);
   const [shakeIndex, setShakeIndex] = useState<number | null>(null);
 
-  // Center the initial item without animation whenever the wheel (re)mounts.
+  // Row height lives in a ref, not state: nothing in the markup reads it (the
+  // rows and spacers size themselves off `--wheel-row` in CSS) — only the scroll
+  // math does. Keeping it out of state avoids a re-render per measurement.
+  const rowRef = useRef(FALLBACK_ROW);
+  // Mirrors `focused` for callbacks that must not be rebuilt when it changes.
+  const focusedRef = useRef(initialIndex);
   useEffect(() => {
+    focusedRef.current = focused;
+  }, [focused]);
+
+  /** Snap straight to a row with no animation (mount, breakpoint change). */
+  const jumpTo = useCallback((i: number) => {
     const el = scrollerRef.current;
     if (!el) return;
-    el.scrollTop = initialIndex * ITEM_HEIGHT;
+    const previous = el.style.scrollBehavior;
+    el.style.scrollBehavior = "auto";
+    el.scrollTop = i * rowRef.current;
+    el.style.scrollBehavior = previous;
+  }, []);
+
+  // Track the live row height — it changes at the width breakpoints that restyle
+  // `--wheel-row`, and every scroll calculation below depends on it. When it does
+  // change, the old scrollTop points at the wrong row, so re-center the focused
+  // one (not `initialIndex` — the player's own choice must survive a resize).
+  useLayoutEffect(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const sync = () => {
+      const px = Number.parseFloat(getComputedStyle(el).getPropertyValue("--wheel-row"));
+      if (!Number.isFinite(px) || px <= 0 || px === rowRef.current) return;
+      rowRef.current = px;
+      jumpTo(focusedRef.current);
+    };
+    sync();
+    const observer = new ResizeObserver(sync);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [jumpTo]);
+
+  // Caller handed the wheel a different starting row. Adjusting state during
+  // render (React's documented pattern) instead of in an effect, which would
+  // paint the stale row first and cascade a second render.
+  const [seenInitial, setSeenInitial] = useState(initialIndex);
+  if (seenInitial !== initialIndex) {
+    setSeenInitial(initialIndex);
     setFocused(initialIndex);
-  }, [initialIndex]);
+  }
+
+  // Put the scroller on that row.
+  useLayoutEffect(() => {
+    jumpTo(initialIndex);
+  }, [initialIndex, jumpTo]);
 
   // Clean up the pending scroll frame on unmount.
   useEffect(
@@ -64,7 +117,7 @@ export function WheelPicker({
       rafRef.current = null;
       const el = scrollerRef.current;
       if (!el) return;
-      const i = Math.round(el.scrollTop / ITEM_HEIGHT);
+      const i = Math.round(el.scrollTop / rowRef.current);
       setFocused(Math.max(0, Math.min(items.length - 1, i)));
     });
   }, [items.length]);
@@ -76,7 +129,7 @@ export function WheelPicker({
     // the scroller's `scroll-smooth` class animates it when the browser can, and
     // its `motion-reduce:scroll-auto` respects reduced-motion. (Both native
     // smooth scrolling and rAF are no-ops while a tab is backgrounded.)
-    el.scrollTop = i * ITEM_HEIGHT;
+    el.scrollTop = i * rowRef.current;
   }, []);
 
   const confirm = useCallback(
@@ -93,6 +146,39 @@ export function WheelPicker({
     [items, onConfirm],
   );
 
+  /**
+   * Tap-vs-drag. A row's click handler must not fire when the player was really
+   * flicking the wheel — otherwise `centerOn` yanks `scrollTop` back mid-gesture
+   * and the list appears to fight them. A gesture counts as a drag if the pointer
+   * travelled, the wheel scrolled under it, or the browser claimed the gesture
+   * for scrolling (pointercancel — the usual signal on touch).
+   */
+  const gestureRef = useRef({ y: 0, top: 0, down: false, dragged: false });
+
+  const onPointerDown = (e: React.PointerEvent) => {
+    gestureRef.current = {
+      y: e.clientY,
+      top: scrollerRef.current?.scrollTop ?? 0,
+      down: true,
+      dragged: false,
+    };
+  };
+  const onPointerMove = (e: React.PointerEvent) => {
+    const g = gestureRef.current;
+    if (g.down && Math.abs(e.clientY - g.y) > TAP_SLOP) g.dragged = true;
+  };
+  const endGesture = (dragged: boolean) => {
+    const g = gestureRef.current;
+    g.down = false;
+    if (dragged) g.dragged = true;
+  };
+
+  const wasDrag = () => {
+    const g = gestureRef.current;
+    const moved = Math.abs((scrollerRef.current?.scrollTop ?? 0) - g.top) > SCROLL_SLOP;
+    return g.dragged || moved;
+  };
+
   const onKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "ArrowDown") {
       e.preventDefault();
@@ -107,7 +193,7 @@ export function WheelPicker({
   };
 
   return (
-    <div className="relative w-full max-w-md">
+    <div className="relative h-full w-full">
       <div
         ref={scrollerRef}
         role="listbox"
@@ -116,10 +202,15 @@ export function WheelPicker({
         tabIndex={0}
         onScroll={onScroll}
         onKeyDown={onKeyDown}
-        className="no-scrollbar relative w-full snap-y snap-mandatory scroll-smooth overflow-y-auto outline-none focus-visible:ring-2 focus-visible:ring-poke-500/40 motion-reduce:scroll-auto"
-        style={{ height: `${(2 * PAD_ROWS + 1) * ITEM_HEIGHT}px` }}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={() => endGesture(false)}
+        onPointerCancel={() => endGesture(true)}
+        className="wheel-scroller no-scrollbar relative h-full w-full touch-pan-y snap-y snap-mandatory scroll-smooth overflow-y-auto overscroll-contain outline-none focus-visible:ring-2 focus-visible:ring-poke-500/40 motion-reduce:scroll-auto"
       >
-        <div aria-hidden style={{ height: `${PAD_ROWS * ITEM_HEIGHT}px` }} />
+        {/* Half the scroller minus half a row, so item 0 can sit dead center —
+            this is what makes `scrollTop === index * row` hold. */}
+        <div aria-hidden className="h-[calc(50%-var(--wheel-row)/2)]" />
         {items.map((item, i) => {
           const dist = Math.abs(i - focused);
           const isFocused = i === focused;
@@ -132,11 +223,14 @@ export function WheelPicker({
               role="option"
               aria-selected={isFocused}
               aria-disabled={item.locked || undefined}
-              onClick={() => (isFocused ? confirm(i) : centerOn(i))}
-              className={`flex cursor-pointer select-none snap-center snap-always items-center justify-center ${
+              onClick={() => {
+                if (wasDrag()) return;
+                if (isFocused) confirm(i);
+                else centerOn(i);
+              }}
+              className={`flex h-[var(--wheel-row)] cursor-pointer select-none snap-center snap-always items-center justify-center ${
                 shakeIndex === i ? "wheel-shake" : ""
               }`}
-              style={{ height: `${ITEM_HEIGHT}px` }}
             >
               <div
                 className="wheel-label flex flex-col items-center gap-0.5"
@@ -145,7 +239,7 @@ export function WheelPicker({
                 <span className="flex items-center gap-2">
                   {item.locked && <Lock className="h-4 w-4 shrink-0 text-zinc-500" />}
                   <span
-                    className={`whitespace-nowrap text-2xl font-black tracking-tight ${
+                    className={`whitespace-nowrap text-2xl font-black tracking-tight md:text-3xl ${
                       item.locked ? "text-zinc-500" : isFocused ? "text-zinc-50" : "text-zinc-300"
                     }`}
                   >
@@ -153,20 +247,21 @@ export function WheelPicker({
                   </span>
                 </span>
                 {item.sublabel && isFocused && (
-                  <span className="whitespace-nowrap text-xs text-zinc-400">{item.sublabel}</span>
+                  <span className="whitespace-nowrap text-xs text-zinc-400 md:text-sm">
+                    {item.sublabel}
+                  </span>
                 )}
               </div>
             </div>
           );
         })}
-        <div aria-hidden style={{ height: `${PAD_ROWS * ITEM_HEIGHT}px` }} />
+        <div aria-hidden className="h-[calc(50%-var(--wheel-row)/2)]" />
       </div>
 
       {/* Focus window — marks where the centered (selectable) item sits. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 rounded-xl border-y border-poke-500/30"
-        style={{ height: `${ITEM_HEIGHT}px` }}
+        className="pointer-events-none absolute inset-x-0 top-1/2 h-[var(--wheel-row)] -translate-y-1/2 rounded-xl border-y border-poke-500/30"
       />
     </div>
   );
