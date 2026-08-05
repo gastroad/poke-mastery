@@ -19,7 +19,7 @@ import { writeFile, mkdir, access, readFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 import { normalizeKoreanName } from "../src/domain/text/normalizeKoreanName";
-import type { Pokemon, PokemonType } from "../src/domain/pokemon/types";
+import type { GenderDiffView, Pokemon, PokemonType } from "../src/domain/pokemon/types";
 import { SPRITE_META, type SpriteVariant } from "../src/shared/sprites";
 
 /** Highest national dex number to sync (gen 9, including DLC). */
@@ -92,10 +92,22 @@ const PICKERS: Record<SpriteVariant, (s: Sprites) => string | null | undefined> 
 /** The four sprites the gender quiz compares. */
 const GENDER_VARIANTS: SpriteVariant[] = ["pixel", "pixel-back", "pixel-female", "pixel-back-female"];
 
-async function fetchJson<T>(url: string): Promise<T> {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`GET ${url} → ${res.status}`);
-  return res.json() as Promise<T>;
+/**
+ * Retries, because a single dropped request silently costs the dex a species —
+ * one flaky call used to leave a hole in pokemon.json that nothing complained
+ * about.
+ */
+async function fetchJson<T>(url: string, attempts = 3): Promise<T> {
+  for (let attempt = 1; ; attempt++) {
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`GET ${url} → ${res.status}`);
+      return (await res.json()) as T;
+    } catch (err) {
+      if (attempt >= attempts) throw err;
+      await new Promise((r) => setTimeout(r, 400 * attempt));
+    }
+  }
 }
 
 /** Small concurrency-limited map that preserves input order. */
@@ -165,23 +177,56 @@ async function spriteBuffer(variant: SpriteVariant, id: number): Promise<Buffer 
   }
 }
 
-/** How many pixels differ between two sprites of the same size. */
-async function differingPixels(a: Buffer | null, b: Buffer | null): Promise<number | null> {
+/** Smallest square crop the reveal screen will zoom to, in sprite pixels. */
+const MIN_DIFF_BOX = 26;
+/** Breathing room around the differing pixels so the crop keeps some context. */
+const DIFF_BOX_PADDING = 6;
+
+
+
+/**
+ * Compare two sprites of the same size: how many pixels differ, and the square
+ * region that contains them. The reveal screen uses the region twice — to light
+ * that part of the full-size sprite, and to zoom into it.
+ */
+async function compareSprites(a: Buffer | null, b: Buffer | null): Promise<GenderDiffView | null> {
   if (!a || !b) return null;
   const [x, y] = await Promise.all([
     sharp(a).ensureAlpha().raw().toBuffer({ resolveWithObject: true }),
     sharp(b).ensureAlpha().raw().toBuffer({ resolveWithObject: true }),
   ]);
   if (x.data.length !== y.data.length) return null;
-  let differing = 0;
+
+  const width = x.info.width;
+  const height = x.info.height;
+  let pixels = 0;
+  let minX = width, minY = height, maxX = -1, maxY = -1;
   for (let i = 0; i < x.data.length; i += 4) {
     const colour =
       Math.abs(x.data[i] - y.data[i]) +
       Math.abs(x.data[i + 1] - y.data[i + 1]) +
       Math.abs(x.data[i + 2] - y.data[i + 2]);
-    if (colour > 25 || Math.abs(x.data[i + 3] - y.data[i + 3]) > 40) differing++;
+    if (colour <= 25 && Math.abs(x.data[i + 3] - y.data[i + 3]) <= 40) continue;
+    pixels++;
+    const p = i / 4;
+    const px = p % width;
+    const py = (p - px) / width;
+    if (px < minX) minX = px;
+    if (px > maxX) maxX = px;
+    if (py < minY) minY = py;
+    if (py > maxY) maxY = py;
   }
-  return differing;
+  if (pixels === 0) return { pixels: 0, box: { x: 0, y: 0, size: width } };
+
+  // Square, padded, and clamped inside the sprite so the crop is always valid.
+  const limit = Math.min(width, height);
+  const size = Math.min(
+    limit,
+    Math.max(MIN_DIFF_BOX, Math.max(maxX - minX, maxY - minY) + 1 + DIFF_BOX_PADDING * 2),
+  );
+  const centre = (lo: number, hi: number, max: number) =>
+    Math.max(0, Math.min(max - size, Math.round((lo + hi) / 2 - size / 2)));
+  return { pixels, box: { x: centre(minX, maxX, width), y: centre(minY, maxY, height), size } };
 }
 
 /**
@@ -195,9 +240,9 @@ async function measureGenderDiff(id: number): Promise<Pokemon["genderDiff"]> {
     spriteBuffer("pixel-back", id),
     spriteBuffer("pixel-back-female", id),
   ]);
-  const front = await differingPixels(maleFront, femaleFront);
+  const front = await compareSprites(maleFront, femaleFront);
   if (front === null) return undefined;
-  return { front, back: await differingPixels(maleBack, femaleBack) };
+  return { front, back: await compareSprites(maleBack, femaleBack) };
 }
 
 async function buildPokemon(id: number): Promise<Pokemon | null> {
@@ -275,7 +320,7 @@ async function main(): Promise<void> {
   console.log(`✓ public/sprites/{${Object.values(SPRITE_META).map((m) => m.dir).join(",")}}/`);
 
   const gendered = pokemon.filter((p) => p.genderDiff);
-  const visible = gendered.filter((p) => Math.max(p.genderDiff!.front, p.genderDiff!.back ?? 0) >= 5);
+  const visible = gendered.filter((p) => Math.max(p.genderDiff!.front.pixels, p.genderDiff!.back?.pixels ?? 0) >= 5);
   console.log(`✓ gender differences measured on ${gendered.length} species (${visible.length} differ by 5+ px)`);
 
   const noKorean = pokemon.filter((p) => p.nameKo === p.nameEn);

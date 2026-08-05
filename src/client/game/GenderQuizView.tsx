@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useMemo } from "react";
 import { INITIAL_LIVES, useSessionStore } from "@/client/stores/sessionStore";
 import { GENDER_ANSWER } from "@/domain/challenge/generateGenderQuestions";
+import type { GenderDiffView } from "@/domain/pokemon/types";
 import { spritePath } from "@/shared/sprites";
 import { POKEMON } from "./pokemonDataset";
 
@@ -92,16 +93,22 @@ export function GenderQuizView() {
           >
             {lastResult === "correct" ? "정답!" : `아쉬워요 — ${question.answer}`}
           </p>
-          {/* The learning moment: both genders side by side. */}
-          <div className="flex items-stretch justify-center gap-2 rounded-2xl bg-zinc-900 py-4">
-            <Sprite id={mon.id} gender="male" back={false} alt="수컷" label="수컷" big />
-            <Sprite id={mon.id} gender="female" back={false} alt="암컷" label="암컷" big />
-          </div>
+          {/* The learning moment: both genders side by side, plus a zoom on the
+              part that actually differs — often a few pixels on a face or tail,
+              which is impossible to spot at sprite size. */}
+          <DiffRow
+            id={mon.id}
+            back={false}
+            view={mon.genderDiff?.front}
+            caption="앞모습에서 다른 곳"
+          />
           {hasBack && (
-            <div className="flex items-stretch justify-center gap-2 rounded-2xl bg-zinc-900 py-4">
-              <Sprite id={mon.id} gender="male" back alt="수컷 뒷모습" label="수컷 뒤" big />
-              <Sprite id={mon.id} gender="female" back alt="암컷 뒷모습" label="암컷 뒤" big />
-            </div>
+            <DiffRow
+              id={mon.id}
+              back
+              view={mon.genderDiff?.back ?? undefined}
+              caption="뒷모습에서 다른 곳"
+            />
           )}
           <button
             type="button"
@@ -134,6 +141,152 @@ export function GenderQuizView() {
   );
 }
 
+/**
+ * One view (front or back) at reveal time: both genders full-size, and — when
+ * the difference is localized enough to be worth pointing at — the same crop of
+ * both, blown up side by side.
+ */
+function DiffRow({
+  id,
+  back,
+  view,
+  caption,
+}: {
+  id: number;
+  back: boolean;
+  view?: GenderDiffView;
+  caption: string;
+}) {
+  // A difference spanning most of the sprite (a whole-body recolour like
+  // 히포포타스) is already obvious; zooming it in would just show the same thing.
+  const worthZooming = view !== undefined && view.pixels > 0 && view.box.size <= 56;
+
+  return (
+    <div className="flex flex-col gap-2 rounded-2xl bg-zinc-900 py-4">
+      <div className="flex items-stretch justify-center gap-2">
+        <Sprite
+          id={id}
+          gender="male"
+          back={back}
+          alt="수컷"
+          label="수컷"
+          big
+          spot={worthZooming ? view.box : undefined}
+        />
+        <Sprite
+          id={id}
+          gender="female"
+          back={back}
+          alt="암컷"
+          label="암컷"
+          big
+          spot={worthZooming ? view.box : undefined}
+        />
+      </div>
+      {worthZooming && (
+        <>
+          <p className="text-center text-xs font-bold text-poke-400">{caption}</p>
+          <div className="flex justify-center">
+            <BlinkZoom id={id} back={back} box={view.box} />
+          </div>
+          <p className="text-center text-[11px] text-zinc-500">
+            <span className="font-bold text-sky-400">수컷</span>
+            {" ⇄ "}
+            <span className="font-bold text-pink-400">암컷</span> · 깜빡이는 곳이 다릅니다
+          </p>
+        </>
+      )}
+    </div>
+  );
+}
+
+const ZOOM_WINDOW = 132;
+
+/** One magnified crop. Pure CSS: the sprite is scaled up inside a fixed window
+    and offset so the requested box lands in view. */
+function ZoomLayer({
+  id,
+  gender,
+  back,
+  box,
+  className = "",
+}: {
+  id: number;
+  gender: "male" | "female";
+  back: boolean;
+  box: { x: number; y: number; size: number };
+  className?: string;
+}) {
+  const scale = ZOOM_WINDOW / box.size;
+  return (
+    <Image
+      src={spritePath(id, spriteVariant(gender, back))}
+      alt={gender === "male" ? "수컷" : "암컷"}
+      width={96}
+      height={96}
+      unoptimized
+      className={`absolute max-w-none [image-rendering:pixelated] ${className}`}
+      style={{
+        width: 96 * scale,
+        height: 96 * scale,
+        left: -box.x * scale,
+        top: -box.y * scale,
+      }}
+    />
+  );
+}
+
+/**
+ * The differing region, magnified, with the two genders swapping in place.
+ *
+ * Zooming alone isn't enough — a 7px difference stays a 7px difference, just
+ * bigger — so the two crops alternate on a timer. Everything identical sits
+ * perfectly still while the difference flickers, which is far easier to notice
+ * than any static marker could make it. The frame colour tracks which gender is
+ * currently up, so the flicker also teaches which one is which.
+ */
+function BlinkZoom({
+  id,
+  back,
+  box,
+}: {
+  id: number;
+  back: boolean;
+  box: { x: number; y: number; size: number };
+}) {
+  const frame = "relative overflow-hidden rounded-xl border-2";
+  const size = { width: ZOOM_WINDOW, height: ZOOM_WINDOW };
+  return (
+    <>
+      <div className={`gender-blink-stack gender-blink-frame ${frame}`} style={size}>
+        <ZoomLayer id={id} gender="male" back={back} box={box} className="gender-blink-male" />
+        <ZoomLayer id={id} gender="female" back={back} box={box} className="gender-blink-female" />
+      </div>
+      {/* Reduced motion can't rely on the flicker, so it gets both at once. */}
+      <div className="gender-blink-pair gap-2">
+        {(["male", "female"] as const).map((gender) => (
+          <figure key={gender} className="flex flex-col items-center gap-1">
+            <div
+              className={`${frame} ${gender === "male" ? "border-sky-400" : "border-pink-400"}`}
+              style={size}
+            >
+              <ZoomLayer id={id} gender={gender} back={back} box={box} />
+            </div>
+            <figcaption className="text-xs text-zinc-500">
+              {gender === "male" ? "수컷" : "암컷"}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </>
+  );
+}
+
+function spriteVariant(gender: "male" | "female", back: boolean) {
+  if (back) return gender === "female" ? "pixel-back-female" : "pixel-back";
+  return gender === "female" ? "pixel-female" : "pixel";
+}
+
 function Sprite({
   id,
   gender,
@@ -141,6 +294,7 @@ function Sprite({
   alt,
   label,
   big = false,
+  spot,
 }: {
   id: number;
   gender: "male" | "female";
@@ -148,24 +302,46 @@ function Sprite({
   alt: string;
   label: string;
   big?: boolean;
+  /** When given, dim the sprite and light only this region of it. */
+  spot?: { x: number; y: number; size: number };
 }) {
-  const variant = back
-    ? gender === "female"
-      ? "pixel-back-female"
-      : "pixel-back"
-    : gender === "female"
-      ? "pixel-female"
-      : "pixel";
+  const size = big ? "h-28 w-28 sm:h-36 sm:w-36" : "h-32 w-32 sm:h-44 sm:w-44";
+  const src = spritePath(id, spriteVariant(gender, back));
+  const pct = (n: number) => `${(n / 96) * 100}%`;
+  const aperture = spot
+    ? ({
+        "--spot-x": pct(spot.x + spot.size / 2),
+        "--spot-y": pct(spot.y + spot.size / 2),
+        "--spot-r": pct(spot.size * 0.55),
+      } as React.CSSProperties)
+    : undefined;
+
   return (
     <figure className="flex flex-col items-center gap-1">
-      <Image
-        src={spritePath(id, variant)}
-        alt={alt}
-        width={96}
-        height={96}
-        unoptimized
-        className={`[image-rendering:pixelated] ${big ? "h-28 w-28 sm:h-36 sm:w-36" : "h-32 w-32 sm:h-44 sm:w-44"}`}
-      />
+      <div className={`relative ${size}`}>
+        <Image
+          src={src}
+          alt={alt}
+          width={96}
+          height={96}
+          unoptimized
+          className={`${size} [image-rendering:pixelated] ${spot ? "gender-spot-dim" : ""}`}
+        />
+        {/* The same sprite again at full strength, showing only through the
+            aperture — that contrast is the spotlight. */}
+        {spot && (
+          <Image
+            src={src}
+            alt=""
+            aria-hidden
+            width={96}
+            height={96}
+            unoptimized
+            className={`gender-spot absolute inset-0 ${size} [image-rendering:pixelated]`}
+            style={aperture}
+          />
+        )}
+      </div>
       <figcaption className="text-xs text-zinc-500">{label}</figcaption>
     </figure>
   );

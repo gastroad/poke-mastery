@@ -22,7 +22,8 @@ export const MIN_GENDER_DIFF_PX = 5;
 export function genderQuizPool(dataset: Dataset): Pokemon[] {
   return dataset.filter((p) => {
     const diff = p.genderDiff;
-    return diff !== undefined && Math.max(diff.front, diff.back ?? 0) >= MIN_GENDER_DIFF_PX;
+    if (!diff) return false;
+    return Math.max(diff.front.pixels, diff.back?.pixels ?? 0) >= MIN_GENDER_DIFF_PX;
   });
 }
 

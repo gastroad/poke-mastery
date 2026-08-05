@@ -8,6 +8,9 @@ import {
 } from "./generateGenderQuestions";
 import type { ChallengeRule } from "./types";
 
+/** A view with `n` differing pixels; the crop box is irrelevant to these tests. */
+const view = (n: number) => ({ pixels: n, box: { x: 0, y: 0, size: 26 } });
+
 const mon = (id: number, genderDiff?: Pokemon["genderDiff"]): Pokemon => ({
   id,
   nameKo: `몬${id}`,
@@ -19,10 +22,10 @@ const mon = (id: number, genderDiff?: Pokemon["genderDiff"]): Pokemon => ({
 });
 
 const dataset: Pokemon[] = [
-  ...Array.from({ length: 20 }, (_, i) => mon(i + 1, { front: 40, back: 30 })),
-  mon(101, { front: 1, back: null }), // 아차모-style: a single pixel
-  mon(102, { front: 4, back: 2 }), // 파치리스-style: below the floor
-  mon(103, { front: 0, back: 60 }), // 브이젤-style: only visible from behind
+  ...Array.from({ length: 20 }, (_, i) => mon(i + 1, { front: view(40), back: view(30) })),
+  mon(101, { front: view(1), back: null }), // 아차모-style: a single pixel
+  mon(102, { front: view(4), back: view(2) }), // 파치리스-style: below the floor
+  mon(103, { front: view(0), back: view(60) }), // 브이젤-style: only visible from behind
   mon(200), // no gender difference at all
 ];
 
@@ -42,8 +45,8 @@ describe("genderQuizPool", () => {
   });
 
   it("uses the documented floor", () => {
-    const justUnder = [mon(1, { front: MIN_GENDER_DIFF_PX - 1, back: null })];
-    const justOver = [mon(1, { front: MIN_GENDER_DIFF_PX, back: null })];
+    const justUnder = [mon(1, { front: view(MIN_GENDER_DIFF_PX - 1), back: null })];
+    const justOver = [mon(1, { front: view(MIN_GENDER_DIFF_PX), back: null })];
     expect(genderQuizPool(justUnder)).toHaveLength(0);
     expect(genderQuizPool(justOver)).toHaveLength(1);
   });
@@ -93,7 +96,7 @@ describe("generateGenderQuestions", () => {
   });
 
   it("is shorter than requested when the pool runs out", () => {
-    const tiny = [mon(1, { front: 40, back: null }), mon(2, { front: 40, back: null })];
+    const tiny = [mon(1, { front: view(40), back: null }), mon(2, { front: view(40), back: null })];
     expect(generateGenderQuestions(rule, tiny, 1)).toHaveLength(2);
   });
 });

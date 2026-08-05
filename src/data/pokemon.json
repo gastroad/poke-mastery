@@ -38,8 +38,22 @@
       "이상해꽃"
     ],
     "genderDiff": {
-      "front": 28,
-      "back": 37
+      "front": {
+        "pixels": 28,
+        "box": {
+          "x": 33,
+          "y": 2,
+          "size": 26
+        }
+      },
+      "back": {
+        "pixels": 37,
+        "box": {
+          "x": 31,
+          "y": 8,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -152,8 +166,22 @@
       "버터플"
     ],
     "genderDiff": {
-      "front": 32,
-      "back": 56
+      "front": {
+        "pixels": 32,
+        "box": {
+          "x": 30,
+          "y": 44,
+          "size": 35
+        }
+      },
+      "back": {
+        "pixels": 56,
+        "box": {
+          "x": 27,
+          "y": 43,
+          "size": 33
+        }
+      }
     }
   },
   {
@@ -246,8 +274,22 @@
       "꼬렛"
     ],
     "genderDiff": {
-      "front": 8,
-      "back": 11
+      "front": {
+        "pixels": 8,
+        "box": {
+          "x": 37,
+          "y": 36,
+          "size": 26
+        }
+      },
+      "back": {
+        "pixels": 11,
+        "box": {
+          "x": 54,
+          "y": 33,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -262,8 +304,22 @@
       "레트라"
     ],
     "genderDiff": {
-      "front": 106,
-      "back": 39
+      "front": {
+        "pixels": 106,
+        "box": {
+          "x": 13,
+          "y": 22,
+          "size": 48
+        }
+      },
+      "back": {
+        "pixels": 39,
+        "box": {
+          "x": 46,
+          "y": 26,
+          "size": 29
+        }
+      }
     }
   },
   {
@@ -328,8 +384,22 @@
       "피카츄"
     ],
     "genderDiff": {
-      "front": 74,
-      "back": 55
+      "front": {
+        "pixels": 74,
+        "box": {
+          "x": 46,
+          "y": 23,
+          "size": 31
+        }
+      },
+      "back": {
+        "pixels": 55,
+        "box": {
+          "x": 19,
+          "y": 28,
+          "size": 28
+        }
+      }
     }
   },
   {
@@ -344,8 +414,22 @@
       "라이츄"
     ],
     "genderDiff": {
-      "front": 30,
-      "back": 31
+      "front": {
+        "pixels": 30,
+        "box": {
+          "x": 0,
+          "y": 18,
+          "size": 42
+        }
+      },
+      "back": {
+        "pixels": 31,
+        "box": {
+          "x": 52,
+          "y": 24,
+          "size": 44
+        }
+      }
     }
   },
   {
@@ -541,8 +625,22 @@
       "주뱃"
     ],
     "genderDiff": {
-      "front": 8,
-      "back": 5
+      "front": {
+        "pixels": 8,
+        "box": {
+          "x": 20,
+          "y": 46,
+          "size": 26
+        }
+      },
+      "back": {
+        "pixels": 5,
+        "box": {
+          "x": 52,
+          "y": 39,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -558,7 +656,14 @@
       "골뱃"
     ],
     "genderDiff": {
-      "front": 10,
+      "front": {
+        "pixels": 10,
+        "box": {
+          "x": 27,
+          "y": 42,
+          "size": 30
+        }
+      },
       "back": null
     }
   },
@@ -588,8 +693,22 @@
       "냄새꼬"
     ],
     "genderDiff": {
-      "front": 63,
-      "back": 82
+      "front": {
+        "pixels": 63,
+        "box": {
+          "x": 29,
+          "y": 17,
+          "size": 36
+        }
+      },
+      "back": {
+        "pixels": 82,
+        "box": {
+          "x": 29,
+          "y": 15,
+          "size": 37
+        }
+      }
     }
   },
   {
@@ -605,8 +724,22 @@
       "라플레시아"
     ],
     "genderDiff": {
-      "front": 179,
-      "back": 282
+      "front": {
+        "pixels": 179,
+        "box": {
+          "x": 13,
+          "y": 6,
+          "size": 62
+        }
+      },
+      "back": {
+        "pixels": 282,
+        "box": {
+          "x": 19,
+          "y": 9,
+          "size": 60
+        }
+      }
     }
   },
   {
@@ -842,8 +975,22 @@
       "윤겔라"
     ],
     "genderDiff": {
-      "front": 132,
-      "back": 104
+      "front": {
+        "pixels": 132,
+        "box": {
+          "x": 18,
+          "y": 33,
+          "size": 42
+        }
+      },
+      "back": {
+        "pixels": 104,
+        "box": {
+          "x": 46,
+          "y": 42,
+          "size": 29
+        }
+      }
     }
   },
   {
@@ -858,8 +1005,22 @@
       "후딘"
     ],
     "genderDiff": {
-      "front": 398,
-      "back": 345
+      "front": {
+        "pixels": 398,
+        "box": {
+          "x": 12,
+          "y": 22,
+          "size": 67
+        }
+      },
+      "back": {
+        "pixels": 345,
+        "box": {
+          "x": 12,
+          "y": 19,
+          "size": 67
+        }
+      }
     }
   },
   {
@@ -1104,8 +1265,22 @@
       "두두"
     ],
     "genderDiff": {
-      "front": 42,
-      "back": 50
+      "front": {
+        "pixels": 42,
+        "box": {
+          "x": 34,
+          "y": 28,
+          "size": 26
+        }
+      },
+      "back": {
+        "pixels": 50,
+        "box": {
+          "x": 34,
+          "y": 21,
+          "size": 35
+        }
+      }
     }
   },
   {
@@ -1121,8 +1296,22 @@
       "두트리오"
     ],
     "genderDiff": {
-      "front": 129,
-      "back": 86
+      "front": {
+        "pixels": 129,
+        "box": {
+          "x": 27,
+          "y": 19,
+          "size": 45
+        }
+      },
+      "back": {
+        "pixels": 86,
+        "box": {
+          "x": 23,
+          "y": 16,
+          "size": 47
+        }
+      }
     }
   },
   {
@@ -1275,8 +1464,22 @@
       "슬리퍼"
     ],
     "genderDiff": {
-      "front": 164,
-      "back": 104
+      "front": {
+        "pixels": 164,
+        "box": {
+          "x": 24,
+          "y": 27,
+          "size": 38
+        }
+      },
+      "back": {
+        "pixels": 104,
+        "box": {
+          "x": 31,
+          "y": 30,
+          "size": 36
+        }
+      }
     }
   },
   {
@@ -1450,8 +1653,22 @@
       "뿔카노"
     ],
     "genderDiff": {
-      "front": 24,
-      "back": 30
+      "front": {
+        "pixels": 24,
+        "box": {
+          "x": 5,
+          "y": 44,
+          "size": 26
+        }
+      },
+      "back": {
+        "pixels": 30,
+        "box": {
+          "x": 69,
+          "y": 37,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -1467,8 +1684,22 @@
       "코뿌리"
     ],
     "genderDiff": {
-      "front": 48,
-      "back": 49
+      "front": {
+        "pixels": 48,
+        "box": {
+          "x": 10,
+          "y": 22,
+          "size": 26
+        }
+      },
+      "back": {
+        "pixels": 49,
+        "box": {
+          "x": 66,
+          "y": 20,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -1543,8 +1774,22 @@
       "콘치"
     ],
     "genderDiff": {
-      "front": 27,
-      "back": 22
+      "front": {
+        "pixels": 27,
+        "box": {
+          "x": 12,
+          "y": 27,
+          "size": 26
+        }
+      },
+      "back": {
+        "pixels": 22,
+        "box": {
+          "x": 52,
+          "y": 24,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -1559,8 +1804,22 @@
       "왕콘치"
     ],
     "genderDiff": {
-      "front": 26,
-      "back": 16
+      "front": {
+        "pixels": 26,
+        "box": {
+          "x": 10,
+          "y": 31,
+          "size": 26
+        }
+      },
+      "back": {
+        "pixels": 16,
+        "box": {
+          "x": 60,
+          "y": 12,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -1614,8 +1873,22 @@
       "스라크"
     ],
     "genderDiff": {
-      "front": 23,
-      "back": 110
+      "front": {
+        "pixels": 23,
+        "box": {
+          "x": 46,
+          "y": 33,
+          "size": 26
+        }
+      },
+      "back": {
+        "pixels": 110,
+        "box": {
+          "x": 21,
+          "y": 44,
+          "size": 28
+        }
+      }
     }
   },
   {
@@ -1691,8 +1964,22 @@
       "잉어킹"
     ],
     "genderDiff": {
-      "front": 107,
-      "back": 77
+      "front": {
+        "pixels": 107,
+        "box": {
+          "x": 18,
+          "y": 43,
+          "size": 39
+        }
+      },
+      "back": {
+        "pixels": 77,
+        "box": {
+          "x": 49,
+          "y": 41,
+          "size": 39
+        }
+      }
     }
   },
   {
@@ -1708,8 +1995,22 @@
       "갸라도스"
     ],
     "genderDiff": {
-      "front": 107,
-      "back": 74
+      "front": {
+        "pixels": 107,
+        "box": {
+          "x": 11,
+          "y": 46,
+          "size": 50
+        }
+      },
+      "back": {
+        "pixels": 74,
+        "box": {
+          "x": 54,
+          "y": 45,
+          "size": 39
+        }
+      }
     }
   },
   {
@@ -1749,8 +2050,22 @@
       "이브이"
     ],
     "genderDiff": {
-      "front": 1455,
-      "back": 793
+      "front": {
+        "pixels": 1455,
+        "box": {
+          "x": 17,
+          "y": 15,
+          "size": 62
+        }
+      },
+      "back": {
+        "pixels": 793,
+        "box": {
+          "x": 15,
+          "y": 16,
+          "size": 62
+        }
+      }
     }
   },
   {
@@ -2014,8 +2329,22 @@
       "메가니움"
     ],
     "genderDiff": {
-      "front": 88,
-      "back": 109
+      "front": {
+        "pixels": 88,
+        "box": {
+          "x": 35,
+          "y": 0,
+          "size": 36
+        }
+      },
+      "back": {
+        "pixels": 109,
+        "box": {
+          "x": 16,
+          "y": 0,
+          "size": 57
+        }
+      }
     }
   },
   {
@@ -2153,8 +2482,22 @@
       "레디바"
     ],
     "genderDiff": {
-      "front": 43,
-      "back": 13
+      "front": {
+        "pixels": 43,
+        "box": {
+          "x": 31,
+          "y": 14,
+          "size": 28
+        }
+      },
+      "back": {
+        "pixels": 13,
+        "box": {
+          "x": 36,
+          "y": 16,
+          "size": 28
+        }
+      }
     }
   },
   {
@@ -2170,8 +2513,22 @@
       "레디안"
     ],
     "genderDiff": {
-      "front": 54,
-      "back": 44
+      "front": {
+        "pixels": 54,
+        "box": {
+          "x": 27,
+          "y": 10,
+          "size": 32
+        }
+      },
+      "back": {
+        "pixels": 44,
+        "box": {
+          "x": 32,
+          "y": 12,
+          "size": 31
+        }
+      }
     }
   },
   {
@@ -2327,8 +2684,22 @@
       "네이티오"
     ],
     "genderDiff": {
-      "front": 2,
-      "back": 35
+      "front": {
+        "pixels": 2,
+        "box": {
+          "x": 41,
+          "y": 41,
+          "size": 26
+        }
+      },
+      "back": {
+        "pixels": 35,
+        "box": {
+          "x": 33,
+          "y": 40,
+          "size": 30
+        }
+      }
     }
   },
   {
@@ -2417,8 +2788,22 @@
       "꼬지모"
     ],
     "genderDiff": {
-      "front": 65,
-      "back": 25
+      "front": {
+        "pixels": 65,
+        "box": {
+          "x": 34,
+          "y": 8,
+          "size": 28
+        }
+      },
+      "back": {
+        "pixels": 25,
+        "box": {
+          "x": 32,
+          "y": 11,
+          "size": 28
+        }
+      }
     }
   },
   {
@@ -2433,8 +2818,22 @@
       "왕구리"
     ],
     "genderDiff": {
-      "front": 9,
-      "back": 11
+      "front": {
+        "pixels": 9,
+        "box": {
+          "x": 38,
+          "y": 27,
+          "size": 26
+        }
+      },
+      "back": {
+        "pixels": 11,
+        "box": {
+          "x": 39,
+          "y": 31,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -2488,8 +2887,22 @@
       "에이팜"
     ],
     "genderDiff": {
-      "front": 25,
-      "back": 37
+      "front": {
+        "pixels": 25,
+        "box": {
+          "x": 31,
+          "y": 13,
+          "size": 39
+        }
+      },
+      "back": {
+        "pixels": 37,
+        "box": {
+          "x": 31,
+          "y": 10,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -2542,8 +2955,22 @@
       "우파"
     ],
     "genderDiff": {
-      "front": 62,
-      "back": 124
+      "front": {
+        "pixels": 62,
+        "box": {
+          "x": 20,
+          "y": 16,
+          "size": 53
+        }
+      },
+      "back": {
+        "pixels": 124,
+        "box": {
+          "x": 23,
+          "y": 18,
+          "size": 50
+        }
+      }
     }
   },
   {
@@ -2559,8 +2986,22 @@
       "누오"
     ],
     "genderDiff": {
-      "front": 19,
-      "back": 51
+      "front": {
+        "pixels": 19,
+        "box": {
+          "x": 43,
+          "y": 24,
+          "size": 26
+        }
+      },
+      "back": {
+        "pixels": 51,
+        "box": {
+          "x": 19,
+          "y": 27,
+          "size": 42
+        }
+      }
     }
   },
   {
@@ -2600,8 +3041,22 @@
       "니로우"
     ],
     "genderDiff": {
-      "front": 129,
-      "back": 66
+      "front": {
+        "pixels": 129,
+        "box": {
+          "x": 22,
+          "y": 18,
+          "size": 51
+        }
+      },
+      "back": {
+        "pixels": 66,
+        "box": {
+          "x": 27,
+          "y": 17,
+          "size": 41
+        }
+      }
     }
   },
   {
@@ -2653,7 +3108,14 @@
       "마자용"
     ],
     "genderDiff": {
-      "front": 16,
+      "front": {
+        "pixels": 16,
+        "box": {
+          "x": 32,
+          "y": 26,
+          "size": 26
+        }
+      },
       "back": null
     }
   },
@@ -2670,8 +3132,22 @@
       "키링키"
     ],
     "genderDiff": {
-      "front": 38,
-      "back": 78
+      "front": {
+        "pixels": 38,
+        "box": {
+          "x": 42,
+          "y": 39,
+          "size": 26
+        }
+      },
+      "back": {
+        "pixels": 78,
+        "box": {
+          "x": 28,
+          "y": 41,
+          "size": 28
+        }
+      }
     }
   },
   {
@@ -2724,8 +3200,22 @@
       "글라이거"
     ],
     "genderDiff": {
-      "front": 48,
-      "back": 99
+      "front": {
+        "pixels": 48,
+        "box": {
+          "x": 57,
+          "y": 49,
+          "size": 26
+        }
+      },
+      "back": {
+        "pixels": 99,
+        "box": {
+          "x": 16,
+          "y": 53,
+          "size": 28
+        }
+      }
     }
   },
   {
@@ -2741,8 +3231,22 @@
       "강철톤"
     ],
     "genderDiff": {
-      "front": 20,
-      "back": 18
+      "front": {
+        "pixels": 20,
+        "box": {
+          "x": 21,
+          "y": 30,
+          "size": 26
+        }
+      },
+      "back": {
+        "pixels": 18,
+        "box": {
+          "x": 58,
+          "y": 10,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -2795,8 +3299,22 @@
       "핫삼"
     ],
     "genderDiff": {
-      "front": 62,
-      "back": 36
+      "front": {
+        "pixels": 62,
+        "box": {
+          "x": 36,
+          "y": 50,
+          "size": 28
+        }
+      },
+      "back": {
+        "pixels": 36,
+        "box": {
+          "x": 33,
+          "y": 47,
+          "size": 27
+        }
+      }
     }
   },
   {
@@ -2825,8 +3343,22 @@
       "헤라크로스"
     ],
     "genderDiff": {
-      "front": 123,
-      "back": 135
+      "front": {
+        "pixels": 123,
+        "box": {
+          "x": 24,
+          "y": 6,
+          "size": 28
+        }
+      },
+      "back": {
+        "pixels": 135,
+        "box": {
+          "x": 39,
+          "y": 5,
+          "size": 34
+        }
+      }
     }
   },
   {
@@ -2842,8 +3374,22 @@
       "포푸니"
     ],
     "genderDiff": {
-      "front": 84,
-      "back": 76
+      "front": {
+        "pixels": 84,
+        "box": {
+          "x": 50,
+          "y": 16,
+          "size": 27
+        }
+      },
+      "back": {
+        "pixels": 76,
+        "box": {
+          "x": 14,
+          "y": 13,
+          "size": 28
+        }
+      }
     }
   },
   {
@@ -2870,8 +3416,22 @@
       "링곰"
     ],
     "genderDiff": {
-      "front": 59,
-      "back": 56
+      "front": {
+        "pixels": 59,
+        "box": {
+          "x": 24,
+          "y": 14,
+          "size": 50
+        }
+      },
+      "back": {
+        "pixels": 56,
+        "box": {
+          "x": 23,
+          "y": 12,
+          "size": 51
+        }
+      }
     }
   },
   {
@@ -2925,8 +3485,22 @@
       "메꾸리"
     ],
     "genderDiff": {
-      "front": 57,
-      "back": 26
+      "front": {
+        "pixels": 57,
+        "box": {
+          "x": 22,
+          "y": 53,
+          "size": 35
+        }
+      },
+      "back": {
+        "pixels": 26,
+        "box": {
+          "x": 61,
+          "y": 45,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -2966,8 +3540,22 @@
       "대포무노"
     ],
     "genderDiff": {
-      "front": 147,
-      "back": 90
+      "front": {
+        "pixels": 147,
+        "box": {
+          "x": 16,
+          "y": 17,
+          "size": 60
+        }
+      },
+      "back": {
+        "pixels": 90,
+        "box": {
+          "x": 23,
+          "y": 17,
+          "size": 61
+        }
+      }
     }
   },
   {
@@ -3035,8 +3623,22 @@
       "헬가"
     ],
     "genderDiff": {
-      "front": 29,
-      "back": 83
+      "front": {
+        "pixels": 29,
+        "box": {
+          "x": 29,
+          "y": 11,
+          "size": 26
+        }
+      },
+      "back": {
+        "pixels": 83,
+        "box": {
+          "x": 40,
+          "y": 6,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -3076,8 +3678,22 @@
       "코리갑"
     ],
     "genderDiff": {
-      "front": 124,
-      "back": 60
+      "front": {
+        "pixels": 124,
+        "box": {
+          "x": 2,
+          "y": 27,
+          "size": 59
+        }
+      },
+      "back": {
+        "pixels": 60,
+        "box": {
+          "x": 61,
+          "y": 38,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -3363,8 +3979,22 @@
       "아차모"
     ],
     "genderDiff": {
-      "front": 0,
-      "back": 1
+      "front": {
+        "pixels": 0,
+        "box": {
+          "x": 0,
+          "y": 0,
+          "size": 96
+        }
+      },
+      "back": {
+        "pixels": 1,
+        "box": {
+          "x": 30,
+          "y": 47,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -3380,8 +4010,22 @@
       "영치코"
     ],
     "genderDiff": {
-      "front": 57,
-      "back": 77
+      "front": {
+        "pixels": 57,
+        "box": {
+          "x": 35,
+          "y": 7,
+          "size": 31
+        }
+      },
+      "back": {
+        "pixels": 77,
+        "box": {
+          "x": 28,
+          "y": 8,
+          "size": 31
+        }
+      }
     }
   },
   {
@@ -3397,8 +4041,22 @@
       "번치코"
     ],
     "genderDiff": {
-      "front": 65,
-      "back": 261
+      "front": {
+        "pixels": 65,
+        "box": {
+          "x": 26,
+          "y": 2,
+          "size": 55
+        }
+      },
+      "back": {
+        "pixels": 261,
+        "box": {
+          "x": 12,
+          "y": 5,
+          "size": 60
+        }
+      }
     }
   },
   {
@@ -3524,8 +4182,22 @@
       "뷰티플라이"
     ],
     "genderDiff": {
-      "front": 48,
-      "back": 26
+      "front": {
+        "pixels": 48,
+        "box": {
+          "x": 16,
+          "y": 23,
+          "size": 54
+        }
+      },
+      "back": {
+        "pixels": 26,
+        "box": {
+          "x": 26,
+          "y": 21,
+          "size": 29
+        }
+      }
     }
   },
   {
@@ -3553,8 +4225,22 @@
       "독케일"
     ],
     "genderDiff": {
-      "front": 119,
-      "back": 123
+      "front": {
+        "pixels": 119,
+        "box": {
+          "x": 15,
+          "y": 17,
+          "size": 37
+        }
+      },
+      "back": {
+        "pixels": 123,
+        "box": {
+          "x": 37,
+          "y": 13,
+          "size": 39
+        }
+      }
     }
   },
   {
@@ -3596,8 +4282,22 @@
       "로파파"
     ],
     "genderDiff": {
-      "front": 79,
-      "back": 97
+      "front": {
+        "pixels": 79,
+        "box": {
+          "x": 14,
+          "y": 12,
+          "size": 67
+        }
+      },
+      "back": {
+        "pixels": 97,
+        "box": {
+          "x": 12,
+          "y": 17,
+          "size": 61
+        }
+      }
     }
   },
   {
@@ -3625,8 +4325,22 @@
       "잎새코"
     ],
     "genderDiff": {
-      "front": 63,
-      "back": 72
+      "front": {
+        "pixels": 63,
+        "box": {
+          "x": 28,
+          "y": 11,
+          "size": 48
+        }
+      },
+      "back": {
+        "pixels": 72,
+        "box": {
+          "x": 17,
+          "y": 13,
+          "size": 27
+        }
+      }
     }
   },
   {
@@ -3642,8 +4356,22 @@
       "다탱구"
     ],
     "genderDiff": {
-      "front": 179,
-      "back": 105
+      "front": {
+        "pixels": 179,
+        "box": {
+          "x": 1,
+          "y": 0,
+          "size": 95
+        }
+      },
+      "back": {
+        "pixels": 105,
+        "box": {
+          "x": 3,
+          "y": 3,
+          "size": 93
+        }
+      }
     }
   },
   {
@@ -4050,8 +4778,22 @@
       "요가랑"
     ],
     "genderDiff": {
-      "front": 129,
-      "back": 139
+      "front": {
+        "pixels": 129,
+        "box": {
+          "x": 26,
+          "y": 24,
+          "size": 44
+        }
+      },
+      "back": {
+        "pixels": 139,
+        "box": {
+          "x": 25,
+          "y": 21,
+          "size": 45
+        }
+      }
     }
   },
   {
@@ -4067,8 +4809,22 @@
       "요가램"
     ],
     "genderDiff": {
-      "front": 16,
-      "back": 27
+      "front": {
+        "pixels": 16,
+        "box": {
+          "x": 35,
+          "y": 4,
+          "size": 26
+        }
+      },
+      "back": {
+        "pixels": 27,
+        "box": {
+          "x": 31,
+          "y": 7,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -4156,8 +4912,22 @@
       "로젤리아"
     ],
     "genderDiff": {
-      "front": 35,
-      "back": 8
+      "front": {
+        "pixels": 35,
+        "box": {
+          "x": 26,
+          "y": 36,
+          "size": 38
+        }
+      },
+      "back": {
+        "pixels": 8,
+        "box": {
+          "x": 19,
+          "y": 19,
+          "size": 53
+        }
+      }
     }
   },
   {
@@ -4172,8 +4942,22 @@
       "꼴깍몬"
     ],
     "genderDiff": {
-      "front": 107,
-      "back": 59
+      "front": {
+        "pixels": 107,
+        "box": {
+          "x": 30,
+          "y": 23,
+          "size": 42
+        }
+      },
+      "back": {
+        "pixels": 59,
+        "box": {
+          "x": 30,
+          "y": 21,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -4188,8 +4972,22 @@
       "꿀꺽몬"
     ],
     "genderDiff": {
-      "front": 89,
-      "back": 30
+      "front": {
+        "pixels": 89,
+        "box": {
+          "x": 13,
+          "y": 25,
+          "size": 45
+        }
+      },
+      "back": {
+        "pixels": 30,
+        "box": {
+          "x": 52,
+          "y": 32,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -4255,8 +5053,22 @@
       "둔타"
     ],
     "genderDiff": {
-      "front": 62,
-      "back": 66
+      "front": {
+        "pixels": 62,
+        "box": {
+          "x": 39,
+          "y": 25,
+          "size": 35
+        }
+      },
+      "back": {
+        "pixels": 66,
+        "box": {
+          "x": 23,
+          "y": 24,
+          "size": 42
+        }
+      }
     }
   },
   {
@@ -4272,8 +5084,22 @@
       "폭타"
     ],
     "genderDiff": {
-      "front": 117,
-      "back": 146
+      "front": {
+        "pixels": 117,
+        "box": {
+          "x": 30,
+          "y": 0,
+          "size": 46
+        }
+      },
+      "back": {
+        "pixels": 146,
+        "box": {
+          "x": 20,
+          "y": 3,
+          "size": 45
+        }
+      }
     }
   },
   {
@@ -4387,7 +5213,14 @@
       "밤선인"
     ],
     "genderDiff": {
-      "front": 64,
+      "front": {
+        "pixels": 64,
+        "box": {
+          "x": 33,
+          "y": 42,
+          "size": 37
+        }
+      },
       "back": null
     }
   },
@@ -4620,8 +5453,22 @@
       "밀로틱"
     ],
     "genderDiff": {
-      "front": 234,
-      "back": 82
+      "front": {
+        "pixels": 234,
+        "box": {
+          "x": 9,
+          "y": 37,
+          "size": 59
+        }
+      },
+      "back": {
+        "pixels": 82,
+        "box": {
+          "x": 21,
+          "y": 42,
+          "size": 32
+        }
+      }
     }
   },
   {
@@ -4857,8 +5704,22 @@
       "시라칸"
     ],
     "genderDiff": {
-      "front": 14,
-      "back": 9
+      "front": {
+        "pixels": 14,
+        "box": {
+          "x": 25,
+          "y": 53,
+          "size": 26
+        }
+      },
+      "back": {
+        "pixels": 9,
+        "box": {
+          "x": 54,
+          "y": 39,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -5198,8 +6059,22 @@
       "찌르꼬"
     ],
     "genderDiff": {
-      "front": 21,
-      "back": 5
+      "front": {
+        "pixels": 21,
+        "box": {
+          "x": 28,
+          "y": 24,
+          "size": 26
+        }
+      },
+      "back": {
+        "pixels": 5,
+        "box": {
+          "x": 38,
+          "y": 24,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -5215,8 +6090,22 @@
       "찌르버드"
     ],
     "genderDiff": {
-      "front": 14,
-      "back": 4
+      "front": {
+        "pixels": 14,
+        "box": {
+          "x": 23,
+          "y": 27,
+          "size": 36
+        }
+      },
+      "back": {
+        "pixels": 4,
+        "box": {
+          "x": 41,
+          "y": 20,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -5232,7 +6121,14 @@
       "찌르호크"
     ],
     "genderDiff": {
-      "front": 13,
+      "front": {
+        "pixels": 13,
+        "box": {
+          "x": 18,
+          "y": 18,
+          "size": 26
+        }
+      },
       "back": null
     }
   },
@@ -5248,8 +6144,22 @@
       "비버니"
     ],
     "genderDiff": {
-      "front": 14,
-      "back": 24
+      "front": {
+        "pixels": 14,
+        "box": {
+          "x": 54,
+          "y": 28,
+          "size": 26
+        }
+      },
+      "back": {
+        "pixels": 24,
+        "box": {
+          "x": 20,
+          "y": 32,
+          "size": 32
+        }
+      }
     }
   },
   {
@@ -5265,7 +6175,14 @@
       "비버통"
     ],
     "genderDiff": {
-      "front": 42,
+      "front": {
+        "pixels": 42,
+        "box": {
+          "x": 16,
+          "y": 18,
+          "size": 47
+        }
+      },
       "back": null
     }
   },
@@ -5281,8 +6198,22 @@
       "귀뚤뚜기"
     ],
     "genderDiff": {
-      "front": 90,
-      "back": 150
+      "front": {
+        "pixels": 90,
+        "box": {
+          "x": 27,
+          "y": 16,
+          "size": 42
+        }
+      },
+      "back": {
+        "pixels": 150,
+        "box": {
+          "x": 23,
+          "y": 21,
+          "size": 42
+        }
+      }
     }
   },
   {
@@ -5297,8 +6228,22 @@
       "귀뚤톡크"
     ],
     "genderDiff": {
-      "front": 116,
-      "back": 44
+      "front": {
+        "pixels": 116,
+        "box": {
+          "x": 27,
+          "y": 28,
+          "size": 37
+        }
+      },
+      "back": {
+        "pixels": 44,
+        "box": {
+          "x": 30,
+          "y": 34,
+          "size": 37
+        }
+      }
     }
   },
   {
@@ -5313,8 +6258,22 @@
       "꼬링크"
     ],
     "genderDiff": {
-      "front": 29,
-      "back": 50
+      "front": {
+        "pixels": 29,
+        "box": {
+          "x": 24,
+          "y": 24,
+          "size": 46
+        }
+      },
+      "back": {
+        "pixels": 50,
+        "box": {
+          "x": 21,
+          "y": 23,
+          "size": 49
+        }
+      }
     }
   },
   {
@@ -5329,8 +6288,22 @@
       "럭시오"
     ],
     "genderDiff": {
-      "front": 100,
-      "back": 99
+      "front": {
+        "pixels": 100,
+        "box": {
+          "x": 11,
+          "y": 18,
+          "size": 55
+        }
+      },
+      "back": {
+        "pixels": 99,
+        "box": {
+          "x": 26,
+          "y": 16,
+          "size": 61
+        }
+      }
     }
   },
   {
@@ -5345,8 +6318,22 @@
       "렌트라"
     ],
     "genderDiff": {
-      "front": 150,
-      "back": 136
+      "front": {
+        "pixels": 150,
+        "box": {
+          "x": 10,
+          "y": 9,
+          "size": 46
+        }
+      },
+      "back": {
+        "pixels": 136,
+        "box": {
+          "x": 28,
+          "y": 9,
+          "size": 68
+        }
+      }
     }
   },
   {
@@ -5375,8 +6362,22 @@
       "로즈레이드"
     ],
     "genderDiff": {
-      "front": 76,
-      "back": 185
+      "front": {
+        "pixels": 76,
+        "box": {
+          "x": 28,
+          "y": 46,
+          "size": 42
+        }
+      },
+      "back": {
+        "pixels": 185,
+        "box": {
+          "x": 24,
+          "y": 43,
+          "size": 40
+        }
+      }
     }
   },
   {
@@ -5480,7 +6481,14 @@
       "세꿀버리"
     ],
     "genderDiff": {
-      "front": 7,
+      "front": {
+        "pixels": 7,
+        "box": {
+          "x": 27,
+          "y": 40,
+          "size": 26
+        }
+      },
       "back": null
     }
   },
@@ -5509,7 +6517,14 @@
       "파치리스"
     ],
     "genderDiff": {
-      "front": 4,
+      "front": {
+        "pixels": 4,
+        "box": {
+          "x": 22,
+          "y": 34,
+          "size": 26
+        }
+      },
       "back": null
     }
   },
@@ -5525,8 +6540,22 @@
       "브이젤"
     ],
     "genderDiff": {
-      "front": 0,
-      "back": 72
+      "front": {
+        "pixels": 0,
+        "box": {
+          "x": 0,
+          "y": 0,
+          "size": 96
+        }
+      },
+      "back": {
+        "pixels": 72,
+        "box": {
+          "x": 39,
+          "y": 42,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -5541,8 +6570,22 @@
       "플로젤"
     ],
     "genderDiff": {
-      "front": 0,
-      "back": 137
+      "front": {
+        "pixels": 0,
+        "box": {
+          "x": 0,
+          "y": 0,
+          "size": 96
+        }
+      },
+      "back": {
+        "pixels": 137,
+        "box": {
+          "x": 29,
+          "y": 24,
+          "size": 46
+        }
+      }
     }
   },
   {
@@ -5606,8 +6649,22 @@
       "겟핸보숭"
     ],
     "genderDiff": {
-      "front": 47,
-      "back": 61
+      "front": {
+        "pixels": 47,
+        "box": {
+          "x": 17,
+          "y": 23,
+          "size": 50
+        }
+      },
+      "back": {
+        "pixels": 61,
+        "box": {
+          "x": 38,
+          "y": 17,
+          "size": 28
+        }
+      }
     }
   },
   {
@@ -5849,8 +6906,22 @@
       "딥상어동"
     ],
     "genderDiff": {
-      "front": 7,
-      "back": 14
+      "front": {
+        "pixels": 7,
+        "box": {
+          "x": 40,
+          "y": 14,
+          "size": 26
+        }
+      },
+      "back": {
+        "pixels": 14,
+        "box": {
+          "x": 25,
+          "y": 18,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -5866,8 +6937,22 @@
       "한바이트"
     ],
     "genderDiff": {
-      "front": 13,
-      "back": 13
+      "front": {
+        "pixels": 13,
+        "box": {
+          "x": 47,
+          "y": 20,
+          "size": 26
+        }
+      },
+      "back": {
+        "pixels": 13,
+        "box": {
+          "x": 19,
+          "y": 27,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -5883,8 +6968,22 @@
       "한카리아스"
     ],
     "genderDiff": {
-      "front": 1981,
-      "back": 17
+      "front": {
+        "pixels": 1981,
+        "box": {
+          "x": 2,
+          "y": 4,
+          "size": 88
+        }
+      },
+      "back": {
+        "pixels": 17,
+        "box": {
+          "x": 12,
+          "y": 30,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -5936,8 +7035,22 @@
       "히포포타스"
     ],
     "genderDiff": {
-      "front": 1070,
-      "back": 1131
+      "front": {
+        "pixels": 1070,
+        "box": {
+          "x": 12,
+          "y": 11,
+          "size": 73
+        }
+      },
+      "back": {
+        "pixels": 1131,
+        "box": {
+          "x": 14,
+          "y": 14,
+          "size": 68
+        }
+      }
     }
   },
   {
@@ -5952,8 +7065,22 @@
       "하마돈"
     ],
     "genderDiff": {
-      "front": 691,
-      "back": 1108
+      "front": {
+        "pixels": 691,
+        "box": {
+          "x": 9,
+          "y": 9,
+          "size": 80
+        }
+      },
+      "back": {
+        "pixels": 1108,
+        "box": {
+          "x": 7,
+          "y": 9,
+          "size": 86
+        }
+      }
     }
   },
   {
@@ -5995,8 +7122,22 @@
       "삐딱구리"
     ],
     "genderDiff": {
-      "front": 89,
-      "back": 90
+      "front": {
+        "pixels": 89,
+        "box": {
+          "x": 36,
+          "y": 34,
+          "size": 29
+        }
+      },
+      "back": {
+        "pixels": 90,
+        "box": {
+          "x": 27,
+          "y": 32,
+          "size": 31
+        }
+      }
     }
   },
   {
@@ -6012,8 +7153,22 @@
       "독개굴"
     ],
     "genderDiff": {
-      "front": 81,
-      "back": 45
+      "front": {
+        "pixels": 81,
+        "box": {
+          "x": 22,
+          "y": 33,
+          "size": 29
+        }
+      },
+      "back": {
+        "pixels": 45,
+        "box": {
+          "x": 46,
+          "y": 33,
+          "size": 28
+        }
+      }
     }
   },
   {
@@ -6040,8 +7195,22 @@
       "형광어"
     ],
     "genderDiff": {
-      "front": 26,
-      "back": 48
+      "front": {
+        "pixels": 26,
+        "box": {
+          "x": 41,
+          "y": 34,
+          "size": 33
+        }
+      },
+      "back": {
+        "pixels": 48,
+        "box": {
+          "x": 27,
+          "y": 45,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -6056,8 +7225,22 @@
       "네오라이트"
     ],
     "genderDiff": {
-      "front": 1412,
-      "back": 74
+      "front": {
+        "pixels": 1412,
+        "box": {
+          "x": 12,
+          "y": 10,
+          "size": 73
+        }
+      },
+      "back": {
+        "pixels": 74,
+        "box": {
+          "x": 28,
+          "y": 56,
+          "size": 40
+        }
+      }
     }
   },
   {
@@ -6086,8 +7269,22 @@
       "눈쓰개"
     ],
     "genderDiff": {
-      "front": 242,
-      "back": 187
+      "front": {
+        "pixels": 242,
+        "box": {
+          "x": 26,
+          "y": 36,
+          "size": 42
+        }
+      },
+      "back": {
+        "pixels": 187,
+        "box": {
+          "x": 26,
+          "y": 38,
+          "size": 42
+        }
+      }
     }
   },
   {
@@ -6103,7 +7300,14 @@
       "눈설왕"
     ],
     "genderDiff": {
-      "front": 106,
+      "front": {
+        "pixels": 106,
+        "box": {
+          "x": 19,
+          "y": 23,
+          "size": 56
+        }
+      },
       "back": null
     }
   },
@@ -6120,8 +7324,22 @@
       "포푸니라"
     ],
     "genderDiff": {
-      "front": 51,
-      "back": 48
+      "front": {
+        "pixels": 51,
+        "box": {
+          "x": 25,
+          "y": 12,
+          "size": 54
+        }
+      },
+      "back": {
+        "pixels": 48,
+        "box": {
+          "x": 24,
+          "y": 31,
+          "size": 33
+        }
+      }
     }
   },
   {
@@ -6162,8 +7380,22 @@
       "거대코뿌리"
     ],
     "genderDiff": {
-      "front": 30,
-      "back": 14
+      "front": {
+        "pixels": 30,
+        "box": {
+          "x": 16,
+          "y": 6,
+          "size": 26
+        }
+      },
+      "back": {
+        "pixels": 14,
+        "box": {
+          "x": 62,
+          "y": 9,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -6178,8 +7410,22 @@
       "덩쿠림보"
     ],
     "genderDiff": {
-      "front": 73,
-      "back": 59
+      "front": {
+        "pixels": 73,
+        "box": {
+          "x": 4,
+          "y": 9,
+          "size": 87
+        }
+      },
+      "back": {
+        "pixels": 59,
+        "box": {
+          "x": 5,
+          "y": 9,
+          "size": 87
+        }
+      }
     }
   },
   {
@@ -6282,8 +7528,22 @@
       "맘모꾸리"
     ],
     "genderDiff": {
-      "front": 143,
-      "back": 40
+      "front": {
+        "pixels": 143,
+        "box": {
+          "x": 2,
+          "y": 19,
+          "size": 58
+        }
+      },
+      "back": {
+        "pixels": 40,
+        "box": {
+          "x": 69,
+          "y": 33,
+          "size": 26
+        }
+      }
     }
   },
   {
@@ -6876,8 +8136,22 @@
       "켄호로우"
     ],
     "genderDiff": {
-      "front": 659,
-      "back": 673
+      "front": {
+        "pixels": 659,
+        "box": {
+          "x": 9,
+          "y": 2,
+          "size": 67
+        }
+      },
+      "back": {
+        "pixels": 673,
+        "box": {
+          "x": 15,
+          "y": 2,
+          "size": 70
+        }
+      }
     }
   },
   {
@@ -7766,8 +9040,22 @@
       "탱그릴"
     ],
     "genderDiff": {
-      "front": 1683,
-      "back": 1598
+      "front": {
+        "pixels": 1683,
+        "box": {
+          "x": 10,
+          "y": 9,
+          "size": 75
+        }
+      },
+      "back": {
+        "pixels": 1598,
+        "box": {
+          "x": 7,
+          "y": 9,
+          "size": 77
+        }
+      }
     }
   },
   {
@@ -7783,8 +9071,22 @@
       "탱탱겔"
     ],
     "genderDiff": {
-      "front": 3034,
-      "back": 2963
+      "front": {
+        "pixels": 3034,
+        "box": {
+          "x": 4,
+          "y": 3,
+          "size": 90
+        }
+      },
+      "back": {
+        "pixels": 2963,
+        "box": {
+          "x": 3,
+          "y": 3,
+          "size": 90
+        }
+      }
     }
   },
   {
@@ -8730,8 +10032,22 @@
       "화염레오"
     ],
     "genderDiff": {
-      "front": 8799,
-      "back": 2799
+      "front": {
+        "pixels": 8799,
+        "box": {
+          "x": 0,
+          "y": 0,
+          "size": 96
+        }
+      },
+      "back": {
+        "pixels": 2799,
+        "box": {
+          "x": 1,
+          "y": 4,
+          "size": 89
+        }
+      }
     }
   },
   {
@@ -8855,8 +10171,22 @@
       "냐오닉스"
     ],
     "genderDiff": {
-      "front": 2068,
-      "back": 1741
+      "front": {
+        "pixels": 2068,
+        "box": {
+          "x": 13,
+          "y": 13,
+          "size": 70
+        }
+      },
+      "back": {
+        "pixels": 1741,
+        "box": {
+          "x": 12,
+          "y": 13,
+          "size": 70
+        }
+      }
     }
   },
   {
@@ -11344,8 +12674,22 @@
       "에써르"
     ],
     "genderDiff": {
-      "front": 861,
-      "back": 1010
+      "front": {
+        "pixels": 861,
+        "box": {
+          "x": 14,
+          "y": 13,
+          "size": 67
+        }
+      },
+      "back": {
+        "pixels": 1010,
+        "box": {
+          "x": 14,
+          "y": 14,
+          "size": 67
+        }
+      }
     }
   },
   {
@@ -11851,7 +13195,14 @@
       "퍼퓨돈"
     ],
     "genderDiff": {
-      "front": 1874,
+      "front": {
+        "pixels": 1874,
+        "box": {
+          "x": 15,
+          "y": 13,
+          "size": 70
+        }
+      },
       "back": null
     }
   },

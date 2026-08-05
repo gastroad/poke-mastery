@@ -159,7 +159,7 @@ describe("gradePlay — gender quiz", () => {
     generation: 1,
     types: ["normal"],
     acceptedAnswers: [`몬${i + 1}`],
-    genderDiff: { front: 40, back: 20 },
+    genderDiff: { front: { pixels: 40, box: { x: 0, y: 0, size: 26 } }, back: { pixels: 20, box: { x: 0, y: 0, size: 26 } } },
   }));
   const CHALLENGE = "all:gender";
   const GENDER_SEED = 31;

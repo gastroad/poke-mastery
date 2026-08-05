@@ -316,6 +316,108 @@ body {
   );
 }
 
+/* ── Gender quiz: showing WHAT differs between male and female ───────────────
+   Two jobs, split deliberately:
+   - the spotlight says WHERE on the body to look;
+   - the blink says WHAT changed, by alternating the two sprites in place.
+
+   The blink is the part that does the real work. Eyes are poor at spotting a
+   few static pixels but very good at spotting movement, so a difference of even
+   one pixel announces itself the moment it starts flickering — which is the
+   whole problem with this quiz, since plenty of species differ by under 10px. */
+/* Spotlight on the full-size sprite: the whole body dimmed, with the part that
+   differs left at full strength. It answers "where on this Pokémon do I even
+   look?", which the zoom below can't — inside the zoom, everything visible is
+   already the answer. Aperture position and radius come from the measured diff
+   box (--spot-*), so no extra image is needed. */
+.gender-spot-dim {
+  filter: brightness(0.4) saturate(0.65);
+}
+.gender-spot {
+  -webkit-mask-image: radial-gradient(
+    circle at var(--spot-x) var(--spot-y),
+    #000 var(--spot-r),
+    transparent calc(var(--spot-r) * 1.9)
+  );
+  mask-image: radial-gradient(
+    circle at var(--spot-x) var(--spot-y),
+    #000 var(--spot-r),
+    transparent calc(var(--spot-r) * 1.9)
+  );
+}
+
+/* The two layers swap in OPPOSITE phase. Leaving the male on underneath and
+   only toggling the female does not read as a swap: wherever the female sprite
+   is transparent the male shows through, so you see a merged silhouette rather
+   than one Pokémon at a time. Exactly one layer is visible at any moment. */
+.gender-blink-male {
+  opacity: 1;
+}
+.gender-blink-female {
+  opacity: 0;
+}
+/* The frame colour follows whichever layer is up, matching the answer buttons —
+   blue for 수컷, pink for 암컷 — so you always know which one you're looking at. */
+.gender-blink-frame {
+  border-color: #38bdf8;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .gender-blink-male {
+    animation: gender-blink-male 1.6s steps(1, end) infinite;
+  }
+  .gender-blink-female {
+    animation: gender-blink-female 1.6s steps(1, end) infinite;
+  }
+  .gender-blink-frame {
+    animation: gender-blink-frame 1.6s steps(1, end) infinite;
+  }
+}
+
+@keyframes gender-blink-male {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes gender-blink-female {
+  0%,
+  50% {
+    opacity: 0;
+  }
+  50.01%,
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes gender-blink-frame {
+  0%,
+  50% {
+    border-color: #38bdf8;
+  }
+  50.01%,
+  100% {
+    border-color: #f472b6;
+  }
+}
+
+/* Reduced motion gets the two crops side by side instead of a flicker. */
+.gender-blink-pair {
+  display: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .gender-blink-stack {
+    display: none;
+  }
+  .gender-blink-pair {
+    display: flex;
+  }
+}
+
 /* Smooth the focus scale/fade as items pass through the center. */
 .wheel-label {
   transition:
