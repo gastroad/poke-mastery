@@ -36,6 +36,19 @@ export interface Pokemon {
   types: PokemonType[];
   /** Pre-normalized set of strings accepted as correct (see normalizeKoreanName). */
   acceptedAnswers: string[];
+  /**
+   * Present only when male and female look different. The numbers are how many
+   * pixels actually differ between the two 96×96 sprites, front and back
+   * (`back: null` when there is no female back sprite).
+   *
+   * MEASURED, not taken on faith: PokéAPI's `has_gender_differences` is true for
+   * species whose difference is a single pixel (아차모's tail dot), which is not
+   * a fair question. Note the count is a weak proxy for how VISIBLE a difference
+   * is — 세꿀버리 differs by only 7px but they're a bright marking on its face,
+   * so the threshold that uses this should stay low and cut only the degenerate
+   * cases.
+   */
+  genderDiff?: { front: number; back: number | null };
   // Sprite paths are NOT stored here — they are derived from `id` via
   // shared/sprites.ts (spritePath), since /sprites/{variant}/{id}.png is pure convention.
 }

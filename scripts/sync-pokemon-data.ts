@@ -1,23 +1,45 @@
 /**
  * Dev-time sync script (NOT run during play).
  *
- * Fetches Gen 1 (151) from PokéAPI and produces:
+ * Fetches the whole national dex from PokéAPI and produces:
  *   - src/data/pokemon.json          normalized Pokemon[] (Korean names, types, acceptedAnswers)
- *   - public/sprites/{variant}/{id}.{ext}   every sprite variant in SPRITE_META
+ *   - public/sprites/{variant}/{id}.{ext}   sprite variants per SPRITE_META
+ *
+ * Sprite budget: gen 1 gets EVERY variant (the silhouette modes need the big
+ * artwork), gen 2+ gets the 96px pixel sprite only. Downloading all variants for
+ * all ~1000 species would be ~390MB of committed binaries; pixel-only keeps the
+ * later generations at ~4MB, which is all the bingo board needs.
  *
  * Sprite paths are derived from id (see shared/sprites.ts), so they are NOT stored in the JSON.
+ * Re-runs are cheap: an existing sprite file is left alone.
  *
  * Run with: npm run sync-data
  */
-import { writeFile, mkdir } from "node:fs/promises";
+import { writeFile, mkdir, access, readFile } from "node:fs/promises";
 import path from "node:path";
+import sharp from "sharp";
 import { normalizeKoreanName } from "../src/domain/text/normalizeKoreanName";
 import type { Pokemon, PokemonType } from "../src/domain/pokemon/types";
 import { SPRITE_META, type SpriteVariant } from "../src/shared/sprites";
 
-const GEN1_COUNT = 151;
+/** Highest national dex number to sync (gen 9, including DLC). */
+const MAX_DEX_ID = 1025;
+/** Generations that get the full sprite set; every other one gets `pixel` only. */
+const FULL_SPRITE_GENERATIONS = new Set([1]);
 const API = "https://pokeapi.co/api/v2";
 const CONCURRENCY = 8;
+
+const GENERATION_BY_SLUG: Record<string, number> = {
+  "generation-i": 1,
+  "generation-ii": 2,
+  "generation-iii": 3,
+  "generation-iv": 4,
+  "generation-v": 5,
+  "generation-vi": 6,
+  "generation-vii": 7,
+  "generation-viii": 8,
+  "generation-ix": 9,
+};
 
 const ROOT = process.cwd();
 const DATA_DIR = path.join(ROOT, "src", "data");
@@ -27,6 +49,8 @@ const SPRITE_ROOT = path.join(ROOT, "public", "sprites");
 interface Sprites {
   front_default: string | null;
   back_default: string | null;
+  front_female: string | null;
+  back_female: string | null;
   other?: {
     dream_world?: { front_default: string | null };
     home?: { front_default: string | null };
@@ -46,6 +70,8 @@ interface PokemonResponse {
 }
 interface SpeciesResponse {
   names: { language: { name: string }; name: string }[];
+  generation: { name: string };
+  has_gender_differences: boolean;
 }
 
 /** Where each sprite variant lives inside PokéAPI's `sprites` object. */
@@ -59,7 +85,12 @@ const PICKERS: Record<SpriteVariant, (s: Sprites) => string | null | undefined> 
   "retro-back": (s) => s.versions?.["generation-i"]?.["red-blue"]?.back_default,
   home: (s) => s.other?.home?.front_default,
   dreamworld: (s) => s.other?.dream_world?.front_default,
+  "pixel-female": (s) => s.front_female,
+  "pixel-back-female": (s) => s.back_female,
 };
+
+/** The four sprites the gender quiz compares. */
+const GENDER_VARIANTS: SpriteVariant[] = ["pixel", "pixel-back", "pixel-female", "pixel-back-female"];
 
 async function fetchJson<T>(url: string): Promise<T> {
   const res = await fetch(url);
@@ -95,27 +126,103 @@ function acceptedAnswersFor(nameKo: string): string[] {
   return [n];
 }
 
+async function exists(file: string): Promise<boolean> {
+  try {
+    await access(file);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 async function downloadSprite(url: string, variant: SpriteVariant, id: number): Promise<void> {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`${variant} sprite #${id} → ${res.status}`);
   const meta = SPRITE_META[variant];
   const dest = path.join(SPRITE_ROOT, meta.dir, `${id}.${meta.ext}`);
+  if (await exists(dest)) return; // already synced — re-runs stay cheap
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`${variant} sprite #${id} → ${res.status}`);
   await writeFile(dest, Buffer.from(await res.arrayBuffer()));
 }
 
-async function buildPokemon(id: number): Promise<Pokemon> {
-  const [p, s] = await Promise.all([
-    fetchJson<PokemonResponse>(`${API}/pokemon/${id}`),
-    fetchJson<SpeciesResponse>(`${API}/pokemon-species/${id}`),
+/**
+ * Full set for gen 1; just the board thumbnail for everything after it — plus
+ * the male/female pair for any species the gender quiz can use, whatever
+ * generation it is from.
+ */
+function variantsFor(generation: number, hasGenderDifferences: boolean): SpriteVariant[] {
+  if (FULL_SPRITE_GENERATIONS.has(generation)) return Object.keys(SPRITE_META) as SpriteVariant[];
+  return hasGenderDifferences ? GENDER_VARIANTS : ["pixel"];
+}
+
+/** Sprite file on disk, or null when that variant was never downloaded. */
+async function spriteBuffer(variant: SpriteVariant, id: number): Promise<Buffer | null> {
+  const meta = SPRITE_META[variant];
+  const file = path.join(SPRITE_ROOT, meta.dir, `${id}.${meta.ext}`);
+  try {
+    return await readFile(file);
+  } catch {
+    return null;
+  }
+}
+
+/** How many pixels differ between two sprites of the same size. */
+async function differingPixels(a: Buffer | null, b: Buffer | null): Promise<number | null> {
+  if (!a || !b) return null;
+  const [x, y] = await Promise.all([
+    sharp(a).ensureAlpha().raw().toBuffer({ resolveWithObject: true }),
+    sharp(b).ensureAlpha().raw().toBuffer({ resolveWithObject: true }),
   ]);
+  if (x.data.length !== y.data.length) return null;
+  let differing = 0;
+  for (let i = 0; i < x.data.length; i += 4) {
+    const colour =
+      Math.abs(x.data[i] - y.data[i]) +
+      Math.abs(x.data[i + 1] - y.data[i + 1]) +
+      Math.abs(x.data[i + 2] - y.data[i + 2]);
+    if (colour > 25 || Math.abs(x.data[i + 3] - y.data[i + 3]) > 40) differing++;
+  }
+  return differing;
+}
+
+/**
+ * Measure the male/female difference from the sprites we just downloaded, so the
+ * game can drop species whose "difference" is a pixel or two (see Pokemon.genderDiff).
+ */
+async function measureGenderDiff(id: number): Promise<Pokemon["genderDiff"]> {
+  const [maleFront, femaleFront, maleBack, femaleBack] = await Promise.all([
+    spriteBuffer("pixel", id),
+    spriteBuffer("pixel-female", id),
+    spriteBuffer("pixel-back", id),
+    spriteBuffer("pixel-back-female", id),
+  ]);
+  const front = await differingPixels(maleFront, femaleFront);
+  if (front === null) return undefined;
+  return { front, back: await differingPixels(maleBack, femaleBack) };
+}
+
+async function buildPokemon(id: number): Promise<Pokemon | null> {
+  let p: PokemonResponse;
+  let s: SpeciesResponse;
+  try {
+    [p, s] = await Promise.all([
+      fetchJson<PokemonResponse>(`${API}/pokemon/${id}`),
+      fetchJson<SpeciesResponse>(`${API}/pokemon-species/${id}`),
+    ]);
+  } catch {
+    return null; // gaps in the dex range are simply skipped
+  }
 
   const nameKo = s.names.find((nm) => nm.language.name === "ko")?.name ?? p.name;
+  const generation = GENERATION_BY_SLUG[s.generation.name];
+  if (!generation) {
+    console.warn(`  ⚠︎ #${id} ${nameKo}: unknown generation "${s.generation.name}", skipped`);
+    return null;
+  }
   const types = [...p.types].sort((a, b) => a.slot - b.slot).map((t) => t.type.name as PokemonType);
 
-  const variants = Object.keys(SPRITE_META) as SpriteVariant[];
   const missing = (
     await Promise.all(
-      variants.map(async (variant) => {
+      variantsFor(generation, s.has_gender_differences).map(async (variant) => {
         const url = PICKERS[variant](p.sprites);
         if (!url) return variant;
         await downloadSprite(url, variant, id);
@@ -123,15 +230,19 @@ async function buildPokemon(id: number): Promise<Pokemon> {
       }),
     )
   ).filter((v): v is SpriteVariant => v !== null);
-  if (missing.length) console.warn(`  ⚠︎ #${id} ${nameKo}: missing ${missing.join(", ")}`);
+  // A missing female sprite is expected (only ~100 species have one); warn about
+  // the rest, which would mean a real gap.
+  const unexpected = missing.filter((v) => !v.includes("female"));
+  if (unexpected.length) console.warn(`  ⚠︎ #${id} ${nameKo}: missing ${unexpected.join(", ")}`);
 
   return {
     id,
     nameKo,
     nameEn: p.name,
-    generation: 1,
+    generation,
     types,
     acceptedAnswers: acceptedAnswersFor(nameKo),
+    ...(s.has_gender_differences ? { genderDiff: await measureGenderDiff(id) } : {}),
   };
 }
 
@@ -141,14 +252,31 @@ async function main(): Promise<void> {
     await mkdir(path.join(SPRITE_ROOT, meta.dir), { recursive: true });
   }
 
-  const ids = Array.from({ length: GEN1_COUNT }, (_, i) => i + 1);
-  console.log(`Fetching ${ids.length} Gen 1 Pokémon + ${Object.keys(SPRITE_META).length} sprite variants each…`);
+  const ids = Array.from({ length: MAX_DEX_ID }, (_, i) => i + 1);
+  console.log(
+    `Fetching ${ids.length} Pokémon — every sprite variant for gen ${[...FULL_SPRITE_GENERATIONS].join("/")}, pixel only after that…`,
+  );
 
-  const pokemon = (await mapPool(ids, CONCURRENCY, buildPokemon)).sort((a, b) => a.id - b.id);
+  let done = 0;
+  const fetched = await mapPool(ids, CONCURRENCY, async (id) => {
+    const result = await buildPokemon(id);
+    if (++done % 100 === 0) console.log(`  … ${done}/${ids.length}`);
+    return result;
+  });
+  const pokemon = fetched.filter((p): p is Pokemon => p !== null).sort((a, b) => a.id - b.id);
   await writeFile(path.join(DATA_DIR, "pokemon.json"), `${JSON.stringify(pokemon, null, 2)}\n`, "utf8");
 
+  const byGen = pokemon.reduce<Record<number, number>>((acc, p) => {
+    acc[p.generation] = (acc[p.generation] ?? 0) + 1;
+    return acc;
+  }, {});
   console.log(`✓ src/data/pokemon.json (${pokemon.length} entries)`);
+  console.log(`  per generation: ${Object.entries(byGen).map(([g, n]) => `${g}세대 ${n}`).join(", ")}`);
   console.log(`✓ public/sprites/{${Object.values(SPRITE_META).map((m) => m.dir).join(",")}}/`);
+
+  const gendered = pokemon.filter((p) => p.genderDiff);
+  const visible = gendered.filter((p) => Math.max(p.genderDiff!.front, p.genderDiff!.back ?? 0) >= 5);
+  console.log(`✓ gender differences measured on ${gendered.length} species (${visible.length} differ by 5+ px)`);
 
   const noKorean = pokemon.filter((p) => p.nameKo === p.nameEn);
   if (noKorean.length) console.warn(`⚠︎ ${noKorean.length} fell back to English name:`, noKorean.map((p) => p.id));

@@ -15,7 +15,9 @@ export type SpriteVariant =
   | "retro" // original RBY front sprite — retro flair
   | "retro-back" // original RBY back sprite
   | "home" // HOME 3D-render style (static PNG, no 3D engine needed)
-  | "dreamworld"; // Dream World SVG vector art (scalable)
+  | "dreamworld" // Dream World SVG vector art (scalable)
+  | "pixel-female" // female front sprite — only for species that look different by gender
+  | "pixel-back-female"; // female back sprite (some species differ only from behind)
 
 export const SPRITE_META: Record<SpriteVariant, { dir: string; ext: string; size: number }> = {
   artwork: { dir: "artwork", ext: "png", size: 475 },
@@ -27,6 +29,8 @@ export const SPRITE_META: Record<SpriteVariant, { dir: string; ext: string; size
   "retro-back": { dir: "retro-back", ext: "png", size: 96 },
   home: { dir: "home", ext: "png", size: 512 },
   dreamworld: { dir: "dreamworld", ext: "svg", size: 400 },
+  "pixel-female": { dir: "pixel-female", ext: "png", size: 96 },
+  "pixel-back-female": { dir: "pixel-back-female", ext: "png", size: 96 },
 };
 
 /** Local /public path for a Pokémon's sprite in the given variant. */

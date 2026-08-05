@@ -36,7 +36,11 @@
     ],
     "acceptedAnswers": [
       "이상해꽃"
-    ]
+    ],
+    "genderDiff": {
+      "front": 28,
+      "back": 37
+    }
   },
   {
     "id": 4,
@@ -146,7 +150,11 @@
     ],
     "acceptedAnswers": [
       "버터플"
-    ]
+    ],
+    "genderDiff": {
+      "front": 32,
+      "back": 56
+    }
   },
   {
     "id": 13,
@@ -236,7 +244,11 @@
     ],
     "acceptedAnswers": [
       "꼬렛"
-    ]
+    ],
+    "genderDiff": {
+      "front": 8,
+      "back": 11
+    }
   },
   {
     "id": 20,
@@ -248,7 +260,11 @@
     ],
     "acceptedAnswers": [
       "레트라"
-    ]
+    ],
+    "genderDiff": {
+      "front": 106,
+      "back": 39
+    }
   },
   {
     "id": 21,
@@ -310,7 +326,11 @@
     ],
     "acceptedAnswers": [
       "피카츄"
-    ]
+    ],
+    "genderDiff": {
+      "front": 74,
+      "back": 55
+    }
   },
   {
     "id": 26,
@@ -322,7 +342,11 @@
     ],
     "acceptedAnswers": [
       "라이츄"
-    ]
+    ],
+    "genderDiff": {
+      "front": 30,
+      "back": 31
+    }
   },
   {
     "id": 27,
@@ -515,7 +539,11 @@
     ],
     "acceptedAnswers": [
       "주뱃"
-    ]
+    ],
+    "genderDiff": {
+      "front": 8,
+      "back": 5
+    }
   },
   {
     "id": 42,
@@ -528,7 +556,11 @@
     ],
     "acceptedAnswers": [
       "골뱃"
-    ]
+    ],
+    "genderDiff": {
+      "front": 10,
+      "back": null
+    }
   },
   {
     "id": 43,
@@ -554,7 +586,11 @@
     ],
     "acceptedAnswers": [
       "냄새꼬"
-    ]
+    ],
+    "genderDiff": {
+      "front": 63,
+      "back": 82
+    }
   },
   {
     "id": 45,
@@ -567,7 +603,11 @@
     ],
     "acceptedAnswers": [
       "라플레시아"
-    ]
+    ],
+    "genderDiff": {
+      "front": 179,
+      "back": 282
+    }
   },
   {
     "id": 46,
@@ -800,7 +840,11 @@
     ],
     "acceptedAnswers": [
       "윤겔라"
-    ]
+    ],
+    "genderDiff": {
+      "front": 132,
+      "back": 104
+    }
   },
   {
     "id": 65,
@@ -812,7 +856,11 @@
     ],
     "acceptedAnswers": [
       "후딘"
-    ]
+    ],
+    "genderDiff": {
+      "front": 398,
+      "back": 345
+    }
   },
   {
     "id": 66,
@@ -1054,7 +1102,11 @@
     ],
     "acceptedAnswers": [
       "두두"
-    ]
+    ],
+    "genderDiff": {
+      "front": 42,
+      "back": 50
+    }
   },
   {
     "id": 85,
@@ -1067,7 +1119,11 @@
     ],
     "acceptedAnswers": [
       "두트리오"
-    ]
+    ],
+    "genderDiff": {
+      "front": 129,
+      "back": 86
+    }
   },
   {
     "id": 86,
@@ -1217,7 +1273,11 @@
     ],
     "acceptedAnswers": [
       "슬리퍼"
-    ]
+    ],
+    "genderDiff": {
+      "front": 164,
+      "back": 104
+    }
   },
   {
     "id": 98,
@@ -1388,7 +1448,11 @@
     ],
     "acceptedAnswers": [
       "뿔카노"
-    ]
+    ],
+    "genderDiff": {
+      "front": 24,
+      "back": 30
+    }
   },
   {
     "id": 112,
@@ -1401,7 +1465,11 @@
     ],
     "acceptedAnswers": [
       "코뿌리"
-    ]
+    ],
+    "genderDiff": {
+      "front": 48,
+      "back": 49
+    }
   },
   {
     "id": 113,
@@ -1473,7 +1541,11 @@
     ],
     "acceptedAnswers": [
       "콘치"
-    ]
+    ],
+    "genderDiff": {
+      "front": 27,
+      "back": 22
+    }
   },
   {
     "id": 119,
@@ -1485,7 +1557,11 @@
     ],
     "acceptedAnswers": [
       "왕콘치"
-    ]
+    ],
+    "genderDiff": {
+      "front": 26,
+      "back": 16
+    }
   },
   {
     "id": 120,
@@ -1536,7 +1612,11 @@
     ],
     "acceptedAnswers": [
       "스라크"
-    ]
+    ],
+    "genderDiff": {
+      "front": 23,
+      "back": 110
+    }
   },
   {
     "id": 124,
@@ -1609,7 +1689,11 @@
     ],
     "acceptedAnswers": [
       "잉어킹"
-    ]
+    ],
+    "genderDiff": {
+      "front": 107,
+      "back": 77
+    }
   },
   {
     "id": 130,
@@ -1622,7 +1706,11 @@
     ],
     "acceptedAnswers": [
       "갸라도스"
-    ]
+    ],
+    "genderDiff": {
+      "front": 107,
+      "back": 74
+    }
   },
   {
     "id": 131,
@@ -1659,7 +1747,11 @@
     ],
     "acceptedAnswers": [
       "이브이"
-    ]
+    ],
+    "genderDiff": {
+      "front": 1455,
+      "back": 793
+    }
   },
   {
     "id": 134,
@@ -1884,6 +1976,11265 @@
     ],
     "acceptedAnswers": [
       "뮤"
+    ]
+  },
+  {
+    "id": 152,
+    "nameKo": "치코리타",
+    "nameEn": "chikorita",
+    "generation": 2,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "치코리타"
+    ]
+  },
+  {
+    "id": 153,
+    "nameKo": "베이리프",
+    "nameEn": "bayleef",
+    "generation": 2,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "베이리프"
+    ]
+  },
+  {
+    "id": 154,
+    "nameKo": "메가니움",
+    "nameEn": "meganium",
+    "generation": 2,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "메가니움"
+    ],
+    "genderDiff": {
+      "front": 88,
+      "back": 109
+    }
+  },
+  {
+    "id": 155,
+    "nameKo": "브케인",
+    "nameEn": "cyndaquil",
+    "generation": 2,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "브케인"
+    ]
+  },
+  {
+    "id": 156,
+    "nameKo": "마그케인",
+    "nameEn": "quilava",
+    "generation": 2,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "마그케인"
+    ]
+  },
+  {
+    "id": 157,
+    "nameKo": "블레이범",
+    "nameEn": "typhlosion",
+    "generation": 2,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "블레이범"
+    ]
+  },
+  {
+    "id": 158,
+    "nameKo": "리아코",
+    "nameEn": "totodile",
+    "generation": 2,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "리아코"
+    ]
+  },
+  {
+    "id": 159,
+    "nameKo": "엘리게이",
+    "nameEn": "croconaw",
+    "generation": 2,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "엘리게이"
+    ]
+  },
+  {
+    "id": 160,
+    "nameKo": "장크로다일",
+    "nameEn": "feraligatr",
+    "generation": 2,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "장크로다일"
+    ]
+  },
+  {
+    "id": 161,
+    "nameKo": "꼬리선",
+    "nameEn": "sentret",
+    "generation": 2,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "꼬리선"
+    ]
+  },
+  {
+    "id": 162,
+    "nameKo": "다꼬리",
+    "nameEn": "furret",
+    "generation": 2,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "다꼬리"
+    ]
+  },
+  {
+    "id": 163,
+    "nameKo": "부우부",
+    "nameEn": "hoothoot",
+    "generation": 2,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "부우부"
+    ]
+  },
+  {
+    "id": 164,
+    "nameKo": "야부엉",
+    "nameEn": "noctowl",
+    "generation": 2,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "야부엉"
+    ]
+  },
+  {
+    "id": 165,
+    "nameKo": "레디바",
+    "nameEn": "ledyba",
+    "generation": 2,
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "레디바"
+    ],
+    "genderDiff": {
+      "front": 43,
+      "back": 13
+    }
+  },
+  {
+    "id": 166,
+    "nameKo": "레디안",
+    "nameEn": "ledian",
+    "generation": 2,
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "레디안"
+    ],
+    "genderDiff": {
+      "front": 54,
+      "back": 44
+    }
+  },
+  {
+    "id": 167,
+    "nameKo": "페이검",
+    "nameEn": "spinarak",
+    "generation": 2,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "페이검"
+    ]
+  },
+  {
+    "id": 168,
+    "nameKo": "아리아도스",
+    "nameEn": "ariados",
+    "generation": 2,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "아리아도스"
+    ]
+  },
+  {
+    "id": 169,
+    "nameKo": "크로뱃",
+    "nameEn": "crobat",
+    "generation": 2,
+    "types": [
+      "poison",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "크로뱃"
+    ]
+  },
+  {
+    "id": 170,
+    "nameKo": "초라기",
+    "nameEn": "chinchou",
+    "generation": 2,
+    "types": [
+      "water",
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "초라기"
+    ]
+  },
+  {
+    "id": 171,
+    "nameKo": "랜턴",
+    "nameEn": "lanturn",
+    "generation": 2,
+    "types": [
+      "water",
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "랜턴"
+    ]
+  },
+  {
+    "id": 172,
+    "nameKo": "피츄",
+    "nameEn": "pichu",
+    "generation": 2,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "피츄"
+    ]
+  },
+  {
+    "id": 173,
+    "nameKo": "삐",
+    "nameEn": "cleffa",
+    "generation": 2,
+    "types": [
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "삐"
+    ]
+  },
+  {
+    "id": 174,
+    "nameKo": "푸푸린",
+    "nameEn": "igglybuff",
+    "generation": 2,
+    "types": [
+      "normal",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "푸푸린"
+    ]
+  },
+  {
+    "id": 175,
+    "nameKo": "토게피",
+    "nameEn": "togepi",
+    "generation": 2,
+    "types": [
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "토게피"
+    ]
+  },
+  {
+    "id": 176,
+    "nameKo": "토게틱",
+    "nameEn": "togetic",
+    "generation": 2,
+    "types": [
+      "fairy",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "토게틱"
+    ]
+  },
+  {
+    "id": 177,
+    "nameKo": "네이티",
+    "nameEn": "natu",
+    "generation": 2,
+    "types": [
+      "psychic",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "네이티"
+    ]
+  },
+  {
+    "id": 178,
+    "nameKo": "네이티오",
+    "nameEn": "xatu",
+    "generation": 2,
+    "types": [
+      "psychic",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "네이티오"
+    ],
+    "genderDiff": {
+      "front": 2,
+      "back": 35
+    }
+  },
+  {
+    "id": 179,
+    "nameKo": "메리프",
+    "nameEn": "mareep",
+    "generation": 2,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "메리프"
+    ]
+  },
+  {
+    "id": 180,
+    "nameKo": "보송송",
+    "nameEn": "flaaffy",
+    "generation": 2,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "보송송"
+    ]
+  },
+  {
+    "id": 181,
+    "nameKo": "전룡",
+    "nameEn": "ampharos",
+    "generation": 2,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "전룡"
+    ]
+  },
+  {
+    "id": 182,
+    "nameKo": "아르코",
+    "nameEn": "bellossom",
+    "generation": 2,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "아르코"
+    ]
+  },
+  {
+    "id": 183,
+    "nameKo": "마릴",
+    "nameEn": "marill",
+    "generation": 2,
+    "types": [
+      "water",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "마릴"
+    ]
+  },
+  {
+    "id": 184,
+    "nameKo": "마릴리",
+    "nameEn": "azumarill",
+    "generation": 2,
+    "types": [
+      "water",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "마릴리"
+    ]
+  },
+  {
+    "id": 185,
+    "nameKo": "꼬지모",
+    "nameEn": "sudowoodo",
+    "generation": 2,
+    "types": [
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "꼬지모"
+    ],
+    "genderDiff": {
+      "front": 65,
+      "back": 25
+    }
+  },
+  {
+    "id": 186,
+    "nameKo": "왕구리",
+    "nameEn": "politoed",
+    "generation": 2,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "왕구리"
+    ],
+    "genderDiff": {
+      "front": 9,
+      "back": 11
+    }
+  },
+  {
+    "id": 187,
+    "nameKo": "통통코",
+    "nameEn": "hoppip",
+    "generation": 2,
+    "types": [
+      "grass",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "통통코"
+    ]
+  },
+  {
+    "id": 188,
+    "nameKo": "두코",
+    "nameEn": "skiploom",
+    "generation": 2,
+    "types": [
+      "grass",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "두코"
+    ]
+  },
+  {
+    "id": 189,
+    "nameKo": "솜솜코",
+    "nameEn": "jumpluff",
+    "generation": 2,
+    "types": [
+      "grass",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "솜솜코"
+    ]
+  },
+  {
+    "id": 190,
+    "nameKo": "에이팜",
+    "nameEn": "aipom",
+    "generation": 2,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "에이팜"
+    ],
+    "genderDiff": {
+      "front": 25,
+      "back": 37
+    }
+  },
+  {
+    "id": 191,
+    "nameKo": "해너츠",
+    "nameEn": "sunkern",
+    "generation": 2,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "해너츠"
+    ]
+  },
+  {
+    "id": 192,
+    "nameKo": "해루미",
+    "nameEn": "sunflora",
+    "generation": 2,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "해루미"
+    ]
+  },
+  {
+    "id": 193,
+    "nameKo": "왕자리",
+    "nameEn": "yanma",
+    "generation": 2,
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "왕자리"
+    ]
+  },
+  {
+    "id": 194,
+    "nameKo": "우파",
+    "nameEn": "wooper",
+    "generation": 2,
+    "types": [
+      "water",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "우파"
+    ],
+    "genderDiff": {
+      "front": 62,
+      "back": 124
+    }
+  },
+  {
+    "id": 195,
+    "nameKo": "누오",
+    "nameEn": "quagsire",
+    "generation": 2,
+    "types": [
+      "water",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "누오"
+    ],
+    "genderDiff": {
+      "front": 19,
+      "back": 51
+    }
+  },
+  {
+    "id": 196,
+    "nameKo": "에브이",
+    "nameEn": "espeon",
+    "generation": 2,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "에브이"
+    ]
+  },
+  {
+    "id": 197,
+    "nameKo": "블래키",
+    "nameEn": "umbreon",
+    "generation": 2,
+    "types": [
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "블래키"
+    ]
+  },
+  {
+    "id": 198,
+    "nameKo": "니로우",
+    "nameEn": "murkrow",
+    "generation": 2,
+    "types": [
+      "dark",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "니로우"
+    ],
+    "genderDiff": {
+      "front": 129,
+      "back": 66
+    }
+  },
+  {
+    "id": 199,
+    "nameKo": "야도킹",
+    "nameEn": "slowking",
+    "generation": 2,
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "야도킹"
+    ]
+  },
+  {
+    "id": 200,
+    "nameKo": "무우마",
+    "nameEn": "misdreavus",
+    "generation": 2,
+    "types": [
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "무우마"
+    ]
+  },
+  {
+    "id": 201,
+    "nameKo": "안농",
+    "nameEn": "unown",
+    "generation": 2,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "안농"
+    ]
+  },
+  {
+    "id": 202,
+    "nameKo": "마자용",
+    "nameEn": "wobbuffet",
+    "generation": 2,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "마자용"
+    ],
+    "genderDiff": {
+      "front": 16,
+      "back": null
+    }
+  },
+  {
+    "id": 203,
+    "nameKo": "키링키",
+    "nameEn": "girafarig",
+    "generation": 2,
+    "types": [
+      "normal",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "키링키"
+    ],
+    "genderDiff": {
+      "front": 38,
+      "back": 78
+    }
+  },
+  {
+    "id": 204,
+    "nameKo": "피콘",
+    "nameEn": "pineco",
+    "generation": 2,
+    "types": [
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "피콘"
+    ]
+  },
+  {
+    "id": 205,
+    "nameKo": "쏘콘",
+    "nameEn": "forretress",
+    "generation": 2,
+    "types": [
+      "bug",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "쏘콘"
+    ]
+  },
+  {
+    "id": 206,
+    "nameKo": "노고치",
+    "nameEn": "dunsparce",
+    "generation": 2,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "노고치"
+    ]
+  },
+  {
+    "id": 207,
+    "nameKo": "글라이거",
+    "nameEn": "gligar",
+    "generation": 2,
+    "types": [
+      "ground",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "글라이거"
+    ],
+    "genderDiff": {
+      "front": 48,
+      "back": 99
+    }
+  },
+  {
+    "id": 208,
+    "nameKo": "강철톤",
+    "nameEn": "steelix",
+    "generation": 2,
+    "types": [
+      "steel",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "강철톤"
+    ],
+    "genderDiff": {
+      "front": 20,
+      "back": 18
+    }
+  },
+  {
+    "id": 209,
+    "nameKo": "블루",
+    "nameEn": "snubbull",
+    "generation": 2,
+    "types": [
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "블루"
+    ]
+  },
+  {
+    "id": 210,
+    "nameKo": "그랑블루",
+    "nameEn": "granbull",
+    "generation": 2,
+    "types": [
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "그랑블루"
+    ]
+  },
+  {
+    "id": 211,
+    "nameKo": "침바루",
+    "nameEn": "qwilfish",
+    "generation": 2,
+    "types": [
+      "water",
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "침바루"
+    ]
+  },
+  {
+    "id": 212,
+    "nameKo": "핫삼",
+    "nameEn": "scizor",
+    "generation": 2,
+    "types": [
+      "bug",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "핫삼"
+    ],
+    "genderDiff": {
+      "front": 62,
+      "back": 36
+    }
+  },
+  {
+    "id": 213,
+    "nameKo": "단단지",
+    "nameEn": "shuckle",
+    "generation": 2,
+    "types": [
+      "bug",
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "단단지"
+    ]
+  },
+  {
+    "id": 214,
+    "nameKo": "헤라크로스",
+    "nameEn": "heracross",
+    "generation": 2,
+    "types": [
+      "bug",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "헤라크로스"
+    ],
+    "genderDiff": {
+      "front": 123,
+      "back": 135
+    }
+  },
+  {
+    "id": 215,
+    "nameKo": "포푸니",
+    "nameEn": "sneasel",
+    "generation": 2,
+    "types": [
+      "dark",
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "포푸니"
+    ],
+    "genderDiff": {
+      "front": 84,
+      "back": 76
+    }
+  },
+  {
+    "id": 216,
+    "nameKo": "깜지곰",
+    "nameEn": "teddiursa",
+    "generation": 2,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "깜지곰"
+    ]
+  },
+  {
+    "id": 217,
+    "nameKo": "링곰",
+    "nameEn": "ursaring",
+    "generation": 2,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "링곰"
+    ],
+    "genderDiff": {
+      "front": 59,
+      "back": 56
+    }
+  },
+  {
+    "id": 218,
+    "nameKo": "마그마그",
+    "nameEn": "slugma",
+    "generation": 2,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "마그마그"
+    ]
+  },
+  {
+    "id": 219,
+    "nameKo": "마그카르고",
+    "nameEn": "magcargo",
+    "generation": 2,
+    "types": [
+      "fire",
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "마그카르고"
+    ]
+  },
+  {
+    "id": 220,
+    "nameKo": "꾸꾸리",
+    "nameEn": "swinub",
+    "generation": 2,
+    "types": [
+      "ice",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "꾸꾸리"
+    ]
+  },
+  {
+    "id": 221,
+    "nameKo": "메꾸리",
+    "nameEn": "piloswine",
+    "generation": 2,
+    "types": [
+      "ice",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "메꾸리"
+    ],
+    "genderDiff": {
+      "front": 57,
+      "back": 26
+    }
+  },
+  {
+    "id": 222,
+    "nameKo": "코산호",
+    "nameEn": "corsola",
+    "generation": 2,
+    "types": [
+      "water",
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "코산호"
+    ]
+  },
+  {
+    "id": 223,
+    "nameKo": "총어",
+    "nameEn": "remoraid",
+    "generation": 2,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "총어"
+    ]
+  },
+  {
+    "id": 224,
+    "nameKo": "대포무노",
+    "nameEn": "octillery",
+    "generation": 2,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "대포무노"
+    ],
+    "genderDiff": {
+      "front": 147,
+      "back": 90
+    }
+  },
+  {
+    "id": 225,
+    "nameKo": "딜리버드",
+    "nameEn": "delibird",
+    "generation": 2,
+    "types": [
+      "ice",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "딜리버드"
+    ]
+  },
+  {
+    "id": 226,
+    "nameKo": "만타인",
+    "nameEn": "mantine",
+    "generation": 2,
+    "types": [
+      "water",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "만타인"
+    ]
+  },
+  {
+    "id": 227,
+    "nameKo": "무장조",
+    "nameEn": "skarmory",
+    "generation": 2,
+    "types": [
+      "steel",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "무장조"
+    ]
+  },
+  {
+    "id": 228,
+    "nameKo": "델빌",
+    "nameEn": "houndour",
+    "generation": 2,
+    "types": [
+      "dark",
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "델빌"
+    ]
+  },
+  {
+    "id": 229,
+    "nameKo": "헬가",
+    "nameEn": "houndoom",
+    "generation": 2,
+    "types": [
+      "dark",
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "헬가"
+    ],
+    "genderDiff": {
+      "front": 29,
+      "back": 83
+    }
+  },
+  {
+    "id": 230,
+    "nameKo": "킹드라",
+    "nameEn": "kingdra",
+    "generation": 2,
+    "types": [
+      "water",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "킹드라"
+    ]
+  },
+  {
+    "id": 231,
+    "nameKo": "코코리",
+    "nameEn": "phanpy",
+    "generation": 2,
+    "types": [
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "코코리"
+    ]
+  },
+  {
+    "id": 232,
+    "nameKo": "코리갑",
+    "nameEn": "donphan",
+    "generation": 2,
+    "types": [
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "코리갑"
+    ],
+    "genderDiff": {
+      "front": 124,
+      "back": 60
+    }
+  },
+  {
+    "id": 233,
+    "nameKo": "폴리곤2",
+    "nameEn": "porygon2",
+    "generation": 2,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "폴리곤2"
+    ]
+  },
+  {
+    "id": 234,
+    "nameKo": "노라키",
+    "nameEn": "stantler",
+    "generation": 2,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "노라키"
+    ]
+  },
+  {
+    "id": 235,
+    "nameKo": "루브도",
+    "nameEn": "smeargle",
+    "generation": 2,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "루브도"
+    ]
+  },
+  {
+    "id": 236,
+    "nameKo": "배루키",
+    "nameEn": "tyrogue",
+    "generation": 2,
+    "types": [
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "배루키"
+    ]
+  },
+  {
+    "id": 237,
+    "nameKo": "카포에라",
+    "nameEn": "hitmontop",
+    "generation": 2,
+    "types": [
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "카포에라"
+    ]
+  },
+  {
+    "id": 238,
+    "nameKo": "뽀뽀라",
+    "nameEn": "smoochum",
+    "generation": 2,
+    "types": [
+      "ice",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "뽀뽀라"
+    ]
+  },
+  {
+    "id": 239,
+    "nameKo": "에레키드",
+    "nameEn": "elekid",
+    "generation": 2,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "에레키드"
+    ]
+  },
+  {
+    "id": 240,
+    "nameKo": "마그비",
+    "nameEn": "magby",
+    "generation": 2,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "마그비"
+    ]
+  },
+  {
+    "id": 241,
+    "nameKo": "밀탱크",
+    "nameEn": "miltank",
+    "generation": 2,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "밀탱크"
+    ]
+  },
+  {
+    "id": 242,
+    "nameKo": "해피너스",
+    "nameEn": "blissey",
+    "generation": 2,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "해피너스"
+    ]
+  },
+  {
+    "id": 243,
+    "nameKo": "라이코",
+    "nameEn": "raikou",
+    "generation": 2,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "라이코"
+    ]
+  },
+  {
+    "id": 244,
+    "nameKo": "앤테이",
+    "nameEn": "entei",
+    "generation": 2,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "앤테이"
+    ]
+  },
+  {
+    "id": 245,
+    "nameKo": "스이쿤",
+    "nameEn": "suicune",
+    "generation": 2,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "스이쿤"
+    ]
+  },
+  {
+    "id": 246,
+    "nameKo": "애버라스",
+    "nameEn": "larvitar",
+    "generation": 2,
+    "types": [
+      "rock",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "애버라스"
+    ]
+  },
+  {
+    "id": 247,
+    "nameKo": "데기라스",
+    "nameEn": "pupitar",
+    "generation": 2,
+    "types": [
+      "rock",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "데기라스"
+    ]
+  },
+  {
+    "id": 248,
+    "nameKo": "마기라스",
+    "nameEn": "tyranitar",
+    "generation": 2,
+    "types": [
+      "rock",
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "마기라스"
+    ]
+  },
+  {
+    "id": 249,
+    "nameKo": "루기아",
+    "nameEn": "lugia",
+    "generation": 2,
+    "types": [
+      "psychic",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "루기아"
+    ]
+  },
+  {
+    "id": 250,
+    "nameKo": "칠색조",
+    "nameEn": "ho-oh",
+    "generation": 2,
+    "types": [
+      "fire",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "칠색조"
+    ]
+  },
+  {
+    "id": 251,
+    "nameKo": "세레비",
+    "nameEn": "celebi",
+    "generation": 2,
+    "types": [
+      "psychic",
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "세레비"
+    ]
+  },
+  {
+    "id": 252,
+    "nameKo": "나무지기",
+    "nameEn": "treecko",
+    "generation": 3,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "나무지기"
+    ]
+  },
+  {
+    "id": 253,
+    "nameKo": "나무돌이",
+    "nameEn": "grovyle",
+    "generation": 3,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "나무돌이"
+    ]
+  },
+  {
+    "id": 254,
+    "nameKo": "나무킹",
+    "nameEn": "sceptile",
+    "generation": 3,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "나무킹"
+    ]
+  },
+  {
+    "id": 255,
+    "nameKo": "아차모",
+    "nameEn": "torchic",
+    "generation": 3,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "아차모"
+    ],
+    "genderDiff": {
+      "front": 0,
+      "back": 1
+    }
+  },
+  {
+    "id": 256,
+    "nameKo": "영치코",
+    "nameEn": "combusken",
+    "generation": 3,
+    "types": [
+      "fire",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "영치코"
+    ],
+    "genderDiff": {
+      "front": 57,
+      "back": 77
+    }
+  },
+  {
+    "id": 257,
+    "nameKo": "번치코",
+    "nameEn": "blaziken",
+    "generation": 3,
+    "types": [
+      "fire",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "번치코"
+    ],
+    "genderDiff": {
+      "front": 65,
+      "back": 261
+    }
+  },
+  {
+    "id": 258,
+    "nameKo": "물짱이",
+    "nameEn": "mudkip",
+    "generation": 3,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "물짱이"
+    ]
+  },
+  {
+    "id": 259,
+    "nameKo": "늪짱이",
+    "nameEn": "marshtomp",
+    "generation": 3,
+    "types": [
+      "water",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "늪짱이"
+    ]
+  },
+  {
+    "id": 260,
+    "nameKo": "대짱이",
+    "nameEn": "swampert",
+    "generation": 3,
+    "types": [
+      "water",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "대짱이"
+    ]
+  },
+  {
+    "id": 261,
+    "nameKo": "포챠나",
+    "nameEn": "poochyena",
+    "generation": 3,
+    "types": [
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "포챠나"
+    ]
+  },
+  {
+    "id": 262,
+    "nameKo": "그라에나",
+    "nameEn": "mightyena",
+    "generation": 3,
+    "types": [
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "그라에나"
+    ]
+  },
+  {
+    "id": 263,
+    "nameKo": "지그제구리",
+    "nameEn": "zigzagoon",
+    "generation": 3,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "지그제구리"
+    ]
+  },
+  {
+    "id": 264,
+    "nameKo": "직구리",
+    "nameEn": "linoone",
+    "generation": 3,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "직구리"
+    ]
+  },
+  {
+    "id": 265,
+    "nameKo": "개무소",
+    "nameEn": "wurmple",
+    "generation": 3,
+    "types": [
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "개무소"
+    ]
+  },
+  {
+    "id": 266,
+    "nameKo": "실쿤",
+    "nameEn": "silcoon",
+    "generation": 3,
+    "types": [
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "실쿤"
+    ]
+  },
+  {
+    "id": 267,
+    "nameKo": "뷰티플라이",
+    "nameEn": "beautifly",
+    "generation": 3,
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "뷰티플라이"
+    ],
+    "genderDiff": {
+      "front": 48,
+      "back": 26
+    }
+  },
+  {
+    "id": 268,
+    "nameKo": "카스쿤",
+    "nameEn": "cascoon",
+    "generation": 3,
+    "types": [
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "카스쿤"
+    ]
+  },
+  {
+    "id": 269,
+    "nameKo": "독케일",
+    "nameEn": "dustox",
+    "generation": 3,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "독케일"
+    ],
+    "genderDiff": {
+      "front": 119,
+      "back": 123
+    }
+  },
+  {
+    "id": 270,
+    "nameKo": "연꽃몬",
+    "nameEn": "lotad",
+    "generation": 3,
+    "types": [
+      "water",
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "연꽃몬"
+    ]
+  },
+  {
+    "id": 271,
+    "nameKo": "로토스",
+    "nameEn": "lombre",
+    "generation": 3,
+    "types": [
+      "water",
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "로토스"
+    ]
+  },
+  {
+    "id": 272,
+    "nameKo": "로파파",
+    "nameEn": "ludicolo",
+    "generation": 3,
+    "types": [
+      "water",
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "로파파"
+    ],
+    "genderDiff": {
+      "front": 79,
+      "back": 97
+    }
+  },
+  {
+    "id": 273,
+    "nameKo": "도토링",
+    "nameEn": "seedot",
+    "generation": 3,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "도토링"
+    ]
+  },
+  {
+    "id": 274,
+    "nameKo": "잎새코",
+    "nameEn": "nuzleaf",
+    "generation": 3,
+    "types": [
+      "grass",
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "잎새코"
+    ],
+    "genderDiff": {
+      "front": 63,
+      "back": 72
+    }
+  },
+  {
+    "id": 275,
+    "nameKo": "다탱구",
+    "nameEn": "shiftry",
+    "generation": 3,
+    "types": [
+      "grass",
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "다탱구"
+    ],
+    "genderDiff": {
+      "front": 179,
+      "back": 105
+    }
+  },
+  {
+    "id": 276,
+    "nameKo": "테일로",
+    "nameEn": "taillow",
+    "generation": 3,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "테일로"
+    ]
+  },
+  {
+    "id": 277,
+    "nameKo": "스왈로",
+    "nameEn": "swellow",
+    "generation": 3,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "스왈로"
+    ]
+  },
+  {
+    "id": 278,
+    "nameKo": "갈모매",
+    "nameEn": "wingull",
+    "generation": 3,
+    "types": [
+      "water",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "갈모매"
+    ]
+  },
+  {
+    "id": 279,
+    "nameKo": "패리퍼",
+    "nameEn": "pelipper",
+    "generation": 3,
+    "types": [
+      "water",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "패리퍼"
+    ]
+  },
+  {
+    "id": 280,
+    "nameKo": "랄토스",
+    "nameEn": "ralts",
+    "generation": 3,
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "랄토스"
+    ]
+  },
+  {
+    "id": 281,
+    "nameKo": "킬리아",
+    "nameEn": "kirlia",
+    "generation": 3,
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "킬리아"
+    ]
+  },
+  {
+    "id": 282,
+    "nameKo": "가디안",
+    "nameEn": "gardevoir",
+    "generation": 3,
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "가디안"
+    ]
+  },
+  {
+    "id": 283,
+    "nameKo": "비구술",
+    "nameEn": "surskit",
+    "generation": 3,
+    "types": [
+      "bug",
+      "water"
+    ],
+    "acceptedAnswers": [
+      "비구술"
+    ]
+  },
+  {
+    "id": 284,
+    "nameKo": "비나방",
+    "nameEn": "masquerain",
+    "generation": 3,
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "비나방"
+    ]
+  },
+  {
+    "id": 285,
+    "nameKo": "버섯꼬",
+    "nameEn": "shroomish",
+    "generation": 3,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "버섯꼬"
+    ]
+  },
+  {
+    "id": 286,
+    "nameKo": "버섯모",
+    "nameEn": "breloom",
+    "generation": 3,
+    "types": [
+      "grass",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "버섯모"
+    ]
+  },
+  {
+    "id": 287,
+    "nameKo": "게을로",
+    "nameEn": "slakoth",
+    "generation": 3,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "게을로"
+    ]
+  },
+  {
+    "id": 288,
+    "nameKo": "발바로",
+    "nameEn": "vigoroth",
+    "generation": 3,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "발바로"
+    ]
+  },
+  {
+    "id": 289,
+    "nameKo": "게을킹",
+    "nameEn": "slaking",
+    "generation": 3,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "게을킹"
+    ]
+  },
+  {
+    "id": 290,
+    "nameKo": "토중몬",
+    "nameEn": "nincada",
+    "generation": 3,
+    "types": [
+      "bug",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "토중몬"
+    ]
+  },
+  {
+    "id": 291,
+    "nameKo": "아이스크",
+    "nameEn": "ninjask",
+    "generation": 3,
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "아이스크"
+    ]
+  },
+  {
+    "id": 292,
+    "nameKo": "껍질몬",
+    "nameEn": "shedinja",
+    "generation": 3,
+    "types": [
+      "bug",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "껍질몬"
+    ]
+  },
+  {
+    "id": 293,
+    "nameKo": "소곤룡",
+    "nameEn": "whismur",
+    "generation": 3,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "소곤룡"
+    ]
+  },
+  {
+    "id": 294,
+    "nameKo": "노공룡",
+    "nameEn": "loudred",
+    "generation": 3,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "노공룡"
+    ]
+  },
+  {
+    "id": 295,
+    "nameKo": "폭음룡",
+    "nameEn": "exploud",
+    "generation": 3,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "폭음룡"
+    ]
+  },
+  {
+    "id": 296,
+    "nameKo": "마크탕",
+    "nameEn": "makuhita",
+    "generation": 3,
+    "types": [
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "마크탕"
+    ]
+  },
+  {
+    "id": 297,
+    "nameKo": "하리뭉",
+    "nameEn": "hariyama",
+    "generation": 3,
+    "types": [
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "하리뭉"
+    ]
+  },
+  {
+    "id": 298,
+    "nameKo": "루리리",
+    "nameEn": "azurill",
+    "generation": 3,
+    "types": [
+      "normal",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "루리리"
+    ]
+  },
+  {
+    "id": 299,
+    "nameKo": "코코파스",
+    "nameEn": "nosepass",
+    "generation": 3,
+    "types": [
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "코코파스"
+    ]
+  },
+  {
+    "id": 300,
+    "nameKo": "에나비",
+    "nameEn": "skitty",
+    "generation": 3,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "에나비"
+    ]
+  },
+  {
+    "id": 301,
+    "nameKo": "델케티",
+    "nameEn": "delcatty",
+    "generation": 3,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "델케티"
+    ]
+  },
+  {
+    "id": 302,
+    "nameKo": "깜까미",
+    "nameEn": "sableye",
+    "generation": 3,
+    "types": [
+      "dark",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "깜까미"
+    ]
+  },
+  {
+    "id": 303,
+    "nameKo": "입치트",
+    "nameEn": "mawile",
+    "generation": 3,
+    "types": [
+      "steel",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "입치트"
+    ]
+  },
+  {
+    "id": 304,
+    "nameKo": "가보리",
+    "nameEn": "aron",
+    "generation": 3,
+    "types": [
+      "steel",
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "가보리"
+    ]
+  },
+  {
+    "id": 305,
+    "nameKo": "갱도라",
+    "nameEn": "lairon",
+    "generation": 3,
+    "types": [
+      "steel",
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "갱도라"
+    ]
+  },
+  {
+    "id": 306,
+    "nameKo": "보스로라",
+    "nameEn": "aggron",
+    "generation": 3,
+    "types": [
+      "steel",
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "보스로라"
+    ]
+  },
+  {
+    "id": 307,
+    "nameKo": "요가랑",
+    "nameEn": "meditite",
+    "generation": 3,
+    "types": [
+      "fighting",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "요가랑"
+    ],
+    "genderDiff": {
+      "front": 129,
+      "back": 139
+    }
+  },
+  {
+    "id": 308,
+    "nameKo": "요가램",
+    "nameEn": "medicham",
+    "generation": 3,
+    "types": [
+      "fighting",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "요가램"
+    ],
+    "genderDiff": {
+      "front": 16,
+      "back": 27
+    }
+  },
+  {
+    "id": 309,
+    "nameKo": "썬더라이",
+    "nameEn": "electrike",
+    "generation": 3,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "썬더라이"
+    ]
+  },
+  {
+    "id": 310,
+    "nameKo": "썬더볼트",
+    "nameEn": "manectric",
+    "generation": 3,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "썬더볼트"
+    ]
+  },
+  {
+    "id": 311,
+    "nameKo": "플러시",
+    "nameEn": "plusle",
+    "generation": 3,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "플러시"
+    ]
+  },
+  {
+    "id": 312,
+    "nameKo": "마이농",
+    "nameEn": "minun",
+    "generation": 3,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "마이농"
+    ]
+  },
+  {
+    "id": 313,
+    "nameKo": "볼비트",
+    "nameEn": "volbeat",
+    "generation": 3,
+    "types": [
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "볼비트"
+    ]
+  },
+  {
+    "id": 314,
+    "nameKo": "네오비트",
+    "nameEn": "illumise",
+    "generation": 3,
+    "types": [
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "네오비트"
+    ]
+  },
+  {
+    "id": 315,
+    "nameKo": "로젤리아",
+    "nameEn": "roselia",
+    "generation": 3,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "로젤리아"
+    ],
+    "genderDiff": {
+      "front": 35,
+      "back": 8
+    }
+  },
+  {
+    "id": 316,
+    "nameKo": "꼴깍몬",
+    "nameEn": "gulpin",
+    "generation": 3,
+    "types": [
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "꼴깍몬"
+    ],
+    "genderDiff": {
+      "front": 107,
+      "back": 59
+    }
+  },
+  {
+    "id": 317,
+    "nameKo": "꿀꺽몬",
+    "nameEn": "swalot",
+    "generation": 3,
+    "types": [
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "꿀꺽몬"
+    ],
+    "genderDiff": {
+      "front": 89,
+      "back": 30
+    }
+  },
+  {
+    "id": 318,
+    "nameKo": "샤프니아",
+    "nameEn": "carvanha",
+    "generation": 3,
+    "types": [
+      "water",
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "샤프니아"
+    ]
+  },
+  {
+    "id": 319,
+    "nameKo": "샤크니아",
+    "nameEn": "sharpedo",
+    "generation": 3,
+    "types": [
+      "water",
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "샤크니아"
+    ]
+  },
+  {
+    "id": 320,
+    "nameKo": "고래왕자",
+    "nameEn": "wailmer",
+    "generation": 3,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "고래왕자"
+    ]
+  },
+  {
+    "id": 321,
+    "nameKo": "고래왕",
+    "nameEn": "wailord",
+    "generation": 3,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "고래왕"
+    ]
+  },
+  {
+    "id": 322,
+    "nameKo": "둔타",
+    "nameEn": "numel",
+    "generation": 3,
+    "types": [
+      "fire",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "둔타"
+    ],
+    "genderDiff": {
+      "front": 62,
+      "back": 66
+    }
+  },
+  {
+    "id": 323,
+    "nameKo": "폭타",
+    "nameEn": "camerupt",
+    "generation": 3,
+    "types": [
+      "fire",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "폭타"
+    ],
+    "genderDiff": {
+      "front": 117,
+      "back": 146
+    }
+  },
+  {
+    "id": 324,
+    "nameKo": "코터스",
+    "nameEn": "torkoal",
+    "generation": 3,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "코터스"
+    ]
+  },
+  {
+    "id": 325,
+    "nameKo": "피그점프",
+    "nameEn": "spoink",
+    "generation": 3,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "피그점프"
+    ]
+  },
+  {
+    "id": 326,
+    "nameKo": "피그킹",
+    "nameEn": "grumpig",
+    "generation": 3,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "피그킹"
+    ]
+  },
+  {
+    "id": 327,
+    "nameKo": "얼루기",
+    "nameEn": "spinda",
+    "generation": 3,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "얼루기"
+    ]
+  },
+  {
+    "id": 328,
+    "nameKo": "톱치",
+    "nameEn": "trapinch",
+    "generation": 3,
+    "types": [
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "톱치"
+    ]
+  },
+  {
+    "id": 329,
+    "nameKo": "비브라바",
+    "nameEn": "vibrava",
+    "generation": 3,
+    "types": [
+      "ground",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "비브라바"
+    ]
+  },
+  {
+    "id": 330,
+    "nameKo": "플라이곤",
+    "nameEn": "flygon",
+    "generation": 3,
+    "types": [
+      "ground",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "플라이곤"
+    ]
+  },
+  {
+    "id": 331,
+    "nameKo": "선인왕",
+    "nameEn": "cacnea",
+    "generation": 3,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "선인왕"
+    ]
+  },
+  {
+    "id": 332,
+    "nameKo": "밤선인",
+    "nameEn": "cacturne",
+    "generation": 3,
+    "types": [
+      "grass",
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "밤선인"
+    ],
+    "genderDiff": {
+      "front": 64,
+      "back": null
+    }
+  },
+  {
+    "id": 333,
+    "nameKo": "파비코",
+    "nameEn": "swablu",
+    "generation": 3,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "파비코"
+    ]
+  },
+  {
+    "id": 334,
+    "nameKo": "파비코리",
+    "nameEn": "altaria",
+    "generation": 3,
+    "types": [
+      "dragon",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "파비코리"
+    ]
+  },
+  {
+    "id": 335,
+    "nameKo": "쟝고",
+    "nameEn": "zangoose",
+    "generation": 3,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "쟝고"
+    ]
+  },
+  {
+    "id": 336,
+    "nameKo": "세비퍼",
+    "nameEn": "seviper",
+    "generation": 3,
+    "types": [
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "세비퍼"
+    ]
+  },
+  {
+    "id": 337,
+    "nameKo": "루나톤",
+    "nameEn": "lunatone",
+    "generation": 3,
+    "types": [
+      "rock",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "루나톤"
+    ]
+  },
+  {
+    "id": 338,
+    "nameKo": "솔록",
+    "nameEn": "solrock",
+    "generation": 3,
+    "types": [
+      "rock",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "솔록"
+    ]
+  },
+  {
+    "id": 339,
+    "nameKo": "미꾸리",
+    "nameEn": "barboach",
+    "generation": 3,
+    "types": [
+      "water",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "미꾸리"
+    ]
+  },
+  {
+    "id": 340,
+    "nameKo": "메깅",
+    "nameEn": "whiscash",
+    "generation": 3,
+    "types": [
+      "water",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "메깅"
+    ]
+  },
+  {
+    "id": 341,
+    "nameKo": "가재군",
+    "nameEn": "corphish",
+    "generation": 3,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "가재군"
+    ]
+  },
+  {
+    "id": 342,
+    "nameKo": "가재장군",
+    "nameEn": "crawdaunt",
+    "generation": 3,
+    "types": [
+      "water",
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "가재장군"
+    ]
+  },
+  {
+    "id": 343,
+    "nameKo": "오뚝군",
+    "nameEn": "baltoy",
+    "generation": 3,
+    "types": [
+      "ground",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "오뚝군"
+    ]
+  },
+  {
+    "id": 344,
+    "nameKo": "점토도리",
+    "nameEn": "claydol",
+    "generation": 3,
+    "types": [
+      "ground",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "점토도리"
+    ]
+  },
+  {
+    "id": 345,
+    "nameKo": "릴링",
+    "nameEn": "lileep",
+    "generation": 3,
+    "types": [
+      "rock",
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "릴링"
+    ]
+  },
+  {
+    "id": 346,
+    "nameKo": "릴리요",
+    "nameEn": "cradily",
+    "generation": 3,
+    "types": [
+      "rock",
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "릴리요"
+    ]
+  },
+  {
+    "id": 347,
+    "nameKo": "아노딥스",
+    "nameEn": "anorith",
+    "generation": 3,
+    "types": [
+      "rock",
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "아노딥스"
+    ]
+  },
+  {
+    "id": 348,
+    "nameKo": "아말도",
+    "nameEn": "armaldo",
+    "generation": 3,
+    "types": [
+      "rock",
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "아말도"
+    ]
+  },
+  {
+    "id": 349,
+    "nameKo": "빈티나",
+    "nameEn": "feebas",
+    "generation": 3,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "빈티나"
+    ]
+  },
+  {
+    "id": 350,
+    "nameKo": "밀로틱",
+    "nameEn": "milotic",
+    "generation": 3,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "밀로틱"
+    ],
+    "genderDiff": {
+      "front": 234,
+      "back": 82
+    }
+  },
+  {
+    "id": 351,
+    "nameKo": "캐스퐁",
+    "nameEn": "castform",
+    "generation": 3,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "캐스퐁"
+    ]
+  },
+  {
+    "id": 352,
+    "nameKo": "켈리몬",
+    "nameEn": "kecleon",
+    "generation": 3,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "켈리몬"
+    ]
+  },
+  {
+    "id": 353,
+    "nameKo": "어둠대신",
+    "nameEn": "shuppet",
+    "generation": 3,
+    "types": [
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "어둠대신"
+    ]
+  },
+  {
+    "id": 354,
+    "nameKo": "다크펫",
+    "nameEn": "banette",
+    "generation": 3,
+    "types": [
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "다크펫"
+    ]
+  },
+  {
+    "id": 355,
+    "nameKo": "해골몽",
+    "nameEn": "duskull",
+    "generation": 3,
+    "types": [
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "해골몽"
+    ]
+  },
+  {
+    "id": 356,
+    "nameKo": "미라몽",
+    "nameEn": "dusclops",
+    "generation": 3,
+    "types": [
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "미라몽"
+    ]
+  },
+  {
+    "id": 357,
+    "nameKo": "트로피우스",
+    "nameEn": "tropius",
+    "generation": 3,
+    "types": [
+      "grass",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "트로피우스"
+    ]
+  },
+  {
+    "id": 358,
+    "nameKo": "치렁",
+    "nameEn": "chimecho",
+    "generation": 3,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "치렁"
+    ]
+  },
+  {
+    "id": 359,
+    "nameKo": "앱솔",
+    "nameEn": "absol",
+    "generation": 3,
+    "types": [
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "앱솔"
+    ]
+  },
+  {
+    "id": 360,
+    "nameKo": "마자",
+    "nameEn": "wynaut",
+    "generation": 3,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "마자"
+    ]
+  },
+  {
+    "id": 361,
+    "nameKo": "눈꼬마",
+    "nameEn": "snorunt",
+    "generation": 3,
+    "types": [
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "눈꼬마"
+    ]
+  },
+  {
+    "id": 362,
+    "nameKo": "얼음귀신",
+    "nameEn": "glalie",
+    "generation": 3,
+    "types": [
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "얼음귀신"
+    ]
+  },
+  {
+    "id": 363,
+    "nameKo": "대굴레오",
+    "nameEn": "spheal",
+    "generation": 3,
+    "types": [
+      "ice",
+      "water"
+    ],
+    "acceptedAnswers": [
+      "대굴레오"
+    ]
+  },
+  {
+    "id": 364,
+    "nameKo": "씨레오",
+    "nameEn": "sealeo",
+    "generation": 3,
+    "types": [
+      "ice",
+      "water"
+    ],
+    "acceptedAnswers": [
+      "씨레오"
+    ]
+  },
+  {
+    "id": 365,
+    "nameKo": "씨카이저",
+    "nameEn": "walrein",
+    "generation": 3,
+    "types": [
+      "ice",
+      "water"
+    ],
+    "acceptedAnswers": [
+      "씨카이저"
+    ]
+  },
+  {
+    "id": 366,
+    "nameKo": "진주몽",
+    "nameEn": "clamperl",
+    "generation": 3,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "진주몽"
+    ]
+  },
+  {
+    "id": 367,
+    "nameKo": "헌테일",
+    "nameEn": "huntail",
+    "generation": 3,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "헌테일"
+    ]
+  },
+  {
+    "id": 368,
+    "nameKo": "분홍장이",
+    "nameEn": "gorebyss",
+    "generation": 3,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "분홍장이"
+    ]
+  },
+  {
+    "id": 369,
+    "nameKo": "시라칸",
+    "nameEn": "relicanth",
+    "generation": 3,
+    "types": [
+      "water",
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "시라칸"
+    ],
+    "genderDiff": {
+      "front": 14,
+      "back": 9
+    }
+  },
+  {
+    "id": 370,
+    "nameKo": "사랑동이",
+    "nameEn": "luvdisc",
+    "generation": 3,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "사랑동이"
+    ]
+  },
+  {
+    "id": 371,
+    "nameKo": "아공이",
+    "nameEn": "bagon",
+    "generation": 3,
+    "types": [
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "아공이"
+    ]
+  },
+  {
+    "id": 372,
+    "nameKo": "쉘곤",
+    "nameEn": "shelgon",
+    "generation": 3,
+    "types": [
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "쉘곤"
+    ]
+  },
+  {
+    "id": 373,
+    "nameKo": "보만다",
+    "nameEn": "salamence",
+    "generation": 3,
+    "types": [
+      "dragon",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "보만다"
+    ]
+  },
+  {
+    "id": 374,
+    "nameKo": "메탕",
+    "nameEn": "beldum",
+    "generation": 3,
+    "types": [
+      "steel",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "메탕"
+    ]
+  },
+  {
+    "id": 375,
+    "nameKo": "메탕구",
+    "nameEn": "metang",
+    "generation": 3,
+    "types": [
+      "steel",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "메탕구"
+    ]
+  },
+  {
+    "id": 376,
+    "nameKo": "메타그로스",
+    "nameEn": "metagross",
+    "generation": 3,
+    "types": [
+      "steel",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "메타그로스"
+    ]
+  },
+  {
+    "id": 377,
+    "nameKo": "레지락",
+    "nameEn": "regirock",
+    "generation": 3,
+    "types": [
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "레지락"
+    ]
+  },
+  {
+    "id": 378,
+    "nameKo": "레지아이스",
+    "nameEn": "regice",
+    "generation": 3,
+    "types": [
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "레지아이스"
+    ]
+  },
+  {
+    "id": 379,
+    "nameKo": "레지스틸",
+    "nameEn": "registeel",
+    "generation": 3,
+    "types": [
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "레지스틸"
+    ]
+  },
+  {
+    "id": 380,
+    "nameKo": "라티아스",
+    "nameEn": "latias",
+    "generation": 3,
+    "types": [
+      "dragon",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "라티아스"
+    ]
+  },
+  {
+    "id": 381,
+    "nameKo": "라티오스",
+    "nameEn": "latios",
+    "generation": 3,
+    "types": [
+      "dragon",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "라티오스"
+    ]
+  },
+  {
+    "id": 382,
+    "nameKo": "가이오가",
+    "nameEn": "kyogre",
+    "generation": 3,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "가이오가"
+    ]
+  },
+  {
+    "id": 383,
+    "nameKo": "그란돈",
+    "nameEn": "groudon",
+    "generation": 3,
+    "types": [
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "그란돈"
+    ]
+  },
+  {
+    "id": 384,
+    "nameKo": "레쿠쟈",
+    "nameEn": "rayquaza",
+    "generation": 3,
+    "types": [
+      "dragon",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "레쿠쟈"
+    ]
+  },
+  {
+    "id": 385,
+    "nameKo": "지라치",
+    "nameEn": "jirachi",
+    "generation": 3,
+    "types": [
+      "steel",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "지라치"
+    ]
+  },
+  {
+    "id": 386,
+    "nameKo": "테오키스",
+    "nameEn": "deoxys-normal",
+    "generation": 3,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "테오키스"
+    ]
+  },
+  {
+    "id": 387,
+    "nameKo": "모부기",
+    "nameEn": "turtwig",
+    "generation": 4,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "모부기"
+    ]
+  },
+  {
+    "id": 388,
+    "nameKo": "수풀부기",
+    "nameEn": "grotle",
+    "generation": 4,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "수풀부기"
+    ]
+  },
+  {
+    "id": 389,
+    "nameKo": "토대부기",
+    "nameEn": "torterra",
+    "generation": 4,
+    "types": [
+      "grass",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "토대부기"
+    ]
+  },
+  {
+    "id": 390,
+    "nameKo": "불꽃숭이",
+    "nameEn": "chimchar",
+    "generation": 4,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "불꽃숭이"
+    ]
+  },
+  {
+    "id": 391,
+    "nameKo": "파이숭이",
+    "nameEn": "monferno",
+    "generation": 4,
+    "types": [
+      "fire",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "파이숭이"
+    ]
+  },
+  {
+    "id": 392,
+    "nameKo": "초염몽",
+    "nameEn": "infernape",
+    "generation": 4,
+    "types": [
+      "fire",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "초염몽"
+    ]
+  },
+  {
+    "id": 393,
+    "nameKo": "팽도리",
+    "nameEn": "piplup",
+    "generation": 4,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "팽도리"
+    ]
+  },
+  {
+    "id": 394,
+    "nameKo": "팽태자",
+    "nameEn": "prinplup",
+    "generation": 4,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "팽태자"
+    ]
+  },
+  {
+    "id": 395,
+    "nameKo": "엠페르트",
+    "nameEn": "empoleon",
+    "generation": 4,
+    "types": [
+      "water",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "엠페르트"
+    ]
+  },
+  {
+    "id": 396,
+    "nameKo": "찌르꼬",
+    "nameEn": "starly",
+    "generation": 4,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "찌르꼬"
+    ],
+    "genderDiff": {
+      "front": 21,
+      "back": 5
+    }
+  },
+  {
+    "id": 397,
+    "nameKo": "찌르버드",
+    "nameEn": "staravia",
+    "generation": 4,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "찌르버드"
+    ],
+    "genderDiff": {
+      "front": 14,
+      "back": 4
+    }
+  },
+  {
+    "id": 398,
+    "nameKo": "찌르호크",
+    "nameEn": "staraptor",
+    "generation": 4,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "찌르호크"
+    ],
+    "genderDiff": {
+      "front": 13,
+      "back": null
+    }
+  },
+  {
+    "id": 399,
+    "nameKo": "비버니",
+    "nameEn": "bidoof",
+    "generation": 4,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "비버니"
+    ],
+    "genderDiff": {
+      "front": 14,
+      "back": 24
+    }
+  },
+  {
+    "id": 400,
+    "nameKo": "비버통",
+    "nameEn": "bibarel",
+    "generation": 4,
+    "types": [
+      "normal",
+      "water"
+    ],
+    "acceptedAnswers": [
+      "비버통"
+    ],
+    "genderDiff": {
+      "front": 42,
+      "back": null
+    }
+  },
+  {
+    "id": 401,
+    "nameKo": "귀뚤뚜기",
+    "nameEn": "kricketot",
+    "generation": 4,
+    "types": [
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "귀뚤뚜기"
+    ],
+    "genderDiff": {
+      "front": 90,
+      "back": 150
+    }
+  },
+  {
+    "id": 402,
+    "nameKo": "귀뚤톡크",
+    "nameEn": "kricketune",
+    "generation": 4,
+    "types": [
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "귀뚤톡크"
+    ],
+    "genderDiff": {
+      "front": 116,
+      "back": 44
+    }
+  },
+  {
+    "id": 403,
+    "nameKo": "꼬링크",
+    "nameEn": "shinx",
+    "generation": 4,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "꼬링크"
+    ],
+    "genderDiff": {
+      "front": 29,
+      "back": 50
+    }
+  },
+  {
+    "id": 404,
+    "nameKo": "럭시오",
+    "nameEn": "luxio",
+    "generation": 4,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "럭시오"
+    ],
+    "genderDiff": {
+      "front": 100,
+      "back": 99
+    }
+  },
+  {
+    "id": 405,
+    "nameKo": "렌트라",
+    "nameEn": "luxray",
+    "generation": 4,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "렌트라"
+    ],
+    "genderDiff": {
+      "front": 150,
+      "back": 136
+    }
+  },
+  {
+    "id": 406,
+    "nameKo": "꼬몽울",
+    "nameEn": "budew",
+    "generation": 4,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "꼬몽울"
+    ]
+  },
+  {
+    "id": 407,
+    "nameKo": "로즈레이드",
+    "nameEn": "roserade",
+    "generation": 4,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "로즈레이드"
+    ],
+    "genderDiff": {
+      "front": 76,
+      "back": 185
+    }
+  },
+  {
+    "id": 408,
+    "nameKo": "두개도스",
+    "nameEn": "cranidos",
+    "generation": 4,
+    "types": [
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "두개도스"
+    ]
+  },
+  {
+    "id": 409,
+    "nameKo": "램펄드",
+    "nameEn": "rampardos",
+    "generation": 4,
+    "types": [
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "램펄드"
+    ]
+  },
+  {
+    "id": 410,
+    "nameKo": "방패톱스",
+    "nameEn": "shieldon",
+    "generation": 4,
+    "types": [
+      "rock",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "방패톱스"
+    ]
+  },
+  {
+    "id": 411,
+    "nameKo": "바리톱스",
+    "nameEn": "bastiodon",
+    "generation": 4,
+    "types": [
+      "rock",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "바리톱스"
+    ]
+  },
+  {
+    "id": 412,
+    "nameKo": "도롱충이",
+    "nameEn": "burmy",
+    "generation": 4,
+    "types": [
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "도롱충이"
+    ]
+  },
+  {
+    "id": 413,
+    "nameKo": "도롱마담",
+    "nameEn": "wormadam-plant",
+    "generation": 4,
+    "types": [
+      "bug",
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "도롱마담"
+    ]
+  },
+  {
+    "id": 414,
+    "nameKo": "나메일",
+    "nameEn": "mothim",
+    "generation": 4,
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "나메일"
+    ]
+  },
+  {
+    "id": 415,
+    "nameKo": "세꿀버리",
+    "nameEn": "combee",
+    "generation": 4,
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "세꿀버리"
+    ],
+    "genderDiff": {
+      "front": 7,
+      "back": null
+    }
+  },
+  {
+    "id": 416,
+    "nameKo": "비퀸",
+    "nameEn": "vespiquen",
+    "generation": 4,
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "비퀸"
+    ]
+  },
+  {
+    "id": 417,
+    "nameKo": "파치리스",
+    "nameEn": "pachirisu",
+    "generation": 4,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "파치리스"
+    ],
+    "genderDiff": {
+      "front": 4,
+      "back": null
+    }
+  },
+  {
+    "id": 418,
+    "nameKo": "브이젤",
+    "nameEn": "buizel",
+    "generation": 4,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "브이젤"
+    ],
+    "genderDiff": {
+      "front": 0,
+      "back": 72
+    }
+  },
+  {
+    "id": 419,
+    "nameKo": "플로젤",
+    "nameEn": "floatzel",
+    "generation": 4,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "플로젤"
+    ],
+    "genderDiff": {
+      "front": 0,
+      "back": 137
+    }
+  },
+  {
+    "id": 420,
+    "nameKo": "체리버",
+    "nameEn": "cherubi",
+    "generation": 4,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "체리버"
+    ]
+  },
+  {
+    "id": 421,
+    "nameKo": "체리꼬",
+    "nameEn": "cherrim",
+    "generation": 4,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "체리꼬"
+    ]
+  },
+  {
+    "id": 422,
+    "nameKo": "깝질무",
+    "nameEn": "shellos",
+    "generation": 4,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "깝질무"
+    ]
+  },
+  {
+    "id": 423,
+    "nameKo": "트리토돈",
+    "nameEn": "gastrodon",
+    "generation": 4,
+    "types": [
+      "water",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "트리토돈"
+    ]
+  },
+  {
+    "id": 424,
+    "nameKo": "겟핸보숭",
+    "nameEn": "ambipom",
+    "generation": 4,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "겟핸보숭"
+    ],
+    "genderDiff": {
+      "front": 47,
+      "back": 61
+    }
+  },
+  {
+    "id": 425,
+    "nameKo": "흔들풍손",
+    "nameEn": "drifloon",
+    "generation": 4,
+    "types": [
+      "ghost",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "흔들풍손"
+    ]
+  },
+  {
+    "id": 426,
+    "nameKo": "둥실라이드",
+    "nameEn": "drifblim",
+    "generation": 4,
+    "types": [
+      "ghost",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "둥실라이드"
+    ]
+  },
+  {
+    "id": 427,
+    "nameKo": "이어롤",
+    "nameEn": "buneary",
+    "generation": 4,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "이어롤"
+    ]
+  },
+  {
+    "id": 428,
+    "nameKo": "이어롭",
+    "nameEn": "lopunny",
+    "generation": 4,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "이어롭"
+    ]
+  },
+  {
+    "id": 429,
+    "nameKo": "무우마직",
+    "nameEn": "mismagius",
+    "generation": 4,
+    "types": [
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "무우마직"
+    ]
+  },
+  {
+    "id": 430,
+    "nameKo": "돈크로우",
+    "nameEn": "honchkrow",
+    "generation": 4,
+    "types": [
+      "dark",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "돈크로우"
+    ]
+  },
+  {
+    "id": 431,
+    "nameKo": "나옹마",
+    "nameEn": "glameow",
+    "generation": 4,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "나옹마"
+    ]
+  },
+  {
+    "id": 432,
+    "nameKo": "몬냥이",
+    "nameEn": "purugly",
+    "generation": 4,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "몬냥이"
+    ]
+  },
+  {
+    "id": 433,
+    "nameKo": "랑딸랑",
+    "nameEn": "chingling",
+    "generation": 4,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "랑딸랑"
+    ]
+  },
+  {
+    "id": 434,
+    "nameKo": "스컹뿡",
+    "nameEn": "stunky",
+    "generation": 4,
+    "types": [
+      "poison",
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "스컹뿡"
+    ]
+  },
+  {
+    "id": 435,
+    "nameKo": "스컹탱크",
+    "nameEn": "skuntank",
+    "generation": 4,
+    "types": [
+      "poison",
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "스컹탱크"
+    ]
+  },
+  {
+    "id": 436,
+    "nameKo": "동미러",
+    "nameEn": "bronzor",
+    "generation": 4,
+    "types": [
+      "steel",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "동미러"
+    ]
+  },
+  {
+    "id": 437,
+    "nameKo": "동탁군",
+    "nameEn": "bronzong",
+    "generation": 4,
+    "types": [
+      "steel",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "동탁군"
+    ]
+  },
+  {
+    "id": 438,
+    "nameKo": "꼬지지",
+    "nameEn": "bonsly",
+    "generation": 4,
+    "types": [
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "꼬지지"
+    ]
+  },
+  {
+    "id": 439,
+    "nameKo": "흉내내",
+    "nameEn": "mime-jr",
+    "generation": 4,
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "흉내내"
+    ]
+  },
+  {
+    "id": 440,
+    "nameKo": "핑복",
+    "nameEn": "happiny",
+    "generation": 4,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "핑복"
+    ]
+  },
+  {
+    "id": 441,
+    "nameKo": "페라페",
+    "nameEn": "chatot",
+    "generation": 4,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "페라페"
+    ]
+  },
+  {
+    "id": 442,
+    "nameKo": "화강돌",
+    "nameEn": "spiritomb",
+    "generation": 4,
+    "types": [
+      "ghost",
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "화강돌"
+    ]
+  },
+  {
+    "id": 443,
+    "nameKo": "딥상어동",
+    "nameEn": "gible",
+    "generation": 4,
+    "types": [
+      "dragon",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "딥상어동"
+    ],
+    "genderDiff": {
+      "front": 7,
+      "back": 14
+    }
+  },
+  {
+    "id": 444,
+    "nameKo": "한바이트",
+    "nameEn": "gabite",
+    "generation": 4,
+    "types": [
+      "dragon",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "한바이트"
+    ],
+    "genderDiff": {
+      "front": 13,
+      "back": 13
+    }
+  },
+  {
+    "id": 445,
+    "nameKo": "한카리아스",
+    "nameEn": "garchomp",
+    "generation": 4,
+    "types": [
+      "dragon",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "한카리아스"
+    ],
+    "genderDiff": {
+      "front": 1981,
+      "back": 17
+    }
+  },
+  {
+    "id": 446,
+    "nameKo": "먹고자",
+    "nameEn": "munchlax",
+    "generation": 4,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "먹고자"
+    ]
+  },
+  {
+    "id": 447,
+    "nameKo": "리오르",
+    "nameEn": "riolu",
+    "generation": 4,
+    "types": [
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "리오르"
+    ]
+  },
+  {
+    "id": 448,
+    "nameKo": "루카리오",
+    "nameEn": "lucario",
+    "generation": 4,
+    "types": [
+      "fighting",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "루카리오"
+    ]
+  },
+  {
+    "id": 449,
+    "nameKo": "히포포타스",
+    "nameEn": "hippopotas",
+    "generation": 4,
+    "types": [
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "히포포타스"
+    ],
+    "genderDiff": {
+      "front": 1070,
+      "back": 1131
+    }
+  },
+  {
+    "id": 450,
+    "nameKo": "하마돈",
+    "nameEn": "hippowdon",
+    "generation": 4,
+    "types": [
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "하마돈"
+    ],
+    "genderDiff": {
+      "front": 691,
+      "back": 1108
+    }
+  },
+  {
+    "id": 451,
+    "nameKo": "스콜피",
+    "nameEn": "skorupi",
+    "generation": 4,
+    "types": [
+      "poison",
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "스콜피"
+    ]
+  },
+  {
+    "id": 452,
+    "nameKo": "드래피온",
+    "nameEn": "drapion",
+    "generation": 4,
+    "types": [
+      "poison",
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "드래피온"
+    ]
+  },
+  {
+    "id": 453,
+    "nameKo": "삐딱구리",
+    "nameEn": "croagunk",
+    "generation": 4,
+    "types": [
+      "poison",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "삐딱구리"
+    ],
+    "genderDiff": {
+      "front": 89,
+      "back": 90
+    }
+  },
+  {
+    "id": 454,
+    "nameKo": "독개굴",
+    "nameEn": "toxicroak",
+    "generation": 4,
+    "types": [
+      "poison",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "독개굴"
+    ],
+    "genderDiff": {
+      "front": 81,
+      "back": 45
+    }
+  },
+  {
+    "id": 455,
+    "nameKo": "무스틈니",
+    "nameEn": "carnivine",
+    "generation": 4,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "무스틈니"
+    ]
+  },
+  {
+    "id": 456,
+    "nameKo": "형광어",
+    "nameEn": "finneon",
+    "generation": 4,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "형광어"
+    ],
+    "genderDiff": {
+      "front": 26,
+      "back": 48
+    }
+  },
+  {
+    "id": 457,
+    "nameKo": "네오라이트",
+    "nameEn": "lumineon",
+    "generation": 4,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "네오라이트"
+    ],
+    "genderDiff": {
+      "front": 1412,
+      "back": 74
+    }
+  },
+  {
+    "id": 458,
+    "nameKo": "타만타",
+    "nameEn": "mantyke",
+    "generation": 4,
+    "types": [
+      "water",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "타만타"
+    ]
+  },
+  {
+    "id": 459,
+    "nameKo": "눈쓰개",
+    "nameEn": "snover",
+    "generation": 4,
+    "types": [
+      "grass",
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "눈쓰개"
+    ],
+    "genderDiff": {
+      "front": 242,
+      "back": 187
+    }
+  },
+  {
+    "id": 460,
+    "nameKo": "눈설왕",
+    "nameEn": "abomasnow",
+    "generation": 4,
+    "types": [
+      "grass",
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "눈설왕"
+    ],
+    "genderDiff": {
+      "front": 106,
+      "back": null
+    }
+  },
+  {
+    "id": 461,
+    "nameKo": "포푸니라",
+    "nameEn": "weavile",
+    "generation": 4,
+    "types": [
+      "dark",
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "포푸니라"
+    ],
+    "genderDiff": {
+      "front": 51,
+      "back": 48
+    }
+  },
+  {
+    "id": 462,
+    "nameKo": "자포코일",
+    "nameEn": "magnezone",
+    "generation": 4,
+    "types": [
+      "electric",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "자포코일"
+    ]
+  },
+  {
+    "id": 463,
+    "nameKo": "내룸벨트",
+    "nameEn": "lickilicky",
+    "generation": 4,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "내룸벨트"
+    ]
+  },
+  {
+    "id": 464,
+    "nameKo": "거대코뿌리",
+    "nameEn": "rhyperior",
+    "generation": 4,
+    "types": [
+      "ground",
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "거대코뿌리"
+    ],
+    "genderDiff": {
+      "front": 30,
+      "back": 14
+    }
+  },
+  {
+    "id": 465,
+    "nameKo": "덩쿠림보",
+    "nameEn": "tangrowth",
+    "generation": 4,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "덩쿠림보"
+    ],
+    "genderDiff": {
+      "front": 73,
+      "back": 59
+    }
+  },
+  {
+    "id": 466,
+    "nameKo": "에레키블",
+    "nameEn": "electivire",
+    "generation": 4,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "에레키블"
+    ]
+  },
+  {
+    "id": 467,
+    "nameKo": "마그마번",
+    "nameEn": "magmortar",
+    "generation": 4,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "마그마번"
+    ]
+  },
+  {
+    "id": 468,
+    "nameKo": "토게키스",
+    "nameEn": "togekiss",
+    "generation": 4,
+    "types": [
+      "fairy",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "토게키스"
+    ]
+  },
+  {
+    "id": 469,
+    "nameKo": "메가자리",
+    "nameEn": "yanmega",
+    "generation": 4,
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "메가자리"
+    ]
+  },
+  {
+    "id": 470,
+    "nameKo": "리피아",
+    "nameEn": "leafeon",
+    "generation": 4,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "리피아"
+    ]
+  },
+  {
+    "id": 471,
+    "nameKo": "글레이시아",
+    "nameEn": "glaceon",
+    "generation": 4,
+    "types": [
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "글레이시아"
+    ]
+  },
+  {
+    "id": 472,
+    "nameKo": "글라이온",
+    "nameEn": "gliscor",
+    "generation": 4,
+    "types": [
+      "ground",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "글라이온"
+    ]
+  },
+  {
+    "id": 473,
+    "nameKo": "맘모꾸리",
+    "nameEn": "mamoswine",
+    "generation": 4,
+    "types": [
+      "ice",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "맘모꾸리"
+    ],
+    "genderDiff": {
+      "front": 143,
+      "back": 40
+    }
+  },
+  {
+    "id": 474,
+    "nameKo": "폴리곤Z",
+    "nameEn": "porygon-z",
+    "generation": 4,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "폴리곤Z"
+    ]
+  },
+  {
+    "id": 475,
+    "nameKo": "엘레이드",
+    "nameEn": "gallade",
+    "generation": 4,
+    "types": [
+      "psychic",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "엘레이드"
+    ]
+  },
+  {
+    "id": 476,
+    "nameKo": "대코파스",
+    "nameEn": "probopass",
+    "generation": 4,
+    "types": [
+      "rock",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "대코파스"
+    ]
+  },
+  {
+    "id": 477,
+    "nameKo": "야느와르몽",
+    "nameEn": "dusknoir",
+    "generation": 4,
+    "types": [
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "야느와르몽"
+    ]
+  },
+  {
+    "id": 478,
+    "nameKo": "눈여아",
+    "nameEn": "froslass",
+    "generation": 4,
+    "types": [
+      "ice",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "눈여아"
+    ]
+  },
+  {
+    "id": 479,
+    "nameKo": "로토무",
+    "nameEn": "rotom",
+    "generation": 4,
+    "types": [
+      "electric",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "로토무"
+    ]
+  },
+  {
+    "id": 480,
+    "nameKo": "유크시",
+    "nameEn": "uxie",
+    "generation": 4,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "유크시"
+    ]
+  },
+  {
+    "id": 481,
+    "nameKo": "엠라이트",
+    "nameEn": "mesprit",
+    "generation": 4,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "엠라이트"
+    ]
+  },
+  {
+    "id": 482,
+    "nameKo": "아그놈",
+    "nameEn": "azelf",
+    "generation": 4,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "아그놈"
+    ]
+  },
+  {
+    "id": 483,
+    "nameKo": "디아루가",
+    "nameEn": "dialga",
+    "generation": 4,
+    "types": [
+      "steel",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "디아루가"
+    ]
+  },
+  {
+    "id": 484,
+    "nameKo": "펄기아",
+    "nameEn": "palkia",
+    "generation": 4,
+    "types": [
+      "water",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "펄기아"
+    ]
+  },
+  {
+    "id": 485,
+    "nameKo": "히드런",
+    "nameEn": "heatran",
+    "generation": 4,
+    "types": [
+      "fire",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "히드런"
+    ]
+  },
+  {
+    "id": 486,
+    "nameKo": "레지기가스",
+    "nameEn": "regigigas",
+    "generation": 4,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "레지기가스"
+    ]
+  },
+  {
+    "id": 487,
+    "nameKo": "기라티나",
+    "nameEn": "giratina-altered",
+    "generation": 4,
+    "types": [
+      "ghost",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "기라티나"
+    ]
+  },
+  {
+    "id": 488,
+    "nameKo": "크레세리아",
+    "nameEn": "cresselia",
+    "generation": 4,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "크레세리아"
+    ]
+  },
+  {
+    "id": 489,
+    "nameKo": "피오네",
+    "nameEn": "phione",
+    "generation": 4,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "피오네"
+    ]
+  },
+  {
+    "id": 490,
+    "nameKo": "마나피",
+    "nameEn": "manaphy",
+    "generation": 4,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "마나피"
+    ]
+  },
+  {
+    "id": 491,
+    "nameKo": "다크라이",
+    "nameEn": "darkrai",
+    "generation": 4,
+    "types": [
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "다크라이"
+    ]
+  },
+  {
+    "id": 492,
+    "nameKo": "쉐이미",
+    "nameEn": "shaymin-land",
+    "generation": 4,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "쉐이미"
+    ]
+  },
+  {
+    "id": 493,
+    "nameKo": "아르세우스",
+    "nameEn": "arceus",
+    "generation": 4,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "아르세우스"
+    ]
+  },
+  {
+    "id": 494,
+    "nameKo": "비크티니",
+    "nameEn": "victini",
+    "generation": 5,
+    "types": [
+      "psychic",
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "비크티니"
+    ]
+  },
+  {
+    "id": 495,
+    "nameKo": "주리비얀",
+    "nameEn": "snivy",
+    "generation": 5,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "주리비얀"
+    ]
+  },
+  {
+    "id": 496,
+    "nameKo": "샤비",
+    "nameEn": "servine",
+    "generation": 5,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "샤비"
+    ]
+  },
+  {
+    "id": 497,
+    "nameKo": "샤로다",
+    "nameEn": "serperior",
+    "generation": 5,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "샤로다"
+    ]
+  },
+  {
+    "id": 498,
+    "nameKo": "뚜꾸리",
+    "nameEn": "tepig",
+    "generation": 5,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "뚜꾸리"
+    ]
+  },
+  {
+    "id": 499,
+    "nameKo": "차오꿀",
+    "nameEn": "pignite",
+    "generation": 5,
+    "types": [
+      "fire",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "차오꿀"
+    ]
+  },
+  {
+    "id": 500,
+    "nameKo": "염무왕",
+    "nameEn": "emboar",
+    "generation": 5,
+    "types": [
+      "fire",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "염무왕"
+    ]
+  },
+  {
+    "id": 501,
+    "nameKo": "수댕이",
+    "nameEn": "oshawott",
+    "generation": 5,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "수댕이"
+    ]
+  },
+  {
+    "id": 502,
+    "nameKo": "쌍검자비",
+    "nameEn": "dewott",
+    "generation": 5,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "쌍검자비"
+    ]
+  },
+  {
+    "id": 503,
+    "nameKo": "대검귀",
+    "nameEn": "samurott",
+    "generation": 5,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "대검귀"
+    ]
+  },
+  {
+    "id": 504,
+    "nameKo": "보르쥐",
+    "nameEn": "patrat",
+    "generation": 5,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "보르쥐"
+    ]
+  },
+  {
+    "id": 505,
+    "nameKo": "보르그",
+    "nameEn": "watchog",
+    "generation": 5,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "보르그"
+    ]
+  },
+  {
+    "id": 506,
+    "nameKo": "요테리",
+    "nameEn": "lillipup",
+    "generation": 5,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "요테리"
+    ]
+  },
+  {
+    "id": 507,
+    "nameKo": "하데리어",
+    "nameEn": "herdier",
+    "generation": 5,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "하데리어"
+    ]
+  },
+  {
+    "id": 508,
+    "nameKo": "바랜드",
+    "nameEn": "stoutland",
+    "generation": 5,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "바랜드"
+    ]
+  },
+  {
+    "id": 509,
+    "nameKo": "쌔비냥",
+    "nameEn": "purrloin",
+    "generation": 5,
+    "types": [
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "쌔비냥"
+    ]
+  },
+  {
+    "id": 510,
+    "nameKo": "레파르다스",
+    "nameEn": "liepard",
+    "generation": 5,
+    "types": [
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "레파르다스"
+    ]
+  },
+  {
+    "id": 511,
+    "nameKo": "야나프",
+    "nameEn": "pansage",
+    "generation": 5,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "야나프"
+    ]
+  },
+  {
+    "id": 512,
+    "nameKo": "야나키",
+    "nameEn": "simisage",
+    "generation": 5,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "야나키"
+    ]
+  },
+  {
+    "id": 513,
+    "nameKo": "바오프",
+    "nameEn": "pansear",
+    "generation": 5,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "바오프"
+    ]
+  },
+  {
+    "id": 514,
+    "nameKo": "바오키",
+    "nameEn": "simisear",
+    "generation": 5,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "바오키"
+    ]
+  },
+  {
+    "id": 515,
+    "nameKo": "앗차프",
+    "nameEn": "panpour",
+    "generation": 5,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "앗차프"
+    ]
+  },
+  {
+    "id": 516,
+    "nameKo": "앗차키",
+    "nameEn": "simipour",
+    "generation": 5,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "앗차키"
+    ]
+  },
+  {
+    "id": 517,
+    "nameKo": "몽나",
+    "nameEn": "munna",
+    "generation": 5,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "몽나"
+    ]
+  },
+  {
+    "id": 518,
+    "nameKo": "몽얌나",
+    "nameEn": "musharna",
+    "generation": 5,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "몽얌나"
+    ]
+  },
+  {
+    "id": 519,
+    "nameKo": "콩둘기",
+    "nameEn": "pidove",
+    "generation": 5,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "콩둘기"
+    ]
+  },
+  {
+    "id": 520,
+    "nameKo": "유토브",
+    "nameEn": "tranquill",
+    "generation": 5,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "유토브"
+    ]
+  },
+  {
+    "id": 521,
+    "nameKo": "켄호로우",
+    "nameEn": "unfezant",
+    "generation": 5,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "켄호로우"
+    ],
+    "genderDiff": {
+      "front": 659,
+      "back": 673
+    }
+  },
+  {
+    "id": 522,
+    "nameKo": "줄뮤마",
+    "nameEn": "blitzle",
+    "generation": 5,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "줄뮤마"
+    ]
+  },
+  {
+    "id": 523,
+    "nameKo": "제브라이카",
+    "nameEn": "zebstrika",
+    "generation": 5,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "제브라이카"
+    ]
+  },
+  {
+    "id": 524,
+    "nameKo": "단굴",
+    "nameEn": "roggenrola",
+    "generation": 5,
+    "types": [
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "단굴"
+    ]
+  },
+  {
+    "id": 525,
+    "nameKo": "암트르",
+    "nameEn": "boldore",
+    "generation": 5,
+    "types": [
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "암트르"
+    ]
+  },
+  {
+    "id": 526,
+    "nameKo": "기가이어스",
+    "nameEn": "gigalith",
+    "generation": 5,
+    "types": [
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "기가이어스"
+    ]
+  },
+  {
+    "id": 527,
+    "nameKo": "또르박쥐",
+    "nameEn": "woobat",
+    "generation": 5,
+    "types": [
+      "psychic",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "또르박쥐"
+    ]
+  },
+  {
+    "id": 528,
+    "nameKo": "맘박쥐",
+    "nameEn": "swoobat",
+    "generation": 5,
+    "types": [
+      "psychic",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "맘박쥐"
+    ]
+  },
+  {
+    "id": 529,
+    "nameKo": "두더류",
+    "nameEn": "drilbur",
+    "generation": 5,
+    "types": [
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "두더류"
+    ]
+  },
+  {
+    "id": 530,
+    "nameKo": "몰드류",
+    "nameEn": "excadrill",
+    "generation": 5,
+    "types": [
+      "ground",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "몰드류"
+    ]
+  },
+  {
+    "id": 531,
+    "nameKo": "다부니",
+    "nameEn": "audino",
+    "generation": 5,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "다부니"
+    ]
+  },
+  {
+    "id": 532,
+    "nameKo": "으랏차",
+    "nameEn": "timburr",
+    "generation": 5,
+    "types": [
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "으랏차"
+    ]
+  },
+  {
+    "id": 533,
+    "nameKo": "토쇠골",
+    "nameEn": "gurdurr",
+    "generation": 5,
+    "types": [
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "토쇠골"
+    ]
+  },
+  {
+    "id": 534,
+    "nameKo": "노보청",
+    "nameEn": "conkeldurr",
+    "generation": 5,
+    "types": [
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "노보청"
+    ]
+  },
+  {
+    "id": 535,
+    "nameKo": "동챙이",
+    "nameEn": "tympole",
+    "generation": 5,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "동챙이"
+    ]
+  },
+  {
+    "id": 536,
+    "nameKo": "두까비",
+    "nameEn": "palpitoad",
+    "generation": 5,
+    "types": [
+      "water",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "두까비"
+    ]
+  },
+  {
+    "id": 537,
+    "nameKo": "두빅굴",
+    "nameEn": "seismitoad",
+    "generation": 5,
+    "types": [
+      "water",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "두빅굴"
+    ]
+  },
+  {
+    "id": 538,
+    "nameKo": "던지미",
+    "nameEn": "throh",
+    "generation": 5,
+    "types": [
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "던지미"
+    ]
+  },
+  {
+    "id": 539,
+    "nameKo": "타격귀",
+    "nameEn": "sawk",
+    "generation": 5,
+    "types": [
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "타격귀"
+    ]
+  },
+  {
+    "id": 540,
+    "nameKo": "두르보",
+    "nameEn": "sewaddle",
+    "generation": 5,
+    "types": [
+      "bug",
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "두르보"
+    ]
+  },
+  {
+    "id": 541,
+    "nameKo": "두르쿤",
+    "nameEn": "swadloon",
+    "generation": 5,
+    "types": [
+      "bug",
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "두르쿤"
+    ]
+  },
+  {
+    "id": 542,
+    "nameKo": "모아머",
+    "nameEn": "leavanny",
+    "generation": 5,
+    "types": [
+      "bug",
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "모아머"
+    ]
+  },
+  {
+    "id": 543,
+    "nameKo": "마디네",
+    "nameEn": "venipede",
+    "generation": 5,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "마디네"
+    ]
+  },
+  {
+    "id": 544,
+    "nameKo": "휠구",
+    "nameEn": "whirlipede",
+    "generation": 5,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "휠구"
+    ]
+  },
+  {
+    "id": 545,
+    "nameKo": "펜드라",
+    "nameEn": "scolipede",
+    "generation": 5,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "펜드라"
+    ]
+  },
+  {
+    "id": 546,
+    "nameKo": "소미안",
+    "nameEn": "cottonee",
+    "generation": 5,
+    "types": [
+      "grass",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "소미안"
+    ]
+  },
+  {
+    "id": 547,
+    "nameKo": "엘풍",
+    "nameEn": "whimsicott",
+    "generation": 5,
+    "types": [
+      "grass",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "엘풍"
+    ]
+  },
+  {
+    "id": 548,
+    "nameKo": "치릴리",
+    "nameEn": "petilil",
+    "generation": 5,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "치릴리"
+    ]
+  },
+  {
+    "id": 549,
+    "nameKo": "드레디어",
+    "nameEn": "lilligant",
+    "generation": 5,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "드레디어"
+    ]
+  },
+  {
+    "id": 550,
+    "nameKo": "배쓰나이",
+    "nameEn": "basculin-red-striped",
+    "generation": 5,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "배쓰나이"
+    ]
+  },
+  {
+    "id": 551,
+    "nameKo": "깜눈크",
+    "nameEn": "sandile",
+    "generation": 5,
+    "types": [
+      "ground",
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "깜눈크"
+    ]
+  },
+  {
+    "id": 552,
+    "nameKo": "악비르",
+    "nameEn": "krokorok",
+    "generation": 5,
+    "types": [
+      "ground",
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "악비르"
+    ]
+  },
+  {
+    "id": 553,
+    "nameKo": "악비아르",
+    "nameEn": "krookodile",
+    "generation": 5,
+    "types": [
+      "ground",
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "악비아르"
+    ]
+  },
+  {
+    "id": 554,
+    "nameKo": "달막화",
+    "nameEn": "darumaka",
+    "generation": 5,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "달막화"
+    ]
+  },
+  {
+    "id": 555,
+    "nameKo": "불비달마",
+    "nameEn": "darmanitan-standard",
+    "generation": 5,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "불비달마"
+    ]
+  },
+  {
+    "id": 556,
+    "nameKo": "마라카치",
+    "nameEn": "maractus",
+    "generation": 5,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "마라카치"
+    ]
+  },
+  {
+    "id": 557,
+    "nameKo": "돌살이",
+    "nameEn": "dwebble",
+    "generation": 5,
+    "types": [
+      "bug",
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "돌살이"
+    ]
+  },
+  {
+    "id": 558,
+    "nameKo": "암팰리스",
+    "nameEn": "crustle",
+    "generation": 5,
+    "types": [
+      "bug",
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "암팰리스"
+    ]
+  },
+  {
+    "id": 559,
+    "nameKo": "곤율랭",
+    "nameEn": "scraggy",
+    "generation": 5,
+    "types": [
+      "dark",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "곤율랭"
+    ]
+  },
+  {
+    "id": 560,
+    "nameKo": "곤율거니",
+    "nameEn": "scrafty",
+    "generation": 5,
+    "types": [
+      "dark",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "곤율거니"
+    ]
+  },
+  {
+    "id": 561,
+    "nameKo": "심보러",
+    "nameEn": "sigilyph",
+    "generation": 5,
+    "types": [
+      "psychic",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "심보러"
+    ]
+  },
+  {
+    "id": 562,
+    "nameKo": "데스마스",
+    "nameEn": "yamask",
+    "generation": 5,
+    "types": [
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "데스마스"
+    ]
+  },
+  {
+    "id": 563,
+    "nameKo": "데스니칸",
+    "nameEn": "cofagrigus",
+    "generation": 5,
+    "types": [
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "데스니칸"
+    ]
+  },
+  {
+    "id": 564,
+    "nameKo": "프로토가",
+    "nameEn": "tirtouga",
+    "generation": 5,
+    "types": [
+      "water",
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "프로토가"
+    ]
+  },
+  {
+    "id": 565,
+    "nameKo": "늑골라",
+    "nameEn": "carracosta",
+    "generation": 5,
+    "types": [
+      "water",
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "늑골라"
+    ]
+  },
+  {
+    "id": 566,
+    "nameKo": "아켄",
+    "nameEn": "archen",
+    "generation": 5,
+    "types": [
+      "rock",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "아켄"
+    ]
+  },
+  {
+    "id": 567,
+    "nameKo": "아케오스",
+    "nameEn": "archeops",
+    "generation": 5,
+    "types": [
+      "rock",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "아케오스"
+    ]
+  },
+  {
+    "id": 568,
+    "nameKo": "깨봉이",
+    "nameEn": "trubbish",
+    "generation": 5,
+    "types": [
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "깨봉이"
+    ]
+  },
+  {
+    "id": 569,
+    "nameKo": "더스트나",
+    "nameEn": "garbodor",
+    "generation": 5,
+    "types": [
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "더스트나"
+    ]
+  },
+  {
+    "id": 570,
+    "nameKo": "조로아",
+    "nameEn": "zorua",
+    "generation": 5,
+    "types": [
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "조로아"
+    ]
+  },
+  {
+    "id": 571,
+    "nameKo": "조로아크",
+    "nameEn": "zoroark",
+    "generation": 5,
+    "types": [
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "조로아크"
+    ]
+  },
+  {
+    "id": 572,
+    "nameKo": "치라미",
+    "nameEn": "minccino",
+    "generation": 5,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "치라미"
+    ]
+  },
+  {
+    "id": 573,
+    "nameKo": "치라치노",
+    "nameEn": "cinccino",
+    "generation": 5,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "치라치노"
+    ]
+  },
+  {
+    "id": 574,
+    "nameKo": "고디탱",
+    "nameEn": "gothita",
+    "generation": 5,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "고디탱"
+    ]
+  },
+  {
+    "id": 575,
+    "nameKo": "고디보미",
+    "nameEn": "gothorita",
+    "generation": 5,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "고디보미"
+    ]
+  },
+  {
+    "id": 576,
+    "nameKo": "고디모아젤",
+    "nameEn": "gothitelle",
+    "generation": 5,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "고디모아젤"
+    ]
+  },
+  {
+    "id": 577,
+    "nameKo": "유니란",
+    "nameEn": "solosis",
+    "generation": 5,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "유니란"
+    ]
+  },
+  {
+    "id": 578,
+    "nameKo": "듀란",
+    "nameEn": "duosion",
+    "generation": 5,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "듀란"
+    ]
+  },
+  {
+    "id": 579,
+    "nameKo": "란쿨루스",
+    "nameEn": "reuniclus",
+    "generation": 5,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "란쿨루스"
+    ]
+  },
+  {
+    "id": 580,
+    "nameKo": "꼬지보리",
+    "nameEn": "ducklett",
+    "generation": 5,
+    "types": [
+      "water",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "꼬지보리"
+    ]
+  },
+  {
+    "id": 581,
+    "nameKo": "스완나",
+    "nameEn": "swanna",
+    "generation": 5,
+    "types": [
+      "water",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "스완나"
+    ]
+  },
+  {
+    "id": 582,
+    "nameKo": "바닐프티",
+    "nameEn": "vanillite",
+    "generation": 5,
+    "types": [
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "바닐프티"
+    ]
+  },
+  {
+    "id": 583,
+    "nameKo": "바닐리치",
+    "nameEn": "vanillish",
+    "generation": 5,
+    "types": [
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "바닐리치"
+    ]
+  },
+  {
+    "id": 584,
+    "nameKo": "배바닐라",
+    "nameEn": "vanilluxe",
+    "generation": 5,
+    "types": [
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "배바닐라"
+    ]
+  },
+  {
+    "id": 585,
+    "nameKo": "사철록",
+    "nameEn": "deerling",
+    "generation": 5,
+    "types": [
+      "normal",
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "사철록"
+    ]
+  },
+  {
+    "id": 586,
+    "nameKo": "바라철록",
+    "nameEn": "sawsbuck",
+    "generation": 5,
+    "types": [
+      "normal",
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "바라철록"
+    ]
+  },
+  {
+    "id": 587,
+    "nameKo": "에몽가",
+    "nameEn": "emolga",
+    "generation": 5,
+    "types": [
+      "electric",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "에몽가"
+    ]
+  },
+  {
+    "id": 588,
+    "nameKo": "딱정곤",
+    "nameEn": "karrablast",
+    "generation": 5,
+    "types": [
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "딱정곤"
+    ]
+  },
+  {
+    "id": 589,
+    "nameKo": "슈바르고",
+    "nameEn": "escavalier",
+    "generation": 5,
+    "types": [
+      "bug",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "슈바르고"
+    ]
+  },
+  {
+    "id": 590,
+    "nameKo": "깜놀버슬",
+    "nameEn": "foongus",
+    "generation": 5,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "깜놀버슬"
+    ]
+  },
+  {
+    "id": 591,
+    "nameKo": "뽀록나",
+    "nameEn": "amoonguss",
+    "generation": 5,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "뽀록나"
+    ]
+  },
+  {
+    "id": 592,
+    "nameKo": "탱그릴",
+    "nameEn": "frillish-male",
+    "generation": 5,
+    "types": [
+      "water",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "탱그릴"
+    ],
+    "genderDiff": {
+      "front": 1683,
+      "back": 1598
+    }
+  },
+  {
+    "id": 593,
+    "nameKo": "탱탱겔",
+    "nameEn": "jellicent-male",
+    "generation": 5,
+    "types": [
+      "water",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "탱탱겔"
+    ],
+    "genderDiff": {
+      "front": 3034,
+      "back": 2963
+    }
+  },
+  {
+    "id": 594,
+    "nameKo": "맘복치",
+    "nameEn": "alomomola",
+    "generation": 5,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "맘복치"
+    ]
+  },
+  {
+    "id": 595,
+    "nameKo": "파쪼옥",
+    "nameEn": "joltik",
+    "generation": 5,
+    "types": [
+      "bug",
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "파쪼옥"
+    ]
+  },
+  {
+    "id": 596,
+    "nameKo": "전툴라",
+    "nameEn": "galvantula",
+    "generation": 5,
+    "types": [
+      "bug",
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "전툴라"
+    ]
+  },
+  {
+    "id": 597,
+    "nameKo": "철시드",
+    "nameEn": "ferroseed",
+    "generation": 5,
+    "types": [
+      "grass",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "철시드"
+    ]
+  },
+  {
+    "id": 598,
+    "nameKo": "너트령",
+    "nameEn": "ferrothorn",
+    "generation": 5,
+    "types": [
+      "grass",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "너트령"
+    ]
+  },
+  {
+    "id": 599,
+    "nameKo": "기어르",
+    "nameEn": "klink",
+    "generation": 5,
+    "types": [
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "기어르"
+    ]
+  },
+  {
+    "id": 600,
+    "nameKo": "기기어르",
+    "nameEn": "klang",
+    "generation": 5,
+    "types": [
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "기기어르"
+    ]
+  },
+  {
+    "id": 601,
+    "nameKo": "기기기어르",
+    "nameEn": "klinklang",
+    "generation": 5,
+    "types": [
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "기기기어르"
+    ]
+  },
+  {
+    "id": 602,
+    "nameKo": "저리어",
+    "nameEn": "tynamo",
+    "generation": 5,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "저리어"
+    ]
+  },
+  {
+    "id": 603,
+    "nameKo": "저리릴",
+    "nameEn": "eelektrik",
+    "generation": 5,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "저리릴"
+    ]
+  },
+  {
+    "id": 604,
+    "nameKo": "저리더프",
+    "nameEn": "eelektross",
+    "generation": 5,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "저리더프"
+    ]
+  },
+  {
+    "id": 605,
+    "nameKo": "리그레",
+    "nameEn": "elgyem",
+    "generation": 5,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "리그레"
+    ]
+  },
+  {
+    "id": 606,
+    "nameKo": "벰크",
+    "nameEn": "beheeyem",
+    "generation": 5,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "벰크"
+    ]
+  },
+  {
+    "id": 607,
+    "nameKo": "불켜미",
+    "nameEn": "litwick",
+    "generation": 5,
+    "types": [
+      "ghost",
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "불켜미"
+    ]
+  },
+  {
+    "id": 608,
+    "nameKo": "램프라",
+    "nameEn": "lampent",
+    "generation": 5,
+    "types": [
+      "ghost",
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "램프라"
+    ]
+  },
+  {
+    "id": 609,
+    "nameKo": "샹델라",
+    "nameEn": "chandelure",
+    "generation": 5,
+    "types": [
+      "ghost",
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "샹델라"
+    ]
+  },
+  {
+    "id": 610,
+    "nameKo": "터검니",
+    "nameEn": "axew",
+    "generation": 5,
+    "types": [
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "터검니"
+    ]
+  },
+  {
+    "id": 611,
+    "nameKo": "액슨도",
+    "nameEn": "fraxure",
+    "generation": 5,
+    "types": [
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "액슨도"
+    ]
+  },
+  {
+    "id": 612,
+    "nameKo": "액스라이즈",
+    "nameEn": "haxorus",
+    "generation": 5,
+    "types": [
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "액스라이즈"
+    ]
+  },
+  {
+    "id": 613,
+    "nameKo": "코고미",
+    "nameEn": "cubchoo",
+    "generation": 5,
+    "types": [
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "코고미"
+    ]
+  },
+  {
+    "id": 614,
+    "nameKo": "툰베어",
+    "nameEn": "beartic",
+    "generation": 5,
+    "types": [
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "툰베어"
+    ]
+  },
+  {
+    "id": 615,
+    "nameKo": "프리지오",
+    "nameEn": "cryogonal",
+    "generation": 5,
+    "types": [
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "프리지오"
+    ]
+  },
+  {
+    "id": 616,
+    "nameKo": "쪼마리",
+    "nameEn": "shelmet",
+    "generation": 5,
+    "types": [
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "쪼마리"
+    ]
+  },
+  {
+    "id": 617,
+    "nameKo": "어지리더",
+    "nameEn": "accelgor",
+    "generation": 5,
+    "types": [
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "어지리더"
+    ]
+  },
+  {
+    "id": 618,
+    "nameKo": "메더",
+    "nameEn": "stunfisk",
+    "generation": 5,
+    "types": [
+      "ground",
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "메더"
+    ]
+  },
+  {
+    "id": 619,
+    "nameKo": "비조푸",
+    "nameEn": "mienfoo",
+    "generation": 5,
+    "types": [
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "비조푸"
+    ]
+  },
+  {
+    "id": 620,
+    "nameKo": "비조도",
+    "nameEn": "mienshao",
+    "generation": 5,
+    "types": [
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "비조도"
+    ]
+  },
+  {
+    "id": 621,
+    "nameKo": "크리만",
+    "nameEn": "druddigon",
+    "generation": 5,
+    "types": [
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "크리만"
+    ]
+  },
+  {
+    "id": 622,
+    "nameKo": "골비람",
+    "nameEn": "golett",
+    "generation": 5,
+    "types": [
+      "ground",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "골비람"
+    ]
+  },
+  {
+    "id": 623,
+    "nameKo": "골루그",
+    "nameEn": "golurk",
+    "generation": 5,
+    "types": [
+      "ground",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "골루그"
+    ]
+  },
+  {
+    "id": 624,
+    "nameKo": "자망칼",
+    "nameEn": "pawniard",
+    "generation": 5,
+    "types": [
+      "dark",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "자망칼"
+    ]
+  },
+  {
+    "id": 625,
+    "nameKo": "절각참",
+    "nameEn": "bisharp",
+    "generation": 5,
+    "types": [
+      "dark",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "절각참"
+    ]
+  },
+  {
+    "id": 626,
+    "nameKo": "버프론",
+    "nameEn": "bouffalant",
+    "generation": 5,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "버프론"
+    ]
+  },
+  {
+    "id": 627,
+    "nameKo": "수리둥보",
+    "nameEn": "rufflet",
+    "generation": 5,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "수리둥보"
+    ]
+  },
+  {
+    "id": 628,
+    "nameKo": "워글",
+    "nameEn": "braviary",
+    "generation": 5,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "워글"
+    ]
+  },
+  {
+    "id": 629,
+    "nameKo": "벌차이",
+    "nameEn": "vullaby",
+    "generation": 5,
+    "types": [
+      "dark",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "벌차이"
+    ]
+  },
+  {
+    "id": 630,
+    "nameKo": "버랜지나",
+    "nameEn": "mandibuzz",
+    "generation": 5,
+    "types": [
+      "dark",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "버랜지나"
+    ]
+  },
+  {
+    "id": 631,
+    "nameKo": "앤티골",
+    "nameEn": "heatmor",
+    "generation": 5,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "앤티골"
+    ]
+  },
+  {
+    "id": 632,
+    "nameKo": "아이앤트",
+    "nameEn": "durant",
+    "generation": 5,
+    "types": [
+      "bug",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "아이앤트"
+    ]
+  },
+  {
+    "id": 633,
+    "nameKo": "모노두",
+    "nameEn": "deino",
+    "generation": 5,
+    "types": [
+      "dark",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "모노두"
+    ]
+  },
+  {
+    "id": 634,
+    "nameKo": "디헤드",
+    "nameEn": "zweilous",
+    "generation": 5,
+    "types": [
+      "dark",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "디헤드"
+    ]
+  },
+  {
+    "id": 635,
+    "nameKo": "삼삼드래",
+    "nameEn": "hydreigon",
+    "generation": 5,
+    "types": [
+      "dark",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "삼삼드래"
+    ]
+  },
+  {
+    "id": 636,
+    "nameKo": "활화르바",
+    "nameEn": "larvesta",
+    "generation": 5,
+    "types": [
+      "bug",
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "활화르바"
+    ]
+  },
+  {
+    "id": 637,
+    "nameKo": "불카모스",
+    "nameEn": "volcarona",
+    "generation": 5,
+    "types": [
+      "bug",
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "불카모스"
+    ]
+  },
+  {
+    "id": 638,
+    "nameKo": "코바르온",
+    "nameEn": "cobalion",
+    "generation": 5,
+    "types": [
+      "steel",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "코바르온"
+    ]
+  },
+  {
+    "id": 639,
+    "nameKo": "테라키온",
+    "nameEn": "terrakion",
+    "generation": 5,
+    "types": [
+      "rock",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "테라키온"
+    ]
+  },
+  {
+    "id": 640,
+    "nameKo": "비리디온",
+    "nameEn": "virizion",
+    "generation": 5,
+    "types": [
+      "grass",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "비리디온"
+    ]
+  },
+  {
+    "id": 641,
+    "nameKo": "토네로스",
+    "nameEn": "tornadus-incarnate",
+    "generation": 5,
+    "types": [
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "토네로스"
+    ]
+  },
+  {
+    "id": 642,
+    "nameKo": "볼트로스",
+    "nameEn": "thundurus-incarnate",
+    "generation": 5,
+    "types": [
+      "electric",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "볼트로스"
+    ]
+  },
+  {
+    "id": 643,
+    "nameKo": "레시라무",
+    "nameEn": "reshiram",
+    "generation": 5,
+    "types": [
+      "dragon",
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "레시라무"
+    ]
+  },
+  {
+    "id": 644,
+    "nameKo": "제크로무",
+    "nameEn": "zekrom",
+    "generation": 5,
+    "types": [
+      "dragon",
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "제크로무"
+    ]
+  },
+  {
+    "id": 645,
+    "nameKo": "랜드로스",
+    "nameEn": "landorus-incarnate",
+    "generation": 5,
+    "types": [
+      "ground",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "랜드로스"
+    ]
+  },
+  {
+    "id": 646,
+    "nameKo": "큐레무",
+    "nameEn": "kyurem",
+    "generation": 5,
+    "types": [
+      "dragon",
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "큐레무"
+    ]
+  },
+  {
+    "id": 647,
+    "nameKo": "케르디오",
+    "nameEn": "keldeo-ordinary",
+    "generation": 5,
+    "types": [
+      "water",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "케르디오"
+    ]
+  },
+  {
+    "id": 648,
+    "nameKo": "메로엣타",
+    "nameEn": "meloetta-aria",
+    "generation": 5,
+    "types": [
+      "normal",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "메로엣타"
+    ]
+  },
+  {
+    "id": 649,
+    "nameKo": "게노세크트",
+    "nameEn": "genesect",
+    "generation": 5,
+    "types": [
+      "bug",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "게노세크트"
+    ]
+  },
+  {
+    "id": 650,
+    "nameKo": "도치마론",
+    "nameEn": "chespin",
+    "generation": 6,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "도치마론"
+    ]
+  },
+  {
+    "id": 651,
+    "nameKo": "도치보구",
+    "nameEn": "quilladin",
+    "generation": 6,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "도치보구"
+    ]
+  },
+  {
+    "id": 652,
+    "nameKo": "브리가론",
+    "nameEn": "chesnaught",
+    "generation": 6,
+    "types": [
+      "grass",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "브리가론"
+    ]
+  },
+  {
+    "id": 653,
+    "nameKo": "푸호꼬",
+    "nameEn": "fennekin",
+    "generation": 6,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "푸호꼬"
+    ]
+  },
+  {
+    "id": 654,
+    "nameKo": "테르나",
+    "nameEn": "braixen",
+    "generation": 6,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "테르나"
+    ]
+  },
+  {
+    "id": 655,
+    "nameKo": "마폭시",
+    "nameEn": "delphox",
+    "generation": 6,
+    "types": [
+      "fire",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "마폭시"
+    ]
+  },
+  {
+    "id": 656,
+    "nameKo": "개구마르",
+    "nameEn": "froakie",
+    "generation": 6,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "개구마르"
+    ]
+  },
+  {
+    "id": 657,
+    "nameKo": "개굴반장",
+    "nameEn": "frogadier",
+    "generation": 6,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "개굴반장"
+    ]
+  },
+  {
+    "id": 658,
+    "nameKo": "개굴닌자",
+    "nameEn": "greninja",
+    "generation": 6,
+    "types": [
+      "water",
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "개굴닌자"
+    ]
+  },
+  {
+    "id": 659,
+    "nameKo": "파르빗",
+    "nameEn": "bunnelby",
+    "generation": 6,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "파르빗"
+    ]
+  },
+  {
+    "id": 660,
+    "nameKo": "파르토",
+    "nameEn": "diggersby",
+    "generation": 6,
+    "types": [
+      "normal",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "파르토"
+    ]
+  },
+  {
+    "id": 661,
+    "nameKo": "화살꼬빈",
+    "nameEn": "fletchling",
+    "generation": 6,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "화살꼬빈"
+    ]
+  },
+  {
+    "id": 662,
+    "nameKo": "불화살빈",
+    "nameEn": "fletchinder",
+    "generation": 6,
+    "types": [
+      "fire",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "불화살빈"
+    ]
+  },
+  {
+    "id": 663,
+    "nameKo": "파이어로",
+    "nameEn": "talonflame",
+    "generation": 6,
+    "types": [
+      "fire",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "파이어로"
+    ]
+  },
+  {
+    "id": 664,
+    "nameKo": "분이벌레",
+    "nameEn": "scatterbug",
+    "generation": 6,
+    "types": [
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "분이벌레"
+    ]
+  },
+  {
+    "id": 665,
+    "nameKo": "분떠도리",
+    "nameEn": "spewpa",
+    "generation": 6,
+    "types": [
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "분떠도리"
+    ]
+  },
+  {
+    "id": 666,
+    "nameKo": "비비용",
+    "nameEn": "vivillon",
+    "generation": 6,
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "비비용"
+    ]
+  },
+  {
+    "id": 667,
+    "nameKo": "레오꼬",
+    "nameEn": "litleo",
+    "generation": 6,
+    "types": [
+      "fire",
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "레오꼬"
+    ]
+  },
+  {
+    "id": 668,
+    "nameKo": "화염레오",
+    "nameEn": "pyroar-male",
+    "generation": 6,
+    "types": [
+      "fire",
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "화염레오"
+    ],
+    "genderDiff": {
+      "front": 8799,
+      "back": 2799
+    }
+  },
+  {
+    "id": 669,
+    "nameKo": "플라베베",
+    "nameEn": "flabebe",
+    "generation": 6,
+    "types": [
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "플라베베"
+    ]
+  },
+  {
+    "id": 670,
+    "nameKo": "플라엣테",
+    "nameEn": "floette",
+    "generation": 6,
+    "types": [
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "플라엣테"
+    ]
+  },
+  {
+    "id": 671,
+    "nameKo": "플라제스",
+    "nameEn": "florges",
+    "generation": 6,
+    "types": [
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "플라제스"
+    ]
+  },
+  {
+    "id": 672,
+    "nameKo": "메이클",
+    "nameEn": "skiddo",
+    "generation": 6,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "메이클"
+    ]
+  },
+  {
+    "id": 673,
+    "nameKo": "고고트",
+    "nameEn": "gogoat",
+    "generation": 6,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "고고트"
+    ]
+  },
+  {
+    "id": 674,
+    "nameKo": "판짱",
+    "nameEn": "pancham",
+    "generation": 6,
+    "types": [
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "판짱"
+    ]
+  },
+  {
+    "id": 675,
+    "nameKo": "부란다",
+    "nameEn": "pangoro",
+    "generation": 6,
+    "types": [
+      "fighting",
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "부란다"
+    ]
+  },
+  {
+    "id": 676,
+    "nameKo": "트리미앙",
+    "nameEn": "furfrou",
+    "generation": 6,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "트리미앙"
+    ]
+  },
+  {
+    "id": 677,
+    "nameKo": "냐스퍼",
+    "nameEn": "espurr",
+    "generation": 6,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "냐스퍼"
+    ]
+  },
+  {
+    "id": 678,
+    "nameKo": "냐오닉스",
+    "nameEn": "meowstic-male",
+    "generation": 6,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "냐오닉스"
+    ],
+    "genderDiff": {
+      "front": 2068,
+      "back": 1741
+    }
+  },
+  {
+    "id": 679,
+    "nameKo": "단칼빙",
+    "nameEn": "honedge",
+    "generation": 6,
+    "types": [
+      "steel",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "단칼빙"
+    ]
+  },
+  {
+    "id": 680,
+    "nameKo": "쌍검킬",
+    "nameEn": "doublade",
+    "generation": 6,
+    "types": [
+      "steel",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "쌍검킬"
+    ]
+  },
+  {
+    "id": 681,
+    "nameKo": "킬가르도",
+    "nameEn": "aegislash-shield",
+    "generation": 6,
+    "types": [
+      "steel",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "킬가르도"
+    ]
+  },
+  {
+    "id": 682,
+    "nameKo": "슈쁘",
+    "nameEn": "spritzee",
+    "generation": 6,
+    "types": [
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "슈쁘"
+    ]
+  },
+  {
+    "id": 683,
+    "nameKo": "프레프티르",
+    "nameEn": "aromatisse",
+    "generation": 6,
+    "types": [
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "프레프티르"
+    ]
+  },
+  {
+    "id": 684,
+    "nameKo": "나룸퍼프",
+    "nameEn": "swirlix",
+    "generation": 6,
+    "types": [
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "나룸퍼프"
+    ]
+  },
+  {
+    "id": 685,
+    "nameKo": "나루림",
+    "nameEn": "slurpuff",
+    "generation": 6,
+    "types": [
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "나루림"
+    ]
+  },
+  {
+    "id": 686,
+    "nameKo": "오케이징",
+    "nameEn": "inkay",
+    "generation": 6,
+    "types": [
+      "dark",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "오케이징"
+    ]
+  },
+  {
+    "id": 687,
+    "nameKo": "칼라마네로",
+    "nameEn": "malamar",
+    "generation": 6,
+    "types": [
+      "dark",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "칼라마네로"
+    ]
+  },
+  {
+    "id": 688,
+    "nameKo": "거북손손",
+    "nameEn": "binacle",
+    "generation": 6,
+    "types": [
+      "rock",
+      "water"
+    ],
+    "acceptedAnswers": [
+      "거북손손"
+    ]
+  },
+  {
+    "id": 689,
+    "nameKo": "거북손데스",
+    "nameEn": "barbaracle",
+    "generation": 6,
+    "types": [
+      "rock",
+      "water"
+    ],
+    "acceptedAnswers": [
+      "거북손데스"
+    ]
+  },
+  {
+    "id": 690,
+    "nameKo": "수레기",
+    "nameEn": "skrelp",
+    "generation": 6,
+    "types": [
+      "poison",
+      "water"
+    ],
+    "acceptedAnswers": [
+      "수레기"
+    ]
+  },
+  {
+    "id": 691,
+    "nameKo": "드래캄",
+    "nameEn": "dragalge",
+    "generation": 6,
+    "types": [
+      "poison",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "드래캄"
+    ]
+  },
+  {
+    "id": 692,
+    "nameKo": "완철포",
+    "nameEn": "clauncher",
+    "generation": 6,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "완철포"
+    ]
+  },
+  {
+    "id": 693,
+    "nameKo": "블로스터",
+    "nameEn": "clawitzer",
+    "generation": 6,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "블로스터"
+    ]
+  },
+  {
+    "id": 694,
+    "nameKo": "목도리키텔",
+    "nameEn": "helioptile",
+    "generation": 6,
+    "types": [
+      "electric",
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "목도리키텔"
+    ]
+  },
+  {
+    "id": 695,
+    "nameKo": "일레도리자드",
+    "nameEn": "heliolisk",
+    "generation": 6,
+    "types": [
+      "electric",
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "일레도리자드"
+    ]
+  },
+  {
+    "id": 696,
+    "nameKo": "티고라스",
+    "nameEn": "tyrunt",
+    "generation": 6,
+    "types": [
+      "rock",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "티고라스"
+    ]
+  },
+  {
+    "id": 697,
+    "nameKo": "견고라스",
+    "nameEn": "tyrantrum",
+    "generation": 6,
+    "types": [
+      "rock",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "견고라스"
+    ]
+  },
+  {
+    "id": 698,
+    "nameKo": "아마루스",
+    "nameEn": "amaura",
+    "generation": 6,
+    "types": [
+      "rock",
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "아마루스"
+    ]
+  },
+  {
+    "id": 699,
+    "nameKo": "아마루르가",
+    "nameEn": "aurorus",
+    "generation": 6,
+    "types": [
+      "rock",
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "아마루르가"
+    ]
+  },
+  {
+    "id": 700,
+    "nameKo": "님피아",
+    "nameEn": "sylveon",
+    "generation": 6,
+    "types": [
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "님피아"
+    ]
+  },
+  {
+    "id": 701,
+    "nameKo": "루차불",
+    "nameEn": "hawlucha",
+    "generation": 6,
+    "types": [
+      "fighting",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "루차불"
+    ]
+  },
+  {
+    "id": 702,
+    "nameKo": "데덴네",
+    "nameEn": "dedenne",
+    "generation": 6,
+    "types": [
+      "electric",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "데덴네"
+    ]
+  },
+  {
+    "id": 703,
+    "nameKo": "멜리시",
+    "nameEn": "carbink",
+    "generation": 6,
+    "types": [
+      "rock",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "멜리시"
+    ]
+  },
+  {
+    "id": 704,
+    "nameKo": "미끄메라",
+    "nameEn": "goomy",
+    "generation": 6,
+    "types": [
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "미끄메라"
+    ]
+  },
+  {
+    "id": 705,
+    "nameKo": "미끄네일",
+    "nameEn": "sliggoo",
+    "generation": 6,
+    "types": [
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "미끄네일"
+    ]
+  },
+  {
+    "id": 706,
+    "nameKo": "미끄래곤",
+    "nameEn": "goodra",
+    "generation": 6,
+    "types": [
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "미끄래곤"
+    ]
+  },
+  {
+    "id": 707,
+    "nameKo": "클레피",
+    "nameEn": "klefki",
+    "generation": 6,
+    "types": [
+      "steel",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "클레피"
+    ]
+  },
+  {
+    "id": 708,
+    "nameKo": "나목령",
+    "nameEn": "phantump",
+    "generation": 6,
+    "types": [
+      "ghost",
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "나목령"
+    ]
+  },
+  {
+    "id": 709,
+    "nameKo": "대로트",
+    "nameEn": "trevenant",
+    "generation": 6,
+    "types": [
+      "ghost",
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "대로트"
+    ]
+  },
+  {
+    "id": 710,
+    "nameKo": "호바귀",
+    "nameEn": "pumpkaboo-average",
+    "generation": 6,
+    "types": [
+      "ghost",
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "호바귀"
+    ]
+  },
+  {
+    "id": 711,
+    "nameKo": "펌킨인",
+    "nameEn": "gourgeist-average",
+    "generation": 6,
+    "types": [
+      "ghost",
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "펌킨인"
+    ]
+  },
+  {
+    "id": 712,
+    "nameKo": "꽁어름",
+    "nameEn": "bergmite",
+    "generation": 6,
+    "types": [
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "꽁어름"
+    ]
+  },
+  {
+    "id": 713,
+    "nameKo": "크레베이스",
+    "nameEn": "avalugg",
+    "generation": 6,
+    "types": [
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "크레베이스"
+    ]
+  },
+  {
+    "id": 714,
+    "nameKo": "음뱃",
+    "nameEn": "noibat",
+    "generation": 6,
+    "types": [
+      "flying",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "음뱃"
+    ]
+  },
+  {
+    "id": 715,
+    "nameKo": "음번",
+    "nameEn": "noivern",
+    "generation": 6,
+    "types": [
+      "flying",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "음번"
+    ]
+  },
+  {
+    "id": 716,
+    "nameKo": "제르네아스",
+    "nameEn": "xerneas",
+    "generation": 6,
+    "types": [
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "제르네아스"
+    ]
+  },
+  {
+    "id": 717,
+    "nameKo": "이벨타르",
+    "nameEn": "yveltal",
+    "generation": 6,
+    "types": [
+      "dark",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "이벨타르"
+    ]
+  },
+  {
+    "id": 718,
+    "nameKo": "지가르데",
+    "nameEn": "zygarde-50",
+    "generation": 6,
+    "types": [
+      "dragon",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "지가르데"
+    ]
+  },
+  {
+    "id": 719,
+    "nameKo": "디안시",
+    "nameEn": "diancie",
+    "generation": 6,
+    "types": [
+      "rock",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "디안시"
+    ]
+  },
+  {
+    "id": 720,
+    "nameKo": "후파",
+    "nameEn": "hoopa",
+    "generation": 6,
+    "types": [
+      "psychic",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "후파"
+    ]
+  },
+  {
+    "id": 721,
+    "nameKo": "볼케니온",
+    "nameEn": "volcanion",
+    "generation": 6,
+    "types": [
+      "fire",
+      "water"
+    ],
+    "acceptedAnswers": [
+      "볼케니온"
+    ]
+  },
+  {
+    "id": 722,
+    "nameKo": "나몰빼미",
+    "nameEn": "rowlet",
+    "generation": 7,
+    "types": [
+      "grass",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "나몰빼미"
+    ]
+  },
+  {
+    "id": 723,
+    "nameKo": "빼미스로우",
+    "nameEn": "dartrix",
+    "generation": 7,
+    "types": [
+      "grass",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "빼미스로우"
+    ]
+  },
+  {
+    "id": 724,
+    "nameKo": "모크나이퍼",
+    "nameEn": "decidueye",
+    "generation": 7,
+    "types": [
+      "grass",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "모크나이퍼"
+    ]
+  },
+  {
+    "id": 725,
+    "nameKo": "냐오불",
+    "nameEn": "litten",
+    "generation": 7,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "냐오불"
+    ]
+  },
+  {
+    "id": 726,
+    "nameKo": "냐오히트",
+    "nameEn": "torracat",
+    "generation": 7,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "냐오히트"
+    ]
+  },
+  {
+    "id": 727,
+    "nameKo": "어흥염",
+    "nameEn": "incineroar",
+    "generation": 7,
+    "types": [
+      "fire",
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "어흥염"
+    ]
+  },
+  {
+    "id": 728,
+    "nameKo": "누리공",
+    "nameEn": "popplio",
+    "generation": 7,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "누리공"
+    ]
+  },
+  {
+    "id": 729,
+    "nameKo": "키요공",
+    "nameEn": "brionne",
+    "generation": 7,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "키요공"
+    ]
+  },
+  {
+    "id": 730,
+    "nameKo": "누리레느",
+    "nameEn": "primarina",
+    "generation": 7,
+    "types": [
+      "water",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "누리레느"
+    ]
+  },
+  {
+    "id": 731,
+    "nameKo": "콕코구리",
+    "nameEn": "pikipek",
+    "generation": 7,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "콕코구리"
+    ]
+  },
+  {
+    "id": 732,
+    "nameKo": "크라파",
+    "nameEn": "trumbeak",
+    "generation": 7,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "크라파"
+    ]
+  },
+  {
+    "id": 733,
+    "nameKo": "왕큰부리",
+    "nameEn": "toucannon",
+    "generation": 7,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "왕큰부리"
+    ]
+  },
+  {
+    "id": 734,
+    "nameKo": "영구스",
+    "nameEn": "yungoos",
+    "generation": 7,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "영구스"
+    ]
+  },
+  {
+    "id": 735,
+    "nameKo": "형사구스",
+    "nameEn": "gumshoos",
+    "generation": 7,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "형사구스"
+    ]
+  },
+  {
+    "id": 736,
+    "nameKo": "턱지충이",
+    "nameEn": "grubbin",
+    "generation": 7,
+    "types": [
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "턱지충이"
+    ]
+  },
+  {
+    "id": 737,
+    "nameKo": "전지충이",
+    "nameEn": "charjabug",
+    "generation": 7,
+    "types": [
+      "bug",
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "전지충이"
+    ]
+  },
+  {
+    "id": 738,
+    "nameKo": "투구뿌논",
+    "nameEn": "vikavolt",
+    "generation": 7,
+    "types": [
+      "bug",
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "투구뿌논"
+    ]
+  },
+  {
+    "id": 739,
+    "nameKo": "오기지게",
+    "nameEn": "crabrawler",
+    "generation": 7,
+    "types": [
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "오기지게"
+    ]
+  },
+  {
+    "id": 740,
+    "nameKo": "모단단게",
+    "nameEn": "crabominable",
+    "generation": 7,
+    "types": [
+      "fighting",
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "모단단게"
+    ]
+  },
+  {
+    "id": 741,
+    "nameKo": "춤추새",
+    "nameEn": "oricorio-baile",
+    "generation": 7,
+    "types": [
+      "fire",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "춤추새"
+    ]
+  },
+  {
+    "id": 742,
+    "nameKo": "에블리",
+    "nameEn": "cutiefly",
+    "generation": 7,
+    "types": [
+      "bug",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "에블리"
+    ]
+  },
+  {
+    "id": 743,
+    "nameKo": "에리본",
+    "nameEn": "ribombee",
+    "generation": 7,
+    "types": [
+      "bug",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "에리본"
+    ]
+  },
+  {
+    "id": 744,
+    "nameKo": "암멍이",
+    "nameEn": "rockruff",
+    "generation": 7,
+    "types": [
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "암멍이"
+    ]
+  },
+  {
+    "id": 745,
+    "nameKo": "루가루암",
+    "nameEn": "lycanroc-midday",
+    "generation": 7,
+    "types": [
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "루가루암"
+    ]
+  },
+  {
+    "id": 746,
+    "nameKo": "약어리",
+    "nameEn": "wishiwashi-solo",
+    "generation": 7,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "약어리"
+    ]
+  },
+  {
+    "id": 747,
+    "nameKo": "시마사리",
+    "nameEn": "mareanie",
+    "generation": 7,
+    "types": [
+      "poison",
+      "water"
+    ],
+    "acceptedAnswers": [
+      "시마사리"
+    ]
+  },
+  {
+    "id": 748,
+    "nameKo": "더시마사리",
+    "nameEn": "toxapex",
+    "generation": 7,
+    "types": [
+      "poison",
+      "water"
+    ],
+    "acceptedAnswers": [
+      "더시마사리"
+    ]
+  },
+  {
+    "id": 749,
+    "nameKo": "머드나기",
+    "nameEn": "mudbray",
+    "generation": 7,
+    "types": [
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "머드나기"
+    ]
+  },
+  {
+    "id": 750,
+    "nameKo": "만마드",
+    "nameEn": "mudsdale",
+    "generation": 7,
+    "types": [
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "만마드"
+    ]
+  },
+  {
+    "id": 751,
+    "nameKo": "물거미",
+    "nameEn": "dewpider",
+    "generation": 7,
+    "types": [
+      "water",
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "물거미"
+    ]
+  },
+  {
+    "id": 752,
+    "nameKo": "깨비물거미",
+    "nameEn": "araquanid",
+    "generation": 7,
+    "types": [
+      "water",
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "깨비물거미"
+    ]
+  },
+  {
+    "id": 753,
+    "nameKo": "짜랑랑",
+    "nameEn": "fomantis",
+    "generation": 7,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "짜랑랑"
+    ]
+  },
+  {
+    "id": 754,
+    "nameKo": "라란티스",
+    "nameEn": "lurantis",
+    "generation": 7,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "라란티스"
+    ]
+  },
+  {
+    "id": 755,
+    "nameKo": "자마슈",
+    "nameEn": "morelull",
+    "generation": 7,
+    "types": [
+      "grass",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "자마슈"
+    ]
+  },
+  {
+    "id": 756,
+    "nameKo": "마셰이드",
+    "nameEn": "shiinotic",
+    "generation": 7,
+    "types": [
+      "grass",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "마셰이드"
+    ]
+  },
+  {
+    "id": 757,
+    "nameKo": "야도뇽",
+    "nameEn": "salandit",
+    "generation": 7,
+    "types": [
+      "poison",
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "야도뇽"
+    ]
+  },
+  {
+    "id": 758,
+    "nameKo": "염뉴트",
+    "nameEn": "salazzle",
+    "generation": 7,
+    "types": [
+      "poison",
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "염뉴트"
+    ]
+  },
+  {
+    "id": 759,
+    "nameKo": "포곰곰",
+    "nameEn": "stufful",
+    "generation": 7,
+    "types": [
+      "normal",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "포곰곰"
+    ]
+  },
+  {
+    "id": 760,
+    "nameKo": "이븐곰",
+    "nameEn": "bewear",
+    "generation": 7,
+    "types": [
+      "normal",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "이븐곰"
+    ]
+  },
+  {
+    "id": 761,
+    "nameKo": "달콤아",
+    "nameEn": "bounsweet",
+    "generation": 7,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "달콤아"
+    ]
+  },
+  {
+    "id": 762,
+    "nameKo": "달무리나",
+    "nameEn": "steenee",
+    "generation": 7,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "달무리나"
+    ]
+  },
+  {
+    "id": 763,
+    "nameKo": "달코퀸",
+    "nameEn": "tsareena",
+    "generation": 7,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "달코퀸"
+    ]
+  },
+  {
+    "id": 764,
+    "nameKo": "큐아링",
+    "nameEn": "comfey",
+    "generation": 7,
+    "types": [
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "큐아링"
+    ]
+  },
+  {
+    "id": 765,
+    "nameKo": "하랑우탄",
+    "nameEn": "oranguru",
+    "generation": 7,
+    "types": [
+      "normal",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "하랑우탄"
+    ]
+  },
+  {
+    "id": 766,
+    "nameKo": "내던숭이",
+    "nameEn": "passimian",
+    "generation": 7,
+    "types": [
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "내던숭이"
+    ]
+  },
+  {
+    "id": 767,
+    "nameKo": "꼬시레",
+    "nameEn": "wimpod",
+    "generation": 7,
+    "types": [
+      "bug",
+      "water"
+    ],
+    "acceptedAnswers": [
+      "꼬시레"
+    ]
+  },
+  {
+    "id": 768,
+    "nameKo": "갑주무사",
+    "nameEn": "golisopod",
+    "generation": 7,
+    "types": [
+      "bug",
+      "water"
+    ],
+    "acceptedAnswers": [
+      "갑주무사"
+    ]
+  },
+  {
+    "id": 769,
+    "nameKo": "모래꿍",
+    "nameEn": "sandygast",
+    "generation": 7,
+    "types": [
+      "ghost",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "모래꿍"
+    ]
+  },
+  {
+    "id": 770,
+    "nameKo": "모래성이당",
+    "nameEn": "palossand",
+    "generation": 7,
+    "types": [
+      "ghost",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "모래성이당"
+    ]
+  },
+  {
+    "id": 771,
+    "nameKo": "해무기",
+    "nameEn": "pyukumuku",
+    "generation": 7,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "해무기"
+    ]
+  },
+  {
+    "id": 772,
+    "nameKo": "타입:널",
+    "nameEn": "type-null",
+    "generation": 7,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "타입:널"
+    ]
+  },
+  {
+    "id": 773,
+    "nameKo": "실버디",
+    "nameEn": "silvally",
+    "generation": 7,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "실버디"
+    ]
+  },
+  {
+    "id": 774,
+    "nameKo": "메테노",
+    "nameEn": "minior-red-meteor",
+    "generation": 7,
+    "types": [
+      "rock",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "메테노"
+    ]
+  },
+  {
+    "id": 775,
+    "nameKo": "자말라",
+    "nameEn": "komala",
+    "generation": 7,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "자말라"
+    ]
+  },
+  {
+    "id": 776,
+    "nameKo": "폭거북스",
+    "nameEn": "turtonator",
+    "generation": 7,
+    "types": [
+      "fire",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "폭거북스"
+    ]
+  },
+  {
+    "id": 777,
+    "nameKo": "토게데마루",
+    "nameEn": "togedemaru",
+    "generation": 7,
+    "types": [
+      "electric",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "토게데마루"
+    ]
+  },
+  {
+    "id": 778,
+    "nameKo": "따라큐",
+    "nameEn": "mimikyu-disguised",
+    "generation": 7,
+    "types": [
+      "ghost",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "따라큐"
+    ]
+  },
+  {
+    "id": 779,
+    "nameKo": "치갈기",
+    "nameEn": "bruxish",
+    "generation": 7,
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "치갈기"
+    ]
+  },
+  {
+    "id": 780,
+    "nameKo": "할비롱",
+    "nameEn": "drampa",
+    "generation": 7,
+    "types": [
+      "normal",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "할비롱"
+    ]
+  },
+  {
+    "id": 781,
+    "nameKo": "타타륜",
+    "nameEn": "dhelmise",
+    "generation": 7,
+    "types": [
+      "ghost",
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "타타륜"
+    ]
+  },
+  {
+    "id": 782,
+    "nameKo": "짜랑꼬",
+    "nameEn": "jangmo-o",
+    "generation": 7,
+    "types": [
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "짜랑꼬"
+    ]
+  },
+  {
+    "id": 783,
+    "nameKo": "짜랑고우",
+    "nameEn": "hakamo-o",
+    "generation": 7,
+    "types": [
+      "dragon",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "짜랑고우"
+    ]
+  },
+  {
+    "id": 784,
+    "nameKo": "짜랑고우거",
+    "nameEn": "kommo-o",
+    "generation": 7,
+    "types": [
+      "dragon",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "짜랑고우거"
+    ]
+  },
+  {
+    "id": 785,
+    "nameKo": "카푸꼬꼬꼭",
+    "nameEn": "tapu-koko",
+    "generation": 7,
+    "types": [
+      "electric",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "카푸꼬꼬꼭"
+    ]
+  },
+  {
+    "id": 786,
+    "nameKo": "카푸나비나",
+    "nameEn": "tapu-lele",
+    "generation": 7,
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "카푸나비나"
+    ]
+  },
+  {
+    "id": 787,
+    "nameKo": "카푸브루루",
+    "nameEn": "tapu-bulu",
+    "generation": 7,
+    "types": [
+      "grass",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "카푸브루루"
+    ]
+  },
+  {
+    "id": 788,
+    "nameKo": "카푸느지느",
+    "nameEn": "tapu-fini",
+    "generation": 7,
+    "types": [
+      "water",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "카푸느지느"
+    ]
+  },
+  {
+    "id": 789,
+    "nameKo": "코스모그",
+    "nameEn": "cosmog",
+    "generation": 7,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "코스모그"
+    ]
+  },
+  {
+    "id": 790,
+    "nameKo": "코스모움",
+    "nameEn": "cosmoem",
+    "generation": 7,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "코스모움"
+    ]
+  },
+  {
+    "id": 791,
+    "nameKo": "솔가레오",
+    "nameEn": "solgaleo",
+    "generation": 7,
+    "types": [
+      "psychic",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "솔가레오"
+    ]
+  },
+  {
+    "id": 792,
+    "nameKo": "루나아라",
+    "nameEn": "lunala",
+    "generation": 7,
+    "types": [
+      "psychic",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "루나아라"
+    ]
+  },
+  {
+    "id": 793,
+    "nameKo": "텅비드",
+    "nameEn": "nihilego",
+    "generation": 7,
+    "types": [
+      "rock",
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "텅비드"
+    ]
+  },
+  {
+    "id": 794,
+    "nameKo": "매시붕",
+    "nameEn": "buzzwole",
+    "generation": 7,
+    "types": [
+      "bug",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "매시붕"
+    ]
+  },
+  {
+    "id": 795,
+    "nameKo": "페로코체",
+    "nameEn": "pheromosa",
+    "generation": 7,
+    "types": [
+      "bug",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "페로코체"
+    ]
+  },
+  {
+    "id": 796,
+    "nameKo": "전수목",
+    "nameEn": "xurkitree",
+    "generation": 7,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "전수목"
+    ]
+  },
+  {
+    "id": 797,
+    "nameKo": "철화구야",
+    "nameEn": "celesteela",
+    "generation": 7,
+    "types": [
+      "steel",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "철화구야"
+    ]
+  },
+  {
+    "id": 798,
+    "nameKo": "종이신도",
+    "nameEn": "kartana",
+    "generation": 7,
+    "types": [
+      "grass",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "종이신도"
+    ]
+  },
+  {
+    "id": 799,
+    "nameKo": "악식킹",
+    "nameEn": "guzzlord",
+    "generation": 7,
+    "types": [
+      "dark",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "악식킹"
+    ]
+  },
+  {
+    "id": 800,
+    "nameKo": "네크로즈마",
+    "nameEn": "necrozma",
+    "generation": 7,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "네크로즈마"
+    ]
+  },
+  {
+    "id": 801,
+    "nameKo": "마기아나",
+    "nameEn": "magearna",
+    "generation": 7,
+    "types": [
+      "steel",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "마기아나"
+    ]
+  },
+  {
+    "id": 802,
+    "nameKo": "마샤도",
+    "nameEn": "marshadow",
+    "generation": 7,
+    "types": [
+      "fighting",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "마샤도"
+    ]
+  },
+  {
+    "id": 803,
+    "nameKo": "베베놈",
+    "nameEn": "poipole",
+    "generation": 7,
+    "types": [
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "베베놈"
+    ]
+  },
+  {
+    "id": 804,
+    "nameKo": "아고용",
+    "nameEn": "naganadel",
+    "generation": 7,
+    "types": [
+      "poison",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "아고용"
+    ]
+  },
+  {
+    "id": 805,
+    "nameKo": "차곡차곡",
+    "nameEn": "stakataka",
+    "generation": 7,
+    "types": [
+      "rock",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "차곡차곡"
+    ]
+  },
+  {
+    "id": 806,
+    "nameKo": "두파팡",
+    "nameEn": "blacephalon",
+    "generation": 7,
+    "types": [
+      "fire",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "두파팡"
+    ]
+  },
+  {
+    "id": 807,
+    "nameKo": "제라오라",
+    "nameEn": "zeraora",
+    "generation": 7,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "제라오라"
+    ]
+  },
+  {
+    "id": 808,
+    "nameKo": "멜탄",
+    "nameEn": "meltan",
+    "generation": 7,
+    "types": [
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "멜탄"
+    ]
+  },
+  {
+    "id": 809,
+    "nameKo": "멜메탈",
+    "nameEn": "melmetal",
+    "generation": 7,
+    "types": [
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "멜메탈"
+    ]
+  },
+  {
+    "id": 810,
+    "nameKo": "흥나숭",
+    "nameEn": "grookey",
+    "generation": 8,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "흥나숭"
+    ]
+  },
+  {
+    "id": 811,
+    "nameKo": "채키몽",
+    "nameEn": "thwackey",
+    "generation": 8,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "채키몽"
+    ]
+  },
+  {
+    "id": 812,
+    "nameKo": "고릴타",
+    "nameEn": "rillaboom",
+    "generation": 8,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "고릴타"
+    ]
+  },
+  {
+    "id": 813,
+    "nameKo": "염버니",
+    "nameEn": "scorbunny",
+    "generation": 8,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "염버니"
+    ]
+  },
+  {
+    "id": 814,
+    "nameKo": "래비풋",
+    "nameEn": "raboot",
+    "generation": 8,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "래비풋"
+    ]
+  },
+  {
+    "id": 815,
+    "nameKo": "에이스번",
+    "nameEn": "cinderace",
+    "generation": 8,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "에이스번"
+    ]
+  },
+  {
+    "id": 816,
+    "nameKo": "울머기",
+    "nameEn": "sobble",
+    "generation": 8,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "울머기"
+    ]
+  },
+  {
+    "id": 817,
+    "nameKo": "누겔레온",
+    "nameEn": "drizzile",
+    "generation": 8,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "누겔레온"
+    ]
+  },
+  {
+    "id": 818,
+    "nameKo": "인텔리레온",
+    "nameEn": "inteleon",
+    "generation": 8,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "인텔리레온"
+    ]
+  },
+  {
+    "id": 819,
+    "nameKo": "탐리스",
+    "nameEn": "skwovet",
+    "generation": 8,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "탐리스"
+    ]
+  },
+  {
+    "id": 820,
+    "nameKo": "요씽리스",
+    "nameEn": "greedent",
+    "generation": 8,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "요씽리스"
+    ]
+  },
+  {
+    "id": 821,
+    "nameKo": "파라꼬",
+    "nameEn": "rookidee",
+    "generation": 8,
+    "types": [
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "파라꼬"
+    ]
+  },
+  {
+    "id": 822,
+    "nameKo": "파크로우",
+    "nameEn": "corvisquire",
+    "generation": 8,
+    "types": [
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "파크로우"
+    ]
+  },
+  {
+    "id": 823,
+    "nameKo": "아머까오",
+    "nameEn": "corviknight",
+    "generation": 8,
+    "types": [
+      "flying",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "아머까오"
+    ]
+  },
+  {
+    "id": 824,
+    "nameKo": "두루지벌레",
+    "nameEn": "blipbug",
+    "generation": 8,
+    "types": [
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "두루지벌레"
+    ]
+  },
+  {
+    "id": 825,
+    "nameKo": "레돔벌레",
+    "nameEn": "dottler",
+    "generation": 8,
+    "types": [
+      "bug",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "레돔벌레"
+    ]
+  },
+  {
+    "id": 826,
+    "nameKo": "이올브",
+    "nameEn": "orbeetle",
+    "generation": 8,
+    "types": [
+      "bug",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "이올브"
+    ]
+  },
+  {
+    "id": 827,
+    "nameKo": "훔처우",
+    "nameEn": "nickit",
+    "generation": 8,
+    "types": [
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "훔처우"
+    ]
+  },
+  {
+    "id": 828,
+    "nameKo": "폭슬라이",
+    "nameEn": "thievul",
+    "generation": 8,
+    "types": [
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "폭슬라이"
+    ]
+  },
+  {
+    "id": 829,
+    "nameKo": "꼬모카",
+    "nameEn": "gossifleur",
+    "generation": 8,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "꼬모카"
+    ]
+  },
+  {
+    "id": 830,
+    "nameKo": "백솜모카",
+    "nameEn": "eldegoss",
+    "generation": 8,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "백솜모카"
+    ]
+  },
+  {
+    "id": 831,
+    "nameKo": "우르",
+    "nameEn": "wooloo",
+    "generation": 8,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "우르"
+    ]
+  },
+  {
+    "id": 832,
+    "nameKo": "배우르",
+    "nameEn": "dubwool",
+    "generation": 8,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "배우르"
+    ]
+  },
+  {
+    "id": 833,
+    "nameKo": "깨물부기",
+    "nameEn": "chewtle",
+    "generation": 8,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "깨물부기"
+    ]
+  },
+  {
+    "id": 834,
+    "nameKo": "갈가부기",
+    "nameEn": "drednaw",
+    "generation": 8,
+    "types": [
+      "water",
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "갈가부기"
+    ]
+  },
+  {
+    "id": 835,
+    "nameKo": "멍파치",
+    "nameEn": "yamper",
+    "generation": 8,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "멍파치"
+    ]
+  },
+  {
+    "id": 836,
+    "nameKo": "펄스멍",
+    "nameEn": "boltund",
+    "generation": 8,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "펄스멍"
+    ]
+  },
+  {
+    "id": 837,
+    "nameKo": "탄동",
+    "nameEn": "rolycoly",
+    "generation": 8,
+    "types": [
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "탄동"
+    ]
+  },
+  {
+    "id": 838,
+    "nameKo": "탄차곤",
+    "nameEn": "carkol",
+    "generation": 8,
+    "types": [
+      "rock",
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "탄차곤"
+    ]
+  },
+  {
+    "id": 839,
+    "nameKo": "석탄산",
+    "nameEn": "coalossal",
+    "generation": 8,
+    "types": [
+      "rock",
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "석탄산"
+    ]
+  },
+  {
+    "id": 840,
+    "nameKo": "과사삭벌레",
+    "nameEn": "applin",
+    "generation": 8,
+    "types": [
+      "grass",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "과사삭벌레"
+    ]
+  },
+  {
+    "id": 841,
+    "nameKo": "애프룡",
+    "nameEn": "flapple",
+    "generation": 8,
+    "types": [
+      "grass",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "애프룡"
+    ]
+  },
+  {
+    "id": 842,
+    "nameKo": "단지래플",
+    "nameEn": "appletun",
+    "generation": 8,
+    "types": [
+      "grass",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "단지래플"
+    ]
+  },
+  {
+    "id": 843,
+    "nameKo": "모래뱀",
+    "nameEn": "silicobra",
+    "generation": 8,
+    "types": [
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "모래뱀"
+    ]
+  },
+  {
+    "id": 844,
+    "nameKo": "사다이사",
+    "nameEn": "sandaconda",
+    "generation": 8,
+    "types": [
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "사다이사"
+    ]
+  },
+  {
+    "id": 845,
+    "nameKo": "윽우지",
+    "nameEn": "cramorant",
+    "generation": 8,
+    "types": [
+      "flying",
+      "water"
+    ],
+    "acceptedAnswers": [
+      "윽우지"
+    ]
+  },
+  {
+    "id": 846,
+    "nameKo": "찌로꼬치",
+    "nameEn": "arrokuda",
+    "generation": 8,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "찌로꼬치"
+    ]
+  },
+  {
+    "id": 847,
+    "nameKo": "꼬치조",
+    "nameEn": "barraskewda",
+    "generation": 8,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "꼬치조"
+    ]
+  },
+  {
+    "id": 848,
+    "nameKo": "일레즌",
+    "nameEn": "toxel",
+    "generation": 8,
+    "types": [
+      "electric",
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "일레즌"
+    ]
+  },
+  {
+    "id": 849,
+    "nameKo": "스트린더",
+    "nameEn": "toxtricity-amped",
+    "generation": 8,
+    "types": [
+      "electric",
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "스트린더"
+    ]
+  },
+  {
+    "id": 850,
+    "nameKo": "태우지네",
+    "nameEn": "sizzlipede",
+    "generation": 8,
+    "types": [
+      "fire",
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "태우지네"
+    ]
+  },
+  {
+    "id": 851,
+    "nameKo": "다태우지네",
+    "nameEn": "centiskorch",
+    "generation": 8,
+    "types": [
+      "fire",
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "다태우지네"
+    ]
+  },
+  {
+    "id": 852,
+    "nameKo": "때때무노",
+    "nameEn": "clobbopus",
+    "generation": 8,
+    "types": [
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "때때무노"
+    ]
+  },
+  {
+    "id": 853,
+    "nameKo": "케오퍼스",
+    "nameEn": "grapploct",
+    "generation": 8,
+    "types": [
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "케오퍼스"
+    ]
+  },
+  {
+    "id": 854,
+    "nameKo": "데인차",
+    "nameEn": "sinistea",
+    "generation": 8,
+    "types": [
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "데인차"
+    ]
+  },
+  {
+    "id": 855,
+    "nameKo": "포트데스",
+    "nameEn": "polteageist",
+    "generation": 8,
+    "types": [
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "포트데스"
+    ]
+  },
+  {
+    "id": 856,
+    "nameKo": "몸지브림",
+    "nameEn": "hatenna",
+    "generation": 8,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "몸지브림"
+    ]
+  },
+  {
+    "id": 857,
+    "nameKo": "손지브림",
+    "nameEn": "hattrem",
+    "generation": 8,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "손지브림"
+    ]
+  },
+  {
+    "id": 858,
+    "nameKo": "브리무음",
+    "nameEn": "hatterene",
+    "generation": 8,
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "브리무음"
+    ]
+  },
+  {
+    "id": 859,
+    "nameKo": "메롱꿍",
+    "nameEn": "impidimp",
+    "generation": 8,
+    "types": [
+      "dark",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "메롱꿍"
+    ]
+  },
+  {
+    "id": 860,
+    "nameKo": "쏘겨모",
+    "nameEn": "morgrem",
+    "generation": 8,
+    "types": [
+      "dark",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "쏘겨모"
+    ]
+  },
+  {
+    "id": 861,
+    "nameKo": "오롱털",
+    "nameEn": "grimmsnarl",
+    "generation": 8,
+    "types": [
+      "dark",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "오롱털"
+    ]
+  },
+  {
+    "id": 862,
+    "nameKo": "가로막구리",
+    "nameEn": "obstagoon",
+    "generation": 8,
+    "types": [
+      "dark",
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "가로막구리"
+    ]
+  },
+  {
+    "id": 863,
+    "nameKo": "나이킹",
+    "nameEn": "perrserker",
+    "generation": 8,
+    "types": [
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "나이킹"
+    ]
+  },
+  {
+    "id": 864,
+    "nameKo": "산호르곤",
+    "nameEn": "cursola",
+    "generation": 8,
+    "types": [
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "산호르곤"
+    ]
+  },
+  {
+    "id": 865,
+    "nameKo": "창파나이트",
+    "nameEn": "sirfetchd",
+    "generation": 8,
+    "types": [
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "창파나이트"
+    ]
+  },
+  {
+    "id": 866,
+    "nameKo": "마임꽁꽁",
+    "nameEn": "mr-rime",
+    "generation": 8,
+    "types": [
+      "ice",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "마임꽁꽁"
+    ]
+  },
+  {
+    "id": 867,
+    "nameKo": "데스판",
+    "nameEn": "runerigus",
+    "generation": 8,
+    "types": [
+      "ground",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "데스판"
+    ]
+  },
+  {
+    "id": 868,
+    "nameKo": "마빌크",
+    "nameEn": "milcery",
+    "generation": 8,
+    "types": [
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "마빌크"
+    ]
+  },
+  {
+    "id": 869,
+    "nameKo": "마휘핑",
+    "nameEn": "alcremie",
+    "generation": 8,
+    "types": [
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "마휘핑"
+    ]
+  },
+  {
+    "id": 870,
+    "nameKo": "대여르",
+    "nameEn": "falinks",
+    "generation": 8,
+    "types": [
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "대여르"
+    ]
+  },
+  {
+    "id": 871,
+    "nameKo": "찌르성게",
+    "nameEn": "pincurchin",
+    "generation": 8,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "찌르성게"
+    ]
+  },
+  {
+    "id": 872,
+    "nameKo": "누니머기",
+    "nameEn": "snom",
+    "generation": 8,
+    "types": [
+      "ice",
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "누니머기"
+    ]
+  },
+  {
+    "id": 873,
+    "nameKo": "모스노우",
+    "nameEn": "frosmoth",
+    "generation": 8,
+    "types": [
+      "ice",
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "모스노우"
+    ]
+  },
+  {
+    "id": 874,
+    "nameKo": "돌헨진",
+    "nameEn": "stonjourner",
+    "generation": 8,
+    "types": [
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "돌헨진"
+    ]
+  },
+  {
+    "id": 875,
+    "nameKo": "빙큐보",
+    "nameEn": "eiscue-ice",
+    "generation": 8,
+    "types": [
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "빙큐보"
+    ]
+  },
+  {
+    "id": 876,
+    "nameKo": "에써르",
+    "nameEn": "indeedee-male",
+    "generation": 8,
+    "types": [
+      "psychic",
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "에써르"
+    ],
+    "genderDiff": {
+      "front": 861,
+      "back": 1010
+    }
+  },
+  {
+    "id": 877,
+    "nameKo": "모르페코",
+    "nameEn": "morpeko-full-belly",
+    "generation": 8,
+    "types": [
+      "electric",
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "모르페코"
+    ]
+  },
+  {
+    "id": 878,
+    "nameKo": "끼리동",
+    "nameEn": "cufant",
+    "generation": 8,
+    "types": [
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "끼리동"
+    ]
+  },
+  {
+    "id": 879,
+    "nameKo": "대왕끼리동",
+    "nameEn": "copperajah",
+    "generation": 8,
+    "types": [
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "대왕끼리동"
+    ]
+  },
+  {
+    "id": 880,
+    "nameKo": "파치래곤",
+    "nameEn": "dracozolt",
+    "generation": 8,
+    "types": [
+      "electric",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "파치래곤"
+    ]
+  },
+  {
+    "id": 881,
+    "nameKo": "파치르돈",
+    "nameEn": "arctozolt",
+    "generation": 8,
+    "types": [
+      "electric",
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "파치르돈"
+    ]
+  },
+  {
+    "id": 882,
+    "nameKo": "어래곤",
+    "nameEn": "dracovish",
+    "generation": 8,
+    "types": [
+      "water",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "어래곤"
+    ]
+  },
+  {
+    "id": 883,
+    "nameKo": "어치르돈",
+    "nameEn": "arctovish",
+    "generation": 8,
+    "types": [
+      "water",
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "어치르돈"
+    ]
+  },
+  {
+    "id": 884,
+    "nameKo": "두랄루돈",
+    "nameEn": "duraludon",
+    "generation": 8,
+    "types": [
+      "steel",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "두랄루돈"
+    ]
+  },
+  {
+    "id": 885,
+    "nameKo": "드라꼰",
+    "nameEn": "dreepy",
+    "generation": 8,
+    "types": [
+      "dragon",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "드라꼰"
+    ]
+  },
+  {
+    "id": 886,
+    "nameKo": "드래런치",
+    "nameEn": "drakloak",
+    "generation": 8,
+    "types": [
+      "dragon",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "드래런치"
+    ]
+  },
+  {
+    "id": 887,
+    "nameKo": "드래펄트",
+    "nameEn": "dragapult",
+    "generation": 8,
+    "types": [
+      "dragon",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "드래펄트"
+    ]
+  },
+  {
+    "id": 888,
+    "nameKo": "자시안",
+    "nameEn": "zacian",
+    "generation": 8,
+    "types": [
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "자시안"
+    ]
+  },
+  {
+    "id": 889,
+    "nameKo": "자마젠타",
+    "nameEn": "zamazenta",
+    "generation": 8,
+    "types": [
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "자마젠타"
+    ]
+  },
+  {
+    "id": 890,
+    "nameKo": "무한다이노",
+    "nameEn": "eternatus",
+    "generation": 8,
+    "types": [
+      "poison",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "무한다이노"
+    ]
+  },
+  {
+    "id": 891,
+    "nameKo": "치고마",
+    "nameEn": "kubfu",
+    "generation": 8,
+    "types": [
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "치고마"
+    ]
+  },
+  {
+    "id": 892,
+    "nameKo": "우라오스",
+    "nameEn": "urshifu-single-strike",
+    "generation": 8,
+    "types": [
+      "fighting",
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "우라오스"
+    ]
+  },
+  {
+    "id": 893,
+    "nameKo": "자루도",
+    "nameEn": "zarude",
+    "generation": 8,
+    "types": [
+      "dark",
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "자루도"
+    ]
+  },
+  {
+    "id": 894,
+    "nameKo": "레지에레키",
+    "nameEn": "regieleki",
+    "generation": 8,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "레지에레키"
+    ]
+  },
+  {
+    "id": 895,
+    "nameKo": "레지드래고",
+    "nameEn": "regidrago",
+    "generation": 8,
+    "types": [
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "레지드래고"
+    ]
+  },
+  {
+    "id": 896,
+    "nameKo": "블리자포스",
+    "nameEn": "glastrier",
+    "generation": 8,
+    "types": [
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "블리자포스"
+    ]
+  },
+  {
+    "id": 897,
+    "nameKo": "레이스포스",
+    "nameEn": "spectrier",
+    "generation": 8,
+    "types": [
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "레이스포스"
+    ]
+  },
+  {
+    "id": 898,
+    "nameKo": "버드렉스",
+    "nameEn": "calyrex",
+    "generation": 8,
+    "types": [
+      "psychic",
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "버드렉스"
+    ]
+  },
+  {
+    "id": 899,
+    "nameKo": "신비록",
+    "nameEn": "wyrdeer",
+    "generation": 8,
+    "types": [
+      "normal",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "신비록"
+    ]
+  },
+  {
+    "id": 900,
+    "nameKo": "사마자르",
+    "nameEn": "kleavor",
+    "generation": 8,
+    "types": [
+      "bug",
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "사마자르"
+    ]
+  },
+  {
+    "id": 901,
+    "nameKo": "다투곰",
+    "nameEn": "ursaluna",
+    "generation": 8,
+    "types": [
+      "ground",
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "다투곰"
+    ]
+  },
+  {
+    "id": 902,
+    "nameKo": "대쓰여너",
+    "nameEn": "basculegion-male",
+    "generation": 8,
+    "types": [
+      "water",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "대쓰여너"
+    ]
+  },
+  {
+    "id": 903,
+    "nameKo": "포푸니크",
+    "nameEn": "sneasler",
+    "generation": 8,
+    "types": [
+      "fighting",
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "포푸니크"
+    ]
+  },
+  {
+    "id": 904,
+    "nameKo": "장침바루",
+    "nameEn": "overqwil",
+    "generation": 8,
+    "types": [
+      "dark",
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "장침바루"
+    ]
+  },
+  {
+    "id": 905,
+    "nameKo": "러브로스",
+    "nameEn": "enamorus-incarnate",
+    "generation": 8,
+    "types": [
+      "fairy",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "러브로스"
+    ]
+  },
+  {
+    "id": 906,
+    "nameKo": "나오하",
+    "nameEn": "sprigatito",
+    "generation": 9,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "나오하"
+    ]
+  },
+  {
+    "id": 907,
+    "nameKo": "나로테",
+    "nameEn": "floragato",
+    "generation": 9,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "나로테"
+    ]
+  },
+  {
+    "id": 908,
+    "nameKo": "마스카나",
+    "nameEn": "meowscarada",
+    "generation": 9,
+    "types": [
+      "grass",
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "마스카나"
+    ]
+  },
+  {
+    "id": 909,
+    "nameKo": "뜨아거",
+    "nameEn": "fuecoco",
+    "generation": 9,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "뜨아거"
+    ]
+  },
+  {
+    "id": 910,
+    "nameKo": "악뜨거",
+    "nameEn": "crocalor",
+    "generation": 9,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "악뜨거"
+    ]
+  },
+  {
+    "id": 911,
+    "nameKo": "라우드본",
+    "nameEn": "skeledirge",
+    "generation": 9,
+    "types": [
+      "fire",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "라우드본"
+    ]
+  },
+  {
+    "id": 912,
+    "nameKo": "꾸왁스",
+    "nameEn": "quaxly",
+    "generation": 9,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "꾸왁스"
+    ]
+  },
+  {
+    "id": 913,
+    "nameKo": "아꾸왁",
+    "nameEn": "quaxwell",
+    "generation": 9,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "아꾸왁"
+    ]
+  },
+  {
+    "id": 914,
+    "nameKo": "웨이니발",
+    "nameEn": "quaquaval",
+    "generation": 9,
+    "types": [
+      "water",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "웨이니발"
+    ]
+  },
+  {
+    "id": 915,
+    "nameKo": "맛보돈",
+    "nameEn": "lechonk",
+    "generation": 9,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "맛보돈"
+    ]
+  },
+  {
+    "id": 916,
+    "nameKo": "퍼퓨돈",
+    "nameEn": "oinkologne-male",
+    "generation": 9,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "퍼퓨돈"
+    ],
+    "genderDiff": {
+      "front": 1874,
+      "back": null
+    }
+  },
+  {
+    "id": 917,
+    "nameKo": "타랜툴라",
+    "nameEn": "tarountula",
+    "generation": 9,
+    "types": [
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "타랜툴라"
+    ]
+  },
+  {
+    "id": 918,
+    "nameKo": "트래피더",
+    "nameEn": "spidops",
+    "generation": 9,
+    "types": [
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "트래피더"
+    ]
+  },
+  {
+    "id": 919,
+    "nameKo": "콩알뚜기",
+    "nameEn": "nymble",
+    "generation": 9,
+    "types": [
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "콩알뚜기"
+    ]
+  },
+  {
+    "id": 920,
+    "nameKo": "엑스레그",
+    "nameEn": "lokix",
+    "generation": 9,
+    "types": [
+      "bug",
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "엑스레그"
+    ]
+  },
+  {
+    "id": 921,
+    "nameKo": "빠모",
+    "nameEn": "pawmi",
+    "generation": 9,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "빠모"
+    ]
+  },
+  {
+    "id": 922,
+    "nameKo": "빠모트",
+    "nameEn": "pawmo",
+    "generation": 9,
+    "types": [
+      "electric",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "빠모트"
+    ]
+  },
+  {
+    "id": 923,
+    "nameKo": "빠르모트",
+    "nameEn": "pawmot",
+    "generation": 9,
+    "types": [
+      "electric",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "빠르모트"
+    ]
+  },
+  {
+    "id": 924,
+    "nameKo": "두리쥐",
+    "nameEn": "tandemaus",
+    "generation": 9,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "두리쥐"
+    ]
+  },
+  {
+    "id": 925,
+    "nameKo": "파밀리쥐",
+    "nameEn": "maushold-family-of-four",
+    "generation": 9,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "파밀리쥐"
+    ]
+  },
+  {
+    "id": 926,
+    "nameKo": "쫀도기",
+    "nameEn": "fidough",
+    "generation": 9,
+    "types": [
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "쫀도기"
+    ]
+  },
+  {
+    "id": 927,
+    "nameKo": "바우첼",
+    "nameEn": "dachsbun",
+    "generation": 9,
+    "types": [
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "바우첼"
+    ]
+  },
+  {
+    "id": 928,
+    "nameKo": "미니브",
+    "nameEn": "smoliv",
+    "generation": 9,
+    "types": [
+      "grass",
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "미니브"
+    ]
+  },
+  {
+    "id": 929,
+    "nameKo": "올리뇨",
+    "nameEn": "dolliv",
+    "generation": 9,
+    "types": [
+      "grass",
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "올리뇨"
+    ]
+  },
+  {
+    "id": 930,
+    "nameKo": "올리르바",
+    "nameEn": "arboliva",
+    "generation": 9,
+    "types": [
+      "grass",
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "올리르바"
+    ]
+  },
+  {
+    "id": 931,
+    "nameKo": "시비꼬",
+    "nameEn": "squawkabilly-green-plumage",
+    "generation": 9,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "시비꼬"
+    ]
+  },
+  {
+    "id": 932,
+    "nameKo": "베베솔트",
+    "nameEn": "nacli",
+    "generation": 9,
+    "types": [
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "베베솔트"
+    ]
+  },
+  {
+    "id": 933,
+    "nameKo": "스태솔트",
+    "nameEn": "naclstack",
+    "generation": 9,
+    "types": [
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "스태솔트"
+    ]
+  },
+  {
+    "id": 934,
+    "nameKo": "콜로솔트",
+    "nameEn": "garganacl",
+    "generation": 9,
+    "types": [
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "콜로솔트"
+    ]
+  },
+  {
+    "id": 935,
+    "nameKo": "카르본",
+    "nameEn": "charcadet",
+    "generation": 9,
+    "types": [
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "카르본"
+    ]
+  },
+  {
+    "id": 936,
+    "nameKo": "카디나르마",
+    "nameEn": "armarouge",
+    "generation": 9,
+    "types": [
+      "fire",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "카디나르마"
+    ]
+  },
+  {
+    "id": 937,
+    "nameKo": "파라블레이즈",
+    "nameEn": "ceruledge",
+    "generation": 9,
+    "types": [
+      "fire",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "파라블레이즈"
+    ]
+  },
+  {
+    "id": 938,
+    "nameKo": "빈나두",
+    "nameEn": "tadbulb",
+    "generation": 9,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "빈나두"
+    ]
+  },
+  {
+    "id": 939,
+    "nameKo": "찌리배리",
+    "nameEn": "bellibolt",
+    "generation": 9,
+    "types": [
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "찌리배리"
+    ]
+  },
+  {
+    "id": 940,
+    "nameKo": "찌리비",
+    "nameEn": "wattrel",
+    "generation": 9,
+    "types": [
+      "electric",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "찌리비"
+    ]
+  },
+  {
+    "id": 941,
+    "nameKo": "찌리비크",
+    "nameEn": "kilowattrel",
+    "generation": 9,
+    "types": [
+      "electric",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "찌리비크"
+    ]
+  },
+  {
+    "id": 942,
+    "nameKo": "오라티프",
+    "nameEn": "maschiff",
+    "generation": 9,
+    "types": [
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "오라티프"
+    ]
+  },
+  {
+    "id": 943,
+    "nameKo": "마피티프",
+    "nameEn": "mabosstiff",
+    "generation": 9,
+    "types": [
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "마피티프"
+    ]
+  },
+  {
+    "id": 944,
+    "nameKo": "땃쭈르",
+    "nameEn": "shroodle",
+    "generation": 9,
+    "types": [
+      "poison",
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "땃쭈르"
+    ]
+  },
+  {
+    "id": 945,
+    "nameKo": "태깅구르",
+    "nameEn": "grafaiai",
+    "generation": 9,
+    "types": [
+      "poison",
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "태깅구르"
+    ]
+  },
+  {
+    "id": 946,
+    "nameKo": "그푸리",
+    "nameEn": "bramblin",
+    "generation": 9,
+    "types": [
+      "grass",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "그푸리"
+    ]
+  },
+  {
+    "id": 947,
+    "nameKo": "공푸리",
+    "nameEn": "brambleghast",
+    "generation": 9,
+    "types": [
+      "grass",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "공푸리"
+    ]
+  },
+  {
+    "id": 948,
+    "nameKo": "들눈해",
+    "nameEn": "toedscool",
+    "generation": 9,
+    "types": [
+      "ground",
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "들눈해"
+    ]
+  },
+  {
+    "id": 949,
+    "nameKo": "육파리",
+    "nameEn": "toedscruel",
+    "generation": 9,
+    "types": [
+      "ground",
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "육파리"
+    ]
+  },
+  {
+    "id": 950,
+    "nameKo": "절벼게",
+    "nameEn": "klawf",
+    "generation": 9,
+    "types": [
+      "rock"
+    ],
+    "acceptedAnswers": [
+      "절벼게"
+    ]
+  },
+  {
+    "id": 951,
+    "nameKo": "캡싸이",
+    "nameEn": "capsakid",
+    "generation": 9,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "캡싸이"
+    ]
+  },
+  {
+    "id": 952,
+    "nameKo": "스코빌런",
+    "nameEn": "scovillain",
+    "generation": 9,
+    "types": [
+      "grass",
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "스코빌런"
+    ]
+  },
+  {
+    "id": 953,
+    "nameKo": "구르데",
+    "nameEn": "rellor",
+    "generation": 9,
+    "types": [
+      "bug"
+    ],
+    "acceptedAnswers": [
+      "구르데"
+    ]
+  },
+  {
+    "id": 954,
+    "nameKo": "베라카스",
+    "nameEn": "rabsca",
+    "generation": 9,
+    "types": [
+      "bug",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "베라카스"
+    ]
+  },
+  {
+    "id": 955,
+    "nameKo": "하느라기",
+    "nameEn": "flittle",
+    "generation": 9,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "하느라기"
+    ]
+  },
+  {
+    "id": 956,
+    "nameKo": "클레스퍼트라",
+    "nameEn": "espathra",
+    "generation": 9,
+    "types": [
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "클레스퍼트라"
+    ]
+  },
+  {
+    "id": 957,
+    "nameKo": "어리짱",
+    "nameEn": "tinkatink",
+    "generation": 9,
+    "types": [
+      "fairy",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "어리짱"
+    ]
+  },
+  {
+    "id": 958,
+    "nameKo": "벼리짱",
+    "nameEn": "tinkatuff",
+    "generation": 9,
+    "types": [
+      "fairy",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "벼리짱"
+    ]
+  },
+  {
+    "id": 959,
+    "nameKo": "두드리짱",
+    "nameEn": "tinkaton",
+    "generation": 9,
+    "types": [
+      "fairy",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "두드리짱"
+    ]
+  },
+  {
+    "id": 960,
+    "nameKo": "바다그다",
+    "nameEn": "wiglett",
+    "generation": 9,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "바다그다"
+    ]
+  },
+  {
+    "id": 961,
+    "nameKo": "바닥트리오",
+    "nameEn": "wugtrio",
+    "generation": 9,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "바닥트리오"
+    ]
+  },
+  {
+    "id": 962,
+    "nameKo": "떨구새",
+    "nameEn": "bombirdier",
+    "generation": 9,
+    "types": [
+      "flying",
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "떨구새"
+    ]
+  },
+  {
+    "id": 963,
+    "nameKo": "맨돌핀",
+    "nameEn": "finizen",
+    "generation": 9,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "맨돌핀"
+    ]
+  },
+  {
+    "id": 964,
+    "nameKo": "돌핀맨",
+    "nameEn": "palafin-zero",
+    "generation": 9,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "돌핀맨"
+    ]
+  },
+  {
+    "id": 965,
+    "nameKo": "부르롱",
+    "nameEn": "varoom",
+    "generation": 9,
+    "types": [
+      "steel",
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "부르롱"
+    ]
+  },
+  {
+    "id": 966,
+    "nameKo": "부르르룸",
+    "nameEn": "revavroom",
+    "generation": 9,
+    "types": [
+      "steel",
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "부르르룸"
+    ]
+  },
+  {
+    "id": 967,
+    "nameKo": "모토마",
+    "nameEn": "cyclizar",
+    "generation": 9,
+    "types": [
+      "dragon",
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "모토마"
+    ]
+  },
+  {
+    "id": 968,
+    "nameKo": "꿈트렁",
+    "nameEn": "orthworm",
+    "generation": 9,
+    "types": [
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "꿈트렁"
+    ]
+  },
+  {
+    "id": 969,
+    "nameKo": "초롱순",
+    "nameEn": "glimmet",
+    "generation": 9,
+    "types": [
+      "rock",
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "초롱순"
+    ]
+  },
+  {
+    "id": 970,
+    "nameKo": "킬라플로르",
+    "nameEn": "glimmora",
+    "generation": 9,
+    "types": [
+      "rock",
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "킬라플로르"
+    ]
+  },
+  {
+    "id": 971,
+    "nameKo": "망망이",
+    "nameEn": "greavard",
+    "generation": 9,
+    "types": [
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "망망이"
+    ]
+  },
+  {
+    "id": 972,
+    "nameKo": "묘두기",
+    "nameEn": "houndstone",
+    "generation": 9,
+    "types": [
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "묘두기"
+    ]
+  },
+  {
+    "id": 973,
+    "nameKo": "꼬이밍고",
+    "nameEn": "flamigo",
+    "generation": 9,
+    "types": [
+      "flying",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "꼬이밍고"
+    ]
+  },
+  {
+    "id": 974,
+    "nameKo": "터벅고래",
+    "nameEn": "cetoddle",
+    "generation": 9,
+    "types": [
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "터벅고래"
+    ]
+  },
+  {
+    "id": 975,
+    "nameKo": "우락고래",
+    "nameEn": "cetitan",
+    "generation": 9,
+    "types": [
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "우락고래"
+    ]
+  },
+  {
+    "id": 976,
+    "nameKo": "가비루사",
+    "nameEn": "veluza",
+    "generation": 9,
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "가비루사"
+    ]
+  },
+  {
+    "id": 977,
+    "nameKo": "어써러셔",
+    "nameEn": "dondozo",
+    "generation": 9,
+    "types": [
+      "water"
+    ],
+    "acceptedAnswers": [
+      "어써러셔"
+    ]
+  },
+  {
+    "id": 978,
+    "nameKo": "싸리용",
+    "nameEn": "tatsugiri-curly",
+    "generation": 9,
+    "types": [
+      "dragon",
+      "water"
+    ],
+    "acceptedAnswers": [
+      "싸리용"
+    ]
+  },
+  {
+    "id": 979,
+    "nameKo": "저승갓숭",
+    "nameEn": "annihilape",
+    "generation": 9,
+    "types": [
+      "fighting",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "저승갓숭"
+    ]
+  },
+  {
+    "id": 980,
+    "nameKo": "토오",
+    "nameEn": "clodsire",
+    "generation": 9,
+    "types": [
+      "poison",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "토오"
+    ]
+  },
+  {
+    "id": 981,
+    "nameKo": "키키링",
+    "nameEn": "farigiraf",
+    "generation": 9,
+    "types": [
+      "normal",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "키키링"
+    ]
+  },
+  {
+    "id": 982,
+    "nameKo": "노고고치",
+    "nameEn": "dudunsparce-two-segment",
+    "generation": 9,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "노고고치"
+    ]
+  },
+  {
+    "id": 983,
+    "nameKo": "대도각참",
+    "nameEn": "kingambit",
+    "generation": 9,
+    "types": [
+      "dark",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "대도각참"
+    ]
+  },
+  {
+    "id": 984,
+    "nameKo": "위대한엄니",
+    "nameEn": "great-tusk",
+    "generation": 9,
+    "types": [
+      "ground",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "위대한엄니"
+    ]
+  },
+  {
+    "id": 985,
+    "nameKo": "우렁찬꼬리",
+    "nameEn": "scream-tail",
+    "generation": 9,
+    "types": [
+      "fairy",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "우렁찬꼬리"
+    ]
+  },
+  {
+    "id": 986,
+    "nameKo": "사나운버섯",
+    "nameEn": "brute-bonnet",
+    "generation": 9,
+    "types": [
+      "grass",
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "사나운버섯"
+    ]
+  },
+  {
+    "id": 987,
+    "nameKo": "날개치는머리",
+    "nameEn": "flutter-mane",
+    "generation": 9,
+    "types": [
+      "ghost",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "날개치는머리"
+    ]
+  },
+  {
+    "id": 988,
+    "nameKo": "땅을기는날개",
+    "nameEn": "slither-wing",
+    "generation": 9,
+    "types": [
+      "bug",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "땅을기는날개"
+    ]
+  },
+  {
+    "id": 989,
+    "nameKo": "모래털가죽",
+    "nameEn": "sandy-shocks",
+    "generation": 9,
+    "types": [
+      "electric",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "모래털가죽"
+    ]
+  },
+  {
+    "id": 990,
+    "nameKo": "무쇠바퀴",
+    "nameEn": "iron-treads",
+    "generation": 9,
+    "types": [
+      "ground",
+      "steel"
+    ],
+    "acceptedAnswers": [
+      "무쇠바퀴"
+    ]
+  },
+  {
+    "id": 991,
+    "nameKo": "무쇠보따리",
+    "nameEn": "iron-bundle",
+    "generation": 9,
+    "types": [
+      "ice",
+      "water"
+    ],
+    "acceptedAnswers": [
+      "무쇠보따리"
+    ]
+  },
+  {
+    "id": 992,
+    "nameKo": "무쇠손",
+    "nameEn": "iron-hands",
+    "generation": 9,
+    "types": [
+      "fighting",
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "무쇠손"
+    ]
+  },
+  {
+    "id": 993,
+    "nameKo": "무쇠머리",
+    "nameEn": "iron-jugulis",
+    "generation": 9,
+    "types": [
+      "dark",
+      "flying"
+    ],
+    "acceptedAnswers": [
+      "무쇠머리"
+    ]
+  },
+  {
+    "id": 994,
+    "nameKo": "무쇠독나방",
+    "nameEn": "iron-moth",
+    "generation": 9,
+    "types": [
+      "fire",
+      "poison"
+    ],
+    "acceptedAnswers": [
+      "무쇠독나방"
+    ]
+  },
+  {
+    "id": 995,
+    "nameKo": "무쇠가시",
+    "nameEn": "iron-thorns",
+    "generation": 9,
+    "types": [
+      "rock",
+      "electric"
+    ],
+    "acceptedAnswers": [
+      "무쇠가시"
+    ]
+  },
+  {
+    "id": 996,
+    "nameKo": "드니차",
+    "nameEn": "frigibax",
+    "generation": 9,
+    "types": [
+      "dragon",
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "드니차"
+    ]
+  },
+  {
+    "id": 997,
+    "nameKo": "드니꽁",
+    "nameEn": "arctibax",
+    "generation": 9,
+    "types": [
+      "dragon",
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "드니꽁"
+    ]
+  },
+  {
+    "id": 998,
+    "nameKo": "드닐레이브",
+    "nameEn": "baxcalibur",
+    "generation": 9,
+    "types": [
+      "dragon",
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "드닐레이브"
+    ]
+  },
+  {
+    "id": 999,
+    "nameKo": "모으령",
+    "nameEn": "gimmighoul",
+    "generation": 9,
+    "types": [
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "모으령"
+    ]
+  },
+  {
+    "id": 1000,
+    "nameKo": "타부자고",
+    "nameEn": "gholdengo",
+    "generation": 9,
+    "types": [
+      "steel",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "타부자고"
+    ]
+  },
+  {
+    "id": 1001,
+    "nameKo": "총지엔",
+    "nameEn": "wo-chien",
+    "generation": 9,
+    "types": [
+      "dark",
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "총지엔"
+    ]
+  },
+  {
+    "id": 1002,
+    "nameKo": "파오젠",
+    "nameEn": "chien-pao",
+    "generation": 9,
+    "types": [
+      "dark",
+      "ice"
+    ],
+    "acceptedAnswers": [
+      "파오젠"
+    ]
+  },
+  {
+    "id": 1003,
+    "nameKo": "딩루",
+    "nameEn": "ting-lu",
+    "generation": 9,
+    "types": [
+      "dark",
+      "ground"
+    ],
+    "acceptedAnswers": [
+      "딩루"
+    ]
+  },
+  {
+    "id": 1004,
+    "nameKo": "위유이",
+    "nameEn": "chi-yu",
+    "generation": 9,
+    "types": [
+      "dark",
+      "fire"
+    ],
+    "acceptedAnswers": [
+      "위유이"
+    ]
+  },
+  {
+    "id": 1005,
+    "nameKo": "고동치는달",
+    "nameEn": "roaring-moon",
+    "generation": 9,
+    "types": [
+      "dragon",
+      "dark"
+    ],
+    "acceptedAnswers": [
+      "고동치는달"
+    ]
+  },
+  {
+    "id": 1006,
+    "nameKo": "무쇠무인",
+    "nameEn": "iron-valiant",
+    "generation": 9,
+    "types": [
+      "fairy",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "무쇠무인"
+    ]
+  },
+  {
+    "id": 1007,
+    "nameKo": "코라이돈",
+    "nameEn": "koraidon",
+    "generation": 9,
+    "types": [
+      "fighting",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "코라이돈"
+    ]
+  },
+  {
+    "id": 1008,
+    "nameKo": "미라이돈",
+    "nameEn": "miraidon",
+    "generation": 9,
+    "types": [
+      "electric",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "미라이돈"
+    ]
+  },
+  {
+    "id": 1009,
+    "nameKo": "굽이치는물결",
+    "nameEn": "walking-wake",
+    "generation": 9,
+    "types": [
+      "water",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "굽이치는물결"
+    ]
+  },
+  {
+    "id": 1010,
+    "nameKo": "무쇠잎새",
+    "nameEn": "iron-leaves",
+    "generation": 9,
+    "types": [
+      "grass",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "무쇠잎새"
+    ]
+  },
+  {
+    "id": 1011,
+    "nameKo": "과미르",
+    "nameEn": "dipplin",
+    "generation": 9,
+    "types": [
+      "grass",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "과미르"
+    ]
+  },
+  {
+    "id": 1012,
+    "nameKo": "차데스",
+    "nameEn": "poltchageist",
+    "generation": 9,
+    "types": [
+      "grass",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "차데스"
+    ]
+  },
+  {
+    "id": 1013,
+    "nameKo": "그우린차",
+    "nameEn": "sinistcha",
+    "generation": 9,
+    "types": [
+      "grass",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "그우린차"
+    ]
+  },
+  {
+    "id": 1014,
+    "nameKo": "조타구",
+    "nameEn": "okidogi",
+    "generation": 9,
+    "types": [
+      "poison",
+      "fighting"
+    ],
+    "acceptedAnswers": [
+      "조타구"
+    ]
+  },
+  {
+    "id": 1015,
+    "nameKo": "이야후",
+    "nameEn": "munkidori",
+    "generation": 9,
+    "types": [
+      "poison",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "이야후"
+    ]
+  },
+  {
+    "id": 1016,
+    "nameKo": "기로치",
+    "nameEn": "fezandipiti",
+    "generation": 9,
+    "types": [
+      "poison",
+      "fairy"
+    ],
+    "acceptedAnswers": [
+      "기로치"
+    ]
+  },
+  {
+    "id": 1017,
+    "nameKo": "오거폰",
+    "nameEn": "ogerpon",
+    "generation": 9,
+    "types": [
+      "grass"
+    ],
+    "acceptedAnswers": [
+      "오거폰"
+    ]
+  },
+  {
+    "id": 1018,
+    "nameKo": "브리두라스",
+    "nameEn": "archaludon",
+    "generation": 9,
+    "types": [
+      "steel",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "브리두라스"
+    ]
+  },
+  {
+    "id": 1019,
+    "nameKo": "과미드라",
+    "nameEn": "hydrapple",
+    "generation": 9,
+    "types": [
+      "grass",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "과미드라"
+    ]
+  },
+  {
+    "id": 1020,
+    "nameKo": "꿰뚫는화염",
+    "nameEn": "gouging-fire",
+    "generation": 9,
+    "types": [
+      "fire",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "꿰뚫는화염"
+    ]
+  },
+  {
+    "id": 1021,
+    "nameKo": "날뛰는우레",
+    "nameEn": "raging-bolt",
+    "generation": 9,
+    "types": [
+      "electric",
+      "dragon"
+    ],
+    "acceptedAnswers": [
+      "날뛰는우레"
+    ]
+  },
+  {
+    "id": 1022,
+    "nameKo": "무쇠암석",
+    "nameEn": "iron-boulder",
+    "generation": 9,
+    "types": [
+      "rock",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "무쇠암석"
+    ]
+  },
+  {
+    "id": 1023,
+    "nameKo": "무쇠감투",
+    "nameEn": "iron-crown",
+    "generation": 9,
+    "types": [
+      "steel",
+      "psychic"
+    ],
+    "acceptedAnswers": [
+      "무쇠감투"
+    ]
+  },
+  {
+    "id": 1024,
+    "nameKo": "테라파고스",
+    "nameEn": "terapagos",
+    "generation": 9,
+    "types": [
+      "normal"
+    ],
+    "acceptedAnswers": [
+      "테라파고스"
+    ]
+  },
+  {
+    "id": 1025,
+    "nameKo": "복숭악동",
+    "nameEn": "pecharunt",
+    "generation": 9,
+    "types": [
+      "poison",
+      "ghost"
+    ],
+    "acceptedAnswers": [
+      "복숭악동"
     ]
   }
 ]
