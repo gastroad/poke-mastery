@@ -9,6 +9,8 @@ const dataset: Pokemon[] = Array.from({ length: 20 }, (_, i) => ({
   nameEn: `pokemon${i + 1}`,
   generation: 1,
   types: ["normal"],
+  heightDm: 10,
+  weightHg: 100,
   acceptedAnswers: [`포켓몬${i + 1}`],
 }));
 

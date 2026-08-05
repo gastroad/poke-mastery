@@ -54,6 +54,11 @@ export interface Pokemon {
   types: PokemonType[];
   /** Pre-normalized set of strings accepted as correct (see normalizeKoreanName). */
   acceptedAnswers: string[];
+  /** Height in decimetres and weight in hectograms, exactly as PokéAPI reports
+      them (so 4 = 0.4m, 60 = 6.0kg). Integers, kept unconverted so no rounding
+      creeps in before the comparison quiz decides which of two is heavier. */
+  heightDm: number;
+  weightHg: number;
   /**
    * Present only when male and female look different (`back: null` when there is
    * no female back sprite).

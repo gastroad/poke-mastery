@@ -2,6 +2,7 @@ import { createRng } from "../rng/createRng";
 import { shuffle } from "../rng/shuffle";
 import { filterPool } from "./filterPool";
 import { generateGenderQuestions } from "./generateGenderQuestions";
+import { generateHeavierQuestions } from "./generateHeavierQuestions";
 import type { ChallengeRule, Dataset, Question } from "./types";
 
 /**
@@ -19,6 +20,7 @@ export function generateQuestions(rule: ChallengeRule, dataset: Dataset, seed: n
   // gender) and answers 암컷/수컷 instead of a name, but it still yields plain
   // Questions — so grading, scoring and the store all work unchanged.
   if (rule.mode === "gender") return generateGenderQuestions(rule, dataset, seed);
+  if (rule.mode === "heavier") return generateHeavierQuestions(rule, dataset, seed);
 
   const pool = filterPool(dataset, rule.pool);
   const rng = createRng(seed);

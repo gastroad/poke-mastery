@@ -13,6 +13,8 @@ const dataset: Pokemon[] = Array.from({ length: 15 }, (_, i) => ({
   nameEn: `pokemon${i + 1}`,
   generation: 1,
   types: i % 2 === 0 ? ["fire"] : ["water"],
+  heightDm: 10,
+  weightHg: 100,
   acceptedAnswers: [`포켓몬${i + 1}`],
 }));
 
@@ -71,6 +73,8 @@ describe("gradePlay — bingo", () => {
           nameEn: `mon${id}`,
           generation,
           types: [type],
+          heightDm: 10,
+          weightHg: 100,
           acceptedAnswers: [`몬${id}`],
         });
         id++;
@@ -158,6 +162,8 @@ describe("gradePlay — gender quiz", () => {
     nameEn: `mon${i + 1}`,
     generation: 1,
     types: ["normal"],
+    heightDm: 10,
+    weightHg: 100,
     acceptedAnswers: [`몬${i + 1}`],
     genderDiff: { front: { pixels: 40, box: { x: 0, y: 0, size: 26 } }, back: { pixels: 20, box: { x: 0, y: 0, size: 26 } } },
   }));

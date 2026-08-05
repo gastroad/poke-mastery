@@ -17,6 +17,8 @@ const mon = (id: number, genderDiff?: Pokemon["genderDiff"]): Pokemon => ({
   nameEn: `mon${id}`,
   generation: 1,
   types: ["normal"],
+  heightDm: 10,
+  weightHg: 100,
   acceptedAnswers: [`몬${id}`],
   ...(genderDiff ? { genderDiff } : {}),
 });

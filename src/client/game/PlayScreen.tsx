@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { INITIAL_LIVES, type StartChallenge, useSessionStore } from "@/client/stores/sessionStore";
 import { BingoView } from "./BingoView";
 import { GenderQuizView } from "./GenderQuizView";
+import { HeavierQuizView } from "./HeavierQuizView";
 import { POKEMON } from "./pokemonDataset";
 import { PokemonSilhouette } from "./PokemonSilhouette";
 import { ResultScreen } from "./ResultScreen";
@@ -31,6 +32,7 @@ export function PlayScreen({ challenge }: { challenge: StartChallenge }) {
   if (status === "playing") {
     if (challenge.rule.mode === "bingo") return <BingoView />;
     if (challenge.rule.mode === "gender") return <GenderQuizView />;
+    if (challenge.rule.mode === "heavier") return <HeavierQuizView />;
     if (challenge.rule.mode === "time-attack") {
       return <TimeAttackView timeLimitSec={challenge.rule.timeLimitSec ?? 60} />;
     }

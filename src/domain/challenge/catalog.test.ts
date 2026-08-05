@@ -10,14 +10,10 @@ import {
 } from "./catalog";
 
 describe("pools", () => {
-  it("has Gen 1 open and later generations coming soon", () => {
-    expect(getPool("gen1")?.unlock).toEqual({ kind: "always" });
-    expect(getPool("gen2")?.unlock).toEqual({ kind: "comingSoon" });
-    expect(getPool("type-fire")?.unlock).toEqual({ kind: "comingSoon" });
-  });
-
-  it("opens the full-dex pool, since bingo needs every generation", () => {
-    expect(getPool("all")?.unlock).toEqual({ kind: "always" });
+  it("is fully open now that every generation is synced", () => {
+    for (const id of ["gen1", "gen5", "gen9", "all", "type-fire"]) {
+      expect(getPool(id)?.unlock).toEqual({ kind: "always" });
+    }
   });
 
   it("has unique ids", () => {
@@ -27,13 +23,14 @@ describe("pools", () => {
 });
 
 describe("modes", () => {
-  it("ships the silhouette formats plus both bingo sizes", () => {
+  it("ships every format", () => {
     expect(MODES.map((m) => m.id)).toEqual([
       "quiz",
       "time-attack",
       "reveal-rush",
       "bingo-3",
       "bingo-5",
+      "heavier",
       "gender",
     ]);
     expect(getMode("time-attack")?.rule.timeLimitSec).toBe(60);
@@ -55,16 +52,15 @@ describe("modes", () => {
 });
 
 describe("modesForPool", () => {
-  it("offers only the silhouette modes on a single generation", () => {
-    expect(modesForPool("gen1").map((m) => m.id)).toEqual([
-      "quiz",
-      "time-attack",
-      "reveal-rush",
-    ]);
+  it("hides the full-dex-only modes from a single generation", () => {
+    const ids = modesForPool("gen1").map((m) => m.id);
+    expect(ids).toContain("quiz");
+    expect(ids).not.toContain("bingo-3");
+    expect(ids).not.toContain("gender");
   });
 
-  it("offers only the full-dex modes on the full dex", () => {
-    expect(modesForPool("all").map((m) => m.id)).toEqual(["bingo-3", "bingo-5", "gender"]);
+  it("offers everything on the full dex", () => {
+    expect(modesForPool("all").map((m) => m.id)).toEqual(MODES.map((m) => m.id));
   });
 
   it("keeps bingo off type pools — a type pool would collapse the column axis", () => {
@@ -89,9 +85,10 @@ describe("getChallenge", () => {
     expect(getChallenge("gen1:time-attack")?.rule.timeLimitSec).toBe(60);
   });
 
-  it("returns undefined for a coming-soon pool", () => {
-    expect(getChallenge("gen2:quiz")).toBeUndefined();
-    expect(getChallenge("type-fire:quiz")).toBeUndefined();
+  it("plays the silhouette quiz on any generation, now that all are synced", () => {
+    expect(getChallenge("gen5:quiz")?.rule.pool).toEqual({ generations: [5] });
+    expect(getChallenge("type-fire:quiz")?.rule.pool).toEqual({ types: ["fire"] });
+    expect(getChallenge("all:quiz")?.rule.pool).toEqual({});
   });
 
   it("returns undefined for an unknown pool or mode", () => {
@@ -111,8 +108,8 @@ describe("getChallenge", () => {
     expect(getChallenge("gen1:bingo-3")).toBeUndefined();
   });
 
-  it("refuses a silhouette mode on the full dex (artwork is gen 1 only)", () => {
-    expect(getChallenge("all:quiz")).toBeUndefined();
+  it("refuses the gender quiz on a single generation", () => {
+    expect(getChallenge("gen1:gender")).toBeUndefined();
   });
 });
 

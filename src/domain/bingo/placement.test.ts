@@ -4,9 +4,9 @@ import { findByAnswer, judgePlacement } from "./placement";
 import type { BingoCell } from "./types";
 
 const dex: Pokemon[] = [
-  { id: 6, nameKo: "리자몽", nameEn: "charizard", generation: 1, types: ["fire", "flying"], acceptedAnswers: ["리자몽"] },
-  { id: 9, nameKo: "거북왕", nameEn: "blastoise", generation: 1, types: ["water"], acceptedAnswers: ["거북왕"] },
-  { id: 257, nameKo: "번치코", nameEn: "blaziken", generation: 3, types: ["fire", "fighting"], acceptedAnswers: ["번치코"] },
+  { id: 6, nameKo: "리자몽", nameEn: "charizard", generation: 1, types: ["fire", "flying"], heightDm: 10, weightHg: 100, acceptedAnswers: ["리자몽"] },
+  { id: 9, nameKo: "거북왕", nameEn: "blastoise", generation: 1, types: ["water"], heightDm: 10, weightHg: 100, acceptedAnswers: ["거북왕"] },
+  { id: 257, nameKo: "번치코", nameEn: "blaziken", generation: 3, types: ["fire", "fighting"], heightDm: 10, weightHg: 100, acceptedAnswers: ["번치코"] },
 ];
 
 const fireGen1: BingoCell = { index: 0, generation: 1, type: "fire" };

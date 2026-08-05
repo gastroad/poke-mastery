@@ -9,8 +9,9 @@ import type { Pokemon, PokemonId, PokemonType } from "../pokemon/types";
  *   the questions aren't a list (see domain/bingo).
  * - "gender": male or female, from the sprites of a species that looks different
  *   by gender (see generateGenderQuestions).
+ * - "heavier": two Pokémon, pick the heavier one (see generateHeavierQuestions).
  */
-export type GameMode = "quiz" | "time-attack" | "reveal-rush" | "bingo" | "gender";
+export type GameMode = "quiz" | "time-attack" | "reveal-rush" | "bingo" | "gender" | "heavier";
 
 /**
  * Which Pokémon a challenge draws from. Undefined field = no constraint.
@@ -55,6 +56,8 @@ export interface Question {
   acceptedAnswers: string[];
   /** Gender quiz only: which gender's sprites to show. The answer is the gender. */
   gender?: "male" | "female";
+  /** Comparison quiz only: the second Pokémon. `pokemonId` is the left-hand one. */
+  pairId?: PokemonId;
 }
 
 /** Convenience alias: the reference dataset passed into pure generators. */

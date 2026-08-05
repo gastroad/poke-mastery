@@ -12,6 +12,8 @@ const mon = (id: number, nameKo: string, generation: number, types: PokemonType[
   nameEn: `m${id}`,
   generation,
   types,
+  heightDm: 10,
+  weightHg: 100,
   acceptedAnswers: [nameKo],
 });
 

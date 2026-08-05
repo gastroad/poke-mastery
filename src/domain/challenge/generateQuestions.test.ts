@@ -9,6 +9,8 @@ const dataset: Pokemon[] = Array.from({ length: 20 }, (_, i) => ({
   nameEn: `pokemon${i + 1}`,
   generation: 1,
   types: ["normal"],
+  heightDm: 10,
+  weightHg: 100,
   acceptedAnswers: [`포켓몬${i + 1}`],
 }));
 
@@ -37,7 +39,7 @@ describe("generateQuestions", () => {
   it("only draws from the filtered pool", () => {
     const withGen2: Pokemon[] = [
       ...dataset,
-      { id: 999, nameKo: "치코리타", nameEn: "chikorita", generation: 2, types: ["grass"], acceptedAnswers: ["치코리타"] },
+      { id: 999, nameKo: "치코리타", nameEn: "chikorita", generation: 2, types: ["grass"], heightDm: 10, weightHg: 100, acceptedAnswers: ["치코리타"] },
     ];
     const ids = generateQuestions(rule, withGen2, 5).map((q) => q.pokemonId);
     expect(ids).not.toContain(999);

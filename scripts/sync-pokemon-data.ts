@@ -5,10 +5,10 @@
  *   - src/data/pokemon.json          normalized Pokemon[] (Korean names, types, acceptedAnswers)
  *   - public/sprites/{variant}/{id}.{ext}   sprite variants per SPRITE_META
  *
- * Sprite budget: gen 1 gets EVERY variant (the silhouette modes need the big
- * artwork), gen 2+ gets the 96px pixel sprite only. Downloading all variants for
- * all ~1000 species would be ~390MB of committed binaries; pixel-only keeps the
- * later generations at ~4MB, which is all the bingo board needs.
+ * Sprite budget: the 96px pixel sprite for everyone, plus a back and female pair
+ * for the ~100 species the gender quiz uses. PokéAPI's prettier styles only
+ * cover Gen 1 and cost ~57MB committed, which bought nothing once the silhouette
+ * quiz moved to pixel sprites and gained all nine generations in exchange.
  *
  * Sprite paths are derived from id (see shared/sprites.ts), so they are NOT stored in the JSON.
  * Re-runs are cheap: an existing sprite file is left alone.
@@ -24,8 +24,6 @@ import { SPRITE_META, type SpriteVariant } from "../src/shared/sprites";
 
 /** Highest national dex number to sync (gen 9, including DLC). */
 const MAX_DEX_ID = 1025;
-/** Generations that get the full sprite set; every other one gets `pixel` only. */
-const FULL_SPRITE_GENERATIONS = new Set([1]);
 const API = "https://pokeapi.co/api/v2";
 const CONCURRENCY = 8;
 
@@ -51,20 +49,11 @@ interface Sprites {
   back_default: string | null;
   front_female: string | null;
   back_female: string | null;
-  other?: {
-    dream_world?: { front_default: string | null };
-    home?: { front_default: string | null };
-    "official-artwork"?: { front_default: string | null };
-  };
-  versions?: {
-    "generation-i"?: { "red-blue"?: { front_default: string | null; back_default: string | null } };
-    "generation-v"?: {
-      "black-white"?: { animated?: { front_default: string | null; back_default: string | null } };
-    };
-  };
 }
 interface PokemonResponse {
   name: string;
+  height: number;
+  weight: number;
   types: { slot: number; type: { name: string } }[];
   sprites: Sprites;
 }
@@ -76,15 +65,8 @@ interface SpeciesResponse {
 
 /** Where each sprite variant lives inside PokéAPI's `sprites` object. */
 const PICKERS: Record<SpriteVariant, (s: Sprites) => string | null | undefined> = {
-  artwork: (s) => s.other?.["official-artwork"]?.front_default,
   pixel: (s) => s.front_default,
   "pixel-back": (s) => s.back_default,
-  animated: (s) => s.versions?.["generation-v"]?.["black-white"]?.animated?.front_default,
-  "animated-back": (s) => s.versions?.["generation-v"]?.["black-white"]?.animated?.back_default,
-  retro: (s) => s.versions?.["generation-i"]?.["red-blue"]?.front_default,
-  "retro-back": (s) => s.versions?.["generation-i"]?.["red-blue"]?.back_default,
-  home: (s) => s.other?.home?.front_default,
-  dreamworld: (s) => s.other?.dream_world?.front_default,
   "pixel-female": (s) => s.front_female,
   "pixel-back-female": (s) => s.back_female,
 };
@@ -157,12 +139,10 @@ async function downloadSprite(url: string, variant: SpriteVariant, id: number): 
 }
 
 /**
- * Full set for gen 1; just the board thumbnail for everything after it — plus
- * the male/female pair for any species the gender quiz can use, whatever
- * generation it is from.
+ * Every species needs its front sprite; only the ones the gender quiz can use
+ * also need a back and the female pair.
  */
-function variantsFor(generation: number, hasGenderDifferences: boolean): SpriteVariant[] {
-  if (FULL_SPRITE_GENERATIONS.has(generation)) return Object.keys(SPRITE_META) as SpriteVariant[];
+function variantsFor(hasGenderDifferences: boolean): SpriteVariant[] {
   return hasGenderDifferences ? GENDER_VARIANTS : ["pixel"];
 }
 
@@ -267,7 +247,7 @@ async function buildPokemon(id: number): Promise<Pokemon | null> {
 
   const missing = (
     await Promise.all(
-      variantsFor(generation, s.has_gender_differences).map(async (variant) => {
+      variantsFor(s.has_gender_differences).map(async (variant) => {
         const url = PICKERS[variant](p.sprites);
         if (!url) return variant;
         await downloadSprite(url, variant, id);
@@ -286,6 +266,8 @@ async function buildPokemon(id: number): Promise<Pokemon | null> {
     nameEn: p.name,
     generation,
     types,
+    heightDm: p.height,
+    weightHg: p.weight,
     acceptedAnswers: acceptedAnswersFor(nameKo),
     ...(s.has_gender_differences ? { genderDiff: await measureGenderDiff(id) } : {}),
   };
@@ -298,9 +280,7 @@ async function main(): Promise<void> {
   }
 
   const ids = Array.from({ length: MAX_DEX_ID }, (_, i) => i + 1);
-  console.log(
-    `Fetching ${ids.length} Pokémon — every sprite variant for gen ${[...FULL_SPRITE_GENERATIONS].join("/")}, pixel only after that…`,
-  );
+  console.log(`Fetching ${ids.length} Pokémon — pixel sprites, plus the female pair where it exists…`);
 
   let done = 0;
   const fetched = await mapPool(ids, CONCURRENCY, async (id) => {

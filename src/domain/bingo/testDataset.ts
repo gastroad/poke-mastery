@@ -20,6 +20,8 @@ export function buildDataset(spec: Record<number, Partial<Record<PokemonType, nu
           nameEn: `mon${id}`,
           generation: Number(gen),
           types: [type as PokemonType],
+          heightDm: 10,
+          weightHg: 100,
           acceptedAnswers: [nameKo],
         });
         id++;
