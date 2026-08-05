@@ -1,7 +1,12 @@
 import { create } from "zustand";
 import { judgeAnswer } from "@/domain/answer/judgeAnswer";
+import { cellAt } from "@/domain/bingo/cellAnswers";
+import { generateBingoBoard } from "@/domain/bingo/generateBoard";
+import { judgePlacement } from "@/domain/bingo/placement";
+import type { BingoBoard, BingoRule, Placement } from "@/domain/bingo/types";
 import { generateQuestions } from "@/domain/challenge/generateQuestions";
 import type { ChallengeRule, Dataset, Question } from "@/domain/challenge/types";
+import type { Pokemon, PokemonId } from "@/domain/pokemon/types";
 
 /**
  * Session store = the state of the CURRENT game only (which question, input,
@@ -52,6 +57,20 @@ interface SessionState {
   score: number;
   results: AnsweredQuestion[];
 
+  // ── bingo only (see domain/bingo) ──
+  board: BingoBoard | null;
+  /** What sits in each cell, by index. */
+  placed: (PokemonId | null)[];
+  /** The raw input accepted into each cell — this array IS the PlayRecord's
+      `attempts`, which is how the player's cell CHOICE survives to the server. */
+  placedInputs: string[];
+  /** The Pokémon the player has picked up but not placed yet. */
+  held: Pokemon | null;
+  /** Attempts left for the whole board. Only a placement spends one. */
+  attemptsLeft: number;
+  /** Verdict of the last drop, for the feedback line. */
+  lastPlacement: Placement | null;
+
   // ── actions ──
   start: (challenge: StartChallenge, dataset: Dataset, seed: number) => void;
   setInput: (value: string) => void;
@@ -61,6 +80,10 @@ interface SessionState {
   recordAndAdvance: (correct: boolean, points?: number) => void;
   /** time-attack: end the game (clock ran out). */
   finishNow: () => void;
+  /** bingo: pick a Pokémon up (does NOT spend an attempt — placing does). */
+  pickUp: (pokemon: Pokemon | null) => void;
+  /** bingo: drop the held Pokémon into a cell. A wrong cell costs an attempt. */
+  dropHeld: (cellIndex: number, dataset: Dataset) => void;
   reset: () => void;
 }
 
@@ -78,12 +101,45 @@ const initialState = {
   maxCombo: 0,
   score: 0,
   results: [] as AnsweredQuestion[],
+  board: null as BingoBoard | null,
+  placed: [] as (PokemonId | null)[],
+  placedInputs: [] as string[],
+  held: null as Pokemon | null,
+  attemptsLeft: 0,
+  lastPlacement: null as Placement | null,
 };
+
+/** Pull the bingo knobs out of a challenge rule (catalog fills them in). */
+function bingoRuleOf(rule: ChallengeRule): BingoRule {
+  return {
+    size: rule.boardSize ?? 3,
+    minAnswersPerCell: rule.minAnswersPerCell ?? 1,
+    attempts: rule.attempts ?? 0,
+  };
+}
 
 export const useSessionStore = create<SessionState>((set, get) => ({
   ...initialState,
 
   start: (challenge, dataset, seed) => {
+    if (challenge.rule.mode === "bingo") {
+      // Bingo has no question list: the board IS the game, and it's rebuilt from
+      // this same seed on the server (see gradePlay).
+      const rule = bingoRuleOf(challenge.rule);
+      const board = generateBingoBoard(rule, dataset, seed);
+      const cellCount = board ? board.size * board.size : 0;
+      set({
+        ...initialState,
+        challenge,
+        seed,
+        board,
+        placed: Array(cellCount).fill(null),
+        placedInputs: Array(cellCount).fill(""),
+        attemptsLeft: rule.attempts,
+        status: board ? "playing" : "finished",
+      });
+      return;
+    }
     set({
       ...initialState,
       challenge,
@@ -145,6 +201,42 @@ export const useSessionStore = create<SessionState>((set, get) => ({
 
   finishNow: () => {
     if (get().status === "playing") set({ status: "finished" });
+  },
+
+  pickUp: (pokemon) => {
+    if (get().status !== "playing") return;
+    set({ held: pokemon, lastPlacement: null });
+  },
+
+  dropHeld: (cellIndex, dataset) => {
+    const { status, board, held, placed, placedInputs, attemptsLeft } = get();
+    if (status !== "playing" || !board || !held) return;
+    const cell = cellAt(board, cellIndex);
+    if (!cell || placed[cellIndex] !== null) return;
+
+    // Rule lives in domain; the store only records the verdict.
+    const result = judgePlacement(cell, held.nameKo, dataset, placed);
+    const hit = result.kind === "placed";
+
+    const nextPlaced = hit
+      ? placed.map((v, i) => (i === cellIndex ? held.id : v))
+      : placed;
+    const nextInputs = hit
+      ? placedInputs.map((v, i) => (i === cellIndex ? held.nameKo : v))
+      : placedInputs;
+    // Only a placement spends an attempt — a name that never reached a cell
+    // (unknown, or already on the board) is rejected before this point.
+    const left = hit ? attemptsLeft : attemptsLeft - 1;
+    const boardFull = nextPlaced.every((id) => id !== null);
+
+    set({
+      placed: nextPlaced,
+      placedInputs: nextInputs,
+      attemptsLeft: left,
+      held: null,
+      lastPlacement: result,
+      status: left <= 0 || boardFull ? "finished" : "playing",
+    });
   },
 
   reset: () => set({ ...initialState }),

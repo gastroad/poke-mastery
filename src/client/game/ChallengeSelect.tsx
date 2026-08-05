@@ -6,7 +6,7 @@ import { useMemo, useState } from "react";
 import { AuthStatus } from "@/client/auth/AuthStatus";
 import { PokeballFrame } from "@/client/ui/PokeballFrame";
 import { WheelPicker, type WheelItem } from "@/client/ui/WheelPicker";
-import { getPool, MODES, POOLS } from "@/domain/challenge/catalog";
+import { getPool, modesForPool, POOLS } from "@/domain/challenge/catalog";
 import { isUnlocked } from "@/domain/challenge/unlock";
 import { EMPTY_PROGRESS } from "@/domain/progress/applyPlayResult";
 
@@ -28,9 +28,14 @@ export function ChallengeSelect() {
     [],
   );
 
+  // Which modes exist depends on the pool: the full dex offers bingo, a single
+  // generation offers the silhouette formats. See `modesForPool`.
   const modeItems = useMemo<WheelItem[]>(
-    () => MODES.map((m) => ({ id: m.id, label: m.label, sublabel: m.description })),
-    [],
+    () =>
+      pool
+        ? modesForPool(pool.id).map((m) => ({ id: m.id, label: m.label, sublabel: m.description }))
+        : [],
+    [pool],
   );
 
   return (

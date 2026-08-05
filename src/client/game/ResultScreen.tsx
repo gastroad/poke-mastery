@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { submitPlayAction } from "@/app/play/actions";
 import { useSessionStore } from "@/client/stores/sessionStore";
+import { completedLines } from "@/domain/bingo/lines";
 import { gradePlay } from "@/domain/challenge/gradePlay";
 import { applyPlayResult } from "@/domain/progress/applyPlayResult";
 import type { ProgressDelta } from "@/domain/progress/types";
@@ -28,9 +29,17 @@ export function ResultScreen() {
   const challenge = useSessionStore((s) => s.challenge);
   const seed = useSessionStore((s) => s.seed);
   const start = useSessionStore((s) => s.start);
+  const board = useSessionStore((s) => s.board);
+  const placed = useSessionStore((s) => s.placed);
+  const placedInputs = useSessionStore((s) => s.placedInputs);
 
   const isTimeAttack = challenge?.rule.mode === "time-attack";
   const isRevealRush = challenge?.rule.mode === "reveal-rush";
+  const isBingo = challenge?.rule.mode === "bingo";
+  const bingoFilled = placed.filter((id) => id !== null).length;
+  const bingoLines = board
+    ? completedLines(board.size, placed.map((id) => id !== null)).length
+    : 0;
   const correct = results.filter((r) => r.correct).length;
   const attempted = results.length;
   const total = questions.length; // the quiz's intended size
@@ -45,7 +54,14 @@ export function ResultScreen() {
     if (!challenge || savedSeed.current === seed) return;
     savedSeed.current = seed;
 
-    const record: PlayRecord = { challengeId: challenge.id, seed, attempts: results.map((r) => r.input) };
+    // Bingo's attempts are indexed by CELL (empty string = left blank), which is
+    // how the player's placement choice reaches the server. Every other mode
+    // sends one entry per answered question, in question order.
+    const record: PlayRecord = {
+      challengeId: challenge.id,
+      seed,
+      attempts: isBingo ? placedInputs : results.map((r) => r.input),
+    };
 
     submitPlayAction(record)
       .then((res) => {
@@ -63,7 +79,7 @@ export function ResultScreen() {
         }
       })
       .catch(() => setSave({ kind: "none", reason: "error" }));
-  }, [challenge, seed, results]);
+  }, [challenge, seed, results, isBingo, placedInputs]);
 
   return (
     <main className="flex min-h-full flex-1 flex-col items-center justify-center bg-zinc-950 px-6 py-10 text-center text-zinc-100">
@@ -71,7 +87,17 @@ export function ResultScreen() {
         <h1 className="text-3xl font-bold">게임 종료</h1>
 
         <div className="flex flex-col gap-2">
-          {isRevealRush ? (
+          {isBingo ? (
+            <>
+              <p className="text-6xl font-black text-poke-400">
+                {bingoLines}
+                <span className="text-2xl text-zinc-500"> 줄</span>
+              </p>
+              <p className="text-zinc-400">
+                {bingoFilled} / {placed.length}칸 채움
+              </p>
+            </>
+          ) : isRevealRush ? (
             <>
               <p className="text-6xl font-black text-poke-400">
                 {score}

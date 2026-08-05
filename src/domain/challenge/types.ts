@@ -1,12 +1,16 @@
 import type { Pokemon, PokemonId, PokemonType } from "../pokemon/types";
 
 /**
- * Session format (always "guess the name by silhouette" for now):
+ * Session format:
  * - "quiz": fixed number of questions, lives, answer→reveal→next.
  * - "time-attack": one global countdown, answer as many as possible.
  * - "reveal-rush": each silhouette reveals over time; earlier guess = more points.
+ * - "bingo": a generation × type grid to fill from memory — no silhouette, and
+ *   the questions aren't a list (see domain/bingo).
+ * - "gender": male or female, from the sprites of a species that looks different
+ *   by gender (see generateGenderQuestions).
  */
-export type GameMode = "quiz" | "time-attack" | "reveal-rush";
+export type GameMode = "quiz" | "time-attack" | "reveal-rush" | "bingo" | "gender";
 
 /**
  * Which Pokémon a challenge draws from. Undefined field = no constraint.
@@ -31,6 +35,12 @@ export interface ChallengeRule {
   timeLimitSec?: number;
   /** Reveal-rush only: seconds each silhouette takes to fully reveal. */
   revealSec?: number;
+  /** Bingo only: board edge (3 ⇒ 3×3). */
+  boardSize?: number;
+  /** Bingo only: a cell is only used if this many Pokémon can fill it. */
+  minAnswersPerCell?: number;
+  /** Bingo only: placement attempts for the whole board. */
+  attempts?: number;
 }
 
 /**
@@ -43,6 +53,8 @@ export interface Question {
   answer: string;
   /** Pre-normalized strings accepted as correct (for instant client-side judging). */
   acceptedAnswers: string[];
+  /** Gender quiz only: which gender's sprites to show. The answer is the gender. */
+  gender?: "male" | "female";
 }
 
 /** Convenience alias: the reference dataset passed into pure generators. */
