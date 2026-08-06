@@ -18,7 +18,7 @@ const dataset: Pokemon[] = Array.from({ length: 15 }, (_, i) => ({
   acceptedAnswers: [`포켓몬${i + 1}`],
 }));
 
-const challenge = getChallenge("gen1:quiz")!;
+const challenge = getChallenge("gen1:quiz:n10")!;
 const SEED = 42;
 const questions = generateQuestions(challenge.rule, dataset, SEED);
 
@@ -29,7 +29,7 @@ describe("gradePlay", () => {
 
   it("re-judges attempts against the seed's questions", () => {
     const attempts = questions.map((q, i) => (i < 6 ? q.answer : "틀린답"));
-    const graded = gradePlay({ challengeId: "gen1:quiz", seed: SEED, attempts }, dataset);
+    const graded = gradePlay({ challengeId: "gen1:quiz:n10", seed: SEED, attempts }, dataset);
     expect(graded).not.toBeNull();
     expect(graded!.questionCount).toBe(10);
     expect(graded!.correctCount).toBe(6);
@@ -39,7 +39,7 @@ describe("gradePlay", () => {
 
   it("attaches each answered Pokémon's types (for mastery)", () => {
     const attempts = questions.map((q) => q.answer);
-    const graded = gradePlay({ challengeId: "gen1:quiz", seed: SEED, attempts }, dataset)!;
+    const graded = gradePlay({ challengeId: "gen1:quiz:n10", seed: SEED, attempts }, dataset)!;
     for (const item of graded.outcome) {
       expect(item.types.length).toBeGreaterThan(0);
     }
@@ -47,15 +47,15 @@ describe("gradePlay", () => {
 
   it("only grades what was attempted (early quit isn't penalised)", () => {
     const attempts = questions.slice(0, 3).map((q) => q.answer);
-    const graded = gradePlay({ challengeId: "gen1:quiz", seed: SEED, attempts }, dataset)!;
+    const graded = gradePlay({ challengeId: "gen1:quiz:n10", seed: SEED, attempts }, dataset)!;
     expect(graded.questionCount).toBe(3);
     expect(graded.correctCount).toBe(3);
   });
 
   it("is deterministic for the same record", () => {
     const attempts = questions.map((q) => q.answer);
-    const a = gradePlay({ challengeId: "gen1:quiz", seed: SEED, attempts }, dataset);
-    const b = gradePlay({ challengeId: "gen1:quiz", seed: SEED, attempts }, dataset);
+    const a = gradePlay({ challengeId: "gen1:quiz:n10", seed: SEED, attempts }, dataset);
+    const b = gradePlay({ challengeId: "gen1:quiz:n10", seed: SEED, attempts }, dataset);
     expect(a).toEqual(b);
   });
 });
@@ -82,7 +82,7 @@ describe("gradePlay — bingo", () => {
     }
   }
 
-  const CHALLENGE = "all:bingo-3";
+  const CHALLENGE = "all:bingo:3x3";
   const BINGO_SEED = 7;
   const rule = getChallenge(CHALLENGE)!.rule;
 
@@ -116,6 +116,32 @@ describe("gradePlay — bingo", () => {
     const graded = gradePlay({ challengeId: CHALLENGE, seed: BINGO_SEED, attempts }, dex);
     expect(graded!.outcome).toHaveLength(9);
     expect(graded!.correctCount).toBe(8);
+  });
+
+  it("clears on a completed line and calls a full board perfect", () => {
+    const full = gradePlay(
+      { challengeId: CHALLENGE, seed: BINGO_SEED, attempts: perfectAttempts() },
+      dex,
+    )!;
+    expect(full.lines).toBe(8); // 3 rows + 3 columns + 2 diagonals
+    expect(full.status).toEqual({ cleared: true, perfect: true });
+
+    // Just the top row: one line, so cleared — but the board is not full.
+    const oneRow = perfectAttempts().map((a, i) => (i < 3 ? a : ""));
+    const partial = gradePlay({ challengeId: CHALLENGE, seed: BINGO_SEED, attempts: oneRow }, dex)!;
+    expect(partial.lines).toBe(1);
+    expect(partial.status).toEqual({ cleared: true, perfect: false });
+  });
+
+  it("does not clear a board with no completed line", () => {
+    // Two cells of the top row — scattered fills, no line.
+    const scattered = perfectAttempts().map((a, i) => (i < 2 ? a : ""));
+    const graded = gradePlay(
+      { challengeId: CHALLENGE, seed: BINGO_SEED, attempts: scattered },
+      dex,
+    )!;
+    expect(graded.lines).toBe(0);
+    expect(graded.status).toEqual({ cleared: false, perfect: false });
   });
 
   it("ignores a placement the client made up", () => {
@@ -167,7 +193,7 @@ describe("gradePlay — gender quiz", () => {
     acceptedAnswers: [`몬${i + 1}`],
     genderDiff: { front: { pixels: 40, box: { x: 0, y: 0, size: 26 } }, back: { pixels: 20, box: { x: 0, y: 0, size: 26 } } },
   }));
-  const CHALLENGE = "all:gender";
+  const CHALLENGE = "all:gender:n10";
   const GENDER_SEED = 31;
 
   it("re-judges 암컷/수컷 taps through the ordinary path", () => {
@@ -194,5 +220,42 @@ describe("gradePlay — gender quiz", () => {
       dex,
     );
     expect(graded!.correctCount).toBeLessThan(10);
+  });
+});
+
+describe("gradePlay clear status", () => {
+  it("clears the silhouette quiz at 70% and calls a full score perfect", () => {
+    const play = (correct: number) =>
+      gradePlay(
+        {
+          challengeId: "gen1:quiz:n10",
+          seed: SEED,
+          attempts: questions.map((q, i) => (i < correct ? q.answer : "틀린답")),
+        },
+        dataset,
+      )!;
+
+    expect(play(6).status).toEqual({ cleared: false, perfect: false });
+    expect(play(7).status).toEqual({ cleared: true, perfect: false });
+    expect(play(10).status).toEqual({ cleared: true, perfect: true });
+  });
+
+  it("does not let quitting early pass as a clear", () => {
+    // One question reached, answered correctly, then the player walked away.
+    const graded = gradePlay(
+      { challengeId: "gen1:quiz:n10", seed: SEED, attempts: [questions[0].answer] },
+      dataset,
+    )!;
+    expect(graded.questionCount).toBe(1); // only what was reached is graded
+    expect(graded.plannedCount).toBe(10); // but the bar is the whole challenge
+    expect(graded.status).toEqual({ cleared: false, perfect: false });
+  });
+
+  it("reports zero lines outside bingo", () => {
+    const graded = gradePlay(
+      { challengeId: "gen1:quiz:n10", seed: SEED, attempts: questions.map((q) => q.answer) },
+      dataset,
+    )!;
+    expect(graded.lines).toBe(0);
   });
 });

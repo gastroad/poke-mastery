@@ -3,13 +3,19 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getMyProgressAction } from "@/app/profile/actions";
+import { readLocalBadges } from "@/client/game/localBadges";
 import { Pokeball } from "@/client/ui/Pokeball";
 import type { Progress } from "@/domain/progress/types";
+import { BadgeCase } from "./BadgeCase";
 import { ProgressView } from "./ProgressView";
 
-type State = { kind: "loading" } | { kind: "authed"; progress: Progress } | { kind: "anonymous" };
+type State =
+  | { kind: "loading" }
+  | { kind: "authed"; progress: Progress; badges: string[] }
+  | { kind: "anonymous"; badges: string[] };
 
-/** Profile dashboard — login-only. Anonymous visitors get a sign-in prompt. */
+/** Profile dashboard. Progress needs an account; the badge case works either
+    way, reading localStorage for players who haven't signed in. */
 export function ProfileView() {
   const [state, setState] = useState<State>({ kind: "loading" });
 
@@ -18,9 +24,13 @@ export function ProfileView() {
     getMyProgressAction()
       .then((res) => {
         if (!active) return;
-        setState(res.status === "authed" ? { kind: "authed", progress: res.progress } : { kind: "anonymous" });
+        setState(
+          res.status === "authed"
+            ? { kind: "authed", progress: res.progress, badges: res.badges }
+            : { kind: "anonymous", badges: readLocalBadges() },
+        );
       })
-      .catch(() => active && setState({ kind: "anonymous" }));
+      .catch(() => active && setState({ kind: "anonymous", badges: readLocalBadges() }));
     return () => {
       active = false;
     };
@@ -46,18 +56,31 @@ export function ProfileView() {
             <Pokeball className="h-10 w-10" spin />
           </div>
         )}
+        {/* Anonymous players still earn badges (into localStorage), so the case
+            has to be visible to them — a badge you can never look at isn't one.
+            The sign-in prompt stays: those badges live in this browser only. */}
         {state.kind === "anonymous" && (
-          <div className="flex flex-col items-center gap-4 rounded-2xl border border-zinc-800 bg-zinc-900/60 px-6 py-12 text-center">
-            <p className="text-zinc-300">로그인하면 진행이 계정에 저장되고 여기서 볼 수 있어요.</p>
-            <Link
-              href="/login"
-              className="rounded-full bg-poke-500 px-6 py-3 font-semibold text-white transition hover:bg-poke-400"
-            >
-              로그인
-            </Link>
-          </div>
+          <>
+            <div className="flex flex-col items-center gap-4 rounded-2xl border border-zinc-800 bg-zinc-900/60 px-6 py-8 text-center">
+              <p className="text-zinc-300">
+                로그인하면 진행이 계정에 저장돼요. 지금 배지는 이 브라우저에만 있어요.
+              </p>
+              <Link
+                href="/login"
+                className="rounded-full bg-poke-500 px-6 py-3 font-semibold text-white transition hover:bg-poke-400"
+              >
+                로그인
+              </Link>
+            </div>
+            <BadgeCase earned={state.badges} />
+          </>
         )}
-        {state.kind === "authed" && <ProgressView progress={state.progress} />}
+        {state.kind === "authed" && (
+          <>
+            <ProgressView progress={state.progress} />
+            <BadgeCase earned={state.badges} />
+          </>
+        )}
       </div>
     </main>
   );

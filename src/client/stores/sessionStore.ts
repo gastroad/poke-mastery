@@ -71,6 +71,14 @@ interface SessionState {
   /** Verdict of the last drop, for the feedback line. */
   lastPlacement: Placement | null;
 
+  /**
+   * The game is suspended behind a blocking UI (the quit prompt). Only the timed
+   * modes read it — deciding whether to quit must not cost clock — and it is NOT
+   * a player-facing pause: nothing offers it except the quit dialog, so it can't
+   * be used to buy thinking time.
+   */
+  paused: boolean;
+
   // ── actions ──
   start: (challenge: StartChallenge, dataset: Dataset, seed: number) => void;
   setInput: (value: string) => void;
@@ -78,8 +86,11 @@ interface SessionState {
   next: () => void;
   /** time-attack / reveal-rush: record the answer (+optional points) and advance immediately. */
   recordAndAdvance: (correct: boolean, points?: number) => void;
-  /** time-attack: end the game (clock ran out). */
+  /** time-attack: end the game (clock ran out, or the player quit early). */
   finishNow: () => void;
+  /** Freeze the timed modes while a blocking prompt is up. */
+  pause: () => void;
+  resume: () => void;
   /** bingo: pick a Pokémon up (does NOT spend an attempt — placing does). */
   pickUp: (pokemon: Pokemon | null) => void;
   /** bingo: drop the held Pokémon into a cell. A wrong cell costs an attempt. */
@@ -107,6 +118,7 @@ const initialState = {
   held: null as Pokemon | null,
   attemptsLeft: 0,
   lastPlacement: null as Placement | null,
+  paused: false,
 };
 
 /** Pull the bingo knobs out of a challenge rule (catalog fills them in). */
@@ -200,8 +212,16 @@ export const useSessionStore = create<SessionState>((set, get) => ({
   },
 
   finishNow: () => {
-    if (get().status === "playing") set({ status: "finished" });
+    // Clears `paused` too: quitting resolves the prompt that froze the game, and
+    // a finished session must never be left suspended.
+    if (get().status === "playing") set({ status: "finished", paused: false });
   },
+
+  pause: () => {
+    if (get().status === "playing") set({ paused: true });
+  },
+
+  resume: () => set({ paused: false }),
 
   pickUp: (pokemon) => {
     if (get().status !== "playing") return;

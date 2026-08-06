@@ -11,35 +11,12 @@
   --background: #09090b;
   --foreground: #fafafa;
 
-  /* Diameter of the full-screen Poké Ball (home backdrop + play frame). This is
-     the REAL drawn diameter — the ball is centered absolutely, so nothing clamps
-     it behind our back. (It used to be declared 130vmax while a flex parent
+  /* Diameter of the full-screen Poké Ball behind the home hero. This is the REAL
+     drawn diameter — the ball is centered absolutely, so nothing clamps it
+     behind our back. (It used to be declared 130vmax while a flex parent
      silently shrank it to the viewport width, which is why portrait says 100vw:
      that is what a phone was already drawing.) */
   --poke-ball-size: 100vw;
-  /* How far each half of the play-screen frame slides off the seam. Measured
-     against the viewport HEIGHT, since what it has to clear is the wheel in the
-     middle of the screen, not the ball. */
-  --poke-frame-offset: 26vh;
-  /* The opening between the two halves — the wheel picker is sized to fill it,
-     so the picker grows with the ball instead of being a fixed-px widget. */
-  --poke-frame-gap: calc(var(--poke-frame-offset) * 2);
-
-  /* Height of one wheel row. Scales up on wider screens so the picker fills a
-     monitor instead of staying phone-sized. WheelPicker READS this value to do
-     its snap math, so it has to stay a plain px length. */
-  --wheel-row: 64px;
-}
-
-@media (min-width: 768px) {
-  :root {
-    --wheel-row: 76px;
-  }
-}
-@media (min-width: 1280px) {
-  :root {
-    --wheel-row: 88px;
-  }
 }
 
 /* Landscape (desktop): size the ball off the viewport HEIGHT instead, so its
@@ -47,9 +24,6 @@
 @media (min-aspect-ratio: 1/1) {
   :root {
     --poke-ball-size: 115vh;
-    /* Landscape leaves room to spare above and below, so open the halves wider
-       than portrait and let the wheel spend that height. */
-    --poke-frame-offset: 31vh;
   }
 }
 
@@ -144,13 +118,18 @@ body {
     animation: page-fade 0.45s ease-out both;
   }
 
-  /* Play screen: continuing from the home ball that flung apart, the halves
-     settle back INWARD to frame the wheel (the gap narrows into place). */
-  .frame-half-top {
-    animation: frame-settle-top 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
+  /* Settings sheet arriving from the bottom of a phone. */
+  .sheet-rise {
+    animation: sheet-rise 0.26s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
-  .frame-half-bottom {
-    animation: frame-settle-bottom 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
+}
+
+@keyframes sheet-rise {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
   }
 }
 
@@ -253,67 +232,13 @@ body {
   }
 }
 
-/* ── Play screen: opened Poké Ball frame + wheel picker ─────────────────────── */
-
-/* Hide the wheel's scrollbar (it snaps, so the bar is just noise). */
+/* Hide a scroll container's bar where it would be pure noise. */
 .no-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 .no-scrollbar::-webkit-scrollbar {
   display: none;
-}
-
-/* Resting position of the two frame halves — the settle animation above lands
-   on these. Wide enough that the split center button reads as clean half-domes
-   at each frame's inner edge, clear of the wheel. */
-.frame-half-top {
-  transform: translateY(calc(var(--poke-frame-offset) * -1));
-}
-.frame-half-bottom {
-  transform: translateY(var(--poke-frame-offset));
-}
-
-/* Softens the middle band so the wheel reads cleanly and the halves' inner
-   edges fade into it — a dark zinc grey (not jet black), fading to transparent
-   at the top/bottom so the red/white frames show. */
-.frame-scrim {
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(39, 39, 42, 0.45) 24%,
-    rgba(39, 39, 42, 0.72) 42%,
-    rgba(39, 39, 42, 0.72) 58%,
-    rgba(39, 39, 42, 0.45) 76%,
-    transparent 100%
-  );
-}
-
-/* The wheel's scroll surface spans the whole screen so a flick anywhere works —
-   a picker you can only grab in a 320px band in the middle of a phone is the
-   main thing that made this feel broken. It still has to LOOK like it lives in
-   the ball's opening, so rows fade out as they pass behind the caps: the mask is
-   fully opaque exactly across the opening and ramps to transparent at the edges. */
-.wheel-scroller {
-  /* Where the ball's opening starts, measured from the top of the scroller. */
-  --wheel-fade: calc(50% - var(--poke-frame-gap) / 2);
-  /* Ramp over the last 48px before the opening, not the whole cap — a gradient
-     spread across the full cap leaves rows ghosting at ~80% over the red. */
-  --wheel-fade-in: calc(var(--wheel-fade) - 48px);
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    transparent var(--wheel-fade-in),
-    #000 var(--wheel-fade),
-    #000 calc(100% - var(--wheel-fade)),
-    transparent calc(100% - var(--wheel-fade-in))
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    transparent var(--wheel-fade-in),
-    #000 var(--wheel-fade),
-    #000 calc(100% - var(--wheel-fade)),
-    transparent calc(100% - var(--wheel-fade-in))
-  );
 }
 
 /* ── Gender quiz: showing WHAT differs between male and female ───────────────
@@ -419,52 +344,16 @@ body {
 }
 
 /* Smooth the focus scale/fade as items pass through the center. */
-.wheel-label {
-  transition:
-    transform 0.2s ease,
-    opacity 0.2s ease,
-    color 0.2s ease;
-}
-.wheel-shake {
-  animation: wheel-shake 0.3s ease;
-}
+
+
 
 @media (prefers-reduced-motion: reduce) {
-  .wheel-label {
-    transition: none;
-  }
-  .wheel-shake {
-    animation: none;
-  }
+  
+  
 }
 
-@keyframes frame-settle-top {
-  from {
-    transform: translateY(calc(var(--poke-frame-offset) * -2));
-  }
-  to {
-    transform: translateY(calc(var(--poke-frame-offset) * -1));
-  }
-}
 
-@keyframes frame-settle-bottom {
-  from {
-    transform: translateY(calc(var(--poke-frame-offset) * 2));
-  }
-  to {
-    transform: translateY(var(--poke-frame-offset));
-  }
-}
 
-@keyframes wheel-shake {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-5px);
-  }
-  75% {
-    transform: translateX(5px);
-  }
-}
+
+
+

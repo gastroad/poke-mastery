@@ -8,6 +8,7 @@ import { GenderQuizView } from "./GenderQuizView";
 import { HeavierQuizView } from "./HeavierQuizView";
 import { POKEMON } from "./pokemonDataset";
 import { PokemonSilhouette } from "./PokemonSilhouette";
+import { QuitButton } from "./QuitButton";
 import { ResultScreen } from "./ResultScreen";
 import { RevealRushView } from "./RevealRushView";
 import { TimeAttackView } from "./TimeAttackView";
@@ -124,6 +125,7 @@ function Hud() {
 
   return (
     <div className="flex w-full items-center justify-between text-sm">
+      <QuitButton />
       <span className="flex items-center gap-1" aria-label={`남은 목숨 ${remaining}`}>
         {Array.from({ length: remaining }).map((_, i) => (
           <Heart key={`life-${i}`} className="h-5 w-5 fill-rose-500 text-rose-500" />

@@ -3,6 +3,7 @@ import { judgeAnswer } from "../answer/judgeAnswer";
 import { gradeBingoPlay } from "../bingo/gradeBingo";
 import type { PlayOutcome } from "../progress/types";
 import { getChallenge } from "./catalog";
+import { type ClearStatus, judgeClear } from "./clear";
 import { generateQuestions } from "./generateQuestions";
 import type { ChallengeRule, Dataset } from "./types";
 
@@ -10,7 +11,18 @@ export interface GradedPlay {
   challengeId: string;
   outcome: PlayOutcome;
   correctCount: number;
+  /** How many questions the player actually reached. */
   questionCount: number;
+  /**
+   * How many the challenge generated (bingo: cells on the board). Accuracy goals
+   * divide by THIS, never by `questionCount` — otherwise quitting after one
+   * correct answer would grade as a flawless run.
+   */
+  plannedCount: number;
+  /** Bingo only: completed lines. 0 for every other mode. */
+  lines: number;
+  /** Judged against the challenge's own bars (see domain/challenge/clear). */
+  status: ClearStatus;
 }
 
 /**
@@ -23,7 +35,7 @@ export function gradePlay(record: PlayRecord, dataset: Dataset): GradedPlay | nu
   const challenge = getChallenge(record.challengeId);
   if (!challenge) return null;
   if (challenge.rule.mode === "bingo") {
-    return gradeBingoRecord(challenge.id, challenge.rule, record, dataset);
+    return gradeBingoRecord(challenge, record, dataset);
   }
 
   const questions = generateQuestions(challenge.rule, dataset, record.seed);
@@ -38,11 +50,22 @@ export function gradePlay(record: PlayRecord, dataset: Dataset): GradedPlay | nu
     };
   });
 
+  const correctCount = outcome.filter((o) => o.correct).length;
   return {
     challengeId: challenge.id,
     outcome,
-    correctCount: outcome.filter((o) => o.correct).length,
+    correctCount,
     questionCount: outcome.length,
+    // The generator caps at the pool size, so the plan is what it actually
+    // produced — not what the rule asked for.
+    plannedCount: questions.length,
+    lines: 0,
+    status: judgeClear(challenge.goals, {
+      planned: questions.length,
+      attempted: outcome.length,
+      correct: correctCount,
+      lines: 0,
+    }),
   };
 }
 
@@ -53,11 +76,11 @@ export function gradePlay(record: PlayRecord, dataset: Dataset): GradedPlay | nu
  * tampered record can only ever score LOWER than an honest one.
  */
 function gradeBingoRecord(
-  challengeId: string,
-  rule: ChallengeRule,
+  challenge: NonNullable<ReturnType<typeof getChallenge>>,
   record: PlayRecord,
   dataset: Dataset,
 ): GradedPlay | null {
+  const rule: ChallengeRule = challenge.rule;
   const graded = gradeBingoPlay(
     {
       size: rule.boardSize ?? 3,
@@ -70,10 +93,20 @@ function gradeBingoRecord(
   );
   if (!graded) return null;
 
+  // Every cell is graded whether or not it was filled, so planned == attempted.
+  const cellCount = graded.outcome.length;
   return {
-    challengeId,
+    challengeId: challenge.id,
     outcome: graded.outcome,
     correctCount: graded.filledCount,
-    questionCount: graded.outcome.length,
+    questionCount: cellCount,
+    plannedCount: cellCount,
+    lines: graded.lines.length,
+    status: judgeClear(challenge.goals, {
+      planned: cellCount,
+      attempted: cellCount,
+      correct: graded.filledCount,
+      lines: graded.lines.length,
+    }),
   };
 }

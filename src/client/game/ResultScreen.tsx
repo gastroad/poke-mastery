@@ -1,23 +1,40 @@
 "use client";
 
-import { Cloud, Flame, HardDrive, Sparkles } from "lucide-react";
+import { Award, Cloud, Flame, HardDrive, Sparkles, Star, Trophy } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { submitPlayAction } from "@/app/play/actions";
 import { useSessionStore } from "@/client/stores/sessionStore";
+import { getBadge } from "@/domain/badge/catalog";
+import { newlyEarnedBadges } from "@/domain/badge/judgeBadges";
 import { completedLines } from "@/domain/bingo/lines";
+import type { ClearStatus } from "@/domain/challenge/clear";
 import { gradePlay } from "@/domain/challenge/gradePlay";
 import { applyPlayResult } from "@/domain/progress/applyPlayResult";
+import {
+  applyPlayToRecord,
+  EMPTY_RECORD as EMPTY_LOCAL_RECORD,
+  type RecordDelta,
+} from "@/domain/progress/challengeRecord";
 import type { ProgressDelta } from "@/domain/progress/types";
 import type { PlayRecord } from "@/shared/play";
+import { addLocalBadges, readLocalBadges } from "./localBadges";
 import { readLocalProgress, writeLocalProgress } from "./localProgress";
+import { readLocalRecords, writeLocalRecord } from "./localRecords";
 import { POKEMON } from "./pokemonDataset";
 
 const randomSeed = () => Math.floor(Math.random() * 0x7fffffff);
 
 type SaveState =
   | { kind: "saving" }
-  | { kind: "saved"; delta: ProgressDelta; where: "server" | "local" }
+  | {
+      kind: "saved";
+      delta: ProgressDelta;
+      where: "server" | "local";
+      clear: ClearStatus;
+      record: RecordDelta;
+      newBadges: string[];
+    }
   | { kind: "none"; reason: string };
 
 /** End-of-game summary. Submits the play (server if logged in, else localStorage). */
@@ -66,14 +83,45 @@ export function ResultScreen() {
     submitPlayAction(record)
       .then((res) => {
         if (res.status === "saved") {
-          setSave({ kind: "saved", delta: res.delta, where: "server" });
+          setSave({
+            kind: "saved",
+            delta: res.delta,
+            where: "server",
+            clear: res.clear,
+            record: res.record,
+            newBadges: res.newBadges,
+          });
         } else if (res.status === "anonymous") {
-          // Not logged in: run the same reducer locally and persist to localStorage.
+          // Not logged in: run the same reducers locally and persist to
+          // localStorage. Same functions the server runs, so an anonymous clear
+          // is judged by exactly the same rules.
           const graded = gradePlay(record, POKEMON);
           if (!graded) return setSave({ kind: "none", reason: "unknown-challenge" });
           const { progress, delta } = applyPlayResult(readLocalProgress(), graded.outcome);
           writeLocalProgress(progress);
-          setSave({ kind: "saved", delta, where: "local" });
+
+          const before = readLocalRecords()[graded.challengeId];
+          const next = applyPlayToRecord(before ?? EMPTY_LOCAL_RECORD, {
+            score: delta.score,
+            status: graded.status,
+          });
+          writeLocalRecord(graded.challengeId, next.record);
+
+          // Same judge the server runs, over the records this browser holds.
+          const fresh = newlyEarnedBadges(
+            { progress, records: { ...readLocalRecords(), [graded.challengeId]: next.record } },
+            readLocalBadges(),
+          );
+          addLocalBadges(fresh);
+
+          setSave({
+            kind: "saved",
+            delta,
+            where: "local",
+            clear: graded.status,
+            record: next.delta,
+            newBadges: fresh,
+          });
         } else {
           setSave({ kind: "none", reason: res.status });
         }
@@ -84,7 +132,7 @@ export function ResultScreen() {
   return (
     <main className="flex min-h-full flex-1 flex-col items-center justify-center bg-zinc-950 px-6 py-10 text-center text-zinc-100">
       <div className="flex w-full max-w-md flex-col items-center gap-8">
-        <h1 className="text-3xl font-bold">게임 종료</h1>
+        <ClearHeading save={save} />
 
         <div className="flex flex-col gap-2">
           {isBingo ? (
@@ -125,6 +173,9 @@ export function ResultScreen() {
         </div>
 
         <SaveBanner save={save} />
+        {save.kind === "saved" && save.newBadges.length > 0 && (
+          <NewBadges ids={save.newBadges} />
+        )}
 
         <div className="flex w-full flex-col gap-3">
           <button
@@ -134,15 +185,84 @@ export function ResultScreen() {
           >
             다시 하기
           </button>
-          <Link
-            href="/"
-            className="w-full rounded-xl border border-zinc-700 px-4 py-3 text-zinc-300 transition hover:bg-zinc-900"
-          >
-            홈으로
-          </Link>
+          {/* Quitting mid-game lands here, so "다른 게임" has to exist — otherwise
+              the only way back to the picker is via the home screen. */}
+          <div className="flex gap-3">
+            <Link
+              href="/play"
+              className="flex-1 rounded-xl border border-zinc-700 px-4 py-3 text-center text-zinc-300 transition hover:bg-zinc-900"
+            >
+              다른 게임
+            </Link>
+            <Link
+              href="/"
+              className="flex-1 rounded-xl border border-zinc-700 px-4 py-3 text-center text-zinc-300 transition hover:bg-zinc-900"
+            >
+              홈으로
+            </Link>
+          </div>
         </div>
       </div>
     </main>
+  );
+}
+
+/**
+ * The verdict, not just "게임 종료". Stays neutral until the play is graded —
+ * announcing a clear before the server has judged it would sometimes be wrong.
+ */
+function ClearHeading({ save }: { save: SaveState }) {
+  if (save.kind !== "saved") return <h1 className="text-3xl font-bold">게임 종료</h1>;
+
+  if (save.clear.perfect) {
+    return (
+      <div className="flex flex-col items-center gap-1">
+        <h1 className="flex items-center gap-2 text-3xl font-black text-amber-300">
+          <Star className="h-7 w-7 fill-amber-300" />
+          퍼펙트
+        </h1>
+        <p className="text-sm text-zinc-400">하나도 놓치지 않았어요</p>
+      </div>
+    );
+  }
+  if (save.clear.cleared) {
+    return (
+      <div className="flex flex-col items-center gap-1">
+        <h1 className="flex items-center gap-2 text-3xl font-black text-emerald-400">
+          <Trophy className="h-7 w-7" />
+          클리어
+        </h1>
+        {save.record.firstClear && <p className="text-sm text-emerald-500/90">첫 클리어!</p>}
+      </div>
+    );
+  }
+  return (
+    <div className="flex flex-col items-center gap-1">
+      <h1 className="text-3xl font-bold">아쉬워요</h1>
+      <p className="text-sm text-zinc-500">조금만 더 하면 클리어예요</p>
+    </div>
+  );
+}
+
+/** Badges this play unlocked. One play can unlock several (a first clear is also
+    a game's badge), so they're listed rather than announced one at a time. */
+function NewBadges({ ids }: { ids: string[] }) {
+  const badges = ids.map(getBadge).filter((b) => b !== undefined);
+  if (badges.length === 0) return null;
+
+  return (
+    <div className="flex w-full flex-col gap-2 rounded-2xl border border-amber-500/30 bg-amber-500/5 px-5 py-4">
+      <p className="flex items-center justify-center gap-1.5 text-sm font-bold text-amber-300">
+        <Award className="h-4 w-4" />새 배지 {badges.length}개
+      </p>
+      <ul className="flex flex-col gap-1">
+        {badges.map((b) => (
+          <li key={b.id} className="text-center">
+            <span className="font-semibold text-zinc-100">{b.name}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
@@ -154,10 +274,16 @@ function SaveBanner({ save }: { save: SaveState }) {
     const msg = save.reason === "replay" ? "이미 기록된 게임이에요" : "진행을 저장하지 못했어요";
     return <p className="text-sm text-zinc-500">{msg}</p>;
   }
-  const { delta, where } = save;
+  const { delta, where, record } = save;
   return (
     <div className="flex flex-col items-center gap-1 rounded-2xl border border-zinc-800 bg-zinc-900/60 px-6 py-4">
       <p className="text-2xl font-bold text-emerald-400">+{delta.xpGained} XP</p>
+      {record.newBest && (
+        <p className="flex items-center gap-1.5 font-semibold text-amber-400">
+          <Trophy className="h-4 w-4" />
+          최고 기록 갱신 · {delta.score}점
+        </p>
+      )}
       {delta.leveledUp && (
         <p className="flex items-center gap-1.5 text-lg font-semibold text-amber-400">
           <Sparkles className="h-5 w-5" />

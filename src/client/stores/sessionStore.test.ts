@@ -142,4 +142,47 @@ describe("sessionStore", () => {
     store().recordAndAdvance(false, 80);
     expect(store().score).toBe(80); // a miss adds nothing
   });
+
+  describe("pause (quit prompt)", () => {
+    it("starts unpaused and toggles", () => {
+      store().start(challenge, dataset, 1);
+      expect(store().paused).toBe(false);
+      store().pause();
+      expect(store().paused).toBe(true);
+      store().resume();
+      expect(store().paused).toBe(false);
+    });
+
+    it("does not pause a game that isn't running", () => {
+      store().start(challenge, dataset, 1);
+      store().finishNow();
+      store().pause();
+      expect(store().paused).toBe(false);
+    });
+
+    it("leaves no finished game suspended", () => {
+      store().start(challenge, dataset, 1);
+      store().pause();
+      store().finishNow(); // this is what 그만두기 calls
+      expect(store().status).toBe("finished");
+      expect(store().paused).toBe(false);
+    });
+
+    it("clears on a fresh game", () => {
+      store().start(challenge, dataset, 1);
+      store().pause();
+      store().start(challenge, dataset, 2);
+      expect(store().paused).toBe(false);
+    });
+
+    it("keeps the answers already given — quitting grades what was played", () => {
+      store().start(challenge, dataset, 1);
+      answerCurrent(true);
+      store().next();
+      store().pause();
+      store().finishNow();
+      expect(store().results).toHaveLength(1);
+      expect(store().results[0].correct).toBe(true);
+    });
+  });
 });
