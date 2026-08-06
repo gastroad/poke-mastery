@@ -3,6 +3,7 @@ import {
   challengeId,
   getChallenge,
   getDifficulty,
+  getMode,
   getPool,
   MODES,
   poolsForMode,
@@ -47,6 +48,42 @@ describe("modes", () => {
       expect(new Set(ids).size).toBe(ids.length);
       expect(ids).toContain(mode.defaultDifficultyId);
     }
+  });
+
+  it("gives every level both a clear bar and a perfect ceiling", () => {
+    for (const mode of MODES) {
+      for (const d of mode.difficulties) {
+        expect(d.clear, `${mode.id}:${d.id}`).toBeDefined();
+        expect(d.perfect, `${mode.id}:${d.id}`).toBeDefined();
+      }
+    }
+  });
+
+  it("asks more of the two-choice modes, where guessing already scores 50%", () => {
+    for (const modeId of ["heavier", "gender"]) {
+      for (const d of getMode(modeId)!.difficulties) {
+        expect(d.clear).toEqual({ kind: "accuracy", min: 0.8 });
+      }
+    }
+    for (const d of getMode("quiz")!.difficulties) {
+      expect(d.clear).toEqual({ kind: "accuracy", min: 0.7 });
+    }
+  });
+
+  it("scales the time-attack target with the clock", () => {
+    const byId = Object.fromEntries(
+      getMode("time-attack")!.difficulties.map((d) => [d.id, d.clear]),
+    );
+    expect(byId["90s"]).toEqual({ kind: "correctCount", min: 22 });
+    expect(byId["60s"]).toEqual({ kind: "correctCount", min: 15 });
+    expect(byId["30s"]).toEqual({ kind: "correctCount", min: 8 });
+  });
+
+  it("wins bingo by lines, and calls a full board perfect", () => {
+    const [small, big] = getMode("bingo")!.difficulties;
+    expect(small.clear).toEqual({ kind: "bingoLines", min: 1 });
+    expect(big.clear).toEqual({ kind: "bingoLines", min: 2 });
+    expect(big.perfect).toEqual({ kind: "accuracy", min: 1 });
   });
 });
 

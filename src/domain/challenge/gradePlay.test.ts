@@ -118,6 +118,32 @@ describe("gradePlay — bingo", () => {
     expect(graded!.correctCount).toBe(8);
   });
 
+  it("clears on a completed line and calls a full board perfect", () => {
+    const full = gradePlay(
+      { challengeId: CHALLENGE, seed: BINGO_SEED, attempts: perfectAttempts() },
+      dex,
+    )!;
+    expect(full.lines).toBe(8); // 3 rows + 3 columns + 2 diagonals
+    expect(full.status).toEqual({ cleared: true, perfect: true });
+
+    // Just the top row: one line, so cleared — but the board is not full.
+    const oneRow = perfectAttempts().map((a, i) => (i < 3 ? a : ""));
+    const partial = gradePlay({ challengeId: CHALLENGE, seed: BINGO_SEED, attempts: oneRow }, dex)!;
+    expect(partial.lines).toBe(1);
+    expect(partial.status).toEqual({ cleared: true, perfect: false });
+  });
+
+  it("does not clear a board with no completed line", () => {
+    // Two cells of the top row — scattered fills, no line.
+    const scattered = perfectAttempts().map((a, i) => (i < 2 ? a : ""));
+    const graded = gradePlay(
+      { challengeId: CHALLENGE, seed: BINGO_SEED, attempts: scattered },
+      dex,
+    )!;
+    expect(graded.lines).toBe(0);
+    expect(graded.status).toEqual({ cleared: false, perfect: false });
+  });
+
   it("ignores a placement the client made up", () => {
     const attempts = perfectAttempts();
     attempts[0] = "없는포켓몬";
@@ -194,5 +220,42 @@ describe("gradePlay — gender quiz", () => {
       dex,
     );
     expect(graded!.correctCount).toBeLessThan(10);
+  });
+});
+
+describe("gradePlay clear status", () => {
+  it("clears the silhouette quiz at 70% and calls a full score perfect", () => {
+    const play = (correct: number) =>
+      gradePlay(
+        {
+          challengeId: "gen1:quiz:n10",
+          seed: SEED,
+          attempts: questions.map((q, i) => (i < correct ? q.answer : "틀린답")),
+        },
+        dataset,
+      )!;
+
+    expect(play(6).status).toEqual({ cleared: false, perfect: false });
+    expect(play(7).status).toEqual({ cleared: true, perfect: false });
+    expect(play(10).status).toEqual({ cleared: true, perfect: true });
+  });
+
+  it("does not let quitting early pass as a clear", () => {
+    // One question reached, answered correctly, then the player walked away.
+    const graded = gradePlay(
+      { challengeId: "gen1:quiz:n10", seed: SEED, attempts: [questions[0].answer] },
+      dataset,
+    )!;
+    expect(graded.questionCount).toBe(1); // only what was reached is graded
+    expect(graded.plannedCount).toBe(10); // but the bar is the whole challenge
+    expect(graded.status).toEqual({ cleared: false, perfect: false });
+  });
+
+  it("reports zero lines outside bingo", () => {
+    const graded = gradePlay(
+      { challengeId: "gen1:quiz:n10", seed: SEED, attempts: questions.map((q) => q.answer) },
+      dataset,
+    )!;
+    expect(graded.lines).toBe(0);
   });
 });

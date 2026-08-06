@@ -1,5 +1,6 @@
 import type { PokemonType } from "../pokemon/types";
 import { TYPE_NAME_KO } from "../pokemon/typeNames";
+import type { ClearGoal, ClearGoals } from "./clear";
 import type { ChallengeRule, PoolFilter } from "./types";
 import type { UnlockCondition } from "./unlock";
 
@@ -62,14 +63,36 @@ export interface DifficultyDef {
   label: string;
   /** Overrides merged onto the mode's base rule. */
   rule: Partial<Omit<ChallengeRule, "mode" | "pool">>;
+  /**
+   * The bar for "cleared" and the ceiling for "perfect". These live on the
+   * DIFFICULTY, not the mode: 30초 타임어택 and 90초 타임어택 cannot possibly ask
+   * for the same number of Pokémon, and neither can a 3×3 and a 5×5 board.
+   */
+  clear: ClearGoal;
+  perfect: ClearGoal;
 }
 
-/** Length ladder, shared by the modes whose only knob is how many questions. */
-const COUNT_LADDER: DifficultyDef[] = [
-  { id: "n5", label: "5문제", rule: { questionCount: 5 } },
-  { id: "n10", label: "10문제", rule: { questionCount: 10 } },
-  { id: "n20", label: "20문제", rule: { questionCount: 20 } },
-];
+/** Perfect for anything scored by question: every planned question answered right. */
+const ALL_CORRECT: ClearGoal = { kind: "accuracy", min: 1 };
+
+/** Reveal-rush is typed free-form, so the same bar holds at every reveal speed. */
+const RUSH_CLEAR: ClearGoal = { kind: "accuracy", min: 0.7 };
+
+/**
+ * Length ladder, shared by the modes whose only knob is how many questions.
+ *
+ * `clearAccuracy` is a parameter rather than a constant because a two-choice
+ * quiz has to ask for more: guessing blindly already scores 50% in 무게 대결 and
+ * 암수 구별, so a 70% bar would sit uncomfortably close to luck.
+ */
+const countLadder = (clearAccuracy: number): DifficultyDef[] =>
+  [5, 10, 20].map((n) => ({
+    id: `n${n}`,
+    label: `${n}문제`,
+    rule: { questionCount: n },
+    clear: { kind: "accuracy", min: clearAccuracy } as ClearGoal,
+    perfect: ALL_CORRECT,
+  }));
 
 // ── Modes: the "how" ──
 export interface ModeDef {
@@ -96,11 +119,17 @@ export interface ModeDef {
 const bingoAttempts = (size: number) => size * size + Math.floor((size * size) / 2);
 
 /** A bingo board size. It's the mode's difficulty axis, not a mode of its own. */
-const bingoSize = (size: number): DifficultyDef => ({
+const bingoSize = (size: number, clearLines: number): DifficultyDef => ({
   id: `${size}x${size}`,
   label: `${size}×${size}`,
   // Every cell is one thing to answer, which is what questionCount means here.
   rule: { questionCount: size * size, boardSize: size, attempts: bingoAttempts(size) },
+  // Bingo is won by lines, not by accuracy — filling eight scattered cells is
+  // not the same achievement as filling three that line up.
+  clear: { kind: "bingoLines", min: clearLines },
+  // For bingo, "every planned question correct" IS the full board: the grader
+  // reports one outcome per cell.
+  perfect: ALL_CORRECT,
 });
 
 export const MODES: ModeDef[] = [
@@ -109,7 +138,7 @@ export const MODES: ModeDef[] = [
     label: "실루엣",
     description: "실루엣만 보고 이름 맞히기",
     fullDexOnly: false,
-    difficulties: COUNT_LADDER,
+    difficulties: countLadder(0.7),
     defaultDifficultyId: "n10",
     rule: { mode: "quiz", questionCount: 10 },
   },
@@ -118,10 +147,30 @@ export const MODES: ModeDef[] = [
     label: "타임어택",
     description: "제한 시간 안에 최대한 많이",
     fullDexOnly: false,
+    // Accuracy means nothing here — the question budget is effectively endless,
+    // so the target is a headcount, and it scales with the clock.
     difficulties: [
-      { id: "90s", label: "90초", rule: { timeLimitSec: 90 } },
-      { id: "60s", label: "60초", rule: { timeLimitSec: 60 } },
-      { id: "30s", label: "30초", rule: { timeLimitSec: 30 } },
+      {
+        id: "90s",
+        label: "90초",
+        rule: { timeLimitSec: 90 },
+        clear: { kind: "correctCount", min: 22 },
+        perfect: { kind: "noMistakes" },
+      },
+      {
+        id: "60s",
+        label: "60초",
+        rule: { timeLimitSec: 60 },
+        clear: { kind: "correctCount", min: 15 },
+        perfect: { kind: "noMistakes" },
+      },
+      {
+        id: "30s",
+        label: "30초",
+        rule: { timeLimitSec: 30 },
+        clear: { kind: "correctCount", min: 8 },
+        perfect: { kind: "noMistakes" },
+      },
     ],
     defaultDifficultyId: "60s",
     // large count so the pool never runs out before the clock (capped at pool size)
@@ -134,9 +183,9 @@ export const MODES: ModeDef[] = [
     fullDexOnly: false,
     // Shorter reveal = less of the silhouette before you must commit = harder.
     difficulties: [
-      { id: "10s", label: "10초", rule: { revealSec: 10 } },
-      { id: "6s", label: "6초", rule: { revealSec: 6 } },
-      { id: "4s", label: "4초", rule: { revealSec: 4 } },
+      { id: "10s", label: "10초", rule: { revealSec: 10 }, clear: RUSH_CLEAR, perfect: ALL_CORRECT },
+      { id: "6s", label: "6초", rule: { revealSec: 6 }, clear: RUSH_CLEAR, perfect: ALL_CORRECT },
+      { id: "4s", label: "4초", rule: { revealSec: 4 }, clear: RUSH_CLEAR, perfect: ALL_CORRECT },
     ],
     defaultDifficultyId: "6s",
     rule: { mode: "reveal-rush", questionCount: 12, revealSec: 6 },
@@ -146,7 +195,7 @@ export const MODES: ModeDef[] = [
     label: "빙고",
     description: "세대 × 타입 판 채우기",
     fullDexOnly: true,
-    difficulties: [bingoSize(3), bingoSize(5)],
+    difficulties: [bingoSize(3, 1), bingoSize(5, 2)],
     defaultDifficultyId: "3x3",
     rule: {
       mode: "bingo",
@@ -161,7 +210,7 @@ export const MODES: ModeDef[] = [
     label: "무게 대결",
     description: "둘 중 더 무거운 쪽 고르기",
     fullDexOnly: false,
-    difficulties: COUNT_LADDER,
+    difficulties: countLadder(0.8),
     defaultDifficultyId: "n10",
     rule: { mode: "heavier", questionCount: 10 },
   },
@@ -172,7 +221,7 @@ export const MODES: ModeDef[] = [
     // Only ~100 species across every generation look different by gender, so
     // this needs the whole dex rather than any one generation's pool.
     fullDexOnly: true,
-    difficulties: COUNT_LADDER,
+    difficulties: countLadder(0.8),
     defaultDifficultyId: "n10",
     rule: { mode: "gender", questionCount: 10 },
   },
@@ -228,10 +277,21 @@ export interface ChallengeDef {
   id: string;
   title: string;
   rule: ChallengeRule;
+  /** What this exact combination asks of you (see domain/challenge/clear). */
+  goals: ClearGoals;
 }
 
 export function challengeId(poolId: string, modeId: string, difficultyId: string): string {
   return `${poolId}:${modeId}:${difficultyId}`;
+}
+
+/** Split a challenge id back into its parts. Undefined if it isn't one. */
+export function parseChallengeId(
+  id: string,
+): { poolId: string; modeId: string; difficultyId: string } | undefined {
+  const [poolId, modeId, difficultyId, ...rest] = id.split(":");
+  if (!poolId || !modeId || !difficultyId || rest.length > 0) return undefined;
+  return { poolId, modeId, difficultyId };
 }
 
 /** Build a playable challenge from its `poolId:modeId:difficultyId`. Returns
@@ -254,5 +314,6 @@ export function getChallenge(id: string): ChallengeDef | undefined {
     title: `${pool.label} · ${mode.label} · ${difficulty.label}`,
     // Difficulty overrides the mode's base params — order matters.
     rule: { ...mode.rule, ...difficulty.rule, pool: pool.filter },
+    goals: { clear: difficulty.clear, perfect: difficulty.perfect },
   };
 }

@@ -1,11 +1,12 @@
 "use client";
 
-import { ChevronDown, X } from "lucide-react";
+import { ChevronDown, Star, Trophy, X } from "lucide-react";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { AuthStatus } from "@/client/auth/AuthStatus";
 import { Pokeball } from "@/client/ui/Pokeball";
 import {
+  challengeId,
   DEFAULT_POOL_ID,
   getMode,
   MODES,
@@ -14,6 +15,7 @@ import {
   poolsForMode,
 } from "@/domain/challenge/catalog";
 import { modeBall } from "./modeBall";
+import { modeCleared, useChallengeRecords } from "./useChallengeRecords";
 
 /** Pools shown before the player asks for the whole list. */
 const POOL_PREVIEW_COUNT = 5;
@@ -39,7 +41,9 @@ export function GameSelect() {
   const [difficultyId, setDifficultyId] = useState(MODES[0].defaultDifficultyId);
   const [poolsOpen, setPoolsOpen] = useState(false);
 
+  const records = useChallengeRecords();
   const mode = getMode(selectedId ?? MODES[0].id) ?? MODES[0];
+  const record = records[challengeId(poolId, mode.id, difficultyId)];
 
   const selectMode = useCallback((next: ModeDef) => {
     setSelectedId(next.id);
@@ -123,9 +127,36 @@ export function GameSelect() {
         </div>
       </Field>
 
+      {/* The record is for THIS exact combination, so it changes with the chips
+          above — which is the only way a best score means anything when the
+          range and length are both adjustable. */}
+      <div className="mt-auto flex items-center justify-between border-t border-zinc-800 pt-4 text-sm">
+        <span className="text-zinc-500">내 최고 기록</span>
+        {record && record.playCount > 0 ? (
+          <span className="flex items-center gap-2">
+            {record.perfect ? (
+              <span className="flex items-center gap-1 text-xs font-bold text-amber-300">
+                <Star className="h-3.5 w-3.5 fill-amber-300" />
+                퍼펙트
+              </span>
+            ) : record.cleared ? (
+              <span className="flex items-center gap-1 text-xs font-bold text-emerald-400">
+                <Trophy className="h-3.5 w-3.5" />
+                클리어
+              </span>
+            ) : null}
+            <span className="font-mono text-lg font-bold tabular-nums text-zinc-100">
+              {record.bestScore.toLocaleString("ko-KR")}
+            </span>
+          </span>
+        ) : (
+          <span className="text-zinc-600">아직 없어요</span>
+        )}
+      </div>
+
       <Link
         href={href}
-        className="mt-auto rounded-xl bg-poke-500 px-4 py-3.5 text-center text-lg font-bold text-white shadow-lg shadow-poke-500/25 transition hover:bg-poke-400 active:scale-[0.98]"
+        className="rounded-xl bg-poke-500 px-4 py-3.5 text-center text-lg font-bold text-white shadow-lg shadow-poke-500/25 transition hover:bg-poke-400 active:scale-[0.98]"
       >
         시작하기
       </Link>
@@ -159,6 +190,12 @@ export function GameSelect() {
               >
                 <Pokeball decorative className="h-6 w-6 shrink-0" topColor={ball.color} />
                 <span className="text-sm">{m.label}</span>
+                {modeCleared(records, m.id) && (
+                  <Trophy
+                    aria-label="클리어함"
+                    className="ml-auto h-3.5 w-3.5 shrink-0 text-emerald-500"
+                  />
+                )}
               </button>
             );
           })}
@@ -188,7 +225,12 @@ export function GameSelect() {
                 className="pointer-events-none absolute -bottom-4 -right-3 h-16 w-16 opacity-15"
                 topColor={ball.color}
               />
-              <span className="text-[15px] font-bold tracking-tight">{m.label}</span>
+              <span className="flex items-center gap-1.5 text-[15px] font-bold tracking-tight">
+                {m.label}
+                {modeCleared(records, m.id) && (
+                  <Trophy aria-label="클리어함" className="h-3.5 w-3.5 text-emerald-500" />
+                )}
+              </span>
               <span className="text-xs leading-snug text-zinc-500">{m.description}</span>
             </button>
           );
