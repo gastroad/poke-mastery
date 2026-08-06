@@ -134,12 +134,22 @@ export function ResultScreen() {
           >
             다시 하기
           </button>
-          <Link
-            href="/"
-            className="w-full rounded-xl border border-zinc-700 px-4 py-3 text-zinc-300 transition hover:bg-zinc-900"
-          >
-            홈으로
-          </Link>
+          {/* Quitting mid-game lands here, so "다른 게임" has to exist — otherwise
+              the only way back to the picker is via the home screen. */}
+          <div className="flex gap-3">
+            <Link
+              href="/play"
+              className="flex-1 rounded-xl border border-zinc-700 px-4 py-3 text-center text-zinc-300 transition hover:bg-zinc-900"
+            >
+              다른 게임
+            </Link>
+            <Link
+              href="/"
+              className="flex-1 rounded-xl border border-zinc-700 px-4 py-3 text-center text-zinc-300 transition hover:bg-zinc-900"
+            >
+              홈으로
+            </Link>
+          </div>
         </div>
       </div>
     </main>

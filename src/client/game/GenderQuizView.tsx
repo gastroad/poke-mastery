@@ -8,6 +8,7 @@ import { GENDER_ANSWER } from "@/domain/challenge/generateGenderQuestions";
 import type { GenderDiffView } from "@/domain/pokemon/types";
 import { spritePath } from "@/shared/sprites";
 import { POKEMON } from "./pokemonDataset";
+import { QuitButton } from "./QuitButton";
 
 /**
  * "Male or female?" — the front AND back sprites of one gender, two buttons.
@@ -49,6 +50,7 @@ export function GenderQuizView() {
   return (
     <main className="mx-auto flex min-h-[100dvh] w-full max-w-xl flex-col gap-4 bg-zinc-950 px-4 py-5 text-zinc-100">
       <header className="flex items-center justify-between text-sm">
+        <QuitButton />
         <span className="font-black">
           {currentIndex + 1}
           <span className="text-zinc-500"> / {questions.length}</span>

@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { useSessionStore } from "@/client/stores/sessionStore";
 import { judgeAnswer } from "@/domain/answer/judgeAnswer";
 import { PokemonSilhouette } from "./PokemonSilhouette";
+import { QuitButton } from "./QuitButton";
 
 /** Time-attack loop: one global countdown, guess as many as possible. */
 export function TimeAttackView({ timeLimitSec }: { timeLimitSec: number }) {
@@ -16,17 +17,28 @@ export function TimeAttackView({ timeLimitSec }: { timeLimitSec: number }) {
   const setInput = useSessionStore((s) => s.setInput);
   const recordAndAdvance = useSessionStore((s) => s.recordAndAdvance);
   const finishNow = useSessionStore((s) => s.finishNow);
+  const paused = useSessionStore((s) => s.paused);
 
   const question = questions[currentIndex];
   const correctCount = results.filter((r) => r.correct).length;
 
   const inputRef = useRef<HTMLInputElement>(null);
   const composingRef = useRef(false); // true while a Hangul syllable is mid-composition
-  const [deadline] = useState(() => Date.now() + timeLimitSec * 1000);
+  const [deadline, setDeadline] = useState(() => Date.now() + timeLimitSec * 1000);
   const [msLeft, setMsLeft] = useState(timeLimitSec * 1000);
+
+  // Reading the quit prompt must not cost clock: while paused nothing ticks, and
+  // on resume the deadline moves out by exactly how long the pause lasted. (The
+  // shift happens in the CLEANUP — that is the moment the pause ends.)
+  useEffect(() => {
+    if (!paused) return;
+    const pausedAt = Date.now();
+    return () => setDeadline((d) => d + (Date.now() - pausedAt));
+  }, [paused]);
 
   // Global countdown; when it hits 0 the game ends.
   useEffect(() => {
+    if (paused) return;
     const id = setInterval(() => {
       const left = deadline - Date.now();
       if (left <= 0) {
@@ -38,7 +50,7 @@ export function TimeAttackView({ timeLimitSec }: { timeLimitSec: number }) {
       }
     }, 100);
     return () => clearInterval(id);
-  }, [deadline, finishNow]);
+  }, [deadline, finishNow, paused]);
 
   useEffect(() => {
     inputRef.current?.focus();
@@ -74,6 +86,7 @@ export function TimeAttackView({ timeLimitSec }: { timeLimitSec: number }) {
     <main className="flex min-h-[100dvh] flex-1 flex-col items-center justify-start bg-zinc-950 px-6 py-6 text-zinc-100 sm:justify-center sm:py-10">
       <div className="flex w-full max-w-md flex-col items-center gap-5 sm:gap-6">
         <div className="flex w-full items-center justify-between">
+          <QuitButton />
           <span
             className={`flex items-center gap-1.5 font-mono text-lg font-bold ${low ? "text-rose-400" : "text-zinc-200"}`}
           >

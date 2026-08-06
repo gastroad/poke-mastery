@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useSessionStore } from "@/client/stores/sessionStore";
 import { judgeAnswer } from "@/domain/answer/judgeAnswer";
 import { PokemonSilhouette } from "./PokemonSilhouette";
+import { QuitButton } from "./QuitButton";
 
 // Tunable — the user adjusts these by feel.
 const MAX_POINTS = 100; // guess instantly (fully hidden)
@@ -17,29 +18,46 @@ export function RevealRushView({ revealSec = 6 }: { revealSec?: number }) {
   const score = useSessionStore((s) => s.score);
   const setInput = useSessionStore((s) => s.setInput);
   const recordAndAdvance = useSessionStore((s) => s.recordAndAdvance);
+  const paused = useSessionStore((s) => s.paused);
 
   const question = questions[currentIndex];
   const inputRef = useRef<HTMLInputElement>(null);
   const composingRef = useRef(false); // true while a Hangul syllable is mid-composition
-  const startRef = useRef<number>(0); // set to Date.now() when each question starts
+  const startRef = useRef<number>(0); // Date.now() when the current run of this question began
+  // Reveal time this question already burned before the last pause. Without it a
+  // pause would hand back a fresh reveal window — and since earlier guesses score
+  // higher, that would be a way to farm full points.
+  const spentRef = useRef(0);
   // Reveal only once the new question's silhouette has painted (avoids a flash).
   const [revealedIndex, setRevealedIndex] = useState(-1);
 
+  // Declared before the timer effect so it runs first on a question change.
   useEffect(() => {
+    spentRef.current = 0;
+  }, [currentIndex]);
+
+  useEffect(() => {
+    if (paused) {
+      // Bank what this question has used; the cutoff below is torn down with it.
+      spentRef.current += Date.now() - startRef.current;
+      return;
+    }
     startRef.current = Date.now();
     const raf = requestAnimationFrame(() => setRevealedIndex(currentIndex));
-    const cutoff = setTimeout(() => recordAndAdvance(false, 0), revealSec * 1000);
+    const remaining = Math.max(0, revealSec * 1000 - spentRef.current);
+    const cutoff = setTimeout(() => recordAndAdvance(false, 0), remaining);
     inputRef.current?.focus();
     return () => {
       cancelAnimationFrame(raf);
       clearTimeout(cutoff);
     };
-  }, [currentIndex, revealSec, recordAndAdvance]);
+  }, [currentIndex, revealSec, recordAndAdvance, paused]);
 
   if (!question) return null;
 
   const pointsForNow = () => {
-    const t = Math.min(1, Math.max(0, (Date.now() - startRef.current) / 1000 / revealSec));
+    const elapsed = spentRef.current + (Date.now() - startRef.current);
+    const t = Math.min(1, Math.max(0, elapsed / 1000 / revealSec));
     return Math.round(MAX_POINTS - (MAX_POINTS - MIN_POINTS) * t);
   };
 
@@ -66,6 +84,7 @@ export function RevealRushView({ revealSec = 6 }: { revealSec?: number }) {
     <main className="flex min-h-[100dvh] flex-1 flex-col items-center justify-start bg-zinc-950 px-6 py-6 text-zinc-100 sm:justify-center sm:py-10">
       <div className="flex w-full max-w-md flex-col items-center gap-5 sm:gap-6">
         <div className="flex w-full items-center justify-between text-sm">
+          <QuitButton />
           <span className="font-mono text-zinc-400">
             {currentIndex + 1} / {questions.length}
           </span>

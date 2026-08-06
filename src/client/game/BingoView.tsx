@@ -10,6 +10,7 @@ import { TYPE_NAME_KO } from "@/domain/pokemon/typeNames";
 import { spritePath } from "@/shared/sprites";
 import { withParticle } from "./korean";
 import { POKEMON } from "./pokemonDataset";
+import { QuitButton } from "./QuitButton";
 
 /**
  * The bingo board. Type a name to pick a Pokémon up, then tap the cell you want
@@ -97,10 +98,15 @@ export function BingoView() {
 
   return (
     <main className="mx-auto flex min-h-[100dvh] w-full max-w-2xl flex-col gap-3 bg-zinc-950 px-4 py-5 text-zinc-100">
-      <header className="flex items-baseline justify-between gap-3">
-        <h1 className="text-lg font-black tracking-tight">
-          세대 <span className="text-poke-500">×</span> 타입 빙고
-        </h1>
+      {/* items-center, not items-baseline: the quit icon has no text baseline
+          to sit on, so baseline alignment would drop it below the title. */}
+      <header className="flex items-center justify-between gap-3">
+        <div className="flex items-center gap-1.5">
+          <QuitButton />
+          <h1 className="text-lg font-black tracking-tight">
+            세대 <span className="text-poke-500">×</span> 타입 빙고
+          </h1>
+        </div>
         <div className="flex gap-3 text-sm">
           <Stat label="시도" value={attemptsLeft} warn={attemptsLeft <= 3} />
           <Stat label="칸" value={`${filledCount}/${cells.length}`} />
