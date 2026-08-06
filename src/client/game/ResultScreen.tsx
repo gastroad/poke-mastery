@@ -1,10 +1,12 @@
 "use client";
 
-import { Cloud, Flame, HardDrive, Sparkles, Star, Trophy } from "lucide-react";
+import { Award, Cloud, Flame, HardDrive, Sparkles, Star, Trophy } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { submitPlayAction } from "@/app/play/actions";
 import { useSessionStore } from "@/client/stores/sessionStore";
+import { getBadge } from "@/domain/badge/catalog";
+import { newlyEarnedBadges } from "@/domain/badge/judgeBadges";
 import { completedLines } from "@/domain/bingo/lines";
 import type { ClearStatus } from "@/domain/challenge/clear";
 import { gradePlay } from "@/domain/challenge/gradePlay";
@@ -16,6 +18,7 @@ import {
 } from "@/domain/progress/challengeRecord";
 import type { ProgressDelta } from "@/domain/progress/types";
 import type { PlayRecord } from "@/shared/play";
+import { addLocalBadges, readLocalBadges } from "./localBadges";
 import { readLocalProgress, writeLocalProgress } from "./localProgress";
 import { readLocalRecords, writeLocalRecord } from "./localRecords";
 import { POKEMON } from "./pokemonDataset";
@@ -30,6 +33,7 @@ type SaveState =
       where: "server" | "local";
       clear: ClearStatus;
       record: RecordDelta;
+      newBadges: string[];
     }
   | { kind: "none"; reason: string };
 
@@ -85,6 +89,7 @@ export function ResultScreen() {
             where: "server",
             clear: res.clear,
             record: res.record,
+            newBadges: res.newBadges,
           });
         } else if (res.status === "anonymous") {
           // Not logged in: run the same reducers locally and persist to
@@ -102,12 +107,20 @@ export function ResultScreen() {
           });
           writeLocalRecord(graded.challengeId, next.record);
 
+          // Same judge the server runs, over the records this browser holds.
+          const fresh = newlyEarnedBadges(
+            { progress, records: { ...readLocalRecords(), [graded.challengeId]: next.record } },
+            readLocalBadges(),
+          );
+          addLocalBadges(fresh);
+
           setSave({
             kind: "saved",
             delta,
             where: "local",
             clear: graded.status,
             record: next.delta,
+            newBadges: fresh,
           });
         } else {
           setSave({ kind: "none", reason: res.status });
@@ -160,6 +173,9 @@ export function ResultScreen() {
         </div>
 
         <SaveBanner save={save} />
+        {save.kind === "saved" && save.newBadges.length > 0 && (
+          <NewBadges ids={save.newBadges} />
+        )}
 
         <div className="flex w-full flex-col gap-3">
           <button
@@ -224,6 +240,28 @@ function ClearHeading({ save }: { save: SaveState }) {
     <div className="flex flex-col items-center gap-1">
       <h1 className="text-3xl font-bold">아쉬워요</h1>
       <p className="text-sm text-zinc-500">조금만 더 하면 클리어예요</p>
+    </div>
+  );
+}
+
+/** Badges this play unlocked. One play can unlock several (a first clear is also
+    a game's badge), so they're listed rather than announced one at a time. */
+function NewBadges({ ids }: { ids: string[] }) {
+  const badges = ids.map(getBadge).filter((b) => b !== undefined);
+  if (badges.length === 0) return null;
+
+  return (
+    <div className="flex w-full flex-col gap-2 rounded-2xl border border-amber-500/30 bg-amber-500/5 px-5 py-4">
+      <p className="flex items-center justify-center gap-1.5 text-sm font-bold text-amber-300">
+        <Award className="h-4 w-4" />새 배지 {badges.length}개
+      </p>
+      <ul className="flex flex-col gap-1">
+        {badges.map((b) => (
+          <li key={b.id} className="text-center">
+            <span className="font-semibold text-zinc-100">{b.name}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
