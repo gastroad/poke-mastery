@@ -1,5 +1,5 @@
-import { ChallengeSelect } from "@/client/game/ChallengeSelect";
+import { GameSelect } from "@/client/game/GameSelect";
 
 export default function PlayPage() {
-  return <ChallengeSelect />;
+  return <GameSelect />;
 }
